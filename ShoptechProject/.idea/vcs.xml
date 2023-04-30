@@ -3,5 +3,8 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="" />
+    <mapping directory="$PROJECT_DIR$/ShoptechWebParent" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd" vcs="Git" />
   </component>
 </project>

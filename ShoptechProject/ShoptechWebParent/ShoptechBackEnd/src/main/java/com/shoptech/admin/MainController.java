@@ -1,4 +1,4 @@
-package com.shoptech.site.admin;
+package com.shoptech.admin;
 
 
 import org.springframework.stereotype.Controller;
