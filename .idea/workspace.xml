@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de07754c-0d28-4ec3-abb7-2f39a3434b84" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ShoptechProject/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechProject/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechProject/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechProject/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechProject/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechProject/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +26,10 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/Users/yoliephan/Desktop/TechShop-Springboot-JAVA"
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/yoliephan/Desktop/DOAN/TechShop-Springboot-JAVA",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -35,7 +40,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1682862297377</updated>
+      <workItem from="1683616274511" duration="75000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>
