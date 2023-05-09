@@ -23,6 +23,7 @@
     <modules>
         <module>ShoptechBackEnd</module>
         <module>ShoptechFrontEnd</module>
+        <module>ShoptechCommon</module>
     </modules>
 
     <dependencies>

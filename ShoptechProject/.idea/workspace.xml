@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e04ae1dc-02cf-4aa2-94b4-9265cc587538" name="Changes" comment="Update Code User Entity, User Repository and Unit test" />
+    <list default="true" id="e04ae1dc-02cf-4aa2-94b4-9265cc587538" name="Changes" comment="Update Code User Entity, User Repository and Unit test">
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/ShoptechCommonApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Shoptechdb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Shoptechdb.sql" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,7 +35,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -55,7 +67,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "20",
     "last_opened_file_path": "/Users/yoliephan/Desktop/TechShop-Springboot-JAVA/ShoptechProject",
     "node.js.detected.package.eslint": "true",
@@ -85,8 +97,8 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ShoptechBackEndApplication">
-    <configuration name="RoleRepositoryTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.UserRepositoryTests.testUpdateUserRoles">
+    <configuration name="RoleRepositoryTests.testCreateFirstRole" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ShoptechBackEnd" />
       <extension name="coverage">
         <pattern>
@@ -96,7 +108,24 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.shoptech.admin.user" />
       <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.user.RoleRepositoryTests" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="testCreateFirstRole" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RoleRepositoryTests.testCreateRestRoles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ShoptechBackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shoptech.admin.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shoptech.admin.user" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.user.RoleRepositoryTests" />
+      <option name="METHOD_NAME" value="testCreateRestRoles" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -113,22 +142,6 @@
       <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.user.UserRepositoryTests" />
       <option name="METHOD_NAME" value="testCreateUser" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserRepositoryTests.testDeleteUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ShoptechBackEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.shoptech.admin.user.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.shoptech.admin.user" />
-      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.user.UserRepositoryTests" />
-      <option name="METHOD_NAME" value="testDeleteUser" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -202,11 +215,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserRepositoryTests.testUpdateUserRoles" />
         <item itemvalue="JUnit.UserRepositoryTests.testGetUserById" />
         <item itemvalue="JUnit.UserRepositoryTests" />
-        <item itemvalue="JUnit.RoleRepositoryTests" />
-        <item itemvalue="JUnit.UserRepositoryTests.testDeleteUser" />
-        <item itemvalue="JUnit.UserRepositoryTests.testUpdateUserRoles" />
+        <item itemvalue="JUnit.RoleRepositoryTests.testCreateRestRoles" />
+        <item itemvalue="JUnit.RoleRepositoryTests.testCreateFirstRole" />
       </list>
     </recent_temporary>
   </component>
@@ -236,7 +249,7 @@
       <workItem from="1683623298089" duration="580000" />
       <workItem from="1683625606602" duration="480000" />
       <workItem from="1683626095663" duration="3270000" />
-      <workItem from="1683629739177" duration="662000" />
+      <workItem from="1683629739177" duration="1470000" />
     </task>
     <task id="LOCAL-00001" summary="Update Mutiple Spring Boot Project">
       <created>1682874480790</created>

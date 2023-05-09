@@ -1,7 +1,7 @@
 package com.shoptech.admin.user;
 
-import entity.Role;
-import entity.User;
+import com.shoptech.entity.Role;
+import com.shoptech.entity.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;

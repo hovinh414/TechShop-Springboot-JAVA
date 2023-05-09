@@ -6,6 +6,7 @@
     <mapping directory="$PROJECT_DIR$" vcs="" />
     <mapping directory="$PROJECT_DIR$/ShoptechWebParent" vcs="" />
     <mapping directory="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd" vcs="" />
+    <mapping directory="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd" vcs="" />
   </component>
 </project>
