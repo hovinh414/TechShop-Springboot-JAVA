@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de07754c-0d28-4ec3-abb7-2f39a3434b84" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/ShoptechProject/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechProject/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechProject/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechProject/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +26,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/yoliephan/Desktop/DOAN/TechShop-Springboot-JAVA",
+    "last_opened_file_path": "D:/Vinh_2B_03/LapTrinhUngDungJava/TechShop-Springboot-JAVA/ShoptechProject",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
