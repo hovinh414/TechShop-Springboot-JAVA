@@ -11,11 +11,9 @@
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw.cmd" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/ShoptechCommonApplication.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Shoptechdb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Shoptechdb.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +67,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "20",
-    "last_opened_file_path": "/Users/yoliephan/Desktop/TechShop-Springboot-JAVA/ShoptechProject",
+    "last_opened_file_path": "/Users/yoliephan/Desktop/TechShop-Springboot-JAVA/ShoptechProject/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -80,7 +78,7 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "spring.configuration.checksum": "f25fdd06a186d9734587e574482dc8a4",
+    "spring.configuration.checksum": "fb29203862e11c032b9b8bb6e877539a",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -140,7 +138,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.shoptech.admin.user" />
       <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.user.UserRepositoryTests" />
-      <option name="METHOD_NAME" value="testCreateUser" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -250,6 +247,7 @@
       <workItem from="1683625606602" duration="480000" />
       <workItem from="1683626095663" duration="3270000" />
       <workItem from="1683629739177" duration="1470000" />
+      <workItem from="1683633530950" duration="507000" />
     </task>
     <task id="LOCAL-00001" summary="Update Mutiple Spring Boot Project">
       <created>1682874480790</created>
