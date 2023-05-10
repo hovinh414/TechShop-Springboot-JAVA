@@ -5,49 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e04ae1dc-02cf-4aa2-94b4-9265cc587538" name="Changes" comment="Update Edentity">
+      <change beforePath="$PROJECT_DIR$/../ShoptechCommon.rar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/._ShoptechCommon" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._.DS_Store" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._.git" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._.mvn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._HELP.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._src" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._target" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/.mvn/._wrapper" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/.mvn/wrapper/._maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/.mvn/wrapper/._maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/._.DS_Store" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/._main" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/._test" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/._.DS_Store" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/._java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/._resources" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/._.DS_Store" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/._com" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/._.DS_Store" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/._shoptech" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/._.DS_Store" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/._entity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/entity/._Role.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/entity/._User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/resources/._application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/test/._java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/test/java/._com" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/test/java/com/._shoptech" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/._classes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/._generated-sources" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/._application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/._com" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/._shoptech" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/._entity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/._Role.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/._User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/generated-sources/._annotations" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +28,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -89,34 +50,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "20",
-    "last_opened_file_path": "/Users/yoliephan/Desktop/TechShop-Springboot-JAVA/ShoptechProject",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "/Users/yoliephan/Desktop/TechShop-Springboot-JAVA/ShoptechProject/src/main/java/com/shoptech/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "spring.configuration.checksum": "fb29203862e11c032b9b8bb6e877539a",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/yoliephan/Desktop/TechShop-Springboot-JAVA/ShoptechProject&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/yoliephan/Desktop/TechShop-Springboot-JAVA/ShoptechProject/src/main/java/com/shoptech/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;fb29203862e11c032b9b8bb6e877539a&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech" />
@@ -124,6 +85,7 @@
       <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/pages" />
       <recent name="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/layout" />
     </key>
   </component>
@@ -148,22 +110,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RoleRepositoryTests.testCreateRestRoles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ShoptechBackEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.shoptech.admin.user.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.shoptech.admin.user" />
-      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.user.RoleRepositoryTests" />
-      <option name="METHOD_NAME" value="testCreateRestRoles" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="UserRepositoryTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ShoptechBackEnd" />
       <extension name="coverage">
@@ -175,6 +121,22 @@
       <option name="PACKAGE_NAME" value="com.shoptech.admin.user" />
       <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.user.UserRepositoryTests" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRepositoryTests.testCreateUserWithTwoRole" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ShoptechBackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shoptech.admin.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shoptech.admin.user" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.user.UserRepositoryTests" />
+      <option name="METHOD_NAME" value="testCreateUserWithTwoRole" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -249,10 +211,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.ShoptechBackEndApplication" />
+        <item itemvalue="JUnit.UserRepositoryTests.testCreateUserWithTwoRole" />
         <item itemvalue="JUnit.UserRepositoryTests.testGetUserById" />
         <item itemvalue="JUnit.UserRepositoryTests.testUpdateUserRoles" />
         <item itemvalue="JUnit.UserRepositoryTests" />
-        <item itemvalue="JUnit.RoleRepositoryTests.testCreateRestRoles" />
       </list>
     </recent_temporary>
   </component>
@@ -285,6 +247,7 @@
       <workItem from="1683629739177" duration="1470000" />
       <workItem from="1683633530950" duration="2371000" />
       <workItem from="1683680421184" duration="4368000" />
+      <workItem from="1683724679499" duration="6618000" />
     </task>
     <task id="LOCAL-00001" summary="Update Mutiple Spring Boot Project">
       <created>1682874480790</created>
