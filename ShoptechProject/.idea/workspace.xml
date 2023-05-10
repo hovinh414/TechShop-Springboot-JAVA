@@ -5,9 +5,49 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e04ae1dc-02cf-4aa2-94b4-9265cc587538" name="Changes" comment="Update Edentity">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/._ShoptechCommon" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._.DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._.git" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._.mvn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._HELP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._src" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._target" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/.mvn/._wrapper" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/.mvn/wrapper/._maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/.mvn/wrapper/._maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/._.DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/._main" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/._test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/._.DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/._java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/._resources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/._.DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/._com" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/._.DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/._shoptech" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/._.DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/._entity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/entity/._Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/entity/._User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/resources/._application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/test/._java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/test/java/._com" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/test/java/com/._shoptech" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/._classes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/._generated-sources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/._application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/._com" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/._shoptech" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/._entity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/._Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/._User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/generated-sources/._annotations" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +60,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -62,7 +102,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "20",
-    "last_opened_file_path": "D:/Vinh_2B_03/LapTrinhUngDungJava/TechShop-Springboot-JAVA/ShoptechProject",
+    "last_opened_file_path": "/Users/yoliephan/Desktop/TechShop-Springboot-JAVA/ShoptechProject",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -82,6 +122,9 @@
       <recent name="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech" />
       <recent name="$PROJECT_DIR$/src/main" />
       <recent name="$PROJECT_DIR$/src/main/java" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/layout" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -241,6 +284,7 @@
       <workItem from="1683626095663" duration="3270000" />
       <workItem from="1683629739177" duration="1470000" />
       <workItem from="1683633530950" duration="2371000" />
+      <workItem from="1683680421184" duration="4368000" />
     </task>
     <task id="LOCAL-00001" summary="Update Mutiple Spring Boot Project">
       <created>1682874480790</created>
