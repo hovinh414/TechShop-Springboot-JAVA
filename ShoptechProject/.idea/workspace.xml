@@ -6,14 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e04ae1dc-02cf-4aa2-94b4-9265cc587538" name="Changes" comment="Update Edentity">
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,9 +21,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -55,36 +50,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/yoliephan/Desktop/TechShop-Springboot-JAVA/ShoptechProject&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/yoliephan/Desktop/TechShop-Springboot-JAVA/ShoptechProject/src/main/java/com/shoptech/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;fb29203862e11c032b9b8bb6e877539a&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "20",
+    "last_opened_file_path": "D:/Vinh_2B_03/LapTrinhUngDungJava/TechShop-Springboot-JAVA/ShoptechProject/ShoptechWebParent/ShoptechBackEnd/src/main/resources/static/assets/images",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "/Users/yoliephan/Desktop/TechShop-Springboot-JAVA/ShoptechProject/src/main/java/com/shoptech/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "spring.configuration.checksum": "fb29203862e11c032b9b8bb6e877539a",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Vinh_2B_03\LapTrinhUngDungJava\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechBackEnd\src\main\resources\static\assets\images" />
+      <recent name="D:\Vinh_2B_03\LapTrinhUngDungJava\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechBackEnd\src\main\resources\templates\categories" />
       <recent name="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech" />
       <recent name="$PROJECT_DIR$/src/main" />
       <recent name="$PROJECT_DIR$/src/main/java" />
@@ -102,7 +99,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ShoptechBackEndApplication">
+  <component name="RunManager" selected="Application.ShoptechBackEndApplication">
     <configuration name="ShoptechBackEndApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.ShoptechBackEndApplication" />
       <module name="ShoptechBackEnd" />
@@ -116,64 +113,64 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserRepositoryTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CategoryRepositoryTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ShoptechBackEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shoptech.admin.user.*" />
+          <option name="PATTERN" value="com.shoptech.admin.category.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.shoptech.admin.user" />
-      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.user.UserRepositoryTests" />
+      <option name="PACKAGE_NAME" value="com.shoptech.admin.category" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.category.CategoryRepositoryTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserRepositoryTests.testCreateUserWithTwoRole" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CategoryRepositoryTests.testCreateSubCategory4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ShoptechBackEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shoptech.admin.user.*" />
+          <option name="PATTERN" value="com.shoptech.admin.category.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.shoptech.admin.user" />
-      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.user.UserRepositoryTests" />
-      <option name="METHOD_NAME" value="testCreateUserWithTwoRole" />
+      <option name="PACKAGE_NAME" value="com.shoptech.admin.category" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.category.CategoryRepositoryTests" />
+      <option name="METHOD_NAME" value="testCreateSubCategory4" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserRepositoryTests.testGetUserById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CategoryRepositoryTests.testCreateSubCategory5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ShoptechBackEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shoptech.admin.user.*" />
+          <option name="PATTERN" value="com.shoptech.admin.category.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.shoptech.admin.user" />
-      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.user.UserRepositoryTests" />
-      <option name="METHOD_NAME" value="testGetUserById" />
+      <option name="PACKAGE_NAME" value="com.shoptech.admin.category" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.category.CategoryRepositoryTests" />
+      <option name="METHOD_NAME" value="testCreateSubCategory5" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserRepositoryTests.testUpdateUserRoles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CategoryRepositoryTests.testPrintHierarchicalCategories" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ShoptechBackEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shoptech.admin.user.*" />
+          <option name="PATTERN" value="com.shoptech.admin.category.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.shoptech.admin.user" />
-      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.user.UserRepositoryTests" />
-      <option name="METHOD_NAME" value="testUpdateUserRoles" />
+      <option name="PACKAGE_NAME" value="com.shoptech.admin.category" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.category.CategoryRepositoryTests" />
+      <option name="METHOD_NAME" value="testPrintHierarchicalCategories" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -217,10 +214,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.ShoptechBackEndApplication" />
-        <item itemvalue="JUnit.UserRepositoryTests.testCreateUserWithTwoRole" />
-        <item itemvalue="JUnit.UserRepositoryTests.testGetUserById" />
-        <item itemvalue="JUnit.UserRepositoryTests.testUpdateUserRoles" />
-        <item itemvalue="JUnit.UserRepositoryTests" />
+        <item itemvalue="JUnit.CategoryRepositoryTests.testPrintHierarchicalCategories" />
+        <item itemvalue="JUnit.CategoryRepositoryTests.testCreateSubCategory5" />
+        <item itemvalue="JUnit.CategoryRepositoryTests.testCreateSubCategory4" />
+        <item itemvalue="JUnit.CategoryRepositoryTests" />
       </list>
     </recent_temporary>
   </component>

@@ -158,11 +158,11 @@
                 </a>
             </li>
             <li class="nav-item menu-items">
-                <a class="nav-link"  th:href="@{/users}" aria-expanded="false" aria-controls="auth">
+                <a class="nav-link" th:href="@{/users}" aria-expanded="false" aria-controls="auth">
               <span class="menu-icon">
                 <i class="mdi mdi-security"></i>
               </span>
-                    <span class="menu-title" >Tài khoản</span>
+                    <span class="menu-title">Tài khoản</span>
                 </a>
             </li>
             <li class="nav-item menu-items">
@@ -376,10 +376,10 @@
             <!-- Trang Chủ-->
             <article layout:fragment="content">
                 <div class="card-body">
-                    <h4 class="card-title ">QUẢN LÝ TÀI KHOẢN</h4>
-                    <a th:href="@{/createuser}" aria-expanded="false" aria-controls="auth">
+                    <h4 class="card-title ">QUẢN LÝ DANH MỤC</h4>
+                    <a th:href="@{/createcategories}" aria-expanded="false" aria-controls="auth">
                     <button type="submit" class="btn btn-danger btn-icon-text" >
-                        <i class="mdi mdi-account-plus"></i>
+                        <i class="mdi mdi-playlist-play"></i>
                         Tạo mới
                     </button>
                     </a>
@@ -392,24 +392,18 @@
                             <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Avatar</th>
-                                <th>Email</th>
-                                <th>Tên</th>
-                                <th>Họ</th>
-                                <th>Vai trò</th>
+                                <th>Tiêu đề</th>
+                                <th>Hình ảnh</th>
                                 <th>Trạng thái</th>
                                 <th>Thao tác</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr th:each="user : ${listUsers}">
-                                <td>[[${user.id}]]</td>
-                                <td></td>
-                                <td>[[${user.email}]]</td>
-                                <td>[[${user.firstName}]]</td>
-                                <td>[[${user.lastName}]]</td>
-                                <td>[[${user.roles}]]</td>
-                                <td><label class="badge badge-success">[[${user.enabled}]]</label></td>
+                            <tr th:each="item : ${listCategories}">
+                                <td>[[${item.id}]]</td>
+                                <td>[[${item.name}]]</td>
+                                <td><img src=""></td>
+                                <td><label class="badge badge-success">[[${item.enable}]]</label></td>
                                 <td>
                                     Edit &nbsp; Delete
                                 </td>
