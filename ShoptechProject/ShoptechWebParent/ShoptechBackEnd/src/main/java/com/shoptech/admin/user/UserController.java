@@ -40,7 +40,7 @@ public class UserController {
     {
         System.out.println(user);
         service.save(user);
-        redirectAttributes.addFlashAttribute("Thông báo", "Tạo thành công tài khoản!");
+        redirectAttributes.addFlashAttribute("message", "Tạo thành công tài khoản!");
         return "redirect:/users";
     }
 
