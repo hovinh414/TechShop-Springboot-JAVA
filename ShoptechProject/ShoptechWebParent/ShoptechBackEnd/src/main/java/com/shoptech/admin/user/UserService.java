@@ -15,7 +15,12 @@ public class UserService {
 
     @Autowired
     private RoleRepository roleRepo;
-    public List<User>listAll(){
+
+    @Autowired
+    /*private PasswordEncoder passwordEncoder;*/
+
+    public List<User>listAll()
+    {
         return (List<User>) userRepo.findAll();
     }
 
@@ -24,8 +29,20 @@ public class UserService {
         return (List<Role>) roleRepo.findAll();
 
     }
-
-    public void save(User user) {
+    public void save(User user)
+    {
+    /*    encodePassword(user);*/
         userRepo.save(user);
+    }
+    /*private void encodePassword(User user)
+    {
+        String encodedPassword = passwordEncoder.encode(user.getPassword());
+        user.setPassword(encodedPassword);
+    }*/
+
+    public boolean isEmailUnique(String email)
+    {
+        User userByEmail= userRepo.getUserByEmail(email);
+        return userByEmail == null;
     }
 }
