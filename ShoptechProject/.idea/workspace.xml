@@ -9,47 +9,6 @@
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/._ShoptechCommon" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._.DS_Store" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._.git" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._.mvn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._HELP.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._src" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._target" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/.mvn/._wrapper" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/.mvn/wrapper/._maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/.mvn/wrapper/._maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/._.DS_Store" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/._main" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/._test" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/._.DS_Store" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/._java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/._resources" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/._.DS_Store" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/._com" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/._.DS_Store" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/._shoptech" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/._.DS_Store" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/._entity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/entity/._Role.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/entity/._User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/resources/._application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/test/._java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/test/java/._com" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/test/java/com/._shoptech" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/._classes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/._generated-sources" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/._application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/._com" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/._shoptech" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/._entity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/._Role.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/._User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/generated-sources/._annotations" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,82 +99,82 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ShoptechBackEndApplication">
-    <configuration name="CategoryRepositoryTests.testCreateSubCategory3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ProductReposityTests.testUpdateProduct">
+    <configuration name="ProductReposityTests.testCreateProduct2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ShoptechBackEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shoptech.admin.category.*" />
+          <option name="PATTERN" value="com.shoptech.admin.product.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.shoptech.admin.category" />
-      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.category.CategoryRepositoryTests" />
-      <option name="METHOD_NAME" value="testCreateSubCategory3" />
+      <option name="PACKAGE_NAME" value="com.shoptech.admin.product" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.product.ProductReposityTests" />
+      <option name="METHOD_NAME" value="testCreateProduct2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CategoryRepositoryTests.testCreateSubCategory4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductReposityTests.testCreateProduct3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ShoptechBackEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shoptech.admin.category.*" />
+          <option name="PATTERN" value="com.shoptech.admin.product.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.shoptech.admin.category" />
-      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.category.CategoryRepositoryTests" />
-      <option name="METHOD_NAME" value="testCreateSubCategory4" />
+      <option name="PACKAGE_NAME" value="com.shoptech.admin.product" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.product.ProductReposityTests" />
+      <option name="METHOD_NAME" value="testCreateProduct3" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CategoryRepositoryTests.testCreateSubCategory5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductReposityTests.testGetProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ShoptechBackEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shoptech.admin.category.*" />
+          <option name="PATTERN" value="com.shoptech.admin.product.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.shoptech.admin.category" />
-      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.category.CategoryRepositoryTests" />
-      <option name="METHOD_NAME" value="testCreateSubCategory5" />
+      <option name="PACKAGE_NAME" value="com.shoptech.admin.product" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.product.ProductReposityTests" />
+      <option name="METHOD_NAME" value="testGetProduct" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PasswordEncoderTest.testEncodePassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductReposityTests.testListAllProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ShoptechBackEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shoptech.admin.user.*" />
+          <option name="PATTERN" value="com.shoptech.admin.product.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.shoptech.admin.user" />
-      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.user.PasswordEncoderTest" />
-      <option name="METHOD_NAME" value="testEncodePassword" />
+      <option name="PACKAGE_NAME" value="com.shoptech.admin.product" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.product.ProductReposityTests" />
+      <option name="METHOD_NAME" value="testListAllProduct" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserRepositoryTests.testGetUserByEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductReposityTests.testUpdateProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ShoptechBackEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shoptech.admin.user.*" />
+          <option name="PATTERN" value="com.shoptech.admin.product.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.shoptech.admin.user" />
-      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.user.UserRepositoryTests" />
-      <option name="METHOD_NAME" value="testGetUserByEmail" />
+      <option name="PACKAGE_NAME" value="com.shoptech.admin.product" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.product.ProductReposityTests" />
+      <option name="METHOD_NAME" value="testUpdateProduct" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -258,11 +217,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserRepositoryTests.testGetUserByEmail" />
-        <item itemvalue="JUnit.PasswordEncoderTest.testEncodePassword" />
-        <item itemvalue="JUnit.CategoryRepositoryTests.testCreateSubCategory5" />
-        <item itemvalue="JUnit.CategoryRepositoryTests.testCreateSubCategory4" />
-        <item itemvalue="JUnit.CategoryRepositoryTests.testCreateSubCategory3" />
+        <item itemvalue="JUnit.ProductReposityTests.testUpdateProduct" />
+        <item itemvalue="JUnit.ProductReposityTests.testGetProduct" />
+        <item itemvalue="JUnit.ProductReposityTests.testListAllProduct" />
+        <item itemvalue="JUnit.ProductReposityTests.testCreateProduct3" />
+        <item itemvalue="JUnit.ProductReposityTests.testCreateProduct2" />
       </list>
     </recent_temporary>
   </component>
