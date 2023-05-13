@@ -41,7 +41,7 @@ public class BrandRepositoryTests {
     }
     @Test
     public void testCreateBrand3(){
-        Category iphone = new Category(14);
+        Category iphone = new Category(10);
         Category smartphone = new Category(7);
 
         Brand apple = new Brand("Apple");
@@ -70,7 +70,7 @@ public class BrandRepositoryTests {
     @Test
     public void testUpdatename(){
         String newName = "Samsung Electronic";
-        Brand samsung = repo.findById(3).get();
+        Brand samsung = repo.findById(2).get();
         samsung.setName(newName);
 
         Brand saveBrand = repo.save(samsung);
