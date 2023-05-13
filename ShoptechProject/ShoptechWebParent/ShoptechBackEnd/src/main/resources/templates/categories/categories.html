@@ -402,7 +402,9 @@
                             <tr th:each="item : ${listCategories}">
                                 <td>[[${item.id}]]</td>
                                 <td>[[${item.name}]]</td>
-                                <td><img src=""></td>
+                                <td>
+                                    <img th:src="@{${item.imagePath}}" style="width: 100px"/>
+                                </td>
                                 <td><label class="badge badge-success">[[${item.enable}]]</label></td>
                                 <td>
                                     Edit &nbsp; Delete

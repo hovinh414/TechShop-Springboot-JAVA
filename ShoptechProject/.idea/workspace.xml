@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e04ae1dc-02cf-4aa2-94b4-9265cc587538" name="Changes" comment="Update Edentity">
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" afterDir="false" />
@@ -106,7 +108,11 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "20",
+<<<<<<< HEAD
+    "last_opened_file_path": "D:/Vinh_2B_03/LapTrinhUngDungJava/TechShop-Springboot-JAVA/ShoptechProject",
+=======
     "last_opened_file_path": "C:/Users/Admin/Desktop/TechShop-Springboot-JAVA/ShoptechProject/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/static",
+>>>>>>> main
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -142,6 +148,15 @@
       </set>
     </option>
   </component>
+<<<<<<< HEAD
+  <component name="RunManager" selected="Application.ShoptechBackEndApplication">
+    <configuration name="ShoptechBackEndApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.ShoptechBackEndApplication" />
+      <module name="ShoptechBackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shoptech.admin.*" />
+=======
   <component name="RunManager" selected="Application.ShoptechFrontEndApplication">
     <configuration name="ShoptechFrontEndApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.shoptech.site.ShoptechFrontEndApplication" />
@@ -149,6 +164,7 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.shoptech.site.*" />
+>>>>>>> main
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -156,17 +172,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductReposityTests.testCreateProduct3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CategoryRepositoryTests.testListRootCategories" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ShoptechBackEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shoptech.admin.product.*" />
+          <option name="PATTERN" value="com.shoptech.admin.category.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.shoptech.admin.product" />
-      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.product.ProductReposityTests" />
-      <option name="METHOD_NAME" value="testCreateProduct3" />
+      <option name="PACKAGE_NAME" value="com.shoptech.admin.category" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.category.CategoryRepositoryTests" />
+      <option name="METHOD_NAME" value="testListRootCategories" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -257,11 +273,19 @@
     </configuration>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
+        <item itemvalue="Application.ShoptechBackEndApplication" />
+        <item itemvalue="JUnit.CategoryRepositoryTests.testListRootCategories" />
+        <item itemvalue="JUnit.ProductReposityTests.testUpdateProduct" />
+        <item itemvalue="JUnit.ProductReposityTests.testGetProduct" />
+        <item itemvalue="JUnit.ProductReposityTests.testListAllProduct" />
+=======
         <item itemvalue="Application.ShoptechFrontEndApplication" />
         <item itemvalue="JUnit.ProductReposityTests.testUpdateProduct" />
         <item itemvalue="JUnit.ProductReposityTests.testGetProduct" />
         <item itemvalue="JUnit.ProductReposityTests.testListAllProduct" />
         <item itemvalue="JUnit.ProductReposityTests.testCreateProduct3" />
+>>>>>>> main
       </list>
     </recent_temporary>
   </component>
@@ -444,6 +468,10 @@
           <line>15</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.springframework.web.multipart.MultipartException" package="org.springframework.web.multipart" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
