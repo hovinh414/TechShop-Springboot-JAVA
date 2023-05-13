@@ -11,6 +11,49 @@
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/._ShoptechCommon" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._.DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._.git" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._.mvn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._HELP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._src" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/._target" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/.mvn/._wrapper" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/.mvn/wrapper/._maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/.mvn/wrapper/._maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/._.DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/._main" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/._test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/._.DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/._java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/._resources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/._.DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/._com" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/._.DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/._shoptech" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/._.DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/._entity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/entity/._Category.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/entity/._Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/entity/._User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/resources/._application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/test/._java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/test/java/._com" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/test/java/com/._shoptech" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/._classes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/._generated-sources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/._application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/._com" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/._shoptech" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/._entity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/._Category.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/._Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/._User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/generated-sources/._annotations" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +108,11 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "20",
+<<<<<<< HEAD
     "last_opened_file_path": "D:/Vinh_2B_03/LapTrinhUngDungJava/TechShop-Springboot-JAVA/ShoptechProject",
+=======
+    "last_opened_file_path": "C:/Users/Admin/Desktop/TechShop-Springboot-JAVA/ShoptechProject/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/static",
+>>>>>>> main
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -101,6 +148,7 @@
       </set>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="Application.ShoptechBackEndApplication">
     <configuration name="ShoptechBackEndApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.ShoptechBackEndApplication" />
@@ -108,6 +156,15 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.shoptech.admin.*" />
+=======
+  <component name="RunManager" selected="Application.ShoptechFrontEndApplication">
+    <configuration name="ShoptechFrontEndApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.site.ShoptechFrontEndApplication" />
+      <module name="ShoptechFrontEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shoptech.site.*" />
+>>>>>>> main
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -216,11 +273,19 @@
     </configuration>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
         <item itemvalue="Application.ShoptechBackEndApplication" />
         <item itemvalue="JUnit.CategoryRepositoryTests.testListRootCategories" />
         <item itemvalue="JUnit.ProductReposityTests.testUpdateProduct" />
         <item itemvalue="JUnit.ProductReposityTests.testGetProduct" />
         <item itemvalue="JUnit.ProductReposityTests.testListAllProduct" />
+=======
+        <item itemvalue="Application.ShoptechFrontEndApplication" />
+        <item itemvalue="JUnit.ProductReposityTests.testUpdateProduct" />
+        <item itemvalue="JUnit.ProductReposityTests.testGetProduct" />
+        <item itemvalue="JUnit.ProductReposityTests.testListAllProduct" />
+        <item itemvalue="JUnit.ProductReposityTests.testCreateProduct3" />
+>>>>>>> main
       </list>
     </recent_temporary>
   </component>
