@@ -377,11 +377,10 @@
       <!-- Trang Chủ-->
       <article layout:fragment="content">
         <div class="col-12 grid-margin card-body">
-          <div class="card-body px-5 py-5 border border-secondary rounded p-3" style="max-width: 700px; margin: 0 auto"
-          th:object="${category}">
+          <div class="card-body px-5 py-5 border border-secondary rounded p-3" style="max-width: 700px; margin: 0 auto">
             <h3 class="card-title text-left mb-3">THÊM DANH MỤC</h3>
-            <form th:action="@{/categories/save}" method="post">
-              <div class="form-groupp">
+            <form th:action="@{/categories/save}" enctype="multipart/form-data" th:object="${category}" method="post">
+              <div class="form-group">
                 <label class="col-sm-3 col-form-label">Tên danh mục: </label>
                 <div  class="col-sm-12">
                   <input style="color:white" type="text" class="form-control p_input" th:field="*{name}" required minlength="3" maxlength="128">
@@ -397,7 +396,7 @@
                 <label class="col-sm-3 col-form-label">Danh mục cha: </label>
                 <div class="col-sm-12">
                   <select style="color:white" class="form-control" th:field="*{parent}">
-                    <option style="color:white" value="0">[Trống]</option>
+                    <option style="color:white" value="0">[Danh mục]</option>
                     <th:block th:each = "cat : ${listCategories}">
                       <option style="color:white" th:value = "${cat.id}">[[${cat.name}]]</option>
                     </th:block>
@@ -409,10 +408,8 @@
                 <label class="col-sm-3 col-form-label">Hình ảnh: </label>
                 <div class="col-sm-12">
                   <input  type="hidden" th:field="*{image}"/>
-                  <input style="color:white" type="file" id="fileImage" name="image" accept="image/png, image/jpeg"/>
-                  <div class="mt-2">
-                  <img id="thumbnail" alt="Image Preview" th:src="@{./assets/images/image-thumbnail.png}">
-                  </div>
+                  <input style="color:white" type="file" id="fileImage" name="fileImage" required/>
+                  <img id="thumbnail" alt="Image Preview" th:src="@{/assets/images/image-thumbnail.png}">
                 </div>
               </div>
 
