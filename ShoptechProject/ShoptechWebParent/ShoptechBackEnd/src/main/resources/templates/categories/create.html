@@ -379,6 +379,9 @@
         <div class="col-12 grid-margin card-body">
           <div class="card-body px-5 py-5 border border-secondary rounded p-3" style="max-width: 700px; margin: 0 auto">
             <h3 class="card-title text-left mb-3">THÊM DANH MỤC</h3>
+            <div th:if="${message != null}" class="alert alert-success text-center">
+              [[${message}]]
+            </div>
             <form th:action="@{/categories/save}" enctype="multipart/form-data" th:object="${category}" method="post">
               <div class="form-group">
                 <label class="col-sm-3 col-form-label">Tên danh mục: </label>
@@ -408,8 +411,8 @@
                 <label class="col-sm-3 col-form-label">Hình ảnh: </label>
                 <div class="col-sm-12">
                   <input  type="hidden" th:field="*{image}"/>
-                  <input style="color:white" type="file" id="fileImage" name="fileImage" required/>
-                  <img id="thumbnail" alt="Image Preview" th:src="@{/assets/images/image-thumbnail.png}">
+                  <input style="color:white" type="file" id="fileImage" name="fileImage" th:required="${category.imagePath == null}"/>
+                  <img id="thumbnail" alt="Image Preview" th:src="@{${category.imagePath}}" style="width:100px" class="img-fluid">
                 </div>
               </div>
 
@@ -467,7 +470,19 @@
     $("#buttonCancel").on("click", function(){
       window.location = "[[@{/categories}]]";
     });
+
+    $("#fileImage").change(function() {
+        showImageThumbnail(this);
+      });
   });
+  function showImageThumbnail(fileInput){
+      var file = fileInput.files[0];
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        $("#thumbnail").attr("src", e.target.result);
+      };
+      reader.readAsDataURL(file);
+   }
 </script>
 </body>
 </html>

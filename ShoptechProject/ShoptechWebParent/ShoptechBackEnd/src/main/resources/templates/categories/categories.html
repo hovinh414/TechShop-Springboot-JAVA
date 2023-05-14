@@ -399,15 +399,16 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr th:each="item : ${listCategories}">
-                                <td>[[${item.id}]]</td>
-                                <td>[[${item.name}]]</td>
+                            <tr th:each="cat : ${listCategories}">
+                                <td>[[${cat.id}]]</td>
+                                <td>[[${cat.name}]]</td>
                                 <td>
-                                    <img th:src="@{${item.imagePath}}" style="width: 100px"/>
+                                    <img th:src="@{${cat.imagePath}}" style="width: 100px"/>
                                 </td>
-                                <td><label class="badge badge-success">[[${item.enable}]]</label></td>
+                                <td><label class="badge badge-success">[[${cat.enable}]]</label></td>
                                 <td>
-                                    Edit &nbsp; Delete
+                                    <a th:href="@{/editcategories/{id}(id=${cat.id})}" class="btn btn-warning">Edit</a> &nbsp;
+                                    <a class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>
 
