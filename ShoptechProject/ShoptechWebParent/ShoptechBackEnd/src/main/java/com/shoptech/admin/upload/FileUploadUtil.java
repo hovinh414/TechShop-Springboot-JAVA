@@ -29,4 +29,21 @@ public class FileUploadUtil {
             throw new IOException("Could not save files: " + fileName, ex);
         }
     }
+    public static void cleanDir(String dir) {
+        Path dirPath = Paths.get(dir);
+
+        try{
+            Files.list(dirPath).forEach(file -> {
+                if (!Files.isDirectory(file)) {
+                    try {
+                        Files.delete(file);
+                    } catch (IOException ex){
+                        System.out.println("Không thể xóa file:" + file);
+                    }
+                }
+            });
+        } catch (IOException ex) {
+            System.out.println("Không thể liệt kê thư mục: " + dirPath);
+        }
+    }
 }
