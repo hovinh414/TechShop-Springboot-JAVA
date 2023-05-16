@@ -3,6 +3,7 @@ package com.shoptech.admin.user;
 import com.shoptech.entity.Role;
 import com.shoptech.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public class UserService {
     private RoleRepository roleRepo;
 
     @Autowired
-    /*private PasswordEncoder passwordEncoder;*/
+    private PasswordEncoder passwordEncoder;
 
     public List<User>listAll()
     {
@@ -30,21 +31,55 @@ public class UserService {
         return (List<Role>) roleRepo.findAll();
 
     }
+
     public void save(User user)
     {
         /*    encodePassword(user);*/
         userRepo.save(user);
     }
-    /*private void encodePassword(User user)
+
+    /*public User save(User user)
+    {
+        boolean isUpdatingUser = (user.getId() != null);
+
+        if (isUpdatingUser) {
+
+            User existingUser = userRepo.findById(user.getId()).get();
+
+            if (user.getPassword().isEmpty()) {
+                user.setPassword(existingUser.getPassword());
+            } else {
+                encodePassword(user);
+            }
+
+        } else {
+            encodePassword(user);
+        }
+        return userRepo.save(user);
+    }*/
+    private void encodePassword(User user)
     {
         String encodedPassword = passwordEncoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
-    }*/
+    }
 
-    public boolean isEmailUnique(String email)
+    public boolean isEmailUnique(Integer id, String email)
     {
         User userByEmail= userRepo.getUserByEmail(email);
-        return userByEmail == null;
+
+        if (userByEmail == null) return true;
+
+        boolean isCreatingNew = (id == null);
+
+        if (isCreatingNew) {
+            if (userByEmail != null)  return false;
+        } else {
+            if (userByEmail.getId() != id) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public User get(Integer id) throws UserNotFoundException {
@@ -53,6 +88,17 @@ public class UserService {
         } catch (NoSuchElementException ex) {
             throw new UserNotFoundException("Không tìm thấy tài khoản người dùng với id: " + id);
         }
+    }
+
+    public void delete(Integer id) throws UserNotFoundException {
+
+        Long countById = userRepo.countById(id);
+
+        if (countById == null || countById == 0) {
+            throw new UserNotFoundException("Không tìm thấy tài khoản người dùng với id: " + id);
+        }
+
+        userRepo.deleteById(id);
     }
 
 }

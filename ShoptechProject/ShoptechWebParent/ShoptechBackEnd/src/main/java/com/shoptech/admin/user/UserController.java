@@ -24,15 +24,15 @@ public class UserController {
         return "user/users";
     }
 
-    @GetMapping("/createuser")
+    @GetMapping("/users/create")
     public String newUser(Model model){
         List<Role> listRoles = service.listRoles();
         User user = new User();
         user.setEnabled(true);
         model.addAttribute("user", user);
         model.addAttribute("listRoles", listRoles);
-
-        return "user/create";
+        model.addAttribute("pageTitle", "Tạo tài khoản");
+        return "user/users_form";
 
     }
 
@@ -52,15 +52,30 @@ public class UserController {
             List<Role> listRoles = service.listRoles();
 
             model.addAttribute("user", user);
-        /*model.addAttribute("pageTitle", "Edit User (ID: " + id + ")");
-        model.addAttribute("listRoles", listRoles);*/
+            model.addAttribute("pageTitle", "Cập nhật tài khoản (ID: " + id + ")");
+            model.addAttribute("listRoles", listRoles);
 
-            return "user/create";
+            return "user/users_form";
         } catch (UserNotFoundException ex) {
             redirectAttributes.addFlashAttribute("message", ex.getMessage());
 
             return "redirect:/users";
         }
+    }
+
+    @GetMapping("/users/delete/{id}")
+    public String deleteUser(@PathVariable(name = "id") Integer id, RedirectAttributes redirectAttributes,
+                             Model model) {
+        try {
+            service.delete(id);
+            redirectAttributes.addFlashAttribute("message", "Tài khoản " + id + " đã xoá thành công.");
+
+        } catch (UserNotFoundException ex) {
+            redirectAttributes.addFlashAttribute("message", ex.getMessage());
+
+        }
+
+        return "redirect:/users";
     }
 
 }

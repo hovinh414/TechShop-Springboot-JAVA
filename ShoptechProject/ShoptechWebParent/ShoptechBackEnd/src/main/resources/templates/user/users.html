@@ -382,7 +382,7 @@
             <article layout:fragment="content">
                 <div class="card-body">
                     <h4 class="card-title ">QUẢN LÝ TÀI KHOẢN</h4>
-                    <a th:href="@{/createuser}" aria-expanded="false" aria-controls="auth">
+                    <a th:href="@{/users/create}" aria-expanded="false" aria-controls="auth">
                     <button type="submit" class="btn btn-danger btn-icon-text" >
                         <i class="mdi mdi-account-plus"></i>
                         Tạo mới
@@ -422,7 +422,8 @@
                                     <a  class="fas fa-edit fas-2x icon-green" th:href="@{'/users/edit/' + ${user.id}}"
                                        title="Edit this user"></a>
                                     &nbsp;&nbsp;
-                                    <a class="fas fa-trash fas-2x icon-dark" href=""></a>
+                                    <a class="fas fa-trash fas-2x icon-dark" th:href="@{'/users/delete/' + ${user.id}}"
+                                       title="Delete this user"></a>
                                 </td>
                             </tr>
 
