@@ -8,6 +8,8 @@
     <!-- plugins:css -->
     <link rel="stylesheet" th:href="@{/assets/vendors/mdi/css/materialdesignicons.min.css}">
     <link rel="stylesheet" th:href="@{/assets/vendors/css/vendor.bundle.base.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/fontawesome/all.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <link rel="stylesheet" th:href="@{/assets/vendors/jvectormap/jquery-jvectormap.css}">
@@ -18,9 +20,12 @@
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Layout styles -->
-    <link rel="stylesheet" th:href="@{assets/css/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/style.css}">
     <!-- End layout styles -->
-    <link rel="shortcut icon" th:href="@{assets/images/favicon.png}" />
+    <link rel="shortcut icon" th:href="@{/assets/images/favicon.png}" />
+
+
+
 </head>
 <body>
 <div class="container-scroller">
@@ -404,14 +409,20 @@
                             <tbody>
                             <tr th:each="user : ${listUsers}">
                                 <td>[[${user.id}]]</td>
-                                <td></td>
+                                <td><span class="fas fa-portrait fa-3x icon-dark"></span></td>
                                 <td>[[${user.email}]]</td>
                                 <td>[[${user.firstName}]]</td>
                                 <td>[[${user.lastName}]]</td>
                                 <td>[[${user.roles}]]</td>
-                                <td><label class="badge badge-success">[[${user.enabled}]]</label></td>
                                 <td>
-                                    Edit &nbsp; Delete
+                                    <a th:if="${user.enabled == true}" class="fas fa-check-circle fas-2x icon-green" href=""></a>
+                                    <a th:if="${user.enabled == false}" class="fas fa-check-circle fas-2x icon-silver" href=""></a>
+                                </td>
+                                <td>
+                                    <a  class="fas fa-edit fas-2x icon-green" th:href="@{'/users/edit/' + ${user.id}}"
+                                       title="Edit this user"></a>
+                                    &nbsp;&nbsp;
+                                    <a class="fas fa-trash fas-2x icon-dark" href=""></a>
                                 </td>
                             </tr>
 
