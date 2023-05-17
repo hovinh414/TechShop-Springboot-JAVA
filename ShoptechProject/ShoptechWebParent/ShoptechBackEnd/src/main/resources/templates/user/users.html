@@ -415,8 +415,13 @@
                                 <td>[[${user.lastName}]]</td>
                                 <td>[[${user.roles}]]</td>
                                 <td>
-                                    <a th:if="${user.enabled == true}" class="fas fa-check-circle fas-2x icon-green" href=""></a>
-                                    <a th:if="${user.enabled == false}" class="fas fa-check-circle fas-2x icon-silver" href=""></a>
+                                    <a th:if="${user.enabled == true}" class="fas fa-check-circle fas-2x icon-green"
+                                       th:href="@{'/users/' + ${user.id} + '/enabled/false'}"
+                                       title="Khoá tài khoản"></a>
+
+                                    <a th:if="${user.enabled == false}" class="fas fa-circle fas-2x icon-silver"
+                                       th:href="@{'/users/' + ${user.id} + '/enabled/true'}"
+                                       title="Mở tài khoản"></a>
                                 </td>
                                 <td>
                                     <a  class="fas fa-edit fas-2x icon-green" th:href="@{'/users/edit/' + ${user.id}}"
