@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Objects;
 
 @Service
 @Transactional
@@ -40,9 +41,9 @@ public class UserService {
         userRepo.save(user);
     }*/
 
-    public void save(User user)
+    public User save(User user)
     {
-        boolean isUpdatingUser = (user.getId() != 0);
+        boolean isUpdatingUser = !Objects.isNull(user.getId());
 
         if (isUpdatingUser) {
 
@@ -57,7 +58,7 @@ public class UserService {
         } else {
             encodePassword(user);
         }
-         userRepo.save(user);
+         return userRepo.save(user);
     }
 
     private void encodePassword(User user)
