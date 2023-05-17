@@ -19,9 +19,9 @@
   <!-- inject:css -->
   <!-- endinject -->
   <!-- Layout styles -->
-  <link rel="stylesheet" th:href="@{assets/css/style.css}">
+  <link rel="stylesheet" th:href="@{/assets/css/style.css}">
   <!-- End layout styles -->
-  <link rel="shortcut icon" th:href="@{assets/images/favicon.png}" />
+  <link rel="shortcut icon" th:href="@{/assets/images/favicon.png}" />
 </head>
 <body>
 <div class="container-scroller">
@@ -378,8 +378,9 @@
       <article layout:fragment="content">
         <div class="col-12 grid-margin card-body">
           <div class="card-body px-5 py-5 border border-secondary rounded p-3" style="max-width: 700px; margin: 0 auto">
-            <h3 class="card-title text-left mb-3">TẠO TÀI KHOẢN</h3>
+            <h3 class="card-title text-left mb-3">[[${pageTitle}]]</h3>
             <form  th:action="@{/users/save}" th:object="${user}" method="post" onsubmit="return checkEmailUnique(this);" >
+              <input type="hidden" th:field="*{id}" />
               <div class="form-group">
                 <label class="col-sm-3 col-form-label">Email: </label>
                 <div  class="col-sm-12">
@@ -401,7 +402,10 @@
               <div class="form-group">
                 <label class="col-sm-3 col-form-label">Mật khẩu: </label>
                 <div class="col-sm-12">
-                  <input style="color:white" type="password" class="form-control p_input" th:field="*{password}" required minlength="8" maxlength="20">
+                  <input th:if="${user.id == null}" style="color:white" type="password" class="form-control p_input"
+                         th:field="*{password}" required minlength="8" maxlength="20">
+                  <input th:if="${user.id != null}" style="color:white" type="password" class="form-control p_input"
+                         th:field="*{password}" minlength="8" maxlength="20">
                 </div>
               </div>
               <div class="form-group">
@@ -494,33 +498,40 @@
       window.location = "[[@{/users}]]";
     });
   });
+  function checkEmailUnique(form)
+  {
+    url= "[[@{/users/check_email}]]";
+    userEmail = $("#email").val();
+    csrfValue = $("input[name='_csrf']").val();
+    userId = $("#id").val();
+    params = {id: userId, email: userEmail, _csrf: csrfValue};
 
-   function checkEmailUnique(form)
-   {
-       url= "[[@{/users/check_email}]]";
-       userEmail = $("#email").val();
-       csrfValue = $("input[name='_csrf']").val();
-       params = {email: userEmail, _csrf: csrfValue};
+    $.post(url, params, function(response){
+      if(response == "OK"){
+        form.submit();
+      }else if(response == "Duplicate"){
+        alert("Email " + userEmail + " đã được sửa dụng!");
+      }else{
+        alert("Lỗi", "Không nhận được thông tin!");
+      }
+      /* alert("Response server: " + response);*/
+    }).fail(function(){
+      alert("Lỗi", "Không nhận được thông tin!");
+    });
+    return false;
+  }
 
-       $.post(url, params, function(response){
-         if(response == "OK"){
-             form.submit();
-         }else if(response == "Duplicate"){
-           alert("Email " + userEmail + " đã được sửa dụng!");
-         }else{
-           alert("Lỗi", "Không nhận được thông tin!");
-         }
-         /* alert("Response server: " + response);*/
-        }).fail(function(){
-         alert("Lỗi", "Không nhận được thông tin!");
-           });
-     return false;
-   }
   function showModalDialog(title, message){
-     $("#modalTitle").text(title);
-     $("#modalBody").text(message);
-     $("#modalDialog").modal();
-   }
+    $("#modalTitle").text(title);
+    $("#modalBody").text(message);
+    $("#modalDialog").modal();
+  }
 </script>
+<script th:src="@{/js/common_form.js}"></script>
 </body>
 </html>
+
+
+
+
+
