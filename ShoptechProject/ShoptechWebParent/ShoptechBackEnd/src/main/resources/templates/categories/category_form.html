@@ -22,6 +22,7 @@
   <link rel="stylesheet" th:href="@{/assets/css/style.css}">
   <!-- End layout styles -->
   <link rel="shortcut icon" th:href="@{/assets/images/favicon.png}" />
+  <script src="../../static/js/common_form.js"></script>
 </head>
 <body>
 <div class="container-scroller">
@@ -378,11 +379,13 @@
       <article layout:fragment="content">
         <div class="col-12 grid-margin card-body">
           <div class="card-body px-5 py-5 border border-secondary rounded p-3" style="max-width: 700px; margin: 0 auto">
-            <h3 class="card-title text-left mb-3">THÊM DANH MỤC</h3>
+            <h3 class="card-title text-left mb-3">[[${pageTitle}]]</h3>
             <div th:if="${message != null}" class="alert alert-success text-center">
               [[${message}]]
             </div>
-            <form th:action="@{/categories/save}" enctype="multipart/form-data" th:object="${category}" method="post">
+            <form th:action="@{/categories/save}" method="post"
+                  enctype="multipart/form-data" onsubmit="return checkUnique(this)"
+                  th:object="${category}" >
               <div class="form-group">
                 <label class="col-sm-3 col-form-label">Tên danh mục: </label>
                 <div  class="col-sm-12">
@@ -412,11 +415,11 @@
                 <div class="col-sm-12">
                   <input  type="hidden" th:field="*{image}"/>
                   <input style="color:white" type="file" id="fileImage" name="fileImage" th:required="${category.imagePath == null}"/>
-                  <img id="thumbnail" alt="Image Preview" th:src="@{${category.imagePath}}" style="width:100px" class="img-fluid">
+                  <img id="thumbnail" alt="Image Preview" th:src="@{${category.imagePath}}" width="100px" height="100px">
                 </div>
               </div>
 
-              <div class="form-group row">
+              <div class="form-group">
                 <label class="col-sm-3 col-form-label">Kích hoạt: </label>
                 <div class="col-sm-3">
                   <input type="checkbox" class="form-check-primary" th:field="*{enable}">
@@ -428,6 +431,7 @@
                 <button class="btn btn-secondary btn-block enter-btn" id="buttonCancel">Cancel</button>
               </div>
             </form>
+            <div th:replace="~{modal_fragments :: modal_dialog}"></div>
           </div>
         </div>
       </article>
@@ -483,6 +487,36 @@
     };
     reader.readAsDataURL(file);
   }
+  function checkUnique(form) {
+
+    catId = $("#id").val();
+    catName = $("#name").val();
+    catAlias = $("#alias").val();
+    csrfValue = $("input[name='_csrf']").val();
+
+    url = "[[@{/categories/check_unique}]]";
+
+    params = {id: catId, name: catName, alias: catAlias, _csrf: csrfValue};
+
+    $.post(url, params, function(response) {
+  debugger
+      if(response == "OK") {
+        form.submit();
+      } else if(response == "DuplicateName") {
+        alert( "Tên danh mục đã tồn tại: "+ catName);
+      } else if(response == "DuplicateAlias") {
+        alert( "Đường dẫn danh mục đã tồn tại: "+ catAlias);
+      } else {
+        alert( "could not connect to server");
+      }
+
+    }).fail(function() {
+      alert( "Không thể kể nối tới sever");
+    });
+
+    return false;
+  }
 </script>
+<script th:src="@{/js/common_form.js}"></script>
 </body>
 </html>
