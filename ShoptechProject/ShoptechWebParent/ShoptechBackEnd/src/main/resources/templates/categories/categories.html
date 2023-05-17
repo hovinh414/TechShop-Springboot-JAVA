@@ -379,7 +379,7 @@
             <article layout:fragment="content">
                 <div class="card-body">
                     <h4 class="card-title ">QUẢN LÝ DANH MỤC</h4>
-                    <a th:href="@{/categoríes/create}" aria-expanded="false" aria-controls="auth">
+                    <a th:href="@{/categories/create}" aria-expanded="false" aria-controls="auth">
                     <button type="submit" class="btn btn-danger btn-icon-text" >
                         <i class="mdi mdi-playlist-play"></i>
                         Tạo mới
@@ -394,9 +394,12 @@
                             <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Tiêu đề</th>
+                                <th>
+                                    <a style="color: #6c7293" th:href="@{'/categories?sortDir=' + ${reverseSortDir}}">Tiêu đề</a>
+                                    <span th:class="${reverseSortDir == 'desc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></span>
+                                </th>
                                 <th>Hình ảnh</th>
-                                <th>Trạng thái</th>
+                                <th style="text-align: center">Trạng thái</th>
                                 <th>Thao tác</th>
                             </tr>
                             </thead>
@@ -405,9 +408,9 @@
                                 <td>[[${cat.id}]]</td>
                                 <td>[[${cat.name}]]</td>
                                 <td>
-                                    <img th:src="@{${cat.imagePath}}" style="width: 100px"/>
+                                    <img th:src="@{${cat.imagePath}}" width="100px" height="100px"/>
                                 </td>
-                                <td>
+                                <td style="text-align: center">
                                     <a th:if="${cat.enable == true}" class="fas fa-check-circle fas-2x icon-green" href=""></a>
                                     <a th:if="${cat.enable == false}" class="fas fa-check-circle fas-2x icon-silver" href=""></a>
                                 </td>
