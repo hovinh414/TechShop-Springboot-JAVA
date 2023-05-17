@@ -18284,8 +18284,8 @@ div.tagsinput {
     .table td img,
     .jsgrid .jsgrid-table td img {
       width: 30px;
-      height: 30px;
-      border-radius: 100%; }
+      height: 70px;
+      border-radius: 0%; }
     .table th .badge, .jsgrid .jsgrid-table th .badge,
     .table td .badge,
     .jsgrid .jsgrid-table td .badge {
