@@ -2,6 +2,7 @@ package com.shoptech.admin.user;
 
 import com.shoptech.entity.Role;
 import com.shoptech.entity.User;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -10,6 +11,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
+@Transactional
 public class UserService {
 
     @Autowired
@@ -101,5 +103,11 @@ public class UserService {
 
         userRepo.deleteById(id);
     }
+
+    public void updateUserEnabledStatus(Integer id, boolean enabled) {
+
+        userRepo.updateEnabledStatus(id, enabled);
+    }
+
 
 }
