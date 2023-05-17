@@ -34,11 +34,11 @@ public class UserService {
 
     public void save(User user)
     {
-        /*    encodePassword(user);*/
+        encodePassword(user);
         userRepo.save(user);
     }
 
-    /*public User save(User user)
+   /* public User save(User user)
     {
         boolean isUpdatingUser = (user.getId() != null);
 
@@ -57,6 +57,7 @@ public class UserService {
         }
         return userRepo.save(user);
     }*/
+
     private void encodePassword(User user)
     {
         String encodedPassword = passwordEncoder.encode(user.getPassword());
