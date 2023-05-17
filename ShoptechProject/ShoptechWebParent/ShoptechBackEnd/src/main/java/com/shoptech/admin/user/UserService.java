@@ -32,15 +32,15 @@ public class UserService {
 
     }
 
-    public void save(User user)
+   /* public void save(User user)
     {
         encodePassword(user);
         userRepo.save(user);
-    }
+    }*/
 
-   /* public User save(User user)
+    public void save(User user)
     {
-        boolean isUpdatingUser = (user.getId() != null);
+        boolean isUpdatingUser = (user.getId() != 0);
 
         if (isUpdatingUser) {
 
@@ -55,8 +55,8 @@ public class UserService {
         } else {
             encodePassword(user);
         }
-        return userRepo.save(user);
-    }*/
+         userRepo.save(user);
+    }
 
     private void encodePassword(User user)
     {

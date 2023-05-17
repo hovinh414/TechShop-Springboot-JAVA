@@ -41,7 +41,7 @@ public class UserController {
     {
         System.out.println(user);
         service.save(user);
-        redirectAttributes.addFlashAttribute("message", "Tạo thành công tài khoản!");
+        redirectAttributes.addFlashAttribute("message", "Tài khoản lưu thành công!");
         return "redirect:/users";
     }
 
