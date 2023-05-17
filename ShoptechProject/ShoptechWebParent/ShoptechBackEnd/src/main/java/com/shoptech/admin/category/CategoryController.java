@@ -25,15 +25,15 @@ public class CategoryController {
         model.addAttribute("listCategories",listCategories);
         return "categories/categories";
     }
-    @GetMapping("/createcategories")
+    @GetMapping("/categoríes/create")
     public String newCategory(Model model){
         List<Category> listCategories = service.listCategoriesUsedInForm();
         model.addAttribute("category", new Category());
         model.addAttribute("listCategories", listCategories);
         model.addAttribute("pageTitle", "Create new Category");
-        return "categories/create";
+        return "categories/category_form";
     }
-    @PostMapping("categories/save")
+    @PostMapping("/categories/save")
     public String saveCategory(Category category, @RequestParam("fileImage") MultipartFile multipartFile,
                                RedirectAttributes ra) throws IOException {
         if (!multipartFile.isEmpty()){
@@ -50,21 +50,22 @@ public class CategoryController {
         ra.addFlashAttribute("message", "Thêm danh mục thành công!");
         return "redirect:/categories";
     }
-    @GetMapping("/editcategories/{id}")
-    public String editCategory(@PathVariable(name = "id") Integer id, Model model, RedirectAttributes ra){
+    @GetMapping("/categories/edit/{id}")
+    public String editCategory(@PathVariable(name = "id") Integer id, Model model, RedirectAttributes ra) {
         try {
             Category category = service.get(id);
             List<Category> listCategories = service.listCategoriesUsedInForm();
 
             model.addAttribute("category", category);
             model.addAttribute("listCategories", listCategories);
-            model.addAttribute("pageTitle", "Sửa danh mục (ID: " + id + ")");
+            model.addAttribute("pageTitle", "Edit Category (ID: " + id + ")");
 
-            return ("categories/create");
+            return "categories/category_form";
         } catch (CategoryNotFoundException ex) {
             ra.addFlashAttribute("message", ex.getMessage());
             return "redirect:/categories";
         }
     }
+
 
 }

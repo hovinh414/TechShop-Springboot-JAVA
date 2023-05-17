@@ -48,7 +48,7 @@ public class ProductReposityTests {
     @Test
     public void testCreateProduct2() {
         Brand brand =entityManager.find(Brand.class, 1);
-        Category category = entityManager.find(Category.class, 4);
+        Category category = entityManager.find(Category.class, 9);
         Product product = new Product();
         product.setName("Acer nitro 5 con chó Trung");
         product.setAlias("acer nitro 5 con cho Trung");
@@ -75,7 +75,7 @@ public class ProductReposityTests {
     @Test
     public void testCreateProduct3() {
         Brand brand =entityManager.find(Brand.class, 3);
-        Category category = entityManager.find(Category.class, 2);
+        Category category = entityManager.find(Category.class, 7);
         Product product = new Product();
         product.setName("Winner X con chó Lộc");
         product.setAlias("winner x con cho loc");

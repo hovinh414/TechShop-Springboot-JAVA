@@ -8,6 +8,8 @@
     <!-- plugins:css -->
     <link rel="stylesheet" th:href="@{/assets/vendors/mdi/css/materialdesignicons.min.css}">
     <link rel="stylesheet" th:href="@{/assets/vendors/css/vendor.bundle.base.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/fontawesome/all.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <link rel="stylesheet" th:href="@{/assets/vendors/jvectormap/jquery-jvectormap.css}">
@@ -18,9 +20,9 @@
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Layout styles -->
-    <link rel="stylesheet" th:href="@{/assets/css/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/style.css}">
     <!-- End layout styles -->
-    <link rel="shortcut icon" th:href="@{assets/images/favicon.png}" />
+    <link rel="shortcut icon" th:href="@{/assets/images/favicon.png}" />
 </head>
 <body>
 <div class="container-scroller">
@@ -377,7 +379,7 @@
             <article layout:fragment="content">
                 <div class="card-body">
                     <h4 class="card-title ">QUẢN LÝ DANH MỤC</h4>
-                    <a th:href="@{/createcategories}" aria-expanded="false" aria-controls="auth">
+                    <a th:href="@{/categoríes/create}" aria-expanded="false" aria-controls="auth">
                     <button type="submit" class="btn btn-danger btn-icon-text" >
                         <i class="mdi mdi-playlist-play"></i>
                         Tạo mới
@@ -405,10 +407,16 @@
                                 <td>
                                     <img th:src="@{${cat.imagePath}}" style="width: 100px"/>
                                 </td>
-                                <td><label class="badge badge-success">[[${cat.enable}]]</label></td>
                                 <td>
-                                    <a th:href="@{/editcategories/{id}(id=${cat.id})}" class="btn btn-warning">Edit</a> &nbsp;
-                                    <a class="btn btn-danger">Delete</a>
+                                    <a th:if="${cat.enable == true}" class="fas fa-check-circle fas-2x icon-green" href=""></a>
+                                    <a th:if="${cat.enable == false}" class="fas fa-check-circle fas-2x icon-silver" href=""></a>
+                                </td>
+                                <td>
+                                    <a  class="fas fa-edit fas-2x icon-green" th:href="@{'/categories/edit/' + ${cat.id}}"
+                                        title="Edit this category"></a>
+                                    &nbsp;&nbsp;
+                                    <a class="fas fa-trash fas-2x icon-dark" th:href="@{'/categories/delete/' + ${cat.id}}"
+                                       title="Delete this Category"></a>
                                 </td>
                             </tr>
 
