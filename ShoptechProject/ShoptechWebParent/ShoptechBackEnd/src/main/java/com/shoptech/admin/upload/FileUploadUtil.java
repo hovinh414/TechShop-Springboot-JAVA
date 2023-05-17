@@ -26,7 +26,7 @@ public class FileUploadUtil {
             Path filePath = uploadPath.resolve(fileName);
             Files.copy(inputStream, filePath, StandardCopyOption.REPLACE_EXISTING);
         } catch (IOException ex) {
-            throw new IOException("Could not save files: " + fileName, ex);
+            throw new IOException("Không thể lưu file: " + fileName, ex);
         }
     }
     public static void cleanDir(String dir) {
