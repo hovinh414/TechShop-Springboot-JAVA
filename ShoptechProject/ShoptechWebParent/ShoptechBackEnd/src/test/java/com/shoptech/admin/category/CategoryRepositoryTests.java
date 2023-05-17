@@ -26,7 +26,7 @@ public class CategoryRepositoryTests {
     }
     @Test
     public void testCreateSubCategory(){
-        Category parent = new Category(1);
+        Category parent = new Category(6);
         Category desktops = new Category("Desktop", parent);
         Category laptops = new Category("Laptops", parent);
         Category components = new Category("Computer Components", parent);
@@ -35,7 +35,7 @@ public class CategoryRepositoryTests {
     }
     @Test
     public void testCreateSubCategory2(){
-        Category parent = new Category(2);
+        Category parent = new Category(10);
         Category cameras = new Category("Cameras", parent);
         Category smartphones = new Category("Smartphones", parent);
         repo.saveAll(List.of(cameras, smartphones));
@@ -43,7 +43,7 @@ public class CategoryRepositoryTests {
     }
     @Test
     public void testCreateSubCategory3(){
-        Category parent = new Category(5);
+        Category parent = new Category(10);
         Category memory = new Category("Memory", parent);
 
         Category savedCategory = repo.save(memory);
@@ -52,7 +52,7 @@ public class CategoryRepositoryTests {
     }
     @Test
     public void testCreateSubCategory4(){
-        Category parent = new Category(4);
+        Category parent = new Category(9);
         Category gaminglaptops = new Category("Gaming Laptops", parent);
 
         Category savedCategory = repo.save(gaminglaptops);
@@ -61,7 +61,7 @@ public class CategoryRepositoryTests {
     }
     @Test
     public void testCreateSubCategory5(){
-        Category parent = new Category(7);
+        Category parent = new Category(12);
         Category iphones = new Category("iPhone", parent);
 
         Category savedCategory = repo.save(iphones);

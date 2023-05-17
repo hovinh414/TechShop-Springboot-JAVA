@@ -20,7 +20,7 @@ public class BrandRepositoryTests {
     private BrandRepository repo;
     @Test
     public void testCreateBrand1(){
-        Category laptops = new Category(4);
+        Category laptops = new Category(9);
         Brand acer = new Brand("Acer");
         acer.getCategories().add(laptops);
         Brand saveBrand = repo.save(acer);
@@ -31,8 +31,8 @@ public class BrandRepositoryTests {
     @Test
     public void testCreateBrand2(){
         Brand samsung = new Brand("Samsung");
-        samsung.getCategories().add(new Category(6));
-        samsung.getCategories().add(new Category(4));
+        samsung.getCategories().add(new Category(12));
+        samsung.getCategories().add(new Category(7));
 
         Brand saveBrand = repo.save(samsung);
         assertThat(saveBrand).isNotNull();
@@ -41,8 +41,8 @@ public class BrandRepositoryTests {
     }
     @Test
     public void testCreateBrand3(){
-        Category iphone = new Category(10);
-        Category smartphone = new Category(7);
+        Category iphone = new Category(12);
+        Category smartphone = new Category(16);
 
         Brand apple = new Brand("Apple");
         apple.getCategories().add(iphone);
