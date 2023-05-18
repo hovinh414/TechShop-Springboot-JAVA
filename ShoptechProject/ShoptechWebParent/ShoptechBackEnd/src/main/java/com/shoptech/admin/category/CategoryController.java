@@ -73,6 +73,31 @@ public class CategoryController {
             return "redirect:/categories";
         }
     }
+    @GetMapping("/categories/{id}/enabled/{status}")
+    public String updateCategoryEnabledStatus(@PathVariable("id") Integer id, @PathVariable("status") boolean enabled,
+                                              RedirectAttributes redirectAttributes) {
+        service.updateCategoryEnabledStatus(id, enabled);
+        String status = enabled ? "mở khóa" : "bị khóa";
+        String message = "Danh mục ID: " + id + " vừa " + status;
+        redirectAttributes.addFlashAttribute("message", message);
 
+        return "redirect:/categories";
+    }
+
+    @GetMapping("/categories/delete/{id}")
+    public String deleteCategory(@PathVariable(name = "id") Integer id, Model model,
+                                 RedirectAttributes redirectAttributes) {
+        try {
+            service.delete(id);
+            String categoryDir = "../category-images/" + id;
+            FileUploadUtil.removeDir(categoryDir);
+
+            redirectAttributes.addFlashAttribute("message", "Đã xóa danh mục ID " + id);
+        } catch (CategoryNotFoundException ex) {
+            redirectAttributes.addFlashAttribute("message", ex.getMessage());
+        }
+
+        return "redirect:/categories";
+    }
 
 }

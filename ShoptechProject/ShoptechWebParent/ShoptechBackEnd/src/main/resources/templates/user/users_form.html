@@ -197,7 +197,7 @@
     $.post(url, params, function(response){
       if(response == "OK"){
         form.submit();
-      }else if(response == "Duplicate"){
+      }else if(response == "Duplicated"){
         alert("Email " + userEmail + " đã được sửa dụng!");
       }else{
         alert("Lỗi", "Không nhận được thông tin!");
