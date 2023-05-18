@@ -48,20 +48,14 @@
                     </div>
 
                     <div class="input-group m-3">
-                        <form th:action="@{/users/page/1}" class="form-inline">
+                        <form th:action="@{/users/page/1}" class="form-inline d-flex align-items-center">
                             <input type="hidden" name="sortField" th:value="${sortField}" />
                             <input type="hidden" name="sortDir" th:value="${sortDir}" />
-                            <div class="input-group-prepend">
-                                <input style="color: white" type="search" name="keyword" placeholder="Search" th:value="${keyword}" class="form-control" required/>
-                            </div>
-                            <div class="input-group-append">
-                                <button type="submit" value="Search" class="btn btn-primary">Search</button>
-                                <button type="button" value="Clear" class="btn btn-secondary" onclick="clearFilter()">Clear</button>
-                            </div>
+                            <input style="color: white" type="search" name="keyword" placeholder="Search" th:value="${keyword}" class="form-control mr-2" required/>
+                            <button type="submit" value="Search" class="btn btn-primary">Search</button>
+                            <button type="button" value="Clear" class="btn btn-secondary" onclick="clearFilter()">Clear</button>
                         </form>
                     </div>
-
-
                     <div class="table-responsive">
                         <table class="table table-hover">
                             <thead>
