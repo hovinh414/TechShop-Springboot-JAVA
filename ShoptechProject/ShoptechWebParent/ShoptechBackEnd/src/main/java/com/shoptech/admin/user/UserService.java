@@ -43,7 +43,7 @@ public class UserService {
 
     public User save(User user)
     {
-        boolean isUpdatingUser = !Objects.isNull(user.getId());
+        boolean isUpdatingUser =(user.getId() != 0);
 
         if (isUpdatingUser) {
 
