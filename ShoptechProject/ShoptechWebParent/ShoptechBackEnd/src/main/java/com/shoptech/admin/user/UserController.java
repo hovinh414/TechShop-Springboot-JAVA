@@ -5,6 +5,7 @@ import com.shoptech.entity.Role;
 import com.shoptech.entity.User;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -23,12 +24,42 @@ public class UserController {
     @Autowired
     private UserService service;
 
+
     @GetMapping("/users")
+    public String listFirstPage(Model model) {
+
+        return listByPage(1,model);
+        /*return "redirect:/users/page/1?sortField=firstName&sortDir=asc";*/
+    }
+
+    /*@GetMapping("/users")
     public String listAll(Model model){
         List<User> listUsers = service.listAll();
         model.addAttribute("listUsers", listUsers);
         return "user/users";
+    }*/
+
+    @GetMapping("/users/page/{pageNum}")
+    public String listByPage(@PathVariable(name = "pageNum") int pageNum, Model model) {
+
+        Page<User> page =service.listByPage(pageNum);
+        List<User> listUsers = page.getContent();
+
+        long startCount = (pageNum - 1) * UserService.USERS_PER_PAGE + 1;
+        long endCount = startCount + UserService.USERS_PER_PAGE - 1;
+        if(endCount > page.getTotalElements())
+        {
+            endCount = page.getTotalElements();
+        }
+        model.addAttribute("currentPage", pageNum);
+        model.addAttribute("totalPages", page.getTotalPages());
+        model.addAttribute("startCount", startCount);
+        model.addAttribute("endCount", endCount);
+        model.addAttribute("totalItems", page.getTotalElements());
+        model.addAttribute("listUsers", listUsers);
+        return "user/users";
     }
+
 
     @GetMapping("/users/create")
     public String newUser(Model model){

@@ -95,12 +95,51 @@
                     </div>
                 </div>
             </article>
+
+
+            <div class="text-center m-1" th:if="${totalItems > 0}">
+                <span>Hiển thị ID # Từ [[${startCount}]] đến [[${endCount}]] trên [[${totalItems}]] </span>
+            </div>
+
+            <div class="text-center m-1" th:unless="${totalItems > 0}">
+                <span>Không tìm thấy tài khoản!</span>
+            </div>
+
+            <div>
+                <nav>
+                    <ul class="pagination justify-content-center">
+                        <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
+                            <a class="page-link" th:href="@{/users/page/1}">Đầu</a>
+                        </li>
+                        <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
+                            <a class="page-link" th:href="@{'/users/page/' + ${currentPage - 1}}" tabindex="-1">Trước</a>
+                        </li>
+
+                        <li th:class="${currentPage != i ? 'page-item': 'page-item active'}"
+                            th:each="i : ${#numbers.sequence(1, totalPages)}">
+                              <a class="page-link" th:href="@{'/users/page/' + ${i}}">[[${i}]]</a>
+                        </li>
+
+                        <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
+                            <a class="page-link" th:href="@{'/users/page/' + ${currentPage + 1}}">Tiếp</a>
+                        </li>
+                        <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
+                            <a class="page-link" th:href="@{'/users/page/' + ${totalPages}}">Cuối</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+
             <footer class="footer">
                 <div class="d-sm-flex justify-content-center justify-content-sm-between">
                     <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © shoptech.com 2023</span>
                     <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.shoptech.com/" target="_blank">TechShop Admin</a> from ShopTech.com</span>
                 </div>
             </footer>
+
+
+
             <!-- partial -->
         </div>
         <!-- main-panel ends -->

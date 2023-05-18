@@ -5,18 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="046bfcbc-cc54-44e7-bbab-c46970ef7774" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../ShoptechCommon.rar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/category/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/category/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/category/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/category/CategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/upload/FileUploadUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/upload/FileUploadUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/categories/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/categories/categories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/fragments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/user/users_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/user/users_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/user/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/user/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/user/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/user/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/static/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/static/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/user/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/user/users.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/test/java/com/shoptech/admin/user/UserRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/test/java/com/shoptech/admin/user/UserRepositoryTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +71,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/Vinh_2B_03/LapTrinhUngDungJava/shopme/ShopmeProject",
+    "last_opened_file_path": "/Users/yoliephan/Desktop/TechShop-Springboot-JAVA/ShoptechProject",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -88,38 +93,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.ShoptechBackEndApplication">
-    <configuration name="BrandRepositoryTests.testCreateBrand3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ShoptechBackEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.shoptech.admin.brand.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.shoptech.admin.brand" />
-      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.brand.BrandRepositoryTests" />
-      <option name="METHOD_NAME" value="testCreateBrand3" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BrandRepositoryTests.testUpdatename" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ShoptechBackEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.shoptech.admin.brand.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.shoptech.admin.brand" />
-      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.brand.BrandRepositoryTests" />
-      <option name="METHOD_NAME" value="testUpdatename" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ProductReposityTests.testCreateProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ShoptechBackEnd" />
       <extension name="coverage">
@@ -168,6 +141,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserRepositoryTests.testCreateUserWithTwoRole" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ShoptechBackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shoptech.admin.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shoptech.admin.user" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.user.UserRepositoryTests" />
+      <option name="METHOD_NAME" value="testCreateUserWithTwoRole" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRepositoryTests.testListFirstPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ShoptechBackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shoptech.admin.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shoptech.admin.user" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.user.UserRepositoryTests" />
+      <option name="METHOD_NAME" value="testListFirstPage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ShoptechBackEndApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="ShoptechBackEnd" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.shoptech.admin.ShoptechBackEndApplication" />
@@ -184,8 +189,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.BrandRepositoryTests.testCreateBrand3" />
-      <item itemvalue="JUnit.BrandRepositoryTests.testUpdatename" />
+      <item itemvalue="JUnit.UserRepositoryTests.testCreateUserWithTwoRole" />
+      <item itemvalue="JUnit.UserRepositoryTests.testListFirstPage" />
       <item itemvalue="JUnit.ProductReposityTests.testCreateProduct" />
       <item itemvalue="JUnit.ProductReposityTests.testCreateProduct2" />
       <item itemvalue="JUnit.ProductReposityTests.testCreateProduct3" />
@@ -194,11 +199,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserRepositoryTests.testListFirstPage" />
+        <item itemvalue="JUnit.UserRepositoryTests.testCreateUserWithTwoRole" />
         <item itemvalue="JUnit.ProductReposityTests.testCreateProduct3" />
         <item itemvalue="JUnit.ProductReposityTests.testCreateProduct2" />
         <item itemvalue="JUnit.ProductReposityTests.testCreateProduct" />
-        <item itemvalue="JUnit.BrandRepositoryTests.testUpdatename" />
-        <item itemvalue="JUnit.BrandRepositoryTests.testCreateBrand3" />
       </list>
     </recent_temporary>
   </component>
@@ -217,6 +222,7 @@
       <workItem from="1684346988833" duration="1201000" />
       <workItem from="1684370218538" duration="527000" />
       <workItem from="1684374034205" duration="7473000" />
+      <workItem from="1684412904112" duration="6622000" />
     </task>
     <servers />
   </component>
