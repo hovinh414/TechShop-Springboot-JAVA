@@ -6,11 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="046bfcbc-cc54-44e7-bbab-c46970ef7774" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/user/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/user/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/user/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/user/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/user/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/user/users.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/test/java/com/shoptech/admin/user/UserRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/test/java/com/shoptech/admin/user/UserRepositoryTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
@@ -68,7 +63,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "SortField",
+    "git-widget-placeholder": "Searching",
     "last_opened_file_path": "/Users/yoliephan/Desktop/TechShop-Springboot-JAVA/ShoptechProject",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -222,7 +217,7 @@
       <workItem from="1684370218538" duration="527000" />
       <workItem from="1684374034205" duration="7473000" />
       <workItem from="1684412904112" duration="6622000" />
-      <workItem from="1684419763667" duration="8696000" />
+      <workItem from="1684419763667" duration="9007000" />
     </task>
     <servers />
   </component>
