@@ -66,14 +66,25 @@
                                     <img th:src="@{${cat.imagePath}}" style="width: 100px; height: 100px"/>
                                 </td>
                                 <td style="text-align: center">
-                                    <a th:if="${cat.enable == true}" class="fas fa-check-circle fas-2x icon-green" href=""></a>
-                                    <a th:if="${cat.enable == false}" class="fas fa-check-circle fas-2x icon-silver" href=""></a>
+                                    <a th:if="${cat.enable == true}" class="fas fa-check-circle fas-2x icon-green"
+                                       th:href="@{'/categories/' + ${cat.id} + '/enabled/false'}"
+                                       title="Khoá danh mục"></a>
+
+                                    <a th:if="${cat.enable == false}" class="fas fa-circle fas-2x icon-silver"
+                                       th:href="@{'/categories/' + ${cat.id} + '/enabled/true'}"
+                                       title="Mở danh mục"></a>
                                 </td>
                                 <td>
                                     <a  class="fas fa-edit fas-2x icon-green" th:href="@{'/categories/edit/' + ${cat.id}}"
                                         title="Edit this category"></a>
-                                    &nbsp;&nbsp;
-                                    <a class="fas fa-trash fas-2x icon-dark" th:href="@{'/categories/delete/' + ${cat.id}}"
+                                    &nbsp;&nbsp
+                                    <!--<th:block th:if="${cat.hasChildren == false}">
+                                    <a class="fas fa-trash fas-2x icon-dark"
+                                       th:href="@{'/categories/delete/' + ${cat.id}}"
+                                       title="Delete this Category"></a>
+                                    </th:block>-->
+                                    <a class="fas fa-trash fas-2x icon-dark"
+                                       th:href="@{'/categories/delete/' + ${cat.id}}"
                                        title="Delete this Category"></a>
                                 </td>
                             </tr>
