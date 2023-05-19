@@ -33,13 +33,6 @@ public class UserController {
         /*return "redirect:/users/page/1?sortField=firstName&sortDir=asc";*/
     }
 
-    /*@GetMapping("/users")
-    public String listAll(Model model){
-        List<User> listUsers = service.listAll();
-        model.addAttribute("listUsers", listUsers);
-        return "user/users";
-    }*/
-
     @GetMapping("/users/page/{pageNum}")
     public String listByPage(
             @PathVariable(name = "pageNum") int pageNum, Model model,
@@ -109,8 +102,12 @@ public class UserController {
             service.save(user);
         }
         redirectAttributes.addFlashAttribute("message", "Lưu tài khoản thành công!");
-        return "redirect:/users";
-       /* return getRedirectURLtoAffectedUser(user);*/
+        return getRedirectURLtoAffectedUser(user);
+    }
+
+    private static String getRedirectURLtoAffectedUser(User user) {
+        String firstPartOfEmail = user.getEmail().split("@")[0];
+        return "redirect:/users/page/1?sortField=id&sortDir=asc&keyword=" + firstPartOfEmail;
     }
 
     @GetMapping("/users/edit/{id}")
