@@ -5,19 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="046bfcbc-cc54-44e7-bbab-c46970ef7774" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/static/assets/css/search.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/static/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/static/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/user/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/user/users.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/category/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/category/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/category/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/category/CategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/categories/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/categories/categories.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/categories/category_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/categories/category_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,9 +26,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -67,7 +63,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Searching",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "/Users/yoliephan/Desktop/TechShop-Springboot-JAVA/ShoptechProject",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
@@ -76,7 +72,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "5dfa6fdcd7d06aeec6ac8abb1598a1e6",
+    "spring.configuration.checksum": "f9abbf1a14ac5ae1e9237d1f78324424",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -224,6 +220,7 @@
       <workItem from="1684412904112" duration="6622000" />
       <workItem from="1684419763667" duration="9007000" />
       <workItem from="1684430089923" duration="1703000" />
+      <workItem from="1684481317251" duration="2686000" />
     </task>
     <servers />
   </component>

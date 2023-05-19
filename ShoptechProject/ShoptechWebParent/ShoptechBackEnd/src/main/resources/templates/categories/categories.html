@@ -50,7 +50,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>
-                                    <a style="color: #6c7293" th:href="@{'/categories?sortDir=' + ${reverseSortDir}}">Tiêu đề</a>
+                                    <a style="color: #6c7293" th:href="@{'/categories/page/ + ${pageNum} + '?sortDir=' + ${reverseSortDir}}">Tiêu đề</a>
                                     <span th:class="${reverseSortDir == 'desc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></span>
                                 </th>
                                 <th>Hình ảnh</th>
@@ -78,22 +78,47 @@
                                     <a  class="fas fa-edit fas-2x icon-green" th:href="@{'/categories/edit/' + ${cat.id}}"
                                         title="Edit this category"></a>
                                     &nbsp;&nbsp
-                                    <!--<th:block th:if="${cat.hasChildren == false}">
-                                    <a class="fas fa-trash fas-2x icon-dark"
-                                       th:href="@{'/categories/delete/' + ${cat.id}}"
-                                       title="Delete this Category"></a>
-                                    </th:block>-->
                                     <a class="fas fa-trash fas-2x icon-dark"
                                        th:href="@{'/categories/delete/' + ${cat.id}}"
                                        title="Delete this Category"></a>
                                 </td>
                             </tr>
-
                             </tbody>
                         </table>
                     </div>
                 </div>
             </article>
+            <div class="text-center m-1" th:if="${totalItems > 0}">
+                <span>Hiển thị ID # Từ [[${startCount}]] đến [[${endCount}]] trên [[${totalItems}]] </span>
+            </div>
+
+            <div class="text-center m-1" th:unless="${totalItems > 0}">
+                <span>Không tìm thấy tài khoản!</span>
+            </div>
+            <div th:if="${totalPages > 1}">
+                <nav>
+                    <ul class="pagination justify-content-center">
+                        <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
+                            <a class="page-link" th:href="@{'/categories/page/1?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">Đầu</a>
+                        </li>
+                        <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
+                            <a class="page-link" th:href="@{'/categories/page/' + ${currentPage - 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}" tabindex="-1">Trước</a>
+                        </li>
+
+                        <li th:class="${currentPage != i ? 'page-item': 'page-item active'}"
+                            th:each="i : ${#numbers.sequence(1, totalPages)}">
+                            <a class="page-link" th:href="@{'/categories/page/' + ${i} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">[[${i}]]</a>
+                        </li>
+
+                        <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
+                            <a class="page-link" th:href="@{'/categories/page/' + ${currentPage + 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">Tiếp</a>
+                        </li>
+                        <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
+                            <a class="page-link" th:href="@{'/categories/page/' + ${totalPages} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">Cuối</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
             <footer class="footer">
                 <div class="d-sm-flex justify-content-center justify-content-sm-between">
                     <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © shoptech.com 2023</span>
