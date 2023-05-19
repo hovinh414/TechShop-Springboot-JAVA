@@ -40,19 +40,53 @@
                         Tạo mới
                     </button>
                     </a>
-                    </p>
                     <div th:if="${message != null}" class="alert alert-success text-center">
                         [[${message}]]
                     </div>
-                    <div class="table-responsive">
+                    <!--- -------------- Tìm Kiếm --------------- ----->
+                    <div  style="padding-top: 10px;" class="input-group m-3">
+                        <form th:action="@{/categories/page/1}" class="form-inline d-flex align-items-center">
+                            <input type="hidden" name="sortField" th:value="${sortField}" />
+                            <input type="hidden" name="sortDir" th:value="${sortDir}" />
+                            <input style="color: white" type="search" name="keyword" placeholder="Search" th:value="${keyword}" class="form-control mr-2" required/>
+                            <button style="height: 37px; border-radius: 0px 3px 3px 0px;"  type="submit" value="Search" class="btn btn-primary">
+                                <i style="font-size: 16px;"  class="mdi mdi-account-search"></i>
+                            </button>
+                            <button style="margin-left: 9px; height: 37px;"  type="button" value="Clear" class="btn btn-secondary" onclick="clearFilter()">
+                                <i style="font-size: 16px;" class="mdi mdi-delete-variant"></i>
+                            </button>
+                        </form>
+                    </div>
+                    <!--- --------------Xuất CSV | Xuất Excel | Xuất PDF --------------- ----->
+                    <div style="text-align: right;">
+                        <!--<a th:href="@{/categories/export/csv}" aria-expanded="false" aria-controls="auth">
+                            <button type="submit" class="btn btn-outline-behance btn-icon-text" >
+                                <i class="mdi mdi-file-export"></i>
+                                IN CSV
+                            </button>
+                        </a>-->
+                        &nbsp;
+                        <!--<a th:href="@{/users/export/excel}" aria-expanded="false" aria-controls="auth">
+                            <button type="submit" class="btn btn-outline-success btn-icon-text" >
+                                <i class="mdi mdi-file-excel"></i>
+                                IN EXCEL
+                            </button>
+                        </a>-->
+                        &nbsp;
+                        <a th:href="@{/categories/export/csv}" aria-expanded="false" aria-controls="auth">
+                            <button type="submit" class="btn btn-outline-behance btn-icon-text" >
+                                <i class="mdi mdi-file-export"></i>
+                                IN CSV
+                            </button>
+                        </a>
+                    </div>
+                    <!--- -------------- Danh Sách Category --------------- ----->
+                    <div style="padding-top: 12px;" class="table-responsive">
                         <table class="table table-hover">
                             <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>
-                                    <a style="color: #6c7293" th:href="@{'/categories/page/ + ${pageNum} + '?sortDir=' + ${reverseSortDir}}">Tiêu đề</a>
-                                    <span th:class="${reverseSortDir == 'desc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></span>
-                                </th>
+                                <th th:replace="fragments :: column_linkCat('id','ID')"></th>
+                                <th th:replace="fragments :: column_linkCat('name','Tiêu đề')"></th>
                                 <th>Hình ảnh</th>
                                 <th style="text-align: center">Trạng thái</th>
                                 <th>Thao tác</th>
@@ -63,24 +97,25 @@
                                 <td>[[${cat.id}]]</td>
                                 <td>[[${cat.name}]]</td>
                                 <td>
-                                    <img th:src="@{${cat.imagePath}}" style="width: 100px; height: 100px"/>
+                                    <span th:if="${cat.image == null}" class="fas fa-portrait fa-3x icon-dark"></span>
+                                    <img th:if="${cat.image != null}" th:src="@{${cat.imagePath}}"
+                                         style="width: 100px"/>
                                 </td>
                                 <td style="text-align: center">
-                                    <a th:if="${cat.enable == true}" class="fas fa-check-circle fas-2x icon-green"
+                                    <a style="font-size: 16px;" th:if="${cat.enable == true}" class="fas fa-check-square fas-2x icon-blue"
                                        th:href="@{'/categories/' + ${cat.id} + '/enabled/false'}"
                                        title="Khoá danh mục"></a>
 
-                                    <a th:if="${cat.enable == false}" class="fas fa-circle fas-2x icon-silver"
+                                    <a style="font-size: 16px;" th:if="${cat.enable == false}" class="fas fa-square fas-2x icon-silver"
                                        th:href="@{'/categories/' + ${cat.id} + '/enabled/true'}"
                                        title="Mở danh mục"></a>
                                 </td>
                                 <td>
-                                    <a  class="fas fa-edit fas-2x icon-green" th:href="@{'/categories/edit/' + ${cat.id}}"
-                                        title="Edit this category"></a>
-                                    &nbsp;&nbsp
-                                    <a class="fas fa-trash fas-2x icon-dark"
-                                       th:href="@{'/categories/delete/' + ${cat.id}}"
-                                       title="Delete this Category"></a>
+                                    <a style="font-size: 16px;" class="fas fa-edit fas-2x icon-purple" th:href="@{'/categories/edit/' + ${cat.id}}"
+                                       title="Edit this category"></a>
+                                    &nbsp;&nbsp;
+                                    <a style="font-size: 16px;" class="fas fa-trash fas-2x icon-red" onclick="return confirm('Bạn có muốn xóa?')" th:href="@{'/categories/delete/' + ${cat.id}}"
+                                       title="Delete this category"></a>
                                 </td>
                             </tr>
                             </tbody>
@@ -93,28 +128,28 @@
             </div>
 
             <div class="text-center m-1" th:unless="${totalItems > 0}">
-                <span>Không tìm thấy tài khoản!</span>
+                <span>Không tìm thấy danh mục!</span>
             </div>
             <div th:if="${totalPages > 1}">
                 <nav>
                     <ul class="pagination justify-content-center">
                         <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-                            <a class="page-link" th:href="@{'/categories/page/1?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">Đầu</a>
+                            <a th:replace="fragments :: page_linkCat(1, 'Đầu')" ></a>
                         </li>
                         <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-                            <a class="page-link" th:href="@{'/categories/page/' + ${currentPage - 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}" tabindex="-1">Trước</a>
+                            <a th:replace="fragments :: page_linkCat(${currentPage - 1}, 'Sau')" ></a>
                         </li>
 
                         <li th:class="${currentPage != i ? 'page-item': 'page-item active'}"
                             th:each="i : ${#numbers.sequence(1, totalPages)}">
-                            <a class="page-link" th:href="@{'/categories/page/' + ${i} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">[[${i}]]</a>
+                            <a th:replace="fragments :: page_linkCat(${i}, ${i})" ></a>
                         </li>
 
                         <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-                            <a class="page-link" th:href="@{'/categories/page/' + ${currentPage + 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">Tiếp</a>
+                            <a th:replace="fragments :: page_linkCat(${currentPage + 1}, 'Tiếp')" ></a>
                         </li>
                         <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-                            <a class="page-link" th:href="@{'/categories/page/' + ${totalPages} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">Cuối</a>
+                            <a th:replace="fragments :: page_linkCat(${totalPages}, 'Cuối')" ></a>
                         </li>
                     </ul>
                 </nav>
@@ -152,6 +187,13 @@
 <!-- endinject -->
 <!-- Custom js for this page -->
 <script th:src="@{assets/js/dashboard.js}"></script>
+<script type="text/javascript">
+
+    function clearFilter(){
+        window.location= "[[@{/categories}]]";
+    }
+
+</script>
 <!-- End custom js for this page -->
 </body>
 </html>
