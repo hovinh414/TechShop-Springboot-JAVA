@@ -43,11 +43,13 @@
                     </button>
                     </a>
                     </p>
+
                     <div th:if="${message != null}" class="alert alert-success text-center">
                         [[${message}]]
                     </div>
 
-                    <div class="input-group m-3">
+                    <!--- -------------- Tìm Kiếm --------------- ----->
+                    <div  style="padding-top: 20px; align-items: center;" class="input-group m-3">
                         <form th:action="@{/users/page/1}" class="form-inline d-flex align-items-center">
                             <input type="hidden" name="sortField" th:value="${sortField}" />
                             <input type="hidden" name="sortDir" th:value="${sortDir}" />
@@ -56,7 +58,19 @@
                             <button style="margin-left: 9px; height: 37px;"  type="button" value="Clear" class="btn btn-secondary" onclick="clearFilter()">Clear</button>
                         </form>
                     </div>
-                    <div class="table-responsive">
+
+                    <!--- --------------Xuất CSV | Xuất Excel | Xuất PDF --------------- ----->
+                    <div style="text-align: right;">
+                        <a th:href="@{/users/export/csv}" aria-expanded="false" aria-controls="auth">
+                            <button type="submit" class="btn btn-outline-success btn-icon-text" >
+                                <i class="mdi mdi-file-export"></i>
+                                In CSV
+                            </button>
+                        </a>
+                    </div>
+
+                    <!--- -------------- Danh Sách User --------------- ----->
+                    <div style="padding-top: 10px;" class="table-responsive">
                         <table class="table table-hover">
                             <thead>
                             <tr>
@@ -66,7 +80,7 @@
                                 <th th:replace="fragments :: column_link('firstName','Tên')"></th>
                                 <th th:replace="fragments :: column_link('lastName','Họ')"></th>
                                 <th>Vai trò</th>
-                                <th th:replace="fragments :: column_link('enabled','Vai trò')"></th>
+                                <th th:replace="fragments :: column_link('enabled','Trạng thái')"></th>
                                 <th>Thao tác</th>
                             </tr>
                             </thead>
@@ -106,7 +120,7 @@
                 </div>
             </article>
 
-
+            <!--- -------------- Show Users --------------- ----->
             <div class="text-center m-1" th:if="${totalItems > 0}">
                 <span>Hiển thị ID # Từ [[${startCount}]] đến [[${endCount}]] trên [[${totalItems}]] </span>
             </div>
@@ -115,6 +129,7 @@
                 <span>Không tìm thấy tài khoản!</span>
             </div>
 
+            <!--- --------------Phân Trang --------------- ----->
             <div th:if="${totalPages > 1}">
                 <nav>
                     <ul class="pagination justify-content-center">
