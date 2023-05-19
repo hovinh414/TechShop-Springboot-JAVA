@@ -62,9 +62,16 @@
                     <!--- --------------Xuất CSV | Xuất Excel | Xuất PDF --------------- ----->
                     <div style="text-align: right;">
                         <a th:href="@{/users/export/csv}" aria-expanded="false" aria-controls="auth">
-                            <button type="submit" class="btn btn-outline-success btn-icon-text" >
+                            <button type="submit" class="btn btn-outline-behance btn-icon-text" >
                                 <i class="mdi mdi-file-export"></i>
-                                In CSV
+                                IN CSV
+                            </button>
+                        </a>
+                        &nbsp;
+                        <a th:href="@{/users/export/excel}" aria-expanded="false" aria-controls="auth">
+                            <button type="submit" class="btn btn-outline-success btn-icon-text" >
+                                <i class="mdi mdi-file-excel"></i>
+                                IN EXCEL
                             </button>
                         </a>
                     </div>
