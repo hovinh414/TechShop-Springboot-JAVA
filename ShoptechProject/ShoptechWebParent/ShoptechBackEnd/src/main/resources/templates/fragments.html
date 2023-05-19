@@ -6,7 +6,7 @@
 </head>
 <body>
 
-/*-------------------------- Bộ Lộc -------------------------*/
+<!-------------------------- Bộ Lộc ------------------------->
 <th th:fragment="column_link(fieldName, columnLabel)">
     <a style="color: #6c7293"
        th:href="@{'/users/page/' + ${currentPage}+ '?sortField=' + ${fieldName} +'&sortDir=' + ${sortField != fieldName ? sortDir: reverseSortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">
@@ -16,14 +16,14 @@
           th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></span>
 </th>
 
-/*-------------------------- Phân trang -------------------------*/
+<!-------------------------- Phân trang ------------------------->
 <a th:fragment="page_link(pageNum, label)"
    class="page-link"
    th:href= "@{'/users/page/' + ${pageNum} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">
     [[${label}]]
 </a>
 
-/*-------------------------- Đóng/ Mở kích hoạt -------------------------*/
+<!-------------------------- Đóng/ Mở kích hoạt ------------------------->
 <div th:fragment="status(enabled, entityName, entityURL)" th:remove="tag">
     <a th:if="${enabled == true}" class="fas fa-check-circle fa-2x icon-green"
        th:href="@{${entityURL} + '/enabled/false'}"

@@ -23,6 +23,11 @@
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-commons</artifactId>
         </dependency>
+		<dependency>
+			<groupId>net.sf.supercsv</groupId>
+			<artifactId>super-csv</artifactId>
+			<version>2.4.0</version>
+		</dependency>
         <dependency>
             <groupId>com.shoptech</groupId>
             <artifactId>ShoptechCommon</artifactId>
