@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Brancy - Cosmetic & Beauty Salon Website Template</title>
+  <title th:replace="fragments :: page_head(${pageTitle}, 'none')"></title>
   <meta name="robots" content="noindex, follow" />
   <meta name="description" content="Brancy - Cosmetic & Beauty Salon Website Template">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -56,7 +56,7 @@
         <div class="col-lg-6 d-none d-lg-block">
           <div class="header-navigation">
             <ul class="main-nav justify-content-start">
-              <li class="has-submenu"><a href="/">home</a></li>
+              <li class="has-submenu"><a href="/static">home</a></li>
               <li><a href="about-us.html">about</a></li>
               <li class="has-submenu position-static"><a href="product.html">shop</a>
                 <ul class="submenu-nav-mega">
@@ -73,20 +73,16 @@
         </div>
         <div class="col-7 col-sm-6 col-lg-3">
           <div class="header-action justify-content-end">
-            <button class="header-action-btn ms-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasSearch" aria-controls="AsideOffcanvasSearch">
-                                <span class="icon">
-                  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <rect class="icon-rect" width="30" height="30" fill="url(#pattern1)"/>
-                    <defs>
-                      <pattern id="pattern1" patternContentUnits="objectBoundingBox" width="1" height="1">
-                        <use xlink:href="#image0_504:11" transform="scale(0.0333333)"/>
-                      </pattern>
-                      <image id="image0_504:11" width="30" height="30" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAABiUlEQVRIie2Wu04CQRSGP0G2EUtIbHwA8B3EQisLIcorEInx8hbEZ9DKy6toDI1oAgalNFpDoYWuxZzJjoTbmSXERP7kZDbZ859vdmb27MJcf0gBUAaugRbQk2gBV3IvmDa0BLwA4Zh4BorTACaAU6fwPXAI5IAliTxwBDScvJp4vWWhH0BlTLEEsC+5Fu6lkgNdV/gKDnxHCw2I9rSiNQNV8baBlMZYJtpTn71KAg9SY3dUYn9xezLPgG8P8BdwLteq5X7CzDbnAbXKS42WxtQVUzoGeFlqdEclxXrnhmhhkqR+8KuMqzHA1vumAddl3IwB3pLxVmOyr1NjwKQmURJ4lBp7GmOAafghpg1qdSDeDrCoNReJWmZB4dsAPsW7rYVa1Rx4FbOEw5TEPKmFvgMZX3DCgYeYNniMaQ5piTXghGhPLdTmZ33hYNpem98f/UHRwSxvhqhXx4anMA3/EmhiOlJPJnSBOb3uQcpOE65VhujPpAms/Bu4u+x3swRbeB24mTV4LgB+AFuLedkPkcmmAAAAAElFTkSuQmCC"/>
-                    </defs>
-                  </svg>
-                </span>
-            </button>
-
+            <nav class="navbar navbar-expand-sm bg-light">
+              <div class="collapse navbar-collapse" id="searchNavbar">
+                <form class="form-inline" th:action="@{/search}" method="get">
+                  <input type="search" name="keyword" class="form-control "
+                         th:value="${searchKeyword}"
+                         placeholder="keyword" required />
+                        <input type="submit" value="search" class="btn btn-outline-success" />
+                </form>
+              </div>
+            </nav>
             <button class="header-action-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasCart" aria-controls="AsideOffcanvasCart">
                                 <span class="icon">
                   <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -145,6 +141,17 @@
               </th:block>
             </ol>
           </div>
+          <th:block th:each="cat : ${category.children}">
+          <div class="col" th:if="${cat.enable == true}">
+            <ol class="text-center">
+                  <a th:href="@{'/c/' + ${cat.alias}}">
+                    <img th:src="@{${cat.imagePath}}" height="100" />
+                    <br/>
+                    <b>[[${cat.name}]]</b>
+                  </a>
+            </ol>
+          </div>
+          </th:block>
         </div>
       </div>
     </section>
@@ -292,10 +299,13 @@
                     </div>
 <!--                    <div class="reviews">150 reviews</div>-->
                   </div>
-                  <h4 class="title"><a href="product-details.html">[[${product.name}]]</a></h4>
-                  <div class="prices">
-                    <span class="price">$210.00</span>
-                    <span class="price-old">300.00</span>
+                  <h4 class="title"><a th:href="@{'/p/' +${product.alias}}">[[${product.shortName}]]</a></h4>
+                  <div class="prices" th:if="${product.discountPercent <= 0 }">
+                    <span class="price">[[${product.price}]] đ</span>
+                  </div>
+                  <div class="prices" th:if="${product.discountPercent > 0 }">
+                    <span class="price">[[${product.discountPrice}]] đ</span>
+                    <span class="price-old">[[${product.price}]] đ</span>
                   </div>
                 </div>
                 <div class="product-action-bottom">
@@ -316,8 +326,10 @@
         </div>
       </div>
     </section>
+      <div align="center">
+        <div th:replace="fragments :: pagination('/c/' + ${category.alias}, 'product' )"></div>
+      </div>
 
-      <div th:replace="fragments :: pagination('/c/' + ${category.alias}, 'product' )"></div>
 
     <!--== End Product Area Wrapper ==-->
 
@@ -591,28 +603,7 @@
   <!--== End Product Quick Add Cart Modal ==-->
 
   <!--== Start Aside Search Form ==-->
-  <aside class="aside-search-box-wrapper offcanvas offcanvas-top" tabindex="-1" id="AsideOffcanvasSearch" aria-labelledby="offcanvasTopLabel">
-    <div class="offcanvas-header">
-      <h5 class="d-none" id="offcanvasTopLabel">Aside Search</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa fa-close"></i></button>
-    </div>
-    <div class="offcanvas-body">
-      <div class="container pt--0 pb--0">
-        <div class="search-box-form-wrap">
-          <div class="search-note">
-            <p>Start typing and press Enter to search</p>
-          </div>
-          <form action="#" method="post">
-            <div class="aside-search-form position-relative">
-              <label for="SearchInput" class="visually-hidden">Search</label>
-              <input id="SearchInput" type="search" class="form-control" placeholder="Search entire store…">
-              <button class="search-button" type="submit"><i class="fa fa-search"></i></button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </aside>
+
   <!--== End Aside Search Form ==-->
 
   <!--== Start Product Quick View Modal ==-->

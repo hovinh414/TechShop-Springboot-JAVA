@@ -1,6 +1,7 @@
 package com.shoptech.site.category;
 
 import com.shoptech.entity.Category;
+import com.shoptech.exception.CategoryNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -58,9 +59,12 @@ public class CategoryService {
             listSubHierarchicalCategories(hierarchicalCategories, subCategory, newSubLevel);
         }
     }
-    public Category getCategory(String alias)  {
-
-        return repo.findByAliasEnabled(alias);
+    public Category getCategory(String alias) throws CategoryNotFoundException {
+         Category category=repo.findByAliasEnabled(alias);
+         if (category == null){
+             throw new CategoryNotFoundException("Không thể tìm thấy danh mục" + alias);
+         }
+         return category;
     }
 
     public List<Category> getCategoryParents(Category child) {

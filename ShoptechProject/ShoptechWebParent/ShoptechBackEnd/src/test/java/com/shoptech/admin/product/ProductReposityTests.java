@@ -29,7 +29,7 @@ public class ProductReposityTests {
         Category category = entityManager.find(Category.class, 7); // cái này cũng vậy vì id cảu mỗi người khác nhau
         Product product = new Product();
         product.setName("Iphone 13 ProMax con chó Quỳnh");
-        product.setAlias("iphone 13 promax con cho quynh");
+        product.setAlias("iphone_13_promax_con_cho_quynh");
         product.setShortDescription("Một sản phẩm tuyệt vời tới từ Bình Dương");
         product.setFullDescription("Một sản phẩm tuyệt vời tới từ Bình Dương - Full Description");
 

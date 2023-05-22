@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="046bfcbc-cc54-44e7-bbab-c46970ef7774" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/exception/CategoryNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/exception/ProductNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="JRebelWorkspace">
+    <option name="jrebelEnabledAutocompile" value="true" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2PuNExbozXDkTd5oziJlTPSe1zd" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Trung1&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Desktop/New folder/TechShop-Springboot-JAVA/ShoptechProject&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;5dfa6fdcd7d06aeec6ac8abb1598a1e6&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RebelAgentSelection">
+    <selection>jr</selection>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Vinh_2B_03\LapTrinhUngDungJava\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechBackEnd\src\main\resources\templates\categories" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Desktop\New folder\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechFrontEnd\src\main\resources\templates\product" />
+      <recent name="D:\Vinh_2B_03\LapTrinhUngDungJava\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechBackEnd\src\main\resources\templates" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ShoptechFrontEndApplication">
+    <configuration name="All in ShoptechFrontEnd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ShoptechFrontEnd" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CategoryRepositoryTests.testFindCategoryByAlias" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ShoptechFrontEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shoptech.site.category.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shoptech.site.category" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.site.category.CategoryRepositoryTests" />
+      <option name="METHOD_NAME" value="testFindCategoryByAlias" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CategoryRepositoryTests.testListEnabledCategories" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ShoptechFrontEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shoptech.site.category.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shoptech.site.category" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.site.category.CategoryRepositoryTests" />
+      <option name="METHOD_NAME" value="testListEnabledCategories" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductRepositoryTests.testFindByAlias" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ShoptechFrontEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shoptech.site.product.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shoptech.site.product" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.site.product.ProductRepositoryTests" />
+      <option name="METHOD_NAME" value="testFindByAlias" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductReposityTests.testCreateProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ShoptechBackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shoptech.admin.product.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shoptech.admin.product" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.product.ProductReposityTests" />
+      <option name="METHOD_NAME" value="testCreateProduct" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShoptechBackEndApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ShoptechBackEnd" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.shoptech.admin.ShoptechBackEndApplication" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShoptechFrontEndApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ShoptechFrontEnd" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.shoptech.site.ShoptechFrontEndApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.ProductRepositoryTests.testFindByAlias" />
+      <item itemvalue="JUnit.ProductReposityTests.testCreateProduct" />
+      <item itemvalue="JUnit.All in ShoptechFrontEnd" />
+      <item itemvalue="JUnit.CategoryRepositoryTests.testFindCategoryByAlias" />
+      <item itemvalue="JUnit.CategoryRepositoryTests.testListEnabledCategories" />
+      <item itemvalue="Spring Boot.ShoptechBackEndApplication" />
+      <item itemvalue="Spring Boot.ShoptechFrontEndApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ProductRepositoryTests.testFindByAlias" />
+        <item itemvalue="JUnit.ProductReposityTests.testCreateProduct" />
+        <item itemvalue="JUnit.CategoryRepositoryTests.testFindCategoryByAlias" />
+        <item itemvalue="JUnit.CategoryRepositoryTests.testListEnabledCategories" />
+        <item itemvalue="JUnit.All in ShoptechFrontEnd" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="046bfcbc-cc54-44e7-bbab-c46970ef7774" name="Changes" comment="" />
+      <created>1684302902751</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1684302902751</updated>
+      <workItem from="1684302908308" duration="3121000" />
+      <workItem from="1684321688683" duration="8806000" />
+      <workItem from="1684333522640" duration="5460000" />
+      <workItem from="1684345661336" duration="1306000" />
+      <workItem from="1684346988833" duration="1201000" />
+      <workItem from="1684370218538" duration="527000" />
+      <workItem from="1684374034205" duration="7473000" />
+      <workItem from="1684412904112" duration="6622000" />
+      <workItem from="1684420152592" duration="64000" />
+      <workItem from="1684421483578" duration="9671000" />
+      <workItem from="1684592576121" duration="7900000" />
+      <workItem from="1684600829369" duration="70000" />
+      <workItem from="1684681652396" duration="9003000" />
+      <workItem from="1684734864012" duration="16443000" />
+      <workItem from="1684773558822" duration="6000" />
+      <workItem from="1684774225105" duration="9000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
