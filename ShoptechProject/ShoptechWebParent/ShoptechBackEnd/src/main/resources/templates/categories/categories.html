@@ -21,6 +21,8 @@
     <!-- endinject -->
     <!-- Layout styles -->
     <link rel="stylesheet" type="text/css" th:href="@{/assets/css/style.css}">
+    <script th:src="@{/richtext/jquery.richtext.js}"></script>
+    <link rel="stylesheet" th:href="@{/richtext/richtext.css}">
     <!-- End layout styles -->
     <link rel="shortcut icon" th:href="@{/assets/images/favicon.png}" />
 </head>
@@ -112,10 +114,10 @@
                                 </td>
                                 <td>
                                     <a style="font-size: 16px;" class="fas fa-edit fas-2x icon-purple" th:href="@{'/categories/edit/' + ${cat.id}}"
-                                       title="Edit this category"></a>
+                                       title="Sửa danh mục"></a>
                                     &nbsp;&nbsp;
                                     <a style="font-size: 16px;" class="fas fa-trash fas-2x icon-red" onclick="return confirm('Bạn có muốn xóa?')" th:href="@{'/categories/delete/' + ${cat.id}}"
-                                       title="Delete this category"></a>
+                                       title="Xóa danh mục"></a>
                                 </td>
                             </tr>
                             </tbody>

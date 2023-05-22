@@ -23,6 +23,8 @@
   <link rel="stylesheet" type="text/css" th:href="@{/assets/css/style.css}">
   <!-- End layout styles -->
   <link rel="shortcut icon" th:href="@{/assets/images/favicon.png}" />
+  <script th:src="@{/richtext/jquery.richtext.js}"></script>
+  <link rel="stylesheet" th:href="@{/richtext/richtext.css}">
 </head>
 <body>
 <div class="container-scroller">
@@ -106,10 +108,10 @@
               </td>
               <td>
                 <a style="font-size: 16px;" class="fas fa-edit fas-2x icon-purple" th:href="@{'/brands/edit/' + ${brand.id}}"
-                   title="Edit this brand"></a>
+                   title="Sửa thương hiệu"></a>
                 &nbsp;&nbsp;
                 <a style="font-size: 16px;" class="fas fa-trash fas-2x icon-red" onclick="return confirm('Bạn có muốn xóa?')" th:href="@{'/brands/delete/' + ${brand.id}}"
-                   title="Delete this brand"></a>
+                   title="Xóa thương hiệu"></a>
               </td>
             </tr>
             </tbody>
