@@ -15,7 +15,7 @@ import java.util.List;
 
 public class CategoryPdfExporter extends AbstractExporter {
     public void export(List<Category> listCategories, HttpServletResponse response) throws IOException {
-        super.setResponseHeader(response, "application/pdf", ".pdf", null);
+        super.setResponseHeader(response, "application/pdf", ".pdf", "brand");
 
         Document document = new Document(PageSize.A4);
         PdfWriter.getInstance(document, response.getOutputStream());
@@ -30,10 +30,10 @@ public class CategoryPdfExporter extends AbstractExporter {
         paragraph.setAlignment(Paragraph.ALIGN_CENTER);
         document.add(paragraph);
 
-        PdfPTable table = new PdfPTable(6);
+        PdfPTable table = new PdfPTable(3);
         table.setWidthPercentage(100f);
         table.setSpacingBefore(10);
-        table.setWidths(new float[]{1.2f, 3.5f, 3.0f, 3.0f, 3.0f, 1.7f});
+        table.setWidths(new float[]{1.2f, 3.5f, 1.7f});
 
         writeTableHeader(table);
         writeTableData(table, listCategories);
@@ -46,9 +46,7 @@ public class CategoryPdfExporter extends AbstractExporter {
         for (Category category: listCategories) {
             table.addCell(String.valueOf(category.getId()));
             table.addCell(category.getName());
-            table.addCell(category.getChildren().toString());
-            table.addCell(category.getParent().toString());
-            table.addCell(String.valueOf(category.isEnabled()));
+            table.addCell(String.valueOf(category.getEnable()));
 
         }
     }
@@ -65,12 +63,6 @@ public class CategoryPdfExporter extends AbstractExporter {
         table.addCell(cell);
 
         cell.setPhrase(new Phrase("Name", font));
-        table.addCell(cell);
-
-        cell.setPhrase(new Phrase("Children", font));
-        table.addCell(cell);
-
-        cell.setPhrase(new Phrase("Parent", font));
         table.addCell(cell);
 
         cell.setPhrase(new Phrase("Enabled", font));
