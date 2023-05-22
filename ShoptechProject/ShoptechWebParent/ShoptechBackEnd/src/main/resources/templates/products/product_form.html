@@ -20,11 +20,10 @@
   <!-- endinject -->
   <!-- Layout styles -->
   <link rel="stylesheet" th:href="@{/assets/css/style.css}">
-  <script th:src="@{/richtext/jquery.richtext.js}"></script>
-  <link rel="stylesheet" th:href="@{/richtext/richtext.css}">
   <!-- End layout styles -->
   <link rel="shortcut icon" th:href="@{/assets/images/favicon.png}" />
-  <script src="../../static/js/common_form.js"></script>
+  <script th:src="@{/richtext/jquery.richtext.min.js}"></script>
+  <link rel="stylesheet" th:href="@{/richtext/richtext.min.css}">
 </head>
 <body>
 <div class="container-scroller">
@@ -39,45 +38,47 @@
           <div th:if="${message != null}" class="alert alert-success text-center">
             [[${message}]]
           </div>
-          <form th:action="@{/brands/save}" method="post"
-                enctype="multipart/form-data" onsubmit="return checkUnique(this)"
-                th:object="${brand}" >
+          <form th:action="@{/products/save}" method="post"
+                enctype="multipart/form-data"
+                th:object="${product}" >
             <input type="hidden" th:field="*{id}" />
-            <div class="form-group">
-              <label class="col-sm-3 col-form-label">Tên thương hiệu: </label>
-              <div  class="col-sm-12">
-                <input style="color:white" type="text" class="form-control p_input" th:field="*{name}" required minlength="3" maxlength="128">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-sm-3 col-form-label">Logo: </label>
-              <div class="col-sm-12">
-                <input  type="hidden" th:field="*{logo}"/>
-                <input style="color:white" type="file" id="fileImage" name="fileImage" th:required="${brand.id == null}"/>
-                <img id="thumbnail" alt="Image Preview" th:src="@{${brand.logoPath}}" width="100px" height="100px">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-sm-3 col-form-label">Chọn một hoặc nhiều danh mục: </label>
-              <div class="col-sm-12">
-                <select style="color:white; resize: vertical; height: 200px;" class="form-control" th:field="*{categories}" multiple required >
-                    <th:block th:each="cat : ${listCategories}">
-                      <option th:value="${cat.id}">[[${cat.name}]]</option>
-                    </th:block>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-sm-3 col-form-label">Danh mục đã chọn: </label>
-              <div class="col-sm-12">
-                <div id="chosenCategories">
+            <div>
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" href="#overview">Tổng Quan</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#description" role="tab">Mô tả</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#images" role="tab">Hình Ảnh</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#details" role="tab">Chi Tiết</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#shipping" role="tab">Phí Ship</a>
+                </li>
+              </ul>
+
+              <div class="tab-content">
+                <div class="tab-pane active p-3" id="overview" >
+                  <div th:replace="products/product_overview :: content"></div>
+                </div>
+                <div class="tab-pane active p-3" id="description" role="tabpanel">
+                  <div th:replace="products/product_description :: content"></div>
+                </div>
+                <div class="tab-pane active p-3" id="images" role="tabpanel">
+                </div>
+                <div class="tab-pane active p-3" id="details" role="tabpanel">
+                </div>
+                <div class="tab-pane active p-3" id="shipping" role="tabpanel">
                 </div>
               </div>
             </div>
-
             <div class="text-center">
-              <button type="submit" class="btn btn-primary btn-block enter-btn">Submit</button>
-              <button class="btn btn-secondary btn-block enter-btn" id="buttonCancel">Cancel</button>
+              <input type="submit" value="Save" class="btn btn-primary m-3" />
+              <input type="button" value="Cancel" class="btn btn-secondary" id="buttonCancel" />
             </div>
           </form>
           <div th:replace="~{modal_fragments :: modal_dialog}"></div>
@@ -119,56 +120,34 @@
 <script th:src="@{assets/js/dashboard.js}"></script>
 <!-- End custom js for this page -->
 <script type="text/javascript">
-  MAX_FILE_SIZE = 102400; // 100KB
-  moduleURL = "[[@{/brands}]]";
 
-  $(document).ready(function() {
-    dropdownCategories = $("#categories");
-    divChosenCategories = $("#chosenCategories");
+  moduleURL = "[[@{/products}]]";
+  brandModuleURL = "[[@{/brands}]]";
 
-    dropdownCategories.change(function() {
-      divChosenCategories.empty();
-      showChosenCategories();
+  dropdownBrands = $("#brand");
+  dropdownCategories = $("#category");
+
+  $(document).ready(function (){
+
+    dropdownBrands.change(function () {
+      dropdownCategories.empty();
+      getCategories();
+      $("#shortDescription").richText();
+      $("#fullDescription").richText();
     });
-
-    showChosenCategories();
+    getCategories();
   });
+  function getCategories() {
+    brandId = dropdownBrands.val();
+    url = brandModuleURL + "/" + brandId + "/categories";
 
-  function showChosenCategories() {
-    dropdownCategories.children("option:selected").each(function() {
-      selectedCategory = $(this);
-      catId = selectedCategory.val();
-      catName = selectedCategory.text().replace(/-/g, "");  /*regular expression */
-
-      divChosenCategories.append("<span class='badge badge-success m-1'>" + catName + "</span>");
+    $.get(url, function (responseJson) {
+      $.each(responseJson, function (index, category) {
+        $("<option>").val(category.id).text(category.name).appendTo(dropdownCategories);
+      });
     });
   }
 
-  function checkUnique(form) {
-    brandId = $("#id").val();
-    brandName = $("#name").val();
-
-    csrfValue = $("input[name='_csrf']").val();
-
-    url = "[[@{/brands/check_unique}]]";
-
-    params = {id: brandId, name: brandName, _csrf: csrfValue};
-
-    $.post(url, params, function(response) {
-      if (response == "OK") {
-        form.submit();
-      } else if (response == "Duplicate") {
-        alert("Tên thương hiệu đã tồn tại " + brandName);
-      } else {
-        alert("Unknown response from server");
-      }
-
-    }).fail(function() {
-      alert("Could not connect to the server");
-    });
-
-    return false;
-  }
 
 </script>
 <script th:src="@{/js/common_form.js}"></script>
