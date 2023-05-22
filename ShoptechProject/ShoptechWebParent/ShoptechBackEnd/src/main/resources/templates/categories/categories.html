@@ -21,6 +21,8 @@
     <!-- endinject -->
     <!-- Layout styles -->
     <link rel="stylesheet" type="text/css" th:href="@{/assets/css/style.css}">
+    <script th:src="@{/richtext/jquery.richtext.js}"></script>
+    <link rel="stylesheet" th:href="@{/richtext/richtext.css}">
     <!-- End layout styles -->
     <link rel="shortcut icon" th:href="@{/assets/images/favicon.png}" />
 </head>
@@ -59,12 +61,12 @@
                     </div>
                     <!--- --------------Xuất CSV | Xuất Excel | Xuất PDF --------------- ----->
                     <div style="text-align: right;">
-                        <!--<a th:href="@{/categories/export/csv}" aria-expanded="false" aria-controls="auth">
+                        <a th:href="@{/categories/export/csv}" aria-expanded="false" aria-controls="auth">
                             <button type="submit" class="btn btn-outline-behance btn-icon-text" >
                                 <i class="mdi mdi-file-export"></i>
                                 IN CSV
                             </button>
-                        </a>-->
+                        </a>
                         &nbsp;
                         <!--<a th:href="@{/users/export/excel}" aria-expanded="false" aria-controls="auth">
                             <button type="submit" class="btn btn-outline-success btn-icon-text" >
@@ -73,10 +75,10 @@
                             </button>
                         </a>-->
                         &nbsp;
-                        <a th:href="@{/categories/export/csv}" aria-expanded="false" aria-controls="auth">
-                            <button type="submit" class="btn btn-outline-behance btn-icon-text" >
-                                <i class="mdi mdi-file-export"></i>
-                                IN CSV
+                        <a th:href="@{/categories/export/pdf}" aria-expanded="false" aria-controls="auth">
+                            <button type="submit" class="btn btn-outline-reddit btn-icon-text" >
+                                <i class="mdi mdi-file-pdf"></i>
+                                IN PDF
                             </button>
                         </a>
                     </div>
@@ -112,10 +114,10 @@
                                 </td>
                                 <td>
                                     <a style="font-size: 16px;" class="fas fa-edit fas-2x icon-purple" th:href="@{'/categories/edit/' + ${cat.id}}"
-                                       title="Edit this category"></a>
+                                       title="Sửa danh mục"></a>
                                     &nbsp;&nbsp;
                                     <a style="font-size: 16px;" class="fas fa-trash fas-2x icon-red" onclick="return confirm('Bạn có muốn xóa?')" th:href="@{'/categories/delete/' + ${cat.id}}"
-                                       title="Delete this category"></a>
+                                       title="Xóa danh mục"></a>
                                 </td>
                             </tr>
                             </tbody>
