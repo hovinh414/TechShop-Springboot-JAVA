@@ -7,11 +7,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.test.annotation.Rollback;
+
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@DataJpaTest
+@DataJpaTest(showSql = false)
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @Rollback(value = false)
 public class UserRepositoryTests {
@@ -21,8 +26,9 @@ public class UserRepositoryTests {
 
     @Autowired
     private TestEntityManager entityManager;
+
     @Test
-    public void testCreateUserWithOneRole(){
+    public void testCreateUserWithOneRole() {
         Role roleAdmin = entityManager.find(Role.class, 1);
         User userQuynhPhan = new User("yoliephan2255@gmail.com", "quynh2002", "Quynh", "Phan");
         userQuynhPhan.addRole(roleAdmin);
@@ -32,7 +38,7 @@ public class UserRepositoryTests {
     }
 
     @Test
-    public void testCreateUserWithTwoRole(){
+    public void testCreateUserWithTwoRole() {
         User userTrung = new User("nguyennguyentrung@gmail.com", "trung2002", "Trung", "Nguyen");
         Role roleEditor = new Role(3);
         Role roleAssistant = new Role(5);
@@ -44,21 +50,21 @@ public class UserRepositoryTests {
     }
 
     @Test
-    public void testListAllUsers(){
+    public void testListAllUsers() {
         Iterable<User> listUsers = repo.findAll();
         listUsers.forEach(System.out::println);
 
     }
 
     @Test
-    public void testGetUserById(){
+    public void testGetUserById() {
         User userQuynh = repo.findById(1).get();
         System.out.println(userQuynh);
         assertThat(userQuynh).isNotNull();
     }
 
     @Test
-    public void testUpdateUserDetails(){
+    public void testUpdateUserDetails() {
         User userQuynh = repo.findById(1).get();
         userQuynh.setEnabled(true);
         userQuynh.setEmail("luisywang1411@gmail.com");
@@ -66,7 +72,7 @@ public class UserRepositoryTests {
     }
 
     @Test
-    public void testUpdateUserRoles(){
+    public void testUpdateUserRoles() {
         User userTrung = repo.findById(2).get();
         Role roleEditor = new Role(3);
         Role roleSalesperson = new Role(2);
@@ -76,14 +82,13 @@ public class UserRepositoryTests {
     }
 
     @Test
-    public void testDeleteUser(){
+    public void testDeleteUser() {
         int userId = 2;
         repo.deleteById(userId);
     }
 
     @Test
-    public void testGetUserByEmail()
-    {
+    public void testGetUserByEmail() {
         String email = "luisywang1411@gmail.com";
         User user = repo.getUserByEmail(email);
         assertThat(user).isNotNull();
@@ -112,6 +117,37 @@ public class UserRepositoryTests {
         repo.updateEnabledStatus(userId, true);
     }
 
+    @Test
+    public void testListFirstPage() {
+        int pageNumber = 0; // the first page number always start with 0, change pageNumber to 1 to get the second page, 2 for thid page and so forth
+        int pageSize = 4; // no of elements
+
+        Pageable pageable = PageRequest.of(pageNumber, pageSize);
+        Page<User> page = repo.findAll(pageable);
+
+        List<User> listUsers = page.getContent();
+
+        listUsers.forEach(System.out::println);
+
+        assertThat(listUsers.size()).isEqualTo(pageSize);
+    }
+
+    @Test
+    public  void testSearchUsers(){
+        String keyword = "bruce";
+
+        int pageNumber = 0;
+        int pageSize = 4;
+
+        Pageable pageable = PageRequest.of(pageNumber, pageSize);
+        Page<User> page = repo.findAll(keyword, pageable);
+
+        List<User> listUsers = page.getContent();
+
+        listUsers.forEach(System.out::println);
+
+        assertThat(listUsers.size()).isGreaterThan(0);
+    }
 
 
 }

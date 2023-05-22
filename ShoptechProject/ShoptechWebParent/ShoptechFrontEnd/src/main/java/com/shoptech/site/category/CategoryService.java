@@ -1,6 +1,7 @@
 package com.shoptech.site.category;
 
 import com.shoptech.entity.Category;
+import com.shoptech.exception.CategoryNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -21,26 +22,49 @@ public class CategoryService {
         super();
         this.repo = repo;
     }*/
+    public List<Category> listAll(){
+        List<Category> rootCategories = repo.findRootCategories();
+        return listHierarchicalCategories(rootCategories);
+    }
+    private List<Category> listHierarchicalCategories(List<Category> rootCategories) {
+        List<Category> hierarchicalCategories = new ArrayList<>();
+        for (Category rootCategory : rootCategories){
+            hierarchicalCategories.add(Category.copyFull(rootCategory));
 
-    public List<Category> listNoChildrenCategories() {
+            Set<Category> children = rootCategory.getChildren();
+            for (Category subCategory : children) {
+                String name = "" + subCategory.getName();
+                hierarchicalCategories.add(Category.copyFull(subCategory, name));
 
-        List<Category> listNoChildrenCategories = new ArrayList<>();
-
-        List<Category> listEnabledCategories = repo.findAllEnabled();
-
-        listEnabledCategories.forEach(category -> {
-            Set<Category> children = category.getChildren();
-            if (children == null || children.size() == 0) {
-                listNoChildrenCategories.add(category);
+                listSubHierarchicalCategories(hierarchicalCategories,subCategory,1);
             }
-        });
+        }
 
-        return listNoChildrenCategories;
+        return hierarchicalCategories;
     }
 
-    public Category getCategory(String alias)  {
+    private void listSubHierarchicalCategories(List<Category> hierarchicalCategories,
+                                               Category parent, int subLevel) {
+        int newSubLevel = subLevel + 1;
+        Set<Category> children = parent.getChildren();
 
-        return repo.findByAliasEnabled(alias);
+        for (Category subCategory : children){
+            String name = "";
+            for (int i = 0; i < newSubLevel; i++) {
+                name += "";
+            }
+            name += subCategory.getName();
+            hierarchicalCategories.add(Category.copyFull(subCategory, name));
+
+            listSubHierarchicalCategories(hierarchicalCategories, subCategory, newSubLevel);
+        }
+    }
+    public Category getCategory(String alias) throws CategoryNotFoundException {
+         Category category=repo.findByAliasEnabled(alias);
+         if (category == null){
+             throw new CategoryNotFoundException("Không thể tìm thấy danh mục" + alias);
+         }
+         return category;
     }
 
     public List<Category> getCategoryParents(Category child) {

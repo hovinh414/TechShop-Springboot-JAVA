@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="046bfcbc-cc54-44e7-bbab-c46970ef7774" name="Changes" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
@@ -29,6 +30,10 @@
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/upload/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/upload/MvcConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/categories/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/categories/categories.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/layouts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/layouts/index.html" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/exception/CategoryNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/exception/ProductNotFoundException.java" afterDir="false" />
+>>>>>>> main
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" afterDir="false" />
@@ -84,16 +89,26 @@
     &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+<<<<<<< HEAD
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/ADMIN/Desktop/shopme/ShopmeProject&quot;,
+=======
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Trung1&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Desktop/New folder/TechShop-Springboot-JAVA/ShoptechProject&quot;,
+>>>>>>> main
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+<<<<<<< HEAD
     &quot;spring.configuration.checksum&quot;: &quot;6beb2bb1a75c78b58d027cdce3ade338&quot;,
+=======
+    &quot;spring.configuration.checksum&quot;: &quot;5dfa6fdcd7d06aeec6ac8abb1598a1e6&quot;,
+>>>>>>> main
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -106,14 +121,19 @@
       <recent name="D:\Vinh_2B_03\LapTrinhUngDungJava\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechBackEnd\src\main\resources\templates\categories" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+<<<<<<< HEAD
       <recent name="C:\Users\ADMIN\Desktop\Web java\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechBackEnd\src\main\java\com\shoptech\admin" />
       <recent name="C:\Users\ADMIN\Desktop\Web java\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechCommon\src\main\java\com\shoptech\entity" />
+=======
+      <recent name="C:\Users\Admin\Desktop\New folder\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechFrontEnd\src\main\resources\templates\product" />
+>>>>>>> main
       <recent name="D:\Vinh_2B_03\LapTrinhUngDungJava\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechBackEnd\src\main\resources\templates" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.shoptech.site.security" />
     </key>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="Spring Boot.ShoptechFrontEndApplication">
     <configuration name="CurrencyRepositoryTests.testCreateCurrencies" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ShoptechBackEnd" />
@@ -126,11 +146,41 @@
       <option name="PACKAGE_NAME" value="com.shoptech.admin.setting" />
       <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.setting.CurrencyRepositoryTests" />
       <option name="METHOD_NAME" value="testCreateCurrencies" />
+=======
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ShoptechFrontEndApplication">
+    <configuration name="All in ShoptechFrontEnd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ShoptechFrontEnd" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CategoryRepositoryTests.testFindCategoryByAlias" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ShoptechFrontEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shoptech.site.category.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shoptech.site.category" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.site.category.CategoryRepositoryTests" />
+      <option name="METHOD_NAME" value="testFindCategoryByAlias" />
+>>>>>>> main
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="CurrencyRepositoryTests.testListAllOrderByNameAsc" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ShoptechBackEnd" />
       <extension name="coverage">
@@ -142,6 +192,35 @@
       <option name="PACKAGE_NAME" value="com.shoptech.admin.setting" />
       <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.setting.CurrencyRepositoryTests" />
       <option name="METHOD_NAME" value="testListAllOrderByNameAsc" />
+=======
+    <configuration name="CategoryRepositoryTests.testListEnabledCategories" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ShoptechFrontEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shoptech.site.category.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shoptech.site.category" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.site.category.CategoryRepositoryTests" />
+      <option name="METHOD_NAME" value="testListEnabledCategories" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductRepositoryTests.testFindByAlias" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ShoptechFrontEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shoptech.site.product.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shoptech.site.product" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.site.product.ProductRepositoryTests" />
+      <option name="METHOD_NAME" value="testFindByAlias" />
+>>>>>>> main
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -178,6 +257,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="SettingRepositoryTests.testListSettingsByCategory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ShoptechBackEnd" />
       <extension name="coverage">
@@ -194,6 +274,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+=======
+>>>>>>> main
     <configuration name="ShoptechBackEndApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="ShoptechBackEnd" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.shoptech.admin.ShoptechBackEndApplication" />
@@ -210,21 +292,37 @@
       </method>
     </configuration>
     <list>
+<<<<<<< HEAD
       <item itemvalue="JUnit.SettingRepositoryTests" />
       <item itemvalue="JUnit.SettingRepositoryTests.testFindByTwoCategories" />
       <item itemvalue="JUnit.CurrencyRepositoryTests.testCreateCurrencies" />
       <item itemvalue="JUnit.CurrencyRepositoryTests.testListAllOrderByNameAsc" />
       <item itemvalue="JUnit.SettingRepositoryTests.testListSettingsByCategory" />
+=======
+      <item itemvalue="JUnit.ProductRepositoryTests.testFindByAlias" />
+      <item itemvalue="JUnit.ProductReposityTests.testCreateProduct" />
+      <item itemvalue="JUnit.All in ShoptechFrontEnd" />
+      <item itemvalue="JUnit.CategoryRepositoryTests.testFindCategoryByAlias" />
+      <item itemvalue="JUnit.CategoryRepositoryTests.testListEnabledCategories" />
+>>>>>>> main
       <item itemvalue="Spring Boot.ShoptechBackEndApplication" />
       <item itemvalue="Spring Boot.ShoptechFrontEndApplication" />
     </list>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
         <item itemvalue="JUnit.SettingRepositoryTests.testFindByTwoCategories" />
         <item itemvalue="JUnit.SettingRepositoryTests" />
         <item itemvalue="JUnit.CurrencyRepositoryTests.testListAllOrderByNameAsc" />
         <item itemvalue="JUnit.SettingRepositoryTests.testListSettingsByCategory" />
         <item itemvalue="JUnit.CurrencyRepositoryTests.testCreateCurrencies" />
+=======
+        <item itemvalue="JUnit.ProductRepositoryTests.testFindByAlias" />
+        <item itemvalue="JUnit.ProductReposityTests.testCreateProduct" />
+        <item itemvalue="JUnit.CategoryRepositoryTests.testFindCategoryByAlias" />
+        <item itemvalue="JUnit.CategoryRepositoryTests.testListEnabledCategories" />
+        <item itemvalue="JUnit.All in ShoptechFrontEnd" />
+>>>>>>> main
       </list>
     </recent_temporary>
   </component>
@@ -243,6 +341,7 @@
       <workItem from="1684346988833" duration="1201000" />
       <workItem from="1684370218538" duration="527000" />
       <workItem from="1684374034205" duration="7473000" />
+<<<<<<< HEAD
       <workItem from="1684398594481" duration="2630000" />
       <workItem from="1684457296500" duration="50000" />
       <workItem from="1684565066801" duration="2240000" />
@@ -250,6 +349,17 @@
       <workItem from="1684567641898" duration="1966000" />
       <workItem from="1684727234387" duration="12555000" />
       <workItem from="1684774838155" duration="639000" />
+=======
+      <workItem from="1684412904112" duration="6622000" />
+      <workItem from="1684420152592" duration="64000" />
+      <workItem from="1684421483578" duration="9671000" />
+      <workItem from="1684592576121" duration="7900000" />
+      <workItem from="1684600829369" duration="70000" />
+      <workItem from="1684681652396" duration="9003000" />
+      <workItem from="1684734864012" duration="16443000" />
+      <workItem from="1684773558822" duration="6000" />
+      <workItem from="1684774225105" duration="9000" />
+>>>>>>> main
     </task>
     <servers />
   </component>

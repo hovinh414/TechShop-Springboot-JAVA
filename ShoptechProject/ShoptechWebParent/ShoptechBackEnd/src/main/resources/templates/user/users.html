@@ -23,6 +23,8 @@
     <link rel="stylesheet" type="text/css" th:href="@{/assets/css/style.css}">
     <!-- End layout styles -->
     <link rel="shortcut icon" th:href="@{/assets/images/favicon.png}" />
+    <script th:src="@{/richtext/jquery.richtext.js}"></script>
+    <link rel="stylesheet" th:href="@{/richtext/richtext.css}">
 
 
 
@@ -43,20 +45,62 @@
                     </button>
                     </a>
                     </p>
+
                     <div th:if="${message != null}" class="alert alert-success text-center">
                         [[${message}]]
                     </div>
-                    <div class="table-responsive">
+
+                    <!--- -------------- Tìm Kiếm --------------- ----->
+                    <div  style="padding-top: 10px;" class="input-group m-3">
+                        <form th:action="@{/users/page/1}" class="form-inline d-flex align-items-center">
+                            <input type="hidden" name="sortField" th:value="${sortField}" />
+                            <input type="hidden" name="sortDir" th:value="${sortDir}" />
+                            <input style="color: white" type="search" name="keyword" placeholder="Search" th:value="${keyword}" class="form-control mr-2" required/>
+                            <button style="height: 37px; border-radius: 0px 3px 3px 0px;"  type="submit" value="Search" class="btn btn-primary">
+                                <i style="font-size: 16px;"  class="mdi mdi-account-search"></i>
+                            </button>
+                            <button style="margin-left: 9px; height: 37px;"  type="button" value="Clear" class="btn btn-secondary" onclick="clearFilter()">
+                                <i style="font-size: 16px;" class="mdi mdi-delete-variant"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!--- --------------Xuất CSV | Xuất Excel | Xuất PDF --------------- ----->
+                    <div style="text-align: right;">
+                        <a th:href="@{/users/export/csv}" aria-expanded="false" aria-controls="auth">
+                            <button type="submit" class="btn btn-outline-behance btn-icon-text" >
+                                <i class="mdi mdi-file-export"></i>
+                                IN CSV
+                            </button>
+                        </a>
+                        &nbsp;
+                        <a th:href="@{/users/export/excel}" aria-expanded="false" aria-controls="auth">
+                            <button type="submit" class="btn btn-outline-success btn-icon-text" >
+                                <i class="mdi mdi-file-excel"></i>
+                                IN EXCEL
+                            </button>
+                        </a>
+                        &nbsp;
+                        <a th:href="@{/users/export/pdf}" aria-expanded="false" aria-controls="auth">
+                            <button type="submit" class="btn btn-outline-reddit btn-icon-text" >
+                                <i class="mdi mdi-file-pdf"></i>
+                                IN PDF
+                            </button>
+                        </a>
+                    </div>
+
+                    <!--- -------------- Danh Sách User --------------- ----->
+                    <div style="padding-top: 12px;" class="table-responsive">
                         <table class="table table-hover">
                             <thead>
                             <tr>
-                                <th>ID</th>
+                               <th th:replace="fragments :: column_link('id','ID')"></th>
                                 <th>Avatar</th>
-                                <th>Email</th>
-                                <th>Tên</th>
-                                <th>Họ</th>
+                                <th th:replace="fragments :: column_link('email','Email')"></th>
+                                <th th:replace="fragments :: column_link('firstName','Tên')"></th>
+                                <th th:replace="fragments :: column_link('lastName','Họ')"></th>
                                 <th>Vai trò</th>
-                                <th>Trạng thái</th>
+                                <th th:replace="fragments :: column_link('enabled','Trạng thái')"></th>
                                 <th>Thao tác</th>
                             </tr>
                             </thead>
@@ -73,19 +117,19 @@
                                 <td>[[${user.lastName}]]</td>
                                 <td>[[${user.roles}]]</td>
                                 <td>
-                                    <a th:if="${user.enabled == true}" class="fas fa-check-circle fas-2x icon-green"
+                                    <a style="font-size: 16px;" th:if="${user.enabled == true}" class="fas fa-check-square fas-2x icon-blue"
                                        th:href="@{'/users/' + ${user.id} + '/enabled/false'}"
                                        title="Khoá tài khoản"></a>
 
-                                    <a th:if="${user.enabled == false}" class="fas fa-circle fas-2x icon-silver"
+                                    <a style="font-size: 16px;" th:if="${user.enabled == false}" class="fas fa-square fas-2x icon-silver"
                                        th:href="@{'/users/' + ${user.id} + '/enabled/true'}"
                                        title="Mở tài khoản"></a>
                                 </td>
                                 <td>
-                                    <a  class="fas fa-edit fas-2x icon-green" th:href="@{'/users/edit/' + ${user.id}}"
+                                    <a style="font-size: 16px;" class="fas fa-edit fas-2x icon-purple" th:href="@{'/users/edit/' + ${user.id}}"
                                        title="Edit this user"></a>
                                     &nbsp;&nbsp;
-                                    <a class="fas fa-trash fas-2x icon-dark" th:href="@{'/users/delete/' + ${user.id}}"
+                                    <a style="font-size: 16px;" class="fas fa-trash fas-2x icon-red" onclick="return confirm('Bạn có muốn xóa?')" th:href="@{'/users/delete/' + ${user.id}}"
                                        title="Delete this user"></a>
                                 </td>
                             </tr>
@@ -95,12 +139,52 @@
                     </div>
                 </div>
             </article>
+
+            <!--- -------------- Show Users --------------- ----->
+            <div class="text-center m-1" th:if="${totalItems > 0}">
+                <span>Hiển thị ID # Từ [[${startCount}]] đến [[${endCount}]] trên [[${totalItems}]] </span>
+            </div>
+
+            <div class="text-center m-1" th:unless="${totalItems > 0}">
+                <span>Không tìm thấy tài khoản!</span>
+            </div>
+
+            <!--- --------------Phân Trang --------------- ----->
+            <div th:if="${totalPages > 1}">
+                <nav>
+                    <ul class="pagination justify-content-center">
+                        <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
+                           <a th:replace="fragments :: page_link(1, 'Đầu')" ></a>
+                        </li>
+                        <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
+                            <a th:replace="fragments :: page_link(${currentPage - 1}, 'Sau')" ></a>
+                        </li>
+
+                        <li th:class="${currentPage != i ? 'page-item': 'page-item active'}"
+                            th:each="i : ${#numbers.sequence(1, totalPages)}">
+                            <a th:replace="fragments :: page_link(${i}, ${i})" ></a>
+                        </li>
+
+                        <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
+                            <a th:replace="fragments :: page_link(${currentPage + 1}, 'Tiếp')" ></a>
+                        </li>
+                        <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
+                            <a th:replace="fragments :: page_link(${totalPages}, 'Cuối')" ></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+
             <footer class="footer">
                 <div class="d-sm-flex justify-content-center justify-content-sm-between">
                     <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © shoptech.com 2023</span>
                     <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.shoptech.com/" target="_blank">TechShop Admin</a> from ShopTech.com</span>
                 </div>
             </footer>
+
+
+
             <!-- partial -->
         </div>
         <!-- main-panel ends -->
@@ -129,5 +213,15 @@
 <!-- Custom js for this page -->
 <script th:src="@{assets/js/dashboard.js}"></script>
 <!-- End custom js for this page -->
+
+<script type="text/javascript">
+
+    function clearFilter(){
+        window.location= "[[@{/users}]]";
+    }
+
+</script>
+
+
 </body>
 </html>

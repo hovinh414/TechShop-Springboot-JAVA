@@ -1,7 +1,11 @@
 package com.shoptech.admin.category;
 
 import com.shoptech.admin.upload.FileUploadUtil;
+import com.shoptech.admin.user.UserPdfExporter;
 import com.shoptech.entity.Category;
+import com.shoptech.entity.User;
+import com.shoptech.exception.CategoryNotFoundException;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
@@ -18,16 +22,39 @@ public class CategoryController {
     @Autowired
     private CategoryService service;
     @GetMapping("/categories")
-    public String listFirstPage(@Param("sortDir") String sortDir, Model model){
+    public String listFirstPage(@Param("sortDir") String sortDir, Model model) {
+        return listByPage(1, sortDir, null, model);
+    }
 
-        if (sortDir == null || sortDir.isEmpty()){
+    @GetMapping("/categories/page/{pageNum}")
+    public String listByPage(@PathVariable(name = "pageNum") int pageNum, @Param("sortDir") String sortDir, @Param("keyword") String keyword, Model model) {
+        if (sortDir == null || sortDir.isEmpty()) {
             sortDir = "asc";
-
         }
-        List<Category> listCategories = service.listAll(sortDir);
+
+        CategoryPageInfo pageInfo = new CategoryPageInfo();
+        List<Category> listCategories = service.listByPage(pageInfo, pageNum, sortDir, keyword);
+
+        long startCount = (pageNum - 1) * CategoryService.ROOT_CATEGORIES_PER_PAGE + 1;
+        long endCount = startCount + CategoryService.ROOT_CATEGORIES_PER_PAGE - 1;
+        if (endCount > pageInfo.getTotalElements()) {
+            endCount = pageInfo.getTotalElements();
+        }
+
         String reverseSortDir = sortDir.equals("asc") ? "desc" : "asc";
-        model.addAttribute("listCategories",listCategories);
+        model.addAttribute("totalPages", pageInfo.getTotalPages());
+        model.addAttribute("totalItems", pageInfo.getTotalElements());
+        model.addAttribute("currentPage", pageNum);
+        model.addAttribute("sortField", "name");
+        model.addAttribute("sortDir", sortDir);
+        model.addAttribute("keyword", keyword);
+        model.addAttribute("startCount", startCount);
+        model.addAttribute("endCount", endCount);
+
+        model.addAttribute("listCategories", listCategories);
         model.addAttribute("reverseSortDir", reverseSortDir);
+        model.addAttribute("moduleURL", "/categories");
+
         return "categories/categories";
     }
     @GetMapping("/categories/create")
@@ -99,5 +126,17 @@ public class CategoryController {
 
         return "redirect:/categories";
     }
+    @GetMapping("/categories/export/csv")
+    public void exporttoCSV(HttpServletResponse response) throws IOException {
+        List<Category> listCategories = service.listCategoriesUsedInForm();
+        CategoryCsvExporter exporter = new CategoryCsvExporter();
+        exporter.export(listCategories, response);
+    }
+    @GetMapping("/categories/export/pdf")
+    public void exportToPDF(HttpServletResponse response) throws IOException {
 
+        List<Category> listCategories = service.listCategoriesUsedInForm();
+        CategoryPdfExporter exporter = new CategoryPdfExporter();
+        exporter.export(listCategories, response);
+    }
 }

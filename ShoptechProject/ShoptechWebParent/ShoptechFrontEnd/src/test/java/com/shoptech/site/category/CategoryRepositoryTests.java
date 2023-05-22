@@ -20,15 +20,15 @@ public class CategoryRepositoryTests {
 
     @Test
     public void testListEnabledCategories() {
-        List<Category> categories = repo.findAllEnabled();
+        List<Category> categories = repo.findRootCategories();
         categories.forEach(category -> {
-            System.out.println(category.getName() + " (" + category.getEnable() + ")");
+            System.out.println(category.getName() + " (" + category.isEnabled() + ")");
         });
     }
 
     @Test
     public void testFindCategoryByAlias() {
-        String alias = "electronics";
+        String alias = "Electronics";
         Category category = repo.findByAliasEnabled(alias);
 
         assertThat(category).isNotNull();

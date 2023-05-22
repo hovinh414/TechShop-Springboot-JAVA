@@ -13,7 +13,7 @@ public class MainController {
     @Autowired private CategoryService categoryService;
     @GetMapping("/")
     public  String viewHomePage(Model model){
-        List<Category> listCategories = categoryService.listNoChildrenCategories();
+        List<Category> listCategories = categoryService.listAll();
         model.addAttribute("listCategories",listCategories);
         return "layouts/index";
     }
