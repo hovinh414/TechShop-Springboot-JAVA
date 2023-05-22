@@ -73,10 +73,10 @@
               </button>
           </a>-->
           &nbsp;
-          <a th:href="@{/brands/export/csv}" aria-expanded="false" aria-controls="auth">
-            <button type="submit" class="btn btn-outline-behance btn-icon-text" >
-              <i class="mdi mdi-file-export"></i>
-              IN CSV
+          <a th:href="@{/brands/export/pdf}" aria-expanded="false" aria-controls="auth">
+            <button type="submit" class="btn btn-outline-reddit btn-icon-text" >
+              <i class="mdi mdi-file-pdf"></i>
+              IN PDF
             </button>
           </a>
         </div>
@@ -86,9 +86,9 @@
             <thead>
             <tr>
               <th>ID</th>
-              <th>Tên thương hiệu</th>
+              <th th:replace="fragments :: column_linkBrand('name','Tên thương hiệu')"></th>
               <th>logo</th>
-              <th>Danh mục</th>
+              <th style="text-align: center">Danh mục</th>
               <th>Thao tác</th>
             </tr>
             </thead>
@@ -97,7 +97,7 @@
               <td>[[${brand.id}]]</td>
               <td>[[${brand.name}]]</td>
               <td>
-                <img th:src="@{${brand.logoPath}}" style="width: 100px" class="img-fluid"/>
+                <img th:src="@{${brand.logoPath}}" style="width: 100px"/>
               </td>
               <td>
                 <th:block th:each="cat : ${brand.categories}">
@@ -122,28 +122,28 @@
     </div>
 
     <div class="text-center m-1" th:unless="${totalItems > 0}">
-      <span>Không tìm thấy danh mục!</span>
+      <span>Không tìm thấy thương hiệu!</span>
     </div>
     <div th:if="${totalPages > 1}">
       <nav>
         <ul class="pagination justify-content-center">
           <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-            <a th:replace="fragments :: page_linkCat(1, 'Đầu')" ></a>
+            <a th:replace="fragments :: page_linkBrand(1, 'Đầu')" ></a>
           </li>
           <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-            <a th:replace="fragments :: page_linkCat(${currentPage - 1}, 'Sau')" ></a>
+            <a th:replace="fragments :: page_linkBrand(${currentPage - 1}, 'Sau')" ></a>
           </li>
 
           <li th:class="${currentPage != i ? 'page-item': 'page-item active'}"
               th:each="i : ${#numbers.sequence(1, totalPages)}">
-            <a th:replace="fragments :: page_linkCat(${i}, ${i})" ></a>
+            <a th:replace="fragments :: page_linkBrand(${i}, ${i})" ></a>
           </li>
 
           <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-            <a th:replace="fragments :: page_linkCat(${currentPage + 1}, 'Tiếp')" ></a>
+            <a th:replace="fragments :: page_linkBrand(${currentPage + 1}, 'Tiếp')" ></a>
           </li>
           <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-            <a th:replace="fragments :: page_linkCat(${totalPages}, 'Cuối')" ></a>
+            <a th:replace="fragments :: page_linkBrand(${totalPages}, 'Cuối')" ></a>
           </li>
         </ul>
       </nav>
