@@ -4,6 +4,7 @@ import com.shoptech.admin.upload.FileUploadUtil;
 import com.shoptech.admin.user.UserPdfExporter;
 import com.shoptech.entity.Category;
 import com.shoptech.entity.User;
+import com.shoptech.exception.CategoryNotFoundException;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;

@@ -1,6 +1,7 @@
 package com.shoptech.admin.category;
 
 import com.shoptech.entity.Category;
+import com.shoptech.exception.CategoryNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
