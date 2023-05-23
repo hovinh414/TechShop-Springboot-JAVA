@@ -76,8 +76,8 @@
             </div>
 
             <div class="text-center">
-              <button type="submit" class="btn btn-primary btn-block enter-btn">Submit</button>
-              <button class="btn btn-secondary btn-block enter-btn" id="buttonCancel">Cancel</button>
+              <input type="submit" value="Save" class="btn btn-primary m-3" />
+              <input type="button" value="Cancel" class="btn btn-secondary" id="buttonCancel" />
             </div>
           </form>
           <div th:replace="~{modal_fragments :: modal_dialog}"></div>
@@ -116,8 +116,9 @@
 <script th:src="@{/assets/js/todolist.js}"></script>
 <!-- endinject -->
 <!-- Custom js for this page -->
-<script th:src="@{assets/js/dashboard.js}"></script>
+<script th:src="@{/assets/js/dashboard.js}"></script>
 <!-- End custom js for this page -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script type="text/javascript">
   MAX_FILE_SIZE = 102400; // 100KB
   moduleURL = "[[@{/brands}]]";
@@ -158,13 +159,28 @@
       if (response == "OK") {
         form.submit();
       } else if (response == "Duplicate") {
-        alert("Tên thương hiệu đã tồn tại " + brandName);
+        swal({
+          title: 'Thông báo',
+          text:'Tên thương hiệu đã tồn tại ' + brandName,
+          icon:'warning',
+          button:'OK'
+        });
       } else {
-        alert("Unknown response from server");
+        swal({
+          title: 'Thông báo',
+          text:'Server không phản hồi',
+          icon:'warning',
+          button:'OK'
+        });
       }
 
     }).fail(function() {
-      alert("Could not connect to the server");
+      swal({
+        title: 'Thông báo',
+        text:'Không thể kết nối tới server',
+        icon:'warning',
+        button:'OK'
+      });
     });
 
     return false;

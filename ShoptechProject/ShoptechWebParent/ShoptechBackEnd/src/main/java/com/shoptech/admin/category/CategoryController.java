@@ -1,7 +1,6 @@
 package com.shoptech.admin.category;
 
 import com.shoptech.admin.upload.FileUploadUtil;
-import com.shoptech.admin.user.UserPdfExporter;
 import com.shoptech.entity.Category;
 import com.shoptech.entity.User;
 import com.shoptech.exception.CategoryNotFoundException;

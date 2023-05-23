@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
 		$("#buttonCancel").on("click", function(){
 			window.location = moduleURL;
 		});
@@ -12,9 +13,32 @@ $(document).ready(function() {
 			
 			showImageThumbnail(this);
 		});
-		
+		$("#extraImage1").change(function() {
+
+			if(!checkFileSize(this)) {
+
+				return;
+			}
+
+			showExtraImageThumbnail(this);
+			addNextExtraImageSection()
+		});
+
 	});
-	
+	function addNextExtraImageSection() {
+
+	}
+function showExtraImageThumbnail(fileInput){
+
+	var file = fileInput.files[0];
+	var reader = new FileReader();
+
+	reader.onload = function(e){
+		$("#extraThumbnail1").attr("src", e.target.result);
+	};
+
+	reader.readAsDataURL(file);
+}
 	function showImageThumbnail(fileInput){
 		
 		var file = fileInput.files[0];
