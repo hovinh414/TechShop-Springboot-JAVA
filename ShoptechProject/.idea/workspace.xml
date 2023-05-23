@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="586dc39d-c46f-41d2-9b32-a2f8558bb188" name="Changes" comment="">
+=======
+    <list default="true" id="6c32a9d2-72a0-46d0-9220-abd148727d77" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/security/ShoptechUserDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/security/ShoptechUserDetailsService.java" afterDir="false" />
+>>>>>>> main
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Currency.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Setting.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/SettingBag.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/SettingCategory.java" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/../ShoptechCommon.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/aws.xml" beforeDir="false" />
@@ -30,18 +37,89 @@
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/products/product_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/products/product_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/products/product_overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/products/product_overview.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/products/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/products/products.html" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/LoginController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/security/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/upload/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/upload/MvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/login.html" afterDir="false" />
+>>>>>>> main
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/fragments.html" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/../brand-logos/1/Canon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/10/Samsung.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/11/Olympus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/12/Caden.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/13/amazonbasics.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/14/Nikon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/15/Neewer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/16/Sigma.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/17/Bosch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/18/Joby.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/19/GoPro.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/2/Fujifilm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/20/Manfrotto.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/21/Google.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/22/LG.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/23/Motorola.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/24/Pantech.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/25/Huawei.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/26/Xiaomi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/27/Hovamp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/28/Aioneus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/29/XIAE.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/3/Sony.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/30/Everyworth.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/31/Lexar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/32/Nulaxy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/33/Fitfort.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/34/PopSocket.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/35/SHAWE.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/36/Lenovo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/37/Acer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/38/Dell.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/39/Intel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/4/HP.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/40/ASUS.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/41/Microsoft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/42/DragonTouch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/43/AMD.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/44/XFX.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/45/MSI.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/46/Seagate.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/47/Corsair.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/48/Thermaltake.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/49/Kingston.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/5/SanDisk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/50/Creative.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/51/Crucial.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/52/HyperX.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/53/Gigabyte.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/54/TP-Link.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/6/Western Digital.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/7/Panasonic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/8/Pelican.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/9/Apple.png" beforeDir="false" />
+>>>>>>> main
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -51,6 +129,8 @@
       </list>
     </option>
   </component>
+=======
+>>>>>>> main
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -64,14 +144,21 @@
       </MavenGeneralSettings>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="ProjectId" id="2QA1YlFgtvolvUXWR9NSMt6rH49" />
+=======
+  <component name="ProjectId" id="2QAxDYF9nzu9o6Wj5pGYYigvIrq" />
+>>>>>>> main
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+<<<<<<< HEAD
     "DefaultHtmlFileTemplate": "HTML File",
+=======
+>>>>>>> main
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -80,20 +167,38 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
+<<<<<<< HEAD
     "last_opened_file_path": "D:/Vinh_2B_03/LapTrinhUngDungJava/TechShop-Springboot-JAVA/ShoptechProject/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/products",
+=======
+    "last_opened_file_path": "/Users/yoliephan/Desktop/TechShop-Springboot-JAVA/ShoptechProject/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/security",
+>>>>>>> main
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+<<<<<<< HEAD
     "spring.configuration.checksum": "5dfa6fdcd7d06aeec6ac8abb1598a1e6",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+=======
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RebelAgentSelection">
+    <selection>jr</selection>
+  </component>
+>>>>>>> main
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.shoptech.admin.category" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+<<<<<<< HEAD
       <recent name="D:\Vinh_2B_03\LapTrinhUngDungJava\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechBackEnd\src\main\resources\templates\products" />
     </key>
   </component>
@@ -117,6 +222,24 @@
           <option name="PATTERN" value="com.shoptech.admin.*" />
           <option name="ENABLED" value="true" />
         </pattern>
+=======
+      <recent name="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/security" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates" />
+      <recent name="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ShoptechBackEndApplication">
+    <configuration name="ShoptechBackEndApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ShoptechBackEnd" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.shoptech.admin.ShoptechBackEndApplication" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd" />
+      <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+        <option name="credential" />
+        <option name="region" />
+        <option name="useCurrentConnection" value="false" />
+>>>>>>> main
       </extension>
       <method v="2">
         <option name="Make" enabled="true" />
@@ -129,15 +252,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.ShoptechBackEndApplication" />
       </list>
     </recent_temporary>
+=======
+    <list>
+      <item itemvalue="Spring Boot.ShoptechBackEndApplication" />
+      <item itemvalue="Spring Boot.ShoptechFrontEndApplication" />
+    </list>
+>>>>>>> main
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="586dc39d-c46f-41d2-9b32-a2f8558bb188" name="Changes" comment="" />
       <created>1684781624584</created>
       <option name="number" value="Default" />
@@ -148,6 +279,14 @@
       <workItem from="1684802680138" duration="1257000" />
       <workItem from="1684804213716" duration="2667000" />
       <workItem from="1684834006387" duration="9967000" />
+=======
+      <changelist id="6c32a9d2-72a0-46d0-9220-abd148727d77" name="Changes" comment="" />
+      <created>1684810069963</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1684810069963</updated>
+      <workItem from="1684810069964" duration="5397000" />
+>>>>>>> main
     </task>
     <servers />
   </component>
