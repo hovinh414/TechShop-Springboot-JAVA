@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -17,31 +18,24 @@ import org.springframework.security.web.SecurityFilterChain;
 public class WebSecurityConfig {
 
     @Bean
+    public UserDetailsService userDetailsService() {
+        return new ShoptechUserDetailsService();
+    }
+
+    @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.ALWAYS);
-        http.authorizeRequests().anyRequest().permitAll();
-        return http.build();
-    }
-
-    /*@Bean
-    public WebSecurityCustomizer webSecurityCustomizer() {
-        //permit access to the assets in the following directories
-        return (web) -> web.ignoring().requestMatchers("/images/**", "/js/**", "/webjars/**");
-    }*/
-    /*@Bean
     public DaoAuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-
         authProvider.setUserDetailsService(userDetailsService());
         authProvider.setPasswordEncoder(passwordEncoder());
 
         return authProvider;
     }
+
+    //NOTE: Đóng từ dòng 39 đến 87  [đang lỗi chưa bik fix]
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
@@ -68,20 +62,40 @@ public class WebSecurityConfig {
                 .loginPage("/login")
                 .usernameParameter("email")
                 .permitAll()
-                .and().logout().permitAll()
-                .and().rememberMe().key("AbcDefgHijKlmnOpqrs_1234567890")
-                .tokenValiditySeconds(7 * 24 * 60 * 60);  // remember me cookie is valid for one week
+                .and().logout().permitAll();
+                /*.and().rememberMe().key("AbcDefgHijKlmnOpqrs_1234567890")
+                .tokenValiditySeconds(7 * 24 * 60 * 60);  // remember me cookie is valid for one week*/
 
-        *//*
+        /*
          * set a fix key used for the md5 hash algorithm to encrypt cookie content each
          * time the application is restarted, a new key will be generated; this key will
          * be used to encrypt the cookie content so, in order for the cookie to be
          * permanent; a fix key is needed.
-         *//*
+         */
 
         http.authenticationProvider(authenticationProvider());
 
+        return http.build();
+    }
 
+    //NOTE: antMatchers() changed to requestMatchers()
+    //stack: https://stackoverflow.com/questions/74907533/the-method-antmatchersstring-is-undefined-for-the-type
+    @Bean
+    public WebSecurityCustomizer webSecurityCustomizer() {
+        //permit access to the assets in the following directories
+        return (web) -> web.ignoring().requestMatchers("/images/**", "/js/**", "/css/**");
+    }
+
+
+    //NOTE: Mở Cái này là vô được admin
+
+    /*@Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.ALWAYS);
+        http.authorizeRequests().anyRequest().permitAll();
         return http.build();
     }*/
+
+
+
 }

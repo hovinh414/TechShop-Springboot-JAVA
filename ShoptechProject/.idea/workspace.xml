@@ -4,63 +4,90 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="046bfcbc-cc54-44e7-bbab-c46970ef7774" name="Changes" comment="">
-<<<<<<< HEAD
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoptechCommon/src/main/java/com/shoptech/entity/Currency.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoptechCommon/src/main/java/com/shoptech/entity/Setting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoptechCommon/src/main/java/com/shoptech/entity/SettingBag.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoptechCommon/src/main/java/com/shoptech/entity/SettingCategory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/setting/GeneralSettingBag.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/setting/SettingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/setting/SettingRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/setting/SettingService.java" afterDir="false" />
+    <list default="true" id="6c32a9d2-72a0-46d0-9220-abd148727d77" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/security/ShoptechUserDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/security/ShoptechUserDetailsService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Currency.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Setting.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/SettingBag.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/SettingCategory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/test/java/com/shoptech/site/setting/SettingRepositoryTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechCommon/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechCommon/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/LoginController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/security/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/upload/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/upload/MvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/categories/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/categories/categories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/layouts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/layouts/index.html" afterDir="false" />
-=======
-      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/exception/CategoryNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/exception/ProductNotFoundException.java" afterDir="false" />
->>>>>>> main
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/fragments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/1/Canon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/10/Samsung.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/11/Olympus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/12/Caden.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/13/amazonbasics.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/14/Nikon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/15/Neewer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/16/Sigma.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/17/Bosch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/18/Joby.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/19/GoPro.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/2/Fujifilm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/20/Manfrotto.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/21/Google.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/22/LG.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/23/Motorola.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/24/Pantech.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/25/Huawei.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/26/Xiaomi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/27/Hovamp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/28/Aioneus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/29/XIAE.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/3/Sony.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/30/Everyworth.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/31/Lexar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/32/Nulaxy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/33/Fitfort.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/34/PopSocket.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/35/SHAWE.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/36/Lenovo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/37/Acer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/38/Dell.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/39/Intel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/4/HP.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/40/ASUS.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/41/Microsoft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/42/DragonTouch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/43/AMD.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/44/XFX.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/45/MSI.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/46/Seagate.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/47/Corsair.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/48/Thermaltake.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/49/Kingston.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/5/SanDisk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/50/Creative.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/51/Crucial.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/52/HyperX.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/53/Gigabyte.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/54/TP-Link.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/6/Western Digital.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/7/Panasonic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/8/Pelican.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brand-logos/9/Apple.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CompilerWorkspaceConfiguration">
-    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="HTML File" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="JRebelWorkspace">
-    <option name="jrebelEnabledAutocompile" value="true" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -72,214 +99,55 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectId" id="2PuNExbozXDkTd5oziJlTPSe1zd" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2QAxDYF9nzu9o6Wj5pGYYigvIrq" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-<<<<<<< HEAD
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ADMIN/Desktop/shopme/ShopmeProject&quot;,
-=======
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Trung1&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Desktop/New folder/TechShop-Springboot-JAVA/ShoptechProject&quot;,
->>>>>>> main
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-<<<<<<< HEAD
-    &quot;spring.configuration.checksum&quot;: &quot;6beb2bb1a75c78b58d027cdce3ade338&quot;,
-=======
-    &quot;spring.configuration.checksum&quot;: &quot;5dfa6fdcd7d06aeec6ac8abb1598a1e6&quot;,
->>>>>>> main
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/yoliephan/Desktop/TechShop-Springboot-JAVA/ShoptechProject/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/security",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ADMIN\Desktop\Web java\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechBackEnd\src\main\java\com\shoptech\admin\setting" />
-      <recent name="D:\Vinh_2B_03\LapTrinhUngDungJava\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechBackEnd\src\main\resources\templates\categories" />
+      <recent name="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/security" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-<<<<<<< HEAD
-      <recent name="C:\Users\ADMIN\Desktop\Web java\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechBackEnd\src\main\java\com\shoptech\admin" />
-      <recent name="C:\Users\ADMIN\Desktop\Web java\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechCommon\src\main\java\com\shoptech\entity" />
-=======
-      <recent name="C:\Users\Admin\Desktop\New folder\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechFrontEnd\src\main\resources\templates\product" />
->>>>>>> main
-      <recent name="D:\Vinh_2B_03\LapTrinhUngDungJava\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechBackEnd\src\main\resources\templates" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.shoptech.site.security" />
+      <recent name="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates" />
+      <recent name="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd" />
     </key>
   </component>
-<<<<<<< HEAD
-  <component name="RunManager" selected="Spring Boot.ShoptechFrontEndApplication">
-    <configuration name="CurrencyRepositoryTests.testCreateCurrencies" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ShoptechBackEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.shoptech.admin.setting.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.shoptech.admin.setting" />
-      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.setting.CurrencyRepositoryTests" />
-      <option name="METHOD_NAME" value="testCreateCurrencies" />
-=======
-  <component name="RunDashboard">
-    <option name="configurationTypes">
-      <set>
-        <option value="SpringBootApplicationConfigurationType" />
-      </set>
-    </option>
-  </component>
-  <component name="RunManager" selected="Spring Boot.ShoptechFrontEndApplication">
-    <configuration name="All in ShoptechFrontEnd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ShoptechFrontEnd" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CategoryRepositoryTests.testFindCategoryByAlias" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ShoptechFrontEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.shoptech.site.category.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.shoptech.site.category" />
-      <option name="MAIN_CLASS_NAME" value="com.shoptech.site.category.CategoryRepositoryTests" />
-      <option name="METHOD_NAME" value="testFindCategoryByAlias" />
->>>>>>> main
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-<<<<<<< HEAD
-    <configuration name="CurrencyRepositoryTests.testListAllOrderByNameAsc" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ShoptechBackEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.shoptech.admin.setting.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.shoptech.admin.setting" />
-      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.setting.CurrencyRepositoryTests" />
-      <option name="METHOD_NAME" value="testListAllOrderByNameAsc" />
-=======
-    <configuration name="CategoryRepositoryTests.testListEnabledCategories" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ShoptechFrontEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.shoptech.site.category.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.shoptech.site.category" />
-      <option name="MAIN_CLASS_NAME" value="com.shoptech.site.category.CategoryRepositoryTests" />
-      <option name="METHOD_NAME" value="testListEnabledCategories" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductRepositoryTests.testFindByAlias" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ShoptechFrontEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.shoptech.site.product.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.shoptech.site.product" />
-      <option name="MAIN_CLASS_NAME" value="com.shoptech.site.product.ProductRepositoryTests" />
-      <option name="METHOD_NAME" value="testFindByAlias" />
->>>>>>> main
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SettingRepositoryTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ShoptechFrontEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.shoptech.site.setting.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.shoptech.site.setting" />
-      <option name="MAIN_CLASS_NAME" value="com.shoptech.site.setting.SettingRepositoryTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SettingRepositoryTests.testFindByTwoCategories" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ShoptechFrontEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.shoptech.site.setting.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.shoptech.site.setting" />
-      <option name="MAIN_CLASS_NAME" value="com.shoptech.site.setting.SettingRepositoryTests" />
-      <option name="METHOD_NAME" value="testFindByTwoCategories" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-<<<<<<< HEAD
-    <configuration name="SettingRepositoryTests.testListSettingsByCategory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ShoptechBackEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.shoptech.admin.setting.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.shoptech.admin.setting" />
-      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.setting.SettingRepositoryTests" />
-      <option name="METHOD_NAME" value="testListSettingsByCategory" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-=======
->>>>>>> main
+  <component name="RunManager" selected="Spring Boot.ShoptechBackEndApplication">
     <configuration name="ShoptechBackEndApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="ShoptechBackEnd" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.shoptech.admin.ShoptechBackEndApplication" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd" />
+      <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+        <option name="credential" />
+        <option name="region" />
+        <option name="useCurrentConnection" value="false" />
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -292,74 +160,19 @@
       </method>
     </configuration>
     <list>
-<<<<<<< HEAD
-      <item itemvalue="JUnit.SettingRepositoryTests" />
-      <item itemvalue="JUnit.SettingRepositoryTests.testFindByTwoCategories" />
-      <item itemvalue="JUnit.CurrencyRepositoryTests.testCreateCurrencies" />
-      <item itemvalue="JUnit.CurrencyRepositoryTests.testListAllOrderByNameAsc" />
-      <item itemvalue="JUnit.SettingRepositoryTests.testListSettingsByCategory" />
-=======
-      <item itemvalue="JUnit.ProductRepositoryTests.testFindByAlias" />
-      <item itemvalue="JUnit.ProductReposityTests.testCreateProduct" />
-      <item itemvalue="JUnit.All in ShoptechFrontEnd" />
-      <item itemvalue="JUnit.CategoryRepositoryTests.testFindCategoryByAlias" />
-      <item itemvalue="JUnit.CategoryRepositoryTests.testListEnabledCategories" />
->>>>>>> main
       <item itemvalue="Spring Boot.ShoptechBackEndApplication" />
       <item itemvalue="Spring Boot.ShoptechFrontEndApplication" />
     </list>
-    <recent_temporary>
-      <list>
-<<<<<<< HEAD
-        <item itemvalue="JUnit.SettingRepositoryTests.testFindByTwoCategories" />
-        <item itemvalue="JUnit.SettingRepositoryTests" />
-        <item itemvalue="JUnit.CurrencyRepositoryTests.testListAllOrderByNameAsc" />
-        <item itemvalue="JUnit.SettingRepositoryTests.testListSettingsByCategory" />
-        <item itemvalue="JUnit.CurrencyRepositoryTests.testCreateCurrencies" />
-=======
-        <item itemvalue="JUnit.ProductRepositoryTests.testFindByAlias" />
-        <item itemvalue="JUnit.ProductReposityTests.testCreateProduct" />
-        <item itemvalue="JUnit.CategoryRepositoryTests.testFindCategoryByAlias" />
-        <item itemvalue="JUnit.CategoryRepositoryTests.testListEnabledCategories" />
-        <item itemvalue="JUnit.All in ShoptechFrontEnd" />
->>>>>>> main
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="046bfcbc-cc54-44e7-bbab-c46970ef7774" name="Changes" comment="" />
-      <created>1684302902751</created>
+      <changelist id="6c32a9d2-72a0-46d0-9220-abd148727d77" name="Changes" comment="" />
+      <created>1684810069963</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1684302902751</updated>
-      <workItem from="1684302908308" duration="3121000" />
-      <workItem from="1684321688683" duration="8806000" />
-      <workItem from="1684333522640" duration="5460000" />
-      <workItem from="1684345661336" duration="1306000" />
-      <workItem from="1684346988833" duration="1201000" />
-      <workItem from="1684370218538" duration="527000" />
-      <workItem from="1684374034205" duration="7473000" />
-<<<<<<< HEAD
-      <workItem from="1684398594481" duration="2630000" />
-      <workItem from="1684457296500" duration="50000" />
-      <workItem from="1684565066801" duration="2240000" />
-      <workItem from="1684567384292" duration="23000" />
-      <workItem from="1684567641898" duration="1966000" />
-      <workItem from="1684727234387" duration="12555000" />
-      <workItem from="1684774838155" duration="639000" />
-=======
-      <workItem from="1684412904112" duration="6622000" />
-      <workItem from="1684420152592" duration="64000" />
-      <workItem from="1684421483578" duration="9671000" />
-      <workItem from="1684592576121" duration="7900000" />
-      <workItem from="1684600829369" duration="70000" />
-      <workItem from="1684681652396" duration="9003000" />
-      <workItem from="1684734864012" duration="16443000" />
-      <workItem from="1684773558822" duration="6000" />
-      <workItem from="1684774225105" duration="9000" />
->>>>>>> main
+      <updated>1684810069963</updated>
+      <workItem from="1684810069964" duration="5397000" />
     </task>
     <servers />
   </component>
