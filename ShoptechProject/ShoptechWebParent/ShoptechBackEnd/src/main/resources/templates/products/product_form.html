@@ -22,8 +22,8 @@
   <link rel="stylesheet" th:href="@{/assets/css/style.css}">
   <!-- End layout styles -->
   <link rel="shortcut icon" th:href="@{/assets/images/favicon.png}" />
+  <link rel="stylesheet" th:href="@{/richtext/richtext.min.css}" />
   <script th:src="@{/richtext/jquery.richtext.min.js}"></script>
-  <link rel="stylesheet" th:href="@{/richtext/richtext.min.css}">
 </head>
 <body>
 <div class="container-scroller">
@@ -39,41 +39,42 @@
             [[${message}]]
           </div>
           <form th:action="@{/products/save}" method="post"
-                enctype="multipart/form-data"
+                enctype="multipart/form-data" onsubmit="return checkUnique(this)"
                 th:object="${product}" >
             <input type="hidden" th:field="*{id}" />
             <div>
-              <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <ul class="nav nav-tabs" id="myTab">
                 <li class="nav-item">
                   <a class="nav-link active" data-toggle="tab" href="#overview">Tổng Quan</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#description" role="tab">Mô tả</a>
+                  <a class="nav-link" data-toggle="tab" href="#description">Mô tả</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#images" role="tab">Hình Ảnh</a>
+                  <a class="nav-link" data-toggle="tab" href="#images">Hình Ảnh</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#details" role="tab">Chi Tiết</a>
+                  <a class="nav-link" data-toggle="tab" href="#details">Chi Tiết</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#shipping" role="tab">Phí Ship</a>
+                  <a class="nav-link" data-toggle="tab" href="#shipping">Kích thước</a>
                 </li>
               </ul>
-
-              <div class="tab-content">
-                <div class="tab-pane active p-3" id="overview" >
-                  <div th:replace="products/product_overview :: content"></div>
-                </div>
-                <div class="tab-pane active p-3" id="description" role="tabpanel">
-                  <div th:replace="products/product_description :: content"></div>
-                </div>
-                <div class="tab-pane active p-3" id="images" role="tabpanel">
-                </div>
-                <div class="tab-pane active p-3" id="details" role="tabpanel">
-                </div>
-                <div class="tab-pane active p-3" id="shipping" role="tabpanel">
-                </div>
+            </div>
+            <div class="tab-content">
+              <div class="tab-pane active p-3" id="overview" >
+                <div th:replace="products/product_overview :: content"></div>
+              </div>
+              <div class="tab-pane active p-3" id="description" >
+                <div th:replace="products/product_description :: content"></div>
+              </div>
+              <div class="tab-pane active p-3" id="images" role="tabpanel">
+                <div th:replace="products/product_images :: content"></div>
+              </div>
+              <div class="tab-pane p-3" id="details" role="tabpanel">
+              </div>
+              <div class="tab-pane active p-3" id="shipping">
+                <div th:replace="products/product_shipping :: content"></div>
               </div>
             </div>
             <div class="text-center">
@@ -117,25 +118,29 @@
 <script th:src="@{/assets/js/todolist.js}"></script>
 <!-- endinject -->
 <!-- Custom js for this page -->
-<script th:src="@{assets/js/dashboard.js}"></script>
+<script th:src="@{/assets/js/dashboard.js}"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!-- End custom js for this page -->
 <script type="text/javascript">
-
+  MAX_FILE_SIZE = 502400;
   moduleURL = "[[@{/products}]]";
   brandModuleURL = "[[@{/brands}]]";
+
+  defaultImageThumbnailSrc = "[[@{/images/image-thumbnail.png}]]";
 
   dropdownBrands = $("#brand");
   dropdownCategories = $("#category");
 
-  $(document).ready(function (){
+  $(document).ready(function() {
 
-    dropdownBrands.change(function () {
+
+    dropdownBrands.change(function() {
       dropdownCategories.empty();
       getCategories();
-      $("#shortDescription").richText();
-      $("#fullDescription").richText();
     });
-    getCategories();
+
+    getCategoriesForNewForm();
+
   });
   function getCategories() {
     brandId = dropdownBrands.val();
@@ -147,9 +152,45 @@
       });
     });
   }
+  function checkUnique(form) {
+    productId = $("#id").val();
+    productName = $("#name").val();
+    csrfValue = $("input[name='_csrf']").val();
+    url= "[[@{/products/check_unique}]]";
+    params = {id: productId, name: productName, _csrf: csrfValue};
 
+    $.post(url, params, function(response) {
+      if (response == "OK") {
+        form.submit();
+      } else if (response == "Duplicate") {
+        swal({
+          title: 'Thông báo',
+          text:'Tên sản phẩm đã tồn tại ' + productName,
+          icon:'warning',
+          button:'OK'
+        });
+      } else {
+        swal({
+          title: 'Thông báo',
+          text:'Không thể kết nối tới server',
+          icon:'warning',
+          button:'OK'
+        });
+      }
 
+    }).fail(function() {
+      swal({
+        title: 'Thông báo',
+        text:'Không thể kết nối tới server',
+        icon:'warning',
+        button:'OK'
+      });
+    });
+
+    return false;
+  }
 </script>
 <script th:src="@{/js/common_form.js}"></script>
+<script th:src="@{/js/product_form.js}"></script>
 </body>
 </html>
