@@ -5,81 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c32a9d2-72a0-46d0-9220-abd148727d77" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/security/ShoptechUserDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/security/ShoptechUserDetailsService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Currency.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Setting.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/SettingBag.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/SettingCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/LoginController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/security/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/upload/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/upload/MvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/1/Canon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/10/Samsung.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/11/Olympus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/12/Caden.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/13/amazonbasics.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/14/Nikon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/15/Neewer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/16/Sigma.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/17/Bosch.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/18/Joby.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/19/GoPro.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/2/Fujifilm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/20/Manfrotto.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/21/Google.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/22/LG.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/23/Motorola.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/24/Pantech.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/25/Huawei.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/26/Xiaomi.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/27/Hovamp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/28/Aioneus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/29/XIAE.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/3/Sony.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/30/Everyworth.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/31/Lexar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/32/Nulaxy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/33/Fitfort.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/34/PopSocket.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/35/SHAWE.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/36/Lenovo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/37/Acer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/38/Dell.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/39/Intel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/4/HP.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/40/ASUS.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/41/Microsoft.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/42/DragonTouch.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/43/AMD.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/44/XFX.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/45/MSI.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/46/Seagate.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/47/Corsair.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/48/Thermaltake.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/49/Kingston.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/5/SanDisk.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/50/Creative.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/51/Crucial.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/52/HyperX.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/53/Gigabyte.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/54/TP-Link.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/6/Western Digital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/7/Panasonic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/8/Pelican.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/9/Apple.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,28 +41,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/yoliephan/Desktop/TechShop-Springboot-JAVA/ShoptechProject/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/security",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/yoliephan/Desktop/TechShop-Springboot-JAVA/ShoptechProject&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;5dfa6fdcd7d06aeec6ac8abb1598a1e6&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
   </component>
@@ -173,6 +111,8 @@
       <option name="presentableId" value="Default" />
       <updated>1684810069963</updated>
       <workItem from="1684810069964" duration="5397000" />
+      <workItem from="1684817050917" duration="948000" />
+      <workItem from="1684831305914" duration="3919000" />
     </task>
     <servers />
   </component>
