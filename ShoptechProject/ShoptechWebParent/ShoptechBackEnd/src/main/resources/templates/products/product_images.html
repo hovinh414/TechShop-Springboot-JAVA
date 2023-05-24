@@ -6,17 +6,17 @@
     <div class="col border m-3 p-2">
       <div><label>Ảnh đại diện:</label></div>
       <div class="m-4">
-        <img id="thumbnail" alt="Ảnh đại diện" th:src="@{${product.mainImagePath}}"/>
+        <img id="thumbnail" alt="Ảnh đại diện" style="width: 100px" th:src="@{${product.mainImagePath}}"/>
       </div>
       <div>
         <input type="file" id="fileImage" name="fileImage" required accept="image/png, image/jpg"/>
       </div>
     </div>
 
-    <div class="col border m-3 p-2">
-      <div><label>Ảnh sản pẩm #1:</label></div>
+    <div class="col border m-3 p-2" id="divExtraImage0">
+      <div id="extraImageHeader0"><label>Ảnh sản pẩm #1:</label></div>
       <div class="m-4">
-        <img id="extraThumbnail0" alt="Ảnh sản phẩm #1" th:src="@{${product.mainImagePath}}"/>
+        <img id="extraThumbnail0" alt="Ảnh sản phẩm #1" style="width: 100px" th:src="@{${product.mainImagePath}}"/>
       </div>
       <div>
         <input type="file" name="extraImage" accept="image/png, image/jpg"/>
