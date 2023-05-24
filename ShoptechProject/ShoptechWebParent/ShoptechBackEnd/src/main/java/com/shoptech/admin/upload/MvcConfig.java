@@ -23,11 +23,6 @@ public class MvcConfig implements WebMvcConfigurer {
 
 		String logicalPath = pathPattern.replace("../", "") + "/**";
 
-<<<<<<< HEAD
-		registry.addResourceHandler(logicalPath)
-			.addResourceLocations("file:/" + absolutePath + "/");
-=======
->>>>>>> main
 		registry.addResourceHandler(logicalPath)
 			.addResourceLocations("file:" + absolutePath + "/");
 	}

@@ -33,7 +33,7 @@
     <!-- Trang Chủ-->
     <article layout:fragment="content">
       <div class="col-12 grid-margin card-body">
-        <div class="card-body px-5 py-5 border border-secondary rounded p-3" style="max-width: 700px; margin: 0 auto">
+        <div class="card-body px-5 py-5 border border-secondary rounded p-3">
           <h3 class="card-title text-left mb-3">[[${pageTitle}]]</h3>
           <div th:if="${message != null}" class="alert alert-success text-center">
             [[${message}]]
@@ -86,12 +86,6 @@
         </div>
       </div>
     </article>
-    <footer class="footer">
-      <div class="d-sm-flex justify-content-center justify-content-sm-between">
-        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © shoptech.com 2023</span>
-        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.shoptech.com/" target="_blank">TechShop Admin</a> from ShopTech.com</span>
-      </div>
-    </footer>
     <!-- partial -->
   </div>
   <!-- main-panel ends -->
@@ -156,10 +150,10 @@
     productId = $("#id").val();
     productName = $("#name").val();
     csrfValue = $("input[name='_csrf']").val();
-    url= "[[@{/products/check_unique}]]";
+    checkUniqueUrl = "[[@{/products/check_unique}]]";
     params = {id: productId, name: productName, _csrf: csrfValue};
 
-    $.post(url, params, function(response) {
+    $.post(checkUniqueUrl, params, function(response) {
       if (response == "OK") {
         form.submit();
       } else if (response == "Duplicate") {

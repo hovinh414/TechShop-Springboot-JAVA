@@ -125,12 +125,6 @@
           </div>
         </div>
       </article>
-      <footer class="footer">
-        <div class="d-sm-flex justify-content-center justify-content-sm-between">
-          <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © shoptech.com 2023</span>
-          <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.shoptech.com/" target="_blank">TechShop Admin</a> from ShopTech.com</span>
-        </div>
-      </footer>
       <!-- partial -->
     </div>
     <!-- main-panel ends -->
@@ -158,6 +152,7 @@
 <!-- endinject -->
 <!-- Custom js for this page -->
 <script th:src="@{assets/js/dashboard.js}"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!-- End custom js for this page -->
 <script type="text/javascript">
   $(document).ready(function(){
@@ -200,13 +195,28 @@
       if(response == "OK"){
         form.submit();
       }else if(response == "Duplicated"){
-        alert("Email " + userEmail + " đã được sửa dụng!");
+        swal({
+          title: 'Thông báo',
+          text:'Email ' + userEmail + ' đã được sửa dụng!',
+          icon:'warning',
+          button:'OK'
+        });
       }else{
-        alert("Lỗi", "Không nhận được thông tin!");
+        swal({
+          title: 'Thông báo',
+          text:'Không nhận được thông tin!',
+          icon:'warning',
+          button:'OK'
+        });
       }
       /* alert("Response server: " + response);*/
     }).fail(function(){
-      alert("Lỗi", "Không nhận được thông tin!");
+      swal({
+        title: 'Thông báo',
+        text:'Không nhận được thông tin!',
+        icon:'warning',
+        button:'OK'
+      });
     });
     return false;
   }
