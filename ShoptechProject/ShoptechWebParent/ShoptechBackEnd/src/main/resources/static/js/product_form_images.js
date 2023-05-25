@@ -16,14 +16,12 @@ $(document).ready(function(){
 			
 		});
 	});
-	
-	
-	$("a[name='linkRemoveExtraImage']").each(function(index){
-		
-		$(this).click(function(){
+
+
+	$("a[name='linkRemoveExtraImage']").each(function(index) {
+		$(this).click(function() {
 			removeExtraImage(index);
 		});
-		
 	});
 
 });
@@ -77,7 +75,7 @@ function addNextExtraImageSection(index){
 	`;
 	
 	htmlLinkRemove = `
-	<a class=" btn btn-sm btn-danger" 
+	<a style="padding-left: 10px" class=" btn btn-sm btn-danger" 
         href="javascript:removeExtraImage(${index - 1})"
         title="Xóa ảnh">Xóa ảnh</a>`;
 
