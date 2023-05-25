@@ -26,7 +26,7 @@ function getCategoriesForNewForm() {
 		editMode = true;
 	}
 	
-	/* Not editmode*/
+
 	if(!editMode) getCategories();
 }
 
@@ -38,7 +38,6 @@ function getCategories() {
 	$.get(url, function(responseJson) {
 
 		$.each(responseJson, function(index, category) {
-			/* append option tag to the category select tag */
 			$("<option>").val(category.id).text(category.name).appendTo(dropdownCategories);
 		});
 
@@ -48,8 +47,9 @@ function getCategories() {
 function checkUnique(form) {
 	productId = $("#id").val();
 	productName = $("#name").val();
+
 	csrfValue = $("input[name='_csrf']").val();
-	checkUniqueUrl = "[[@{/products/check_unique}]]";
+
 	params = {id: productId, name: productName, _csrf: csrfValue};
 
 	$.post(checkUniqueUrl, params, function(response) {

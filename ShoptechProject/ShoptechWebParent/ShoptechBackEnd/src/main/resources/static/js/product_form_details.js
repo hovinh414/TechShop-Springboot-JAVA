@@ -37,7 +37,7 @@ $(document).ready(function(){
 	htmlLinkRemove = `
 		<a class=" btn btn-sm btn-danger" 
 			href="javascript:removeDetailSectionById('${previousDivDetailID}')"
-		title="Xóa chi tiết sản phẩm">Xóa chi tiết sản phẩm</a>`;
+		title="Xóa chi tiết sản phẩm">Xóa chi tiết</a>`;
 	
 	previousDivDetailSection.append(htmlLinkRemove);
 	
