@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:sec ="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -36,20 +37,32 @@
             <article layout:fragment="content">
                 <div class="card-body">
                     <h4 class="card-title ">QUẢN LÝ SẢN PHẨM</h4>
+                    <th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
                     <a th:href="@{/products/create}" aria-expanded="false" aria-controls="auth">
                     <button type="submit" class="btn btn-danger btn-icon-text" >
                         <i class="mdi mdi-playlist-play"></i>
                         Tạo mới
                     </button>
                     </a>
+                    </th:block>
                     <div th:if="${message != null}" class="alert alert-success text-center">
                         [[${message}]]
                     </div>
+                    <!--- -------------- Lọc danh mục --------------- ----->
+
                     <!--- -------------- Tìm Kiếm --------------- ----->
                     <div  style="padding-top: 10px;" class="input-group m-3">
-                        <form th:action="@{/products/page/1}" class="form-inline d-flex align-items-center">
+                        <form th:action="@{/products/page/1}" class="form-inline d-flex align-items-center" id="searchForm">
                             <input type="hidden" name="sortField" th:value="${sortField}" />
                             <input type="hidden" name="sortDir" th:value="${sortDir}" />
+                            <select style="color: white" class="form-control" name="categoryId" id="dropdownCategory">
+                                <option style="color: white"  value="0">Danh mục sản phẩm</option>
+
+                                <th:block th:each="cat : ${listCategories}">
+                                    <option style="color: white"  th:value="${cat.id}" th:selected="(${categoryId} == ${cat.id})">[[${cat.name}]]</option>
+                                </th:block>
+                            </select>
+                            &nbsp; &nbsp;
                             <input style="color: white" type="search" name="keyword" placeholder="Search" th:value="${keyword}" class="form-control mr-2" required/>
                             <button style="height: 37px; border-radius: 0px 3px 3px 0px;"  type="submit" value="Search" class="btn btn-primary">
                                 <i style="font-size: 16px;"  class="mdi mdi-account-search"></i>
@@ -60,6 +73,7 @@
                         </form>
                     </div>
                     <!--- --------------Xuất CSV | Xuất Excel | Xuất PDF --------------- ----->
+                    <th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
                     <div style="text-align: right;">
                         <a th:href="@{/products/export/csv}" aria-expanded="false" aria-controls="auth">
                             <button type="submit" class="btn btn-outline-behance btn-icon-text" >
@@ -82,6 +96,7 @@
                             </button>
                         </a>
                     </div>
+                    </th:block>
                     <!--- -------------- Danh Sách Category --------------- ----->
                     <div style="padding-top: 12px;" class="table-responsive">
                         <table class="table table-hover">
@@ -92,7 +107,9 @@
                                 <th>Hình ảnh</th>
                                 <th th:replace="fragments :: column_linkPro('brand.name','Thương hiệu')"></th>
                                 <th th:replace="fragments :: column_linkPro('category.name','Danh mục')"></th>
+                                <th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
                                 <th style="text-align: center">Trạng thái</th>
+                                </th:block>
                                 <th>Thao tác</th>
                             </tr>
                             </thead>
@@ -108,6 +125,7 @@
                                 </td>
                                 <td>[[${product.brand.name}]]</td>
                                 <td>[[${product.category.name}]]</td>
+                                <th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
                                 <td style="text-align: center">
                                     <a style="font-size: 16px;" th:if="${product.enabled == true}" class="fas fa-check-square fas-2x icon-blue"
                                        th:href="@{'/products/' + ${product.id} + '/enabled/false'}"
@@ -117,14 +135,17 @@
                                        th:href="@{'/products/' + ${product.id} + '/enabled/true'}"
                                        title="Mở sản phẩm"></a>
                                 </td>
+                                </th:block>
                                 <td>
                                     <a class="fas fa-file-alt fas-2x icon-green link-detail" th:href="@{'/products/detail/' + ${product.id}}" title="Xem chi tiết sản phẩm"></a>
-                                    &nbsp;&nbsp;
+                                    &nbsp;&nbsp;<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor', 'Salesperson')">
                                     <a style="font-size: 16px;" class="fas fa-edit fas-2x icon-purple" th:href="@{'/products/edit/' + ${product.id}}"
                                        title="Sửa sản phẩm"></a>
-                                    &nbsp;&nbsp;
+                                    &nbsp;&nbsp;</th:block>
+                                    <th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
                                     <a style="font-size: 16px;" class="fas fa-trash fas-2x icon-red" onclick="return confirm('Bạn có muốn xóa?')" th:href="@{'/products/delete/' + ${product.id}}"
                                        title="Xóa sản phẩm"></a>
+                                    </th:block>
                                 </td>
                             </tr>
                             </tbody>
@@ -210,9 +231,9 @@
             $("#detailModal").modal("show").find(".modal-content").load(linkDetailURL);
         });
 
-       /* $("#dropdownCategory").on("change", function() {
+       $("#dropdownCategory").on("change", function() {
             $("#searchForm").submit();
-        });*/
+        });
 
     });
     function clearFilter(){

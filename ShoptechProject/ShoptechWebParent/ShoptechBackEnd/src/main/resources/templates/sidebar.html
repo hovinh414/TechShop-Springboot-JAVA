@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec ="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -88,6 +88,7 @@
                 </ul>
             </div>
         </li>
+        <th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
         <li class="nav-item menu-items">
             <a class="nav-link" th:href="@{/categories}" aria-expanded="false" aria-controls="auth">
               <span class="menu-icon">
@@ -96,6 +97,7 @@
                 <span class="menu-title" >Danh mục</span>
             </a>
         </li>
+
         <li class="nav-item menu-items">
             <a class="nav-link" th:href="@{/brands}" aria-expanded="false" aria-controls="auth">
               <span class="menu-icon">
@@ -104,6 +106,8 @@
                 <span class="menu-title">Thương hiệu</span>
             </a>
         </li>
+        </th:block>
+        <th:block sec:authorize="hasAnyAuthority('Admin', 'Salesperson', 'Editor', 'Shipper')">
         <li class="nav-item menu-items">
             <a class="nav-link" th:href="@{/products}" aria-expanded="false" aria-controls="auth">
               <span class="menu-icon">
@@ -112,6 +116,7 @@
                 <span class="menu-title">Sản phẩm</span>
             </a>
         </li>
+        </th:block>
         <li class="nav-item menu-items">
             <a class="nav-link" href="pages/icons/mdi.html">
               <span class="menu-icon">
@@ -120,6 +125,7 @@
                 <span class="menu-title">Icons</span>
             </a>
         </li>
+        <th:block sec:authorize="hasAuthority('Admin')">
         <li class="nav-item menu-items">
             <a class="nav-link" th:href="@{/users}" aria-expanded="false" aria-controls="auth">
               <span class="menu-icon">
@@ -128,6 +134,8 @@
                 <span class="menu-title">Tài khoản</span>
             </a>
         </li>
+        </th:block>
+        <th:block sec:authorize="hasAuthority('Admin')">
         <li class="nav-item menu-items">
             <a class="nav-link" th:href="@{/settings}" aria-expanded="false" aria-controls="auth">
               <span class="menu-icon">
@@ -136,6 +144,7 @@
                 <span class="menu-title">Cài đặt</span>
             </a>
         </li>
+        </th:block>
     </ul>
 </nav>
 <!-- partial -->
