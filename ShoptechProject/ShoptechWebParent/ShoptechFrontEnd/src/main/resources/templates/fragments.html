@@ -1,11 +1,25 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
+<html xmlns:th="http://www.thymeleaf.org">
+=======
 <htmlxmlns:th="http://www.w3.org/1999/xhtml">
+>>>>>>> main
 
 <head th:fragment="page_head(title, remove)" th:remove="${remove}">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0">
 
   <title>[[${title}]]  [[${SITE_NAME}]]</title>
+  <link rel="shortcut icon" type="image/x-icon" th:href="@{/assets/images/favicon.webp}">
+  <link rel="preconnect" th:href="@{https://fonts.googleapis.com/}">
+  <link rel="preconnect" th:href="@{https://fonts.gstatic.com/}" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/assets/css/vendor/bootstrap.min.css}">
+  <link rel="stylesheet" th:href="@{/assets/css/plugins/swiper-bundle.min.css}">
+  <link rel="stylesheet" th:href="@{/assets/css/plugins/font-awesome.min.css}">
+  <link rel="stylesheet" th:href="@{/assets/css/plugins/fancybox.min.css}">
+  <link rel="stylesheet" th:href="@{/assets/css/plugins/nice-select.css}">
+  <link rel="stylesheet" th:href="@{/assets/css/style.min.css}">
 </head>
 
 <body>
@@ -139,6 +153,19 @@
   </form>
 </div>
 
+<div th:fragment="script">
+  <script th:src="@{/assets/js/vendor/modernizr-3.11.7.min.js}"></script>
+  <script th:src="@{/assets/js/vendor/jquery-3.6.0.min.js}"></script>
+  <script th:src="@{/assets/js/vendor/jquery-migrate-3.3.2.min.js}"></script>
+  <script th:src="@{/assets/js/vendor/bootstrap.bundle.min.js}"></script>
 
+  <!-- Plugins JS -->
+  <script th:src="@{/assets/js/plugins/swiper-bundle.min.js}"></script>
+  <script th:src="@{/assets/js/plugins/fancybox.min.js}"></script>
+  <script th:src="@{/assets/js/plugins/jquery.nice-select.min.js}"></script>
+
+  <!-- Custom Main JS -->
+  <script th:src="@{/assets/js/main.js}"></script>
+</div>
 </body>
 </html>

@@ -47,7 +47,6 @@ public class SettingController {
 
 		return "settings/settings";
 	}
-
 	/*use HttpServletRequest as we did not bind the form to an object; namely, th:object */
 	@PostMapping("/settings/save_general")
 	public String saveGeneralSettings(@RequestParam("fileImage") MultipartFile multipartFile,
