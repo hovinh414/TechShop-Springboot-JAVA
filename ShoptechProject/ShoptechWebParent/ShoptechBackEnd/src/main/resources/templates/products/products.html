@@ -87,11 +87,11 @@
                         <table class="table table-hover">
                             <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Tên sản phẩm</th>
+                                <th th:replace="fragments :: column_linkPro('id','ID')"></th>
+                                <th th:replace="fragments :: column_linkPro('name','Tên sản phẩm')"></th>
                                 <th>Hình ảnh</th>
-                                <th>Thương hiệu</th>
-                                <th>Danh mục</th>
+                                <th th:replace="fragments :: column_linkPro('brand.name','Thương hiệu')"></th>
+                                <th th:replace="fragments :: column_linkPro('category.name','Danh mục')"></th>
                                 <th style="text-align: center">Trạng thái</th>
                                 <th>Thao tác</th>
                             </tr>
@@ -99,9 +99,12 @@
                             <tbody>
                             <tr th:each="product : ${listProducts}">
                                 <td>[[${product.id}]]</td>
-                                <td>[[${product.name}]]</td>
                                 <td>
+                                    <a class="link-detail"style="color: #6c7293" th:href="@{'/products/detail/' + ${product.id}}" th:title="${product.name}">[[${product.shortName}]]</a>
 
+                                </td>
+                                <td>
+                                    <img th:src="@{${product.mainImagePath}}" style="width: 100px"/>
                                 </td>
                                 <td>[[${product.brand.name}]]</td>
                                 <td>[[${product.category.name}]]</td>
@@ -115,7 +118,7 @@
                                        title="Mở sản phẩm"></a>
                                 </td>
                                 <td>
-                                    <a class="fas fa-file-alt fas-2x icon-green" th:href="@{'/products/detail/' + ${product.id}}" title="Xem chi tiết sản phẩm"></a>
+                                    <a class="fas fa-file-alt fas-2x icon-green link-detail" th:href="@{'/products/detail/' + ${product.id}}" title="Xem chi tiết sản phẩm"></a>
                                     &nbsp;&nbsp;
                                     <a style="font-size: 16px;" class="fas fa-edit fas-2x icon-purple" th:href="@{'/products/edit/' + ${product.id}}"
                                        title="Sửa sản phẩm"></a>
@@ -129,43 +132,43 @@
                     </div>
                 </div>
             </article>
+            <div class="modal fade" id="detailModal">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                    </div>
+                </div>
+            </div>
             <div class="text-center m-1" th:if="${totalItems > 0}">
                 <span>Hiển thị ID # Từ [[${startCount}]] đến [[${endCount}]] trên [[${totalItems}]] </span>
             </div>
 
             <div class="text-center m-1" th:unless="${totalItems > 0}">
-                <span>Không tìm thấy danh mục!</span>
+                <span>Không tìm thấy sản phẩm!</span>
             </div>
             <div th:if="${totalPages > 1}">
                 <nav>
                     <ul class="pagination justify-content-center">
                         <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-                            <a th:replace="fragments :: page_linkCat(1, 'Đầu')" ></a>
+                            <a th:replace="fragments :: page_linkPro(1, 'Đầu')" ></a>
                         </li>
                         <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-                            <a th:replace="fragments :: page_linkCat(${currentPage - 1}, 'Sau')" ></a>
+                            <a th:replace="fragments :: page_linkPro(${currentPage - 1}, 'Sau')" ></a>
                         </li>
 
                         <li th:class="${currentPage != i ? 'page-item': 'page-item active'}"
                             th:each="i : ${#numbers.sequence(1, totalPages)}">
-                            <a th:replace="fragments :: page_linkCat(${i}, ${i})" ></a>
+                            <a th:replace="fragments :: page_linkPro(${i}, ${i})" ></a>
                         </li>
 
                         <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-                            <a th:replace="fragments :: page_linkCat(${currentPage + 1}, 'Tiếp')" ></a>
+                            <a th:replace="fragments :: page_linkPro(${currentPage + 1}, 'Tiếp')" ></a>
                         </li>
                         <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-                            <a th:replace="fragments :: page_linkCat(${totalPages}, 'Cuối')" ></a>
+                            <a th:replace="fragments :: page_linkPro(${totalPages}, 'Cuối')" ></a>
                         </li>
                     </ul>
                 </nav>
             </div>
-            <footer class="footer">
-                <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                    <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © shoptech.com 2023</span>
-                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.shoptech.com/" target="_blank">TechShop Admin</a> from ShopTech.com</span>
-                </div>
-            </footer>
             <!-- partial -->
         </div>
         <!-- main-panel ends -->
@@ -194,7 +197,24 @@
 <!-- Custom js for this page -->
 <script th:src="@{assets/js/dashboard.js}"></script>
 <script type="text/javascript">
+    moduleURL = "[[@{/products}]]";
+    $(document).ready(function() {
+        /*$(".link-delete").on("click", function(e) {
+            e.preventDefault();
+            showDeleteConfirmModal($(this), 'product');
+        });*/
 
+        $(".link-detail").on("click", function(e) {
+            e.preventDefault();
+            linkDetailURL = $(this).attr("href");
+            $("#detailModal").modal("show").find(".modal-content").load(linkDetailURL);
+        });
+
+       /* $("#dropdownCategory").on("change", function() {
+            $("#searchForm").submit();
+        });*/
+
+    });
     function clearFilter(){
         window.location= "[[@{/products}]]";
     }

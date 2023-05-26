@@ -5,7 +5,6 @@ dropdownCategories = $("#category");
 
 $(document).ready(function() {
 
-	//https://www.jqueryscript.net/text/Rich-Text-Editor-jQuery-RichText.html#google_vignette
 	$("#shortDescription").richText();
 	$("#fullDescription").richText();
 
@@ -27,7 +26,7 @@ function getCategoriesForNewForm() {
 		editMode = true;
 	}
 	
-	/* Not editmode*/
+
 	if(!editMode) getCategories();
 }
 
@@ -39,7 +38,6 @@ function getCategories() {
 	$.get(url, function(responseJson) {
 
 		$.each(responseJson, function(index, category) {
-			/* append option tag to the category select tag */
 			$("<option>").val(category.id).text(category.name).appendTo(dropdownCategories);
 		});
 
@@ -52,19 +50,34 @@ function checkUnique(form) {
 
 	csrfValue = $("input[name='_csrf']").val();
 
-	params = { id: productId, name: productName, _csrf: csrfValue };
+	params = {id: productId, name: productName, _csrf: csrfValue};
 
 	$.post(checkUniqueUrl, params, function(response) {
 		if (response == "OK") {
 			form.submit();
 		} else if (response == "Duplicate") {
-			showWarningModal("There is another product having same name " + productName);
+			swal({
+				title: 'Thông báo',
+				text:'Tên sản phẩm đã tồn tại ' + productName,
+				icon:'warning',
+				button:'OK'
+			});
 		} else {
-			showErrorModal("Unknown response from server");
+			swal({
+				title: 'Thông báo',
+				text:'Không thể kết nối tới server',
+				icon:'warning',
+				button:'OK'
+			});
 		}
 
 	}).fail(function() {
-		showErrorModal("Could not connect to the server");
+		swal({
+			title: 'Thông báo',
+			text:'Không thể kết nối tới server',
+			icon:'warning',
+			button:'OK'
+		});
 	});
 
 	return false;

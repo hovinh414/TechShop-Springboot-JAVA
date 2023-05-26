@@ -84,20 +84,14 @@
               </div>
 
               <div class="text-center">
-                <button type="submit" class="btn btn-primary btn-block enter-btn">Submit</button>
-                <button class="btn btn-secondary btn-block enter-btn" id="buttonCancel">Cancel</button>
+                <input type="submit" value="Save" class="btn btn-primary m-3" />
+                <input type="button" value="Cancel" class="btn btn-secondary" id="buttonCancel" />
               </div>
             </form>
             <div th:replace="~{modal_fragments :: modal_dialog}"></div>
           </div>
         </div>
       </article>
-      <footer class="footer">
-        <div class="d-sm-flex justify-content-center justify-content-sm-between">
-          <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © shoptech.com 2023</span>
-          <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.shoptech.com/" target="_blank">TechShop Admin</a> from ShopTech.com</span>
-        </div>
-      </footer>
       <!-- partial -->
     </div>
     <!-- main-panel ends -->
@@ -122,11 +116,13 @@
 <script th:src="@{/assets/js/misc.js}"></script>
 <script th:src="@{/assets/js/settings.js}"></script>
 <script th:src="@{/assets/js/todolist.js}"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!-- endinject -->
 <!-- Custom js for this page -->
-<script th:src="@{assets/js/dashboard.js}"></script>
+<script th:src="@{/assets/js/dashboard.js}"></script>
 <!-- End custom js for this page -->
 <script type="text/javascript">
+  MAX_FILE_SIZE = 502400;
   $(document).ready(function(){
     $("#buttonCancel").on("click", function(){
       window.location = "[[@{/categories}]]";
@@ -160,15 +156,35 @@
       if(response == "OK") {
         form.submit();
       } else if(response == "DuplicateName") {
-        alert( "Tên danh mục đã tồn tại: "+ catName);
+        swal({
+          title: 'Thông báo',
+          text:'Tên danh mục đã tồn tại ' + catName,
+          icon:'warning',
+          button:'OK'
+        });
       } else if(response == "DuplicateAlias") {
-        alert( "Đường dẫn danh mục đã tồn tại: "+ catAlias);
+        swal({
+          title: 'Thông báo',
+          text:'Đường dẫn đã tồn tại ' + catAlias,
+          icon:'warning',
+          button:'OK'
+        });
       } else {
-        alert( "could not connect to server");
+        swal({
+          title: 'Thông báo',
+          text:'Không thể kết nối tới server',
+          icon:'warning',
+          button:'OK'
+        });
       }
 
     }).fail(function() {
-      alert( "Không thể kể nối tới sever");
+      swal({
+        title: 'Thông báo',
+        text:'Không thể kết nối tới server',
+        icon:'warning',
+        button:'OK'
+      });
     });
 
     return false;

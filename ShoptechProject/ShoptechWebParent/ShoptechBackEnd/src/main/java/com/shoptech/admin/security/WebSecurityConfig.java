@@ -35,12 +35,14 @@ public class WebSecurityConfig {
         return authProvider;
     }
 
+<<<<<<< HEAD
     //NOTE: Đóng từ dòng 39 đến 87  [đang lỗi chưa bik fix]
     /*@Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+=======
 
-        // any request need to be authenticated (require login)
-        // custom login page at "/login" - handler method in MainController class
+    @Bean
+>>>>>>> main
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests()
                 .requestMatchers("/users/**", "/settings/**", "/countries/**", "/states/**").hasAuthority("Admin")
                 .requestMatchers("/products/**", "/categories/**", "/brands/**").hasAnyAuthority("Admin", "Editor")
@@ -56,6 +58,7 @@ public class WebSecurityConfig {
                 .requestMatchers("/customers/**", "/shipping/**", "/report/**").hasAnyAuthority("Admin", "Salesperson")
                 .requestMatchers("/orders/**").hasAnyAuthority("Admin", "Salesperson", "Shipper")
                 .requestMatchers("/articles/**", "/menus/**").hasAnyAuthority("Admin", "Editor")
+                .requestMatchers("/assets/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -66,6 +69,7 @@ public class WebSecurityConfig {
                 *//*.and().rememberMe().key("AbcDefgHijKlmnOpqrs_1234567890")
                 .tokenValiditySeconds(7 * 24 * 60 * 60);  // remember me cookie is valid for one week*//*
 
+<<<<<<< HEAD
         *//*
          * set a fix key used for the md5 hash algorithm to encrypt cookie content each
          * time the application is restarted, a new key will be generated; this key will
@@ -73,23 +77,26 @@ public class WebSecurityConfig {
          * permanent; a fix key is needed.
          *//*
 
+=======
+>>>>>>> main
         http.authenticationProvider(authenticationProvider());
 
         return http.build();
     }
 
-    //NOTE: antMatchers() changed to requestMatchers()
-    //stack: https://stackoverflow.com/questions/74907533/the-method-antmatchersstring-is-undefined-for-the-type
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
-        //permit access to the assets in the following directories
         return (web) -> web.ignoring().requestMatchers("/images/**", "/js/**", "/css/**");
     }*/
 
 
+<<<<<<< HEAD
     //NOTE: Mở Cái này là vô được admin
 
     @Bean
+=======
+    /*@Bean
+>>>>>>> main
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.ALWAYS);
         http.authorizeRequests().anyRequest().permitAll();

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:fragment="content" id="divProductDetails">
+    <th:block th:each="detail, status: ${product.details}">
+        <div class="form-inline" th:id="'divDetail' + ${status.index}">
+            <input type="hidden" name="detailIDs" value="0" />
+            <label class="m-3">Name:</label>
+            <input style="color: white" type="text" class="form-control" name="detailNames" maxlength="255"
+                   th:value="${detail.name}"/>
+            <label class="m-3">Value:</label>
+            <input style="color: white" type="text" class="form-control" name="detailValues" maxlength="255"
+                   th:value="${detail.value}"/>
+            <a name="linkRemoveDetail" class=" btn btn-sm btn-danger"
+                title="Xóa chi tiết sản phẩm">Xóa chi tiết</a>
+        </div>
+    </th:block>
+  <div class="form-inline" th:id="'divDetail' + ${#lists.size(product.details)}">
+      <input type="hidden" name="detailIDs" value="0" />
+      <label class="m-3">Name:</label>
+      <input style="color: white" type="text" class="form-control" name="detailNames" maxlength="255"/>
+      <label class="m-3">Value:</label>
+      <input style="color: white" type="text" class="form-control" name="detailValues" maxlength="255"/>
+  </div>
+</div>
+</body>
+</html>

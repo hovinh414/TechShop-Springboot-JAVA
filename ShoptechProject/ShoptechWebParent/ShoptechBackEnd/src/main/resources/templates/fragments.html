@@ -31,6 +31,14 @@
     <span th:if="${sortField == fieldName}"
           th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></span>
 </th>
+<th th:fragment="column_linkPro(fieldName, columnLabel)">
+    <a style="color: #6c7293"
+       th:href="@{'/products/page/' + ${currentPage}+ '?sortField=' + ${fieldName} +'&sortDir=' + ${sortField != fieldName ? sortDir: reverseSortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">
+        [[${columnLabel}]]
+    </a>
+    <span th:if="${sortField == fieldName}"
+          th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></span>
+</th>
 <!-------------------------- Phân trang ------------------------->
 <a th:fragment="page_link(pageNum, label)"
    class="page-link"
@@ -45,6 +53,11 @@
 <a th:fragment="page_linkBrand(pageNum, label)"
    class="page-link"
    th:href= "@{'/brands/page/' + ${pageNum} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">
+    [[${label}]]
+</a>
+<a th:fragment="page_linkPro(pageNum, label)"
+   class="page-link"
+   th:href= "@{'/products/page/' + ${pageNum} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">
     [[${label}]]
 </a>
 <div th:fragment="pagination(entityName)" th:remove="tag">

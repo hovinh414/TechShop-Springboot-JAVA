@@ -23,9 +23,9 @@ $(document).ready(function(){
 		<div class="form-inline" id="divDetail${divDetailsCount}">
 			<input type="hidden" name="detailIDs" value="0" /> 
 			<label class="m-3">Name:</label>
-			<input type="text" class="form-control w-25" name="detailNames" maxlength="255" />
+			<input style="color: white" type="text" class="form-control" name="detailNames" maxlength="255"/>
 			<label class="m-3">Value:</label>
-			<input type="text" class="form-control w-25" name="detailValues" maxlength="255" />
+			<input style="color: white" type="text" class="form-control" name="detailValues" maxlength="255"/>
 		</div>	
 	`;
 	
@@ -35,10 +35,9 @@ $(document).ready(function(){
 	previousDivDetailID = previousDivDetailSection.attr("id");
 	 	
 	htmlLinkRemove = `
-		<a class="btn fas fa-times-circle fa-2x icon-dark"
+		<a class=" btn btn-sm btn-danger" 
 			href="javascript:removeDetailSectionById('${previousDivDetailID}')"
-			title="Remove this detail"></a>
-	`;
+		title="Xóa chi tiết sản phẩm">Xóa chi tiết</a>`;
 	
 	previousDivDetailSection.append(htmlLinkRemove);
 	

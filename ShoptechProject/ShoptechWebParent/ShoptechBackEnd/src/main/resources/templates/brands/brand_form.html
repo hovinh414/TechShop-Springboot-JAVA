@@ -76,20 +76,14 @@
             </div>
 
             <div class="text-center">
-              <button type="submit" class="btn btn-primary btn-block enter-btn">Submit</button>
-              <button class="btn btn-secondary btn-block enter-btn" id="buttonCancel">Cancel</button>
+              <input type="submit" value="Save" class="btn btn-primary m-3" />
+              <input type="button" value="Cancel" class="btn btn-secondary" id="buttonCancel" />
             </div>
           </form>
           <div th:replace="~{modal_fragments :: modal_dialog}"></div>
         </div>
       </div>
     </article>
-    <footer class="footer">
-      <div class="d-sm-flex justify-content-center justify-content-sm-between">
-        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © shoptech.com 2023</span>
-        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.shoptech.com/" target="_blank">TechShop Admin</a> from ShopTech.com</span>
-      </div>
-    </footer>
     <!-- partial -->
   </div>
   <!-- main-panel ends -->
@@ -116,8 +110,9 @@
 <script th:src="@{/assets/js/todolist.js}"></script>
 <!-- endinject -->
 <!-- Custom js for this page -->
-<script th:src="@{assets/js/dashboard.js}"></script>
+<script th:src="@{/assets/js/dashboard.js}"></script>
 <!-- End custom js for this page -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script type="text/javascript">
   MAX_FILE_SIZE = 102400; // 100KB
   moduleURL = "[[@{/brands}]]";
@@ -140,7 +135,7 @@
       catId = selectedCategory.val();
       catName = selectedCategory.text().replace(/-/g, "");  /*regular expression */
 
-      divChosenCategories.append("<span class='badge badge-success m-1'>" + catName + "</span>");
+      divChosenCategories.append("<span class='badge badge-primary m-1'>" + catName + "</span>");
     });
   }
 
@@ -158,13 +153,28 @@
       if (response == "OK") {
         form.submit();
       } else if (response == "Duplicate") {
-        alert("Tên thương hiệu đã tồn tại " + brandName);
+        swal({
+          title: 'Thông báo',
+          text:'Tên thương hiệu đã tồn tại ' + brandName,
+          icon:'warning',
+          button:'OK'
+        });
       } else {
-        alert("Unknown response from server");
+        swal({
+          title: 'Thông báo',
+          text:'Server không phản hồi',
+          icon:'warning',
+          button:'OK'
+        });
       }
 
     }).fail(function() {
-      alert("Could not connect to the server");
+      swal({
+        title: 'Thông báo',
+        text:'Không thể kết nối tới server',
+        icon:'warning',
+        button:'OK'
+      });
     });
 
     return false;
