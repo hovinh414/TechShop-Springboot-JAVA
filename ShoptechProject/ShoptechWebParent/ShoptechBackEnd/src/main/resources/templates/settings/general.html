@@ -2,7 +2,7 @@
 <html  xmlns:th="http://thymeleaf.org" >
 <body>
 
-<div th:fragment="content" >
+<div th:fragment="content" th:remove="tag">
 
     <form th:action="@{/settings/save_general}" method="post" enctype="multipart/form-data">
         <div class="form-group row">

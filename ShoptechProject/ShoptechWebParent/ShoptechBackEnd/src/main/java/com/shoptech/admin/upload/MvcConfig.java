@@ -16,6 +16,8 @@ public class MvcConfig implements WebMvcConfigurer {
 		exposeDirectory("../brand-logos", registry);
 		exposeDirectory("../product-images", registry);
 		exposeDirectory("../site-logo", registry);
+		registry.addResourceHandler("/static/**")
+				.addResourceLocations("classpath:/static/");
 	}
     private void exposeDirectory(String pathPattern, ResourceHandlerRegistry registry) {
 		Path path = Paths.get(pathPattern);
@@ -26,4 +28,5 @@ public class MvcConfig implements WebMvcConfigurer {
 		registry.addResourceHandler(logicalPath)
 			.addResourceLocations("file:" + absolutePath + "/");
 	}
+
 }

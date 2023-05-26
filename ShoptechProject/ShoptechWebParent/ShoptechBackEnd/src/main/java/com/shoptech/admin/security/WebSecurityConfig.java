@@ -36,7 +36,7 @@ public class WebSecurityConfig {
     }
 
     //NOTE: Đóng từ dòng 39 đến 87  [đang lỗi chưa bik fix]
-    @Bean
+    /*@Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
         // any request need to be authenticated (require login)
@@ -63,15 +63,15 @@ public class WebSecurityConfig {
                 .usernameParameter("email")
                 .permitAll()
                 .and().logout().permitAll();
-                /*.and().rememberMe().key("AbcDefgHijKlmnOpqrs_1234567890")
-                .tokenValiditySeconds(7 * 24 * 60 * 60);  // remember me cookie is valid for one week*/
+                *//*.and().rememberMe().key("AbcDefgHijKlmnOpqrs_1234567890")
+                .tokenValiditySeconds(7 * 24 * 60 * 60);  // remember me cookie is valid for one week*//*
 
-        /*
+        *//*
          * set a fix key used for the md5 hash algorithm to encrypt cookie content each
          * time the application is restarted, a new key will be generated; this key will
          * be used to encrypt the cookie content so, in order for the cookie to be
          * permanent; a fix key is needed.
-         */
+         *//*
 
         http.authenticationProvider(authenticationProvider());
 
@@ -84,17 +84,17 @@ public class WebSecurityConfig {
     public WebSecurityCustomizer webSecurityCustomizer() {
         //permit access to the assets in the following directories
         return (web) -> web.ignoring().requestMatchers("/images/**", "/js/**", "/css/**");
-    }
+    }*/
 
 
     //NOTE: Mở Cái này là vô được admin
 
-    /*@Bean
+    @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.ALWAYS);
         http.authorizeRequests().anyRequest().permitAll();
         return http.build();
-    }*/
+    }
 
 
 

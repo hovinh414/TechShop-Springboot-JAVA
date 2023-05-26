@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  xmlns:th="http://thymeleaf.org" >
+<html  xmlns:th="http://www.thymeleaf.org" >
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -21,6 +21,8 @@
     <link rel="stylesheet" th:href="@{/assets/css/style.css}">
     <!-- End layout styles -->
     <link rel="shortcut icon" th:href="@{/assets/images/favicon.png}" />
+    <script src="../../static/js/common_form.js"></script>
+
 </head>
 <body>
 <div class="container-scroller">
@@ -375,63 +377,63 @@
             <!-- partial:partials/_footer.html -->
             <!-- Trang Chủ-->
             <article th:fragment="content">
-                <div class="card-body">
-                    <h4 class="card-title ">SITE SETTING</h4>
+
                     <!--<a th:href="@{/createcategories}" aria-expanded="false" aria-controls="auth">
                         <button type="submit" class="btn btn-danger btn-icon-text" >
                             <i class="mdi mdi-playlist-play"></i>
                             Tạo mới
                         </button>
                     </a>-->
-                    <div class="container-fluid">
-                        <div th:if="${message != null}" class="alert alert-success text-center">
-                            [[${message}]]
-                        </div>
-                        <div>
-                            <ul class="nav nav-tabs" id="settingTab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#general" role="tab">General</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#countries" role="tab">Countries</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#states" role="tab">States</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#mailServer" role="tab">Mail Server</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#mailTemplates" role="tab">Mail Templates</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#payment" role="tab">Payment</a>
-                                </li>
-                            </ul>
+                    <div th:if="${message != null}" class="alert alert-success text-center">
+                        [[${message}]]
+                    </div>
+                    <div>
+                        <ul class="nav nav-tabs" id="settingTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#general" role="tab">General</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#countries" role="tab">Countries</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#states" role="tab">States</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#mailServer" role="tab">Mail Server</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#mailTemplates" role="tab">Mail Templates</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#payment" role="tab">Payment</a>
+                            </li>
+                        </ul>
 
-
-                            <div class="tab-content">
-                                <div class="tab-pane active p-3" id="general" role="tabpanel">
-                                    <h2>general</h2>
-                                    <div th:replace="~{settings/general :: content}"></div>
-                                </div>
-                                <div class="tab-pane p-3" id="countries" role="tabpanel">
-                                    <h2>countries</h2>
-                                    <div th:replace="~{settings/countries :: content}"></div>
-                                </div>
-                                <div class="tab-pane p-3" id="states" role="tabpanel">
-                                    <div th:replace="~{settings/states :: content}"></div>
-                                </div>
-                                <div class="tab-pane p-3" id="mailServer" role="tabpanel">
-                                    <div th:replace="~{settings/mail_server :: content}"></div>
-                                </div>
-                                <div class="tab-pane p-3" id="mailTemplates" role="tabpanel">
-                                    <div th:replace="~{settings/mail_templates/mail_templates :: content}"></div>
-                                </div>
-                                <div class="tab-pane p-3" id="payment" role="tabpanel">
-                                    <div th:replace="~{settings/payment :: content}"></div>
-                                </div>
+                        <div class="tab-content">
+                            <div class="tab-pane active p-3" id="general" role="tabpanel">
+                                <div th:replace="settings/general :: content"></div>
                             </div>
+                            <div class="tab-pane p-3" id="countries" role="tabpanel">
+                                <div th:replace="settings/countries :: content"></div>
+                            </div>
+                            <div class="tab-pane p-3" id="states" role="tabpanel">
+                                <div th:replace="settings/states :: content"></div>
+                            </div>
+                            <div class="tab-pane p-3" id="mailServer" role="tabpanel">
+                                <!--<div th:replace="settings/mail_server :: content"></div>-->
+                            </div>
+                            <div class="tab-pane p-3" id="mailTemplates" role="tabpanel">
+                                <!--<div th:replace="settings/mail_templates/mail_templates :: content"></div>-->
+                            </div>
+                            <div class="tab-pane p-3" id="payment" role="tabpanel">
+                                <!--<div th:replace="settings/payment :: content"></div>-->
+                            </div>
+                        </div>
+                    </div>
+                <div class="toast justify-content-center d-flex" role="alert" aria-live="polite" aria-atomic="true" data-delay="3000">
+                    <div role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-body">
+                            <span id="toastMessage"></span>
                         </div>
                     </div>
                 </div>
@@ -456,14 +458,14 @@
 <script type="text/javascript">
 
     MAX_FILE_SIZE = 102400; // 100KB
-        /*contextPath= "[[@{/}]]";
+        contextPath= "[[@{/}]]";
         var csrfHeaderName = "[[${_csrf.headerName}]]";
         var csrfValue = "[[${_csrf.token}]]";
 
         $(document).ready(function() {
             $("#customerVerificationContent").richText();
-            /!* $("#orderConfirmationContent").richText({height: 400}); *!/
-        });*/
+            /* $("#orderConfirmationContent").richText({height: 400}); */
+        });
 
 </script>
 <!--end choose image-->
@@ -483,7 +485,13 @@
 <script th:src="@{/assets/js/todolist.js}"></script>
 <!-- endinject -->
 <!-- Custom js for this page -->
-<script th:src="@{assets/js/dashboard.js}"></script>
+<script th:src="@{/assets/js/dashboard.js}"></script>
 <!-- End custom js for this page -->
+<!--<script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}" ></script>-->
+<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" ></script>
+<script type="text/javascript" th:src="@{/js/common.js}" ></script>
+<script th:src="@{/js/common_form.js}"></script>
+<script th:src="@{/js/countries_setting.js}"></script>
+<script th:src="@{/js/states_setting.js}"></script>
 </body>
 </html>

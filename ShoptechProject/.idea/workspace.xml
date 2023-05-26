@@ -5,86 +5,62 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c32a9d2-72a0-46d0-9220-abd148727d77" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/security/ShoptechUserDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/security/ShoptechUserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/setting/country/CountryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/setting/country/CountryRestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/setting/state/StateDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/setting/state/StateRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/setting/state/StateRestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/settings/countries.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/settings/states.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/test/java/com/shoptech/admin/setting/country/CountryRepositoryTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/test/java/com/shoptech/admin/setting/country/CountryRestControllerTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/test/java/com/shoptech/admin/setting/state/StateRepositoryTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/test/java/com/shoptech/admin/setting/state/StateRestControllerTests.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Currency.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Setting.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/SettingBag.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/SettingCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/breadcrumb.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/error.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/error/403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/error/500.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/navigation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/product/product_fragments.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/LoginController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/security/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/setting/SettingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/setting/SettingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/upload/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/upload/MvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/static/js/countries_setting.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/static/js/countries_setting.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/products/product_overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/products/product_overview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/settings/general.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/settings/general.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/settings/settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/settings/settings.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/1/Canon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/10/Samsung.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/11/Olympus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/12/Caden.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/13/amazonbasics.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/14/Nikon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/15/Neewer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/16/Sigma.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/17/Bosch.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/18/Joby.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/19/GoPro.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/2/Fujifilm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/20/Manfrotto.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/21/Google.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/22/LG.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/23/Motorola.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/24/Pantech.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/25/Huawei.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/26/Xiaomi.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/27/Hovamp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/28/Aioneus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/29/XIAE.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/3/Sony.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/30/Everyworth.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/31/Lexar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/32/Nulaxy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/33/Fitfort.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/34/PopSocket.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/35/SHAWE.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/36/Lenovo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/37/Acer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/38/Dell.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/39/Intel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/4/HP.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/40/ASUS.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/41/Microsoft.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/42/DragonTouch.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/43/AMD.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/44/XFX.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/45/MSI.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/46/Seagate.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/47/Corsair.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/48/Thermaltake.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/49/Kingston.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/5/SanDisk.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/50/Creative.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/51/Crucial.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/52/HyperX.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/53/Gigabyte.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/54/TP-Link.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/6/Western Digital.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/7/Panasonic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/8/Pelican.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brand-logos/9/Apple.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/MvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/setting/SettingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/setting/SettingFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/error/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/error/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/fragments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/layouts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/layouts/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/product/product_by_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/product/product_by_item.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/product/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/product/product_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/site-logo/MyShop.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -100,12 +76,16 @@
     </option>
   </component>
   <component name="ProjectId" id="2QAxDYF9nzu9o6Wj5pGYYigvIrq" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -114,7 +94,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/yoliephan/Desktop/TechShop-Springboot-JAVA/ShoptechProject/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/security",
+    "last_opened_file_path": "C:/Users/ADMIN/Desktop/Web java/baithuchanh3",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -123,6 +103,7 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "5dfa6fdcd7d06aeec6ac8abb1598a1e6",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -130,15 +111,103 @@
     <selection>jr</selection>
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.shoptech.admin.setting.state" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ADMIN\Desktop\Web java\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechBackEnd\src\main\resources\templates\settings" />
+      <recent name="C:\Users\ADMIN\Desktop\Web java\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechBackEnd\src\test\java\com\shoptech\admin\setting\state" />
+      <recent name="C:\Users\ADMIN\Desktop\Web java\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechBackEnd\src\test\java\com\shoptech\admin\setting\country" />
       <recent name="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/security" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ADMIN\Desktop\Web java\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechBackEnd\src\main\resources\static\assets\js" />
+      <recent name="C:\Users\ADMIN\Desktop\Web java\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechFrontEnd\src\main\resources\templates" />
+      <recent name="C:\Users\ADMIN\Desktop\Web java\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechFrontEnd\src\main\resources\templates\error" />
+      <recent name="C:\Users\ADMIN\Desktop\Web java\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechFrontEnd\src\main\resources\templates\layouts" />
       <recent name="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates" />
-      <recent name="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.ShoptechBackEndApplication">
+    <configuration name="CountryRestControllerTests.testDeleteCountry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ShoptechBackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shoptech.admin.setting.country.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shoptech.admin.setting.country" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.setting.country.CountryRestControllerTests" />
+      <option name="METHOD_NAME" value="testDeleteCountry" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CountryRestControllerTests.testUpdateCountry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ShoptechBackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shoptech.admin.setting.country.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shoptech.admin.setting.country" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.setting.country.CountryRestControllerTests" />
+      <option name="METHOD_NAME" value="testUpdateCountry" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StateRestControllerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ShoptechBackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shoptech.admin.setting.state.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shoptech.admin.setting.state" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.setting.state.StateRestControllerTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StateRestControllerTests.testDeleteState" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ShoptechBackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shoptech.admin.setting.state.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shoptech.admin.setting.state" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.setting.state.StateRestControllerTests" />
+      <option name="METHOD_NAME" value="testDeleteState" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StateRestControllerTests.testUpdateState" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ShoptechBackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shoptech.admin.setting.state.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shoptech.admin.setting.state" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.setting.state.StateRestControllerTests" />
+      <option name="METHOD_NAME" value="testUpdateState" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ShoptechBackEndApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="ShoptechBackEnd" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.shoptech.admin.ShoptechBackEndApplication" />
@@ -160,9 +229,23 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.StateRestControllerTests" />
+      <item itemvalue="JUnit.StateRestControllerTests.testDeleteState" />
+      <item itemvalue="JUnit.StateRestControllerTests.testUpdateState" />
+      <item itemvalue="JUnit.CountryRestControllerTests.testDeleteCountry" />
+      <item itemvalue="JUnit.CountryRestControllerTests.testUpdateCountry" />
       <item itemvalue="Spring Boot.ShoptechBackEndApplication" />
       <item itemvalue="Spring Boot.ShoptechFrontEndApplication" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.StateRestControllerTests.testDeleteState" />
+        <item itemvalue="JUnit.StateRestControllerTests.testUpdateState" />
+        <item itemvalue="JUnit.StateRestControllerTests" />
+        <item itemvalue="JUnit.CountryRestControllerTests.testDeleteCountry" />
+        <item itemvalue="JUnit.CountryRestControllerTests.testUpdateCountry" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -173,6 +256,15 @@
       <option name="presentableId" value="Default" />
       <updated>1684810069963</updated>
       <workItem from="1684810069964" duration="5397000" />
+      <workItem from="1684829619049" duration="4732000" />
+      <workItem from="1684842903059" duration="14575000" />
+      <workItem from="1684920633538" duration="24320000" />
+      <workItem from="1684975240951" duration="8795000" />
+      <workItem from="1684992883649" duration="317000" />
+      <workItem from="1684993226447" duration="704000" />
+      <workItem from="1685004648835" duration="1091000" />
+      <workItem from="1685035001465" duration="7357000" />
+      <workItem from="1685062635627" duration="54000" />
     </task>
     <servers />
   </component>

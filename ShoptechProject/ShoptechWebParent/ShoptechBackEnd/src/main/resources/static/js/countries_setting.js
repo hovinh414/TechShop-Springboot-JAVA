@@ -53,24 +53,23 @@ $(document).ready(function() {
 function deleteCountry() {
 	optionValue = dropDownCountry.val();
 	countryId = optionValue.split("-")[0];
-	
+
 	url = contextPath + "countries/delete/" + countryId;
-	
+
 	$.ajax({
 		type: 'DELETE',
 		url: url,
-		beforeSend: function(xhr) {
+		beforeSend: function (xhr) {
 			xhr.setRequestHeader(csrfHeaderName, csrfValue);
 		}
-	}).done(function() {
+	}).done(function () {
 		$("#dropDownCountries option[value='" + optionValue + "']").remove();
 		changeFormStateToNewCountry();
 		showToastMessage("The country has been deleted");
-	}).fail(function() {
+	}).fail(function () {
 		showToastMessage("ERROR: Could not connect to server or server encountered an error");
-	});		
+	});
 }
-
 function updateCountry() {
 	if (!validateFormCountry()) return;
 	
