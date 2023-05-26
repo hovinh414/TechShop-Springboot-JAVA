@@ -1,33 +1,15 @@
 <!DOCTYPE html>
-<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Tech Admin</title>
-    <!-- plugins:css -->
-    <link rel="stylesheet" th:href="@{/assets/vendors/mdi/css/materialdesignicons.min.css}">
-    <link rel="stylesheet" th:href="@{/assets/vendors/css/vendor.bundle.base.css}">
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <link rel="stylesheet" th:href="@{/assets/vendors/jvectormap/jquery-jvectormap.css}">
-    <link rel="stylesheet" th:href="@{/assets/vendors/flag-icon-css/css/flag-icon.min.css}">
-    <link rel="stylesheet" th:href="@{/assets/vendors/owl-carousel-2/owl.carousel.min.css}">
-    <link rel="stylesheet" th:href="@{/assets/vendors/owl-carousel-2/owl.theme.default.min.css}">
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <!-- endinject -->
-    <!-- Layout styles -->
-    <link rel="stylesheet" th:href="@{assets/css/style.css}">
-    <!-- End layout styles -->
-    <link rel="shortcut icon" th:href="@{assets/images/favicon.png}" />
-</head>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="fragments :: page_head('Home - Tech Admin')"></head>
 <body>
 <div class="container-scroller">
     <!-- partial:partials/_sidebar.html -->
     <nav th:replace="~{sidebar :: side_bar}"></nav>
     <div class="container-fluid page-body-wrapper">
         <!-- partial:partials/_navbar.html -->
+        <form th:action="@{/logout}" method="post" th:hidden="true" name="logoutForm"></form>
         <nav class="navbar p-0 fixed-top d-flex flex-row">
             <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
                 <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
@@ -182,7 +164,7 @@
                         <a class="nav-link" id="profileDropdown" href="#" data-bs-toggle="dropdown">
                             <div class="navbar-profile">
                                 <img class="img-xs rounded-circle" src="assets/images/faces/face15.jpg" alt="">
-                                <p class="mb-0 d-none d-sm-block navbar-profile-name">Henry Klein</p>
+                                <p class="mb-0 d-none d-sm-block navbar-profile-name" sec:authentication="principal.username"></p>
                                 <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                             </div>
                         </a>
@@ -196,8 +178,9 @@
                                     </div>
                                 </div>
                                 <div class="preview-item-content">
-                                    <p class="preview-subject mb-1">Settings</p>
+                                    <p class="preview-subject mb-1" th:href="@{/account}">Account</p>
                                 </div>
+
                             </a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item preview-item">
@@ -207,7 +190,7 @@
                                     </div>
                                 </div>
                                 <div class="preview-item-content">
-                                    <p class="preview-subject mb-1">Log out</p>
+                                    <p class="preview-subject mb-1 logoutLink">Log out</p>
                                 </div>
                             </a>
                             <div class="dropdown-divider"></div>
@@ -239,9 +222,9 @@
                                            <p class="mb-0 font-weight-normal d-none d-sm-block">Check out our Pro version with 5 unique layouts!</p>
                                        </div>
                                        <div class="col-3 col-sm-2 col-xl-2 ps-0 text-center">
-                        <span>
-                          <a href="https://www.bootstrapdash.com/product/corona-admin-template/" target="_blank" class="btn btn-outline-light btn-rounded get-started-btn">Upgrade to PRO</a>
-                        </span>
+                                            <span>
+                                              <a href="https://www.bootstrapdash.com/product/corona-admin-template/" target="_blank" class="btn btn-outline-light btn-rounded get-started-btn">Upgrade to PRO</a>
+                                            </span>
                                        </div>
                                    </div>
                                </div>
@@ -916,5 +899,15 @@
 <!-- Custom js for this page -->
 <script th:src="@{assets/js/dashboard.js}"></script>
 <!-- End custom js for this page -->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".logoutLink").on("click", function (e) {
+            e.preventDefault();
+            document.logoutForm.submit();
+        });
+    });
+</script>
+
 </body>
 </html>
