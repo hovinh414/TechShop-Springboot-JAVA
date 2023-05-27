@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:th="http://www.w3.org/1999/xhtml"
-      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head th:replace="fragments :: page_head('Home - Tech Admin')"></head>
 <body>
 <div class="container-scroller">
@@ -164,7 +164,7 @@
                         <a class="nav-link" id="profileDropdown" href="#" data-bs-toggle="dropdown">
                             <div class="navbar-profile">
                                 <img class="img-xs rounded-circle" src="assets/images/faces/face15.jpg" alt="">
-                                <p class="mb-0 d-none d-sm-block navbar-profile-name" sec:authentication="principal.username"></p>
+                                <p class="mb-0 d-none d-sm-block navbar-profile-name"><span sec:authentication="principal.username"> User</span></p>
                                 <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                             </div>
                         </a>
@@ -178,7 +178,7 @@
                                     </div>
                                 </div>
                                 <div class="preview-item-content">
-                                    <p class="preview-subject mb-1" th:href="@{/account}">Account</p>
+                                    <p class="preview-subject mb-1 account-link">Account</p>
                                 </div>
 
                             </a>
@@ -898,16 +898,16 @@
 <!-- endinject -->
 <!-- Custom js for this page -->
 <script th:src="@{assets/js/dashboard.js}"></script>
+<!-- Logout custom js for this page -->
+<script type="text/javascript" th:src="@{/js/common.js}" ></script>
 <!-- End custom js for this page -->
-
-<script type="text/javascript">
-    $(document).ready(function () {
-        $(".logoutLink").on("click", function (e) {
-            e.preventDefault();
-            document.logoutForm.submit();
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var logoutLink = document.querySelector('.account-link');
+        logoutLink.addEventListener('click', function() {
+            window.location.href = '/admin/account';
         });
     });
 </script>
-
 </body>
 </html>
