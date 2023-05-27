@@ -12,7 +12,10 @@ $(document).ready(function(){
 		
 		customizeDropDownMenu();
 		customizeTabs();
+
 	});
+
+
 	
 	
 function customizeDropDownMenu() {
@@ -45,4 +48,6 @@ function customizeTabs() {
 }	
 	
 }
+
+
 	

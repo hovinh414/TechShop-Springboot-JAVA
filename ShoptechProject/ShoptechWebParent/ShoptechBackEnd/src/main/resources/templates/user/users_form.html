@@ -155,16 +155,8 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!-- End custom js for this page -->
 <script type="text/javascript">
-  $(document).ready(function(){
-    $("#buttonCancel").on("click", function(){
-      window.location = "[[@{/users}]]";
-    });
-
     MAX_FILE_SIZE = 102400; // 100KB
     moduleURL = "[[@{/users}]]";
-
-  });
-
   function showImageThumbnail(fileInput){
     var file = fileInput.file[0];
     var reader = new FileReader();

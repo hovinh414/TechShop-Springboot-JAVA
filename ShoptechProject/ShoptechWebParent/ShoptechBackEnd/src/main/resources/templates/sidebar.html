@@ -20,7 +20,7 @@
                         <span class="count bg-success"></span>
                     </div>
                     <div class="profile-name">
-                        <h5 class="mb-0 font-weight-normal" sec:authentication="principal.username">HENRY</h5>
+                        <h5 class="mb-0 font-weight-normal" sec:authentication="principal.fullname"></h5>
                         <span>Gold Member</span>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                             </div>
                         </div>
                         <div class="preview-item-content">
-                            <p class="preview-subject ellipsis mb-1 text-small">Account settings</p>
+                            <p class="preview-subject ellipsis mb-1 text-small setting-link">Settings</p>
                         </div>
                     </a>
                     <div class="dropdown-divider"></div>
@@ -44,7 +44,7 @@
                             </div>
                         </div>
                         <div class="preview-item-content">
-                            <p class="preview-subject ellipsis mb-1 text-small">Change Password</p>
+                            <p class="preview-subject ellipsis mb-1 text-small account-link">Change Password</p>
                         </div>
                     </a>
                     <div class="dropdown-divider"></div>
@@ -318,7 +318,7 @@
                                 </div>
                             </div>
                             <div class="preview-item-content">
-                                <p class="preview-subject mb-1">Settings</p>
+                                <p class="preview-subject mb-1">Account</p>
                             </div>
                         </a>
                         <div class="dropdown-divider"></div>
@@ -345,4 +345,12 @@
     <!-- partial -->
 </div>
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var logoutLink = document.querySelector('.account-link');
+        logoutLink.addEventListener('click', function() {
+            window.location.href = '/admin/account';
+        });
+    });
+</script>
 </html>
