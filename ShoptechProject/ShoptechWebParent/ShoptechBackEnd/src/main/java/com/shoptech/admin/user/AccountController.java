@@ -30,7 +30,9 @@ public class AccountController {
     }
 
     @PostMapping("/account/update")
-    public String saveDetails(User user, RedirectAttributes redirectAttributes, @RequestParam("image") MultipartFile multipartFile) throws IOException {
+    public String saveDetails(User user, RedirectAttributes redirectAttributes,
+                              @AuthenticationPrincipal ShoptechUserDetails loggedUser,
+                              @RequestParam("image") MultipartFile multipartFile) throws IOException {
 
         if (!multipartFile.isEmpty()) {
 
@@ -48,6 +50,9 @@ public class AccountController {
             if (user.getPhotos().isEmpty()) user.setPhotos(null);
             service.updateAccount(user);
         }
+        loggedUser.setFirstName(user.getFirstName());
+        loggedUser.setLastName(user.getLastName());
+
         redirectAttributes.addFlashAttribute("message", "Cập nhật thông tin thành công!");
         return "redirect:/account";
     }
