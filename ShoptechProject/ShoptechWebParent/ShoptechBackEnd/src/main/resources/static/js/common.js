@@ -1,5 +1,5 @@
 $(document).ready(function(){
-		$("#logoutLink").on("click", function(e){
+		$(".logoutLink").on("click", function(e){
 			e.preventDefault(); /* stop the hyperlink default behaviour  */
 			
 			/* use  the form to  log out and navigate to the url path /logout  

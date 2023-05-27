@@ -34,13 +34,16 @@
       <article layout:fragment="content">
         <div class="col-12 grid-margin card-body">
           <div class="card-body px-5 py-5 border border-secondary rounded p-3" style="max-width: 700px; margin: 0 auto">
-            <h3 class="card-title text-left mb-3">[[${pageTitle}]]</h3>
-            <form  th:action="@{/users/save}" th:object="${user}" method="post" enctype="multipart/form-data" onsubmit="return checkEmailUnique(this);" >
+            <h3 class="card-title text-center mb-3">YOUR PROFILE</h3>
+            <div th:if="${message != null}" class="alert alert-success text-center">
+              [[${message}]]
+            </div>
+            <form  th:action="@{/account/update}" th:object="${user}" method="post" enctype="multipart/form-data" >
               <input type="hidden" th:field="*{id}" />
               <div class="form-group">
                 <label class="col-sm-3 col-form-label">Email: </label>
                 <div  class="col-sm-12">
-                  <input style="color:white" type="email" class="form-control p_input" th:field="*{email}" required minlength="8" maxlength="128">
+                  <input style="color:white" type="email" class="form-control p_input" th:field="*{email}" readonly="readonly">
                 </div>
               </div>
               <div class="form-group">
@@ -58,31 +61,24 @@
               <div class="form-group">
                 <label class="col-sm-3 col-form-label">Mật khẩu: </label>
                 <div class="col-sm-12">
-                  <input th:if="${user.id == null}" style="color:white" type="password" class="form-control p_input"
-                         th:field="*{password}" required minlength="8" maxlength="20">
-                  <input th:if="${user.id != null}" style="color:white" type="password" class="form-control p_input"
-                         th:field="*{password}" minlength="8" maxlength="20">
+                  <input style="color:white" type="password" class="form-control p_input"
+                         th:field="*{password}" placeholder="để trống nếu không thay đổi"
+                         minlength="8" maxlength="20"
+                         oninput="checkPasswordMatch(document.getElementById('confirmPassword'))">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-3 col-form-label">Nhập lại mật khẩu: </label>
+                <div class="col-sm-12">
+                  <input style="color:white" type="password" class="form-control p_input" id="confirmPassword"
+                         minlength="8" maxlength="20"
+                        oninput="checkPasswordMatch(this)">
                 </div>
               </div>
               <div class="form-group">
                 <label class="col-sm-3 col-form-label">Chức vụ: </label>
                 <div class="col-sm-12">
-                  <th:blcok th:each="role : ${listRoles}">
-                    <input style="color:white" type="checkbox"  th:field="*{roles}"
-                           th:text="${role.name}"
-                           th:value="${role.id}"
-                           class="m-2 form-check-input "
-                    />
-                    -<small>[[${role.description}]]</small>
-                    <br/>
-                  </th:blcok>
-                </div>
-              </div>
-
-              <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Kích hoạt: </label>
-                <div class="col-sm-3">
-                  <input type="checkbox" class="form-check-primary" th:field="*{enabled}">
+                  <span><b>[[${user.roles}]]</b></span>
                 </div>
               </div>
 
@@ -174,49 +170,20 @@
     reader.readAsDataURL(file);
   }
 
-  function checkEmailUnique(form)
-  {
-    url= "[[@{/users/check_email}]]";
-    userEmail = $("#email").val();
-    csrfValue = $("input[name='_csrf']").val();
-    userId = $("#id").val();
-    params = {id: userId, email: userEmail, _csrf: csrfValue};
+  function checkPasswordMatch(confirmPassword){
 
-    $.post(url, params, function(response){
-      if(response == "OK"){
-        form.submit();
-      }else if(response == "Duplicated"){
-        swal({
-          title: 'Thông báo',
-          text:'Email ' + userEmail + ' đã được sửa dụng!',
-          icon:'warning',
-          button:'OK'
-        });
-      }else{
-        swal({
-          title: 'Thông báo',
-          text:'Không nhận được thông tin!',
-          icon:'warning',
-          button:'OK'
-        });
-      }
-      /* alert("Response server: " + response);*/
-    }).fail(function(){
-      swal({
-        title: 'Thông báo',
-        text:'Không nhận được thông tin!',
-        icon:'warning',
-        button:'OK'
-      });
-    });
-    return false;
+    /*
+        $("#password") selector refers to the input tag with th:field="*{password}"
+    */
+    if(confirmPassword.value != $("#password").val()) {
+      confirmPassword.setCustomValidity("mật khẩu không trùng khớp!");
+
+    }else {
+      confirmPassword.setCustomValidity("");
+    }
+
   }
 
-  function showModalDialog(title, message){
-    $("#modalTitle").text(title);
-    $("#modalBody").text(message);
-    $("#modalDialog").modal();
-  }
 </script>
 <script th:src="@{/js/common_form.js}"></script>
 </body>

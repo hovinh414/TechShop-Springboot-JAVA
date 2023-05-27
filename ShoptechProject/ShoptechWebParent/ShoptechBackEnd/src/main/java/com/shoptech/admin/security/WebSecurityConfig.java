@@ -56,14 +56,13 @@ public class WebSecurityConfig {
                 .formLogin()
                 .loginPage("/login")
                 .usernameParameter("email")
-                .defaultSuccessUrl("/home")
+                .defaultSuccessUrl("/home", true)
                 .permitAll()
                 .and().logout().permitAll()
                 .and().rememberMe()
                 .key("AbcDefgHijKlmnOpqrs_1234567890")
                 .tokenValiditySeconds(7 * 24 * 60 * 60)
                 .userDetailsService(userDetailsService());
-
         http.authenticationProvider(authenticationProvider());
         return http.build();
     }
