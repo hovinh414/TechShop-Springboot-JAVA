@@ -164,7 +164,7 @@
                         <a class="nav-link" id="profileDropdown" href="#" data-bs-toggle="dropdown">
                             <div class="navbar-profile">
                                 <img class="img-xs rounded-circle" src="assets/images/faces/face15.jpg" alt="">
-                                <p class="mb-0 d-none d-sm-block navbar-profile-name"><span sec:authentication=" ${#authentication.getPrincipal().getFullname}"></span></p>
+                                <p class="mb-0 d-none d-sm-block navbar-profile-name"><span sec:authentication=" ${#authentication.getPrincipal().getFullname}">User</span></p>
                                 <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                             </div>
                         </a>
@@ -901,7 +901,7 @@
 <!-- Logout custom js for this page -->
 <script type="text/javascript" th:src="@{/js/common.js}" ></script>
 <!-- End custom js for this page -->
-<script>
+<script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
         var logoutLink = document.querySelector('.account-link');
         logoutLink.addEventListener('click', function() {
