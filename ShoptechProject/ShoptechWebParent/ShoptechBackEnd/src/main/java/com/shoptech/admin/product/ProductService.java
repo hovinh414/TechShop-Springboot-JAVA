@@ -1,5 +1,6 @@
 package com.shoptech.admin.product;
 
+import com.shoptech.admin.paging.PagingAndSortingHelper;
 import com.shoptech.entity.Brand;
 import com.shoptech.entity.Product;
 import com.shoptech.exception.ProductNotFoundException;
@@ -101,5 +102,12 @@ public class ProductService {
         } catch (NoSuchElementException ex) {
             throw new ProductNotFoundException("Không tìm thấy sản phẩm với ID " + id);
         }
+    }
+
+    public void searchProducts(int pageNum, PagingAndSortingHelper helper) {
+        Pageable pageable = helper.createPageable(PRODUCTS_PER_PAGE, pageNum);
+        String keyword = helper.getKeyword();
+        Page<Product> page = repo.searchProductsByName(keyword, pageable);
+        helper.updateModelAttributes(pageNum, page);
     }
 }

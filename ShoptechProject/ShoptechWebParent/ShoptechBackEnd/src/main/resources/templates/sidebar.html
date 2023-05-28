@@ -44,18 +44,18 @@
                             </div>
                         </div>
                         <div class="preview-item-content">
-                            <p class="preview-subject ellipsis mb-1 text-small account-link">Change Password</p>
+                            <p class="preview-subject ellipsis mb-1 text-small account-link">Profile</p>
                         </div>
                     </a>
                     <div class="dropdown-divider"></div>
                     <a href="#" class="dropdown-item preview-item">
                         <div class="preview-thumbnail">
                             <div class="preview-icon bg-dark rounded-circle">
-                                <i class="mdi mdi-calendar-today text-success"></i>
+                                <i class="mdi mdi-logout text-success"></i>
                             </div>
                         </div>
                         <div class="preview-item-content">
-                            <p class="preview-subject ellipsis mb-1 text-small">To-do list</p>
+                            <p class="preview-subject ellipsis mb-1 text-small logoutLink">Log out</p>
                         </div>
                     </a>
                 </div>
@@ -65,7 +65,7 @@
             <span class="nav-link">Navigation</span>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" th:href="@{/home}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -345,7 +345,8 @@
     <!-- partial -->
 </div>
 </body>
-<script>
+<script type="text/javascript" th:src="@{/js/common.js}" ></script>
+<script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
         var logoutLink = document.querySelector('.account-link');
         logoutLink.addEventListener('click', function() {
