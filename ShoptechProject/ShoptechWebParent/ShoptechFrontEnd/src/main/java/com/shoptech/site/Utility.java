@@ -1,5 +1,15 @@
 package com.shoptech.site;
 
+<<<<<<< HEAD
+import com.shoptech.site.security.oauth.CustomerOAuth2User;
+import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.security.authentication.RememberMeAuthenticationToken;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
+
+public class Utility {
+    public static String getEmailOfAuthenticatedCustomer(HttpServletRequest request) {
+=======
 import com.shoptech.site.setting.EmailSettingBag;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
@@ -31,6 +41,7 @@ public class Utility {
     }
 
     /*public static String getEmailOfAuthenticatedCustomer(HttpServletRequest request) {
+>>>>>>> main
         Object principal = request.getUserPrincipal();
         if (principal == null) return null;
 
@@ -44,6 +55,10 @@ public class Utility {
             CustomerOAuth2User oauth2User = (CustomerOAuth2User) oauth2Token.getPrincipal();
             customerEmail = oauth2User.getEmail();
         }
+<<<<<<< HEAD
+        return customerEmail;
+    }
+=======
 
         return customerEmail;
     }*/
@@ -76,4 +91,5 @@ public class Utility {
 
         return formatter.format(amount);
     }*/
+>>>>>>> main
 }

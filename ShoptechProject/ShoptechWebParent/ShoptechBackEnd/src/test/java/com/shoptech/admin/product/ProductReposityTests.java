@@ -25,8 +25,8 @@ public class ProductReposityTests {
 
     @Test
     public void testCreateProduct() {
-        Brand brand =entityManager.find(Brand.class, 3); // sửa lại id theo trong database của từng người
-        Category category = entityManager.find(Category.class, 7); // cái này cũng vậy vì id cảu mỗi người khác nhau
+        Brand brand =entityManager.find(Brand.class, 7); // sửa lại id theo trong database của từng người
+        Category category = entityManager.find(Category.class, 6); // cái này cũng vậy vì id cảu mỗi người khác nhau
         Product product = new Product();
         product.setName("Iphone 13 ProMax con chó Quỳnh");
         product.setAlias("iphone_13_promax_con_cho_quynh");
@@ -47,8 +47,8 @@ public class ProductReposityTests {
     }
     @Test
     public void testCreateProduct2() {
-        Brand brand =entityManager.find(Brand.class, 1);
-        Category category = entityManager.find(Category.class, 9);
+        Brand brand =entityManager.find(Brand.class, 7);
+        Category category = entityManager.find(Category.class, 6);
         Product product = new Product();
         product.setName("Acer nitro 5 con chó Trung");
         product.setAlias("acer nitro 5 con cho Trung");
@@ -74,8 +74,8 @@ public class ProductReposityTests {
 
     @Test
     public void testCreateProduct3() {
-        Brand brand =entityManager.find(Brand.class, 3);
-        Category category = entityManager.find(Category.class, 7);
+        Brand brand =entityManager.find(Brand.class, 7);
+        Category category = entityManager.find(Category.class, 6);
         Product product = new Product();
         product.setName("Winner X con chó Lộc");
         product.setAlias("winner x con cho loc");

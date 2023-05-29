@@ -33,12 +33,15 @@ public class WebSecurityConfig {
         return authProvider;
     }
 
-<<<<<<< HEAD
     //NOTE: Đóng từ dòng 39 đến 87  [đang lỗi chưa bik fix]
 
     /*@Bean
+<<<<<<< HEAD
+
+=======
 =======
     @Bean
+>>>>>>> main
 >>>>>>> main
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests()
@@ -68,18 +71,28 @@ public class WebSecurityConfig {
                 .and().logout().permitAll();
                 *//*.and().rememberMe().key("AbcDefgHijKlmnOpqrs_1234567890")
                 .tokenValiditySeconds(7 * 24 * 60 * 60);  // remember me cookie is valid for one week*//*
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> main
         *//*
          * set a fix key used for the md5 hash algorithm to encrypt cookie content each
          * time the application is restarted, a new key will be generated; this key will
          * be used to encrypt the cookie content so, in order for the cookie to be
          * permanent; a fix key is needed.
          *//*
+<<<<<<< HEAD
+
+
+=======
 =======
                 .and().logout().permitAll()
                 .and().rememberMe()
                 .key("AbcDefgHijKlmnOpqrs_1234567890")
                 .tokenValiditySeconds(7 * 24 * 60 * 60)
                 .userDetailsService(userDetailsService());
+>>>>>>> main
 >>>>>>> main
         http.authenticationProvider(authenticationProvider());
         return http.build();
@@ -96,8 +109,11 @@ public class WebSecurityConfig {
 
 <<<<<<< HEAD
     @Bean
+<<<<<<< HEAD
+=======
 =======
    /* @Bean
+>>>>>>> main
 >>>>>>> main
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.ALWAYS);
