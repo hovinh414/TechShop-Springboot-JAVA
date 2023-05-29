@@ -1,5 +1,6 @@
 package com.shoptech.admin.product;
 
+import com.shoptech.admin.paging.PagingAndSortingHelper;
 import com.shoptech.entity.Brand;
 import com.shoptech.entity.Product;
 import com.shoptech.exception.ProductNotFoundException;
@@ -23,14 +24,23 @@ public class ProductService {
     public List<Product> listAll() {
         return (List<Product>) repo.findAll();
     }
-    public Page<Product> listByPage(int pageNum, String sortField, String sortDir, String keyword) {
+    public Page<Product> listByPage(int pageNum, String sortField, String sortDir, String keyword, Integer categoryId) {
         Sort sort = Sort.by(sortField);
 
         sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
         Pageable pageable = PageRequest.of(pageNum - 1, PRODUCTS_PER_PAGE, sort);
 
-        if (keyword != null) {
+        if (keyword != null && !keyword.isEmpty()) {
+            if (categoryId != null && categoryId > 0) {
+                String categoryIdMatch = "-" + String.valueOf(categoryId) + "-";
+                return repo.searchInCategory(categoryId, categoryIdMatch,keyword, pageable);
+            }
             return repo.findAll(keyword, pageable);
+        }
+
+        if (categoryId != null && categoryId > 0) {
+            String categoryIdMatch = "-" + String.valueOf(categoryId) + "-";
+            return repo.findAllInCategory(categoryId, categoryIdMatch, pageable);
         }
         return repo.findAll(pageable);
     }
@@ -51,6 +61,14 @@ public class ProductService {
 
 
         return repo.save(product);
+    }
+    public void saveProductPrice(Product productInForm) {
+        Product productInDB = repo.findById(productInForm.getId()).get();
+        productInDB.setCost(productInForm.getCost());
+        productInDB.setPrice(productInForm.getPrice());
+        productInDB.setDiscountPercent(productInForm.getDiscountPercent());
+
+        repo.save(productInDB);
     }
     public String checkUnique(Integer id, String name) {
         boolean isCreatingNew = (id == null || id == 0);
@@ -84,5 +102,12 @@ public class ProductService {
         } catch (NoSuchElementException ex) {
             throw new ProductNotFoundException("Không tìm thấy sản phẩm với ID " + id);
         }
+    }
+
+    public void searchProducts(int pageNum, PagingAndSortingHelper helper) {
+        Pageable pageable = helper.createPageable(PRODUCTS_PER_PAGE, pageNum);
+        String keyword = helper.getKeyword();
+        Page<Product> page = repo.searchProductsByName(keyword, pageable);
+        helper.updateModelAttributes(pageNum, page);
     }
 }

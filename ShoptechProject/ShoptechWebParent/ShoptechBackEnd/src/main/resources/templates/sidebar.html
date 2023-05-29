@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec ="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -8,8 +8,8 @@
 <!-- partial:partials/_sidebar.html -->
 <nav th:fragment="side_bar" class="sidebar sidebar-offcanvas" id="sidebar">
     <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-        <a class="sidebar-brand brand-logo" href="index.html"><img src="assets/images/logo.svg" alt="logo" /></a>
-        <a class="sidebar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
+        <a class="sidebar-brand brand-logo" th:href="@{/home}"><img src="assets/images/logo.svg" alt="logo" /></a>
+        <a class="sidebar-brand brand-logo-mini" th:href="@{/home}"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
     </div>
     <ul class="nav">
         <li class="nav-item profile">
@@ -20,7 +20,7 @@
                         <span class="count bg-success"></span>
                     </div>
                     <div class="profile-name">
-                        <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
+                        <h5 class="mb-0 font-weight-normal" sec:authentication="principal.fullname"></h5>
                         <span>Gold Member</span>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                             </div>
                         </div>
                         <div class="preview-item-content">
-                            <p class="preview-subject ellipsis mb-1 text-small">Account settings</p>
+                            <p class="preview-subject ellipsis mb-1 text-small setting-link">Settings</p>
                         </div>
                     </a>
                     <div class="dropdown-divider"></div>
@@ -44,18 +44,18 @@
                             </div>
                         </div>
                         <div class="preview-item-content">
-                            <p class="preview-subject ellipsis mb-1 text-small">Change Password</p>
+                            <p class="preview-subject ellipsis mb-1 text-small account-link">Profile</p>
                         </div>
                     </a>
                     <div class="dropdown-divider"></div>
                     <a href="#" class="dropdown-item preview-item">
                         <div class="preview-thumbnail">
                             <div class="preview-icon bg-dark rounded-circle">
-                                <i class="mdi mdi-calendar-today text-success"></i>
+                                <i class="mdi mdi-logout text-success"></i>
                             </div>
                         </div>
                         <div class="preview-item-content">
-                            <p class="preview-subject ellipsis mb-1 text-small">To-do list</p>
+                            <p class="preview-subject ellipsis mb-1 text-small logoutLink">Log out</p>
                         </div>
                     </a>
                 </div>
@@ -65,7 +65,7 @@
             <span class="nav-link">Navigation</span>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" th:href="@{/home}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -88,6 +88,7 @@
                 </ul>
             </div>
         </li>
+        <th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
         <li class="nav-item menu-items">
             <a class="nav-link" th:href="@{/categories}" aria-expanded="false" aria-controls="auth">
               <span class="menu-icon">
@@ -96,6 +97,7 @@
                 <span class="menu-title" >Danh mục</span>
             </a>
         </li>
+
         <li class="nav-item menu-items">
             <a class="nav-link" th:href="@{/brands}" aria-expanded="false" aria-controls="auth">
               <span class="menu-icon">
@@ -104,6 +106,8 @@
                 <span class="menu-title">Thương hiệu</span>
             </a>
         </li>
+        </th:block>
+        <th:block sec:authorize="hasAnyAuthority('Admin', 'Salesperson', 'Editor', 'Shipper')">
         <li class="nav-item menu-items">
             <a class="nav-link" th:href="@{/products}" aria-expanded="false" aria-controls="auth">
               <span class="menu-icon">
@@ -112,6 +116,7 @@
                 <span class="menu-title">Sản phẩm</span>
             </a>
         </li>
+        </th:block>
         <li class="nav-item menu-items">
             <a class="nav-link" href="pages/icons/mdi.html">
               <span class="menu-icon">
@@ -120,6 +125,7 @@
                 <span class="menu-title">Icons</span>
             </a>
         </li>
+        <th:block sec:authorize="hasAuthority('Admin')">
         <li class="nav-item menu-items">
             <a class="nav-link" th:href="@{/users}" aria-expanded="false" aria-controls="auth">
               <span class="menu-icon">
@@ -128,6 +134,8 @@
                 <span class="menu-title">Tài khoản</span>
             </a>
         </li>
+        </th:block>
+        <th:block sec:authorize="hasAuthority('Admin')">
         <li class="nav-item menu-items">
             <a class="nav-link" th:href="@{/settings}" aria-expanded="false" aria-controls="auth">
               <span class="menu-icon">
@@ -136,6 +144,7 @@
                 <span class="menu-title">Cài đặt</span>
             </a>
         </li>
+        </th:block>
     </ul>
 </nav>
 <!-- partial -->
@@ -292,7 +301,7 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link" id="profileDropdown" href="#" data-bs-toggle="dropdown">
+                    <a class="nav-link" id="profileDropdown"  th:href="@{/home}" data-bs-toggle="dropdown">
                         <div class="navbar-profile">
                             <img class="img-xs rounded-circle" src="/assets/images/faces/face15.jpg" alt="">
                             <p class="mb-0 d-none d-sm-block navbar-profile-name">Henry Klein</p>
@@ -309,7 +318,7 @@
                                 </div>
                             </div>
                             <div class="preview-item-content">
-                                <p class="preview-subject mb-1">Settings</p>
+                                <p class="preview-subject mb-1">Account</p>
                             </div>
                         </a>
                         <div class="dropdown-divider"></div>
@@ -336,4 +345,13 @@
     <!-- partial -->
 </div>
 </body>
+<script type="text/javascript" th:src="@{/js/common.js}" ></script>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        var logoutLink = document.querySelector('.account-link');
+        logoutLink.addEventListener('click', function() {
+            window.location.href = '/admin/account';
+        });
+    });
+</script>
 </html>

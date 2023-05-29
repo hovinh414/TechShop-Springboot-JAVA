@@ -33,7 +33,7 @@
                             </div>
 
                             <div th:if="${param.logout}">
-                                <p class="text-warning">Bạn đã đăng nhập.</p>
+                                <p class="text-warning">Bạn đã đăng xuất thành công!</p>
                             </div>
 
                             <div class="form-group">
@@ -42,12 +42,12 @@
                             </div>
                             <div class="form-group">
                                 <label>Password *</label>
-                                <input  style="color: aliceblue"  type="text" name="password" class="form-control p_input">
+                                <input  style="color: aliceblue"  type="password" name="password" class="form-control p_input">
                             </div>
                             <div class="form-group d-flex align-items-center justify-content-between">
                                 <div class="form-check">
                                     <label class="form-check-label">
-                                        <input type="checkbox" class="form-check-input"> Remember me </label>
+                                        <input type="checkbox" name="remember-me" class="form-check-input"> Remember me </label>
                                 </div>
                             </div>
                             <div class="text-center">
