@@ -31,11 +31,11 @@
         </div>
         <h4 class="title"><a th:href="@{'/p/' +${product.alias}}">[[${product.shortName}]]</a></h4>
         <div class="prices" th:if="${product.discountPercent <= 0 }">
-          <div th:replace="product/product_fragments/price :: price_fragment(${product.price})"></div>
+          <div th:replace="product/product_fragments :: price_fragment(${product.price})"></div>
         </div>
         <div class="prices" th:if="${product.discountPercent > 0 }">
-          <span class="price"><div th:replace="product/product_fragments/price :: price_fragment(${product.discountPrice})"></div></span>
-          <span class="price-old"><div th:replace="product/product_fragments/price :: price_fragment(${product.price})"></div></span>
+          <span class="price"><div th:replace="product/product_fragments :: price_fragment(${product.discountPrice})"></div></span>
+          <span class="price-old"><div th:replace="product/product_fragments :: price_fragment(${product.price})"></div></span>
         </div>
       </div>
       <div class="product-action-bottom">

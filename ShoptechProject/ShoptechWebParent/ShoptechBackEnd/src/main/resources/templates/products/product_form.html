@@ -47,43 +47,45 @@
             <input type="hidden" th:field="*{id}" />
             <input th:if="${product.category != null}" type="hidden" id="categoryId" th:value="${product.category.id}" />
             <div>
-              <ul class="nav nav-tabs" id="myTab">
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item">
-                  <a class="nav-link active" data-toggle="tab" href="#overview">Tổng Quan</a>
+                  <a class="nav-link active" data-toggle="tab" href="#overview" role="tab">Tổng Quan</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#description">Mô tả</a>
+                  <a class="nav-link" data-toggle="tab" href="#description" role="tab">Mô tả</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#images">Hình Ảnh</a>
+                  <a class="nav-link" data-toggle="tab" href="#images" role="tab">Hình Ảnh</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#details">Chi Tiết</a>
+                  <a class="nav-link" data-toggle="tab" href="#details" role="tab">Chi Tiết</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#shipping">Kích thước</a>
+                  <a class="nav-link" data-toggle="tab" href="#shipping" role="tab">Kích thước</a>
                 </li>
               </ul>
-            </div>
+
             <div class="tab-content">
-              <div class="tab-pane active p-3" id="overview" >
+              <div class="tab-pane active p-3" id="overview" role="tabpanel">
                 <div th:replace="products/product_overview :: content"></div>
               </div>
-              <div class="tab-pane active p-3" id="description" >
+              <div class="tab-pane p-3" id="description" role="tabpanel" >
                 <div th:replace="products/product_description :: content"></div>
               </div>
-              <div class="tab-pane active p-3" id="images" role="tabpanel">
+
+              <div class="tab-pane p-3" id="images" role="tabpanel">
                 <div th:replace="products/product_images :: content"></div>
               </div>
-              <div class="tab-pane active p-3" id="details" role="tabpanel">
+              <div class="tab-pane p-3" id="details" role="tabpanel">
                 <div th:replace="products/product_details :: content"></div>
                 <div class="m-3">
                   <input type="button" class="btn btn-warning" value="Thêm chi tiết sản phẩm" onclick="addNextDetailSection()"/>
                 </div>
               </div>
-              <div class="tab-pane active p-3" id="shipping">
+              <div class="tab-pane p-3" id="shipping" role="tabpanel">
                 <div th:replace="products/product_shipping :: content"></div>
               </div>
+            </div>
             </div>
             <div class="text-center">
               <input type="submit" value="Save" class="btn btn-primary m-3" />
@@ -131,6 +133,10 @@
   defaultImageThumbnailSrc = "[[@{/images/image-thumbnail.png}]]";
   checkUniqueUrl = "[[@{/products/check_unique}]]";
 </script>
+<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" ></script>
+<script type="text/javascript" th:src="@{/js/common.js}" ></script>
+<script th:src="@{/js/countries_setting.js}"></script>
+<script th:src="@{/js/states_setting.js}"></script>
 <script th:src="@{/js/common_form.js}"></script>
 <script th:src="@{/js/product_form_images.js}"></script>
 <script th:src="@{/js/product_form_overview.js}"></script>

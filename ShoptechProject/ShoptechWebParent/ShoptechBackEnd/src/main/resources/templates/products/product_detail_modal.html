@@ -6,19 +6,19 @@
 <div>
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item">
-      <a class="nav-link active" data-toggle="tab" href="#overview" role="tab">Overview</a>
+      <a class="nav-link active" data-toggle="tab" href="#overview" role="tab">Tổng Quan</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#description" role="tab">Description</a>
+      <a class="nav-link" data-toggle="tab" href="#description" role="tab">Mô tả</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#images" role="tab">Images</a>
+      <a class="nav-link" data-toggle="tab" href="#images" role="tab">Hình Ảnh</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#details" role="tab">Details</a>
+      <a class="nav-link" data-toggle="tab" href="#details" role="tab">Chi Tiết</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#shipping" role="tab">Shipping</a>
+      <a class="nav-link" data-toggle="tab" href="#shipping" role="tab">Kích thước</a>
     </li>
   </ul>
 
@@ -106,7 +106,7 @@
         </div>
       </div>
     </div>
-    <div class="tab-pane active" id="description" role="tabpanel">
+    <div class="tab-pane p-3" id="description" role="tabpanel" >
       <div class="m-2">
         <label>Mô tả:</label>
         <div th:utext="${product.shortDescription}" class="border p-2 m-2"></div>
@@ -117,7 +117,7 @@
         <div th:utext="${product.fullDescription}" class="border p-2 m-2"></div>
       </div>
     </div>
-    <div class="tab-pane active" id="images" role="tabpanel">
+    <div class="tab-pane p-3" id="images" role="tabpanel">
       <div class="row">
         <div class="col border m-3 p-2">
           <div><label>Main Image: [[${product.mainImage}]]</label></div>
@@ -140,7 +140,7 @@
         </th:block>
       </div>
     </div>
-    <div class="tab-pane active p-3" id="details" role="tabpanel">
+    <div class="tab-pane p-3" id="details" role="tabpanel">
       <div>
         <table class="table table-bordered table-hover">
           <thead class="thead-dark">
@@ -158,7 +158,7 @@
         </table>
       </div>
     </div>
-    <div class="tab-pane active p-3" id="shipping" role="tabpanel">
+    <div class="tab-pane p-3" id="shipping" role="tabpanel">
       <div class="form-group row">
         <div class="col-sm-2 col-form-label">
           <label>Chiều dài (cm): </label>
@@ -198,3 +198,8 @@
 <div class="modal-footer">
   <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 </div>
+<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" ></script>
+<script type="text/javascript" th:src="@{/js/common.js}" ></script>
+<script th:src="@{/js/common_form.js}"></script>
+<script th:src="@{/js/countries_setting.js}"></script>
+<script th:src="@{/js/states_setting.js}"></script>
