@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <body>
   <div th:fragment="header_menu">
     <div class="container">
@@ -69,11 +69,21 @@
                 </ul>
               </li>
               <li><a href="contact.html">Contact</a></li>
+              <li><a th:href="@{/register}">Register</a></li>
+              <li><a th:href="@{/login}">Login</a></li>
             </ul>
           </div>
         </div>
         <div class="col-7 col-lg-3 col-xl-4">
           <div class="header-action justify-content-end">
+            <th:block sec:authorize="isAuthenticated()">
+              <form th:action="@{/logout}" method="post" th:hidden="true" name="logoutForm">
+                <input type="submit" value="Logout" />
+              </form>
+            </th:block>
+            <th:block sec:authorize="isAuthenticated()">
+              <b><a class="nav-link" th:href="@{/account_details}"
+                    sec:authentication="principal.fullName"></a></b>
             <button class="header-action-btn ms-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasSearch" aria-controls="AsideOffcanvasSearch">
               <span class="icon">
                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

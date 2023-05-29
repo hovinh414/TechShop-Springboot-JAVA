@@ -1,5 +1,6 @@
 package com.shoptech.site.setting;
 
+import com.nimbusds.oauth2.sdk.auth.ClientSecretBasic;
 import com.shoptech.entity.Setting;
 import com.shoptech.entity.SettingCategory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,11 @@ public class SettingService{
         return repo.findByTwoCategories(SettingCategory.GENERAL, SettingCategory.CURRENCY);
     }
 
+    public EmailSettingBag getEmailSettings(){
+        List<Setting> settings = repo.findByCategory((SettingCategory.MAIL_SERVER));
+        settings.addAll(repo.findByCategory(SettingCategory.MAIL_TEMPLATES));
+        return new EmailSettingBag(settings);
+    }
 
     public List<Setting> getMailServerSettings() {
         return repo.findByCategory(SettingCategory.MAIL_SERVER);
