@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+
+<head th:fragment="page_head(title, remove)" th:remove="${remove}">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0">
+
+    <title>[[${title}]]  [[${SITE_NAME}]]</title>
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{/assets/images/favicon.webp}">
+    <link rel="preconnect" th:href="@{https://fonts.googleapis.com/}">
+    <link rel="preconnect" th:href="@{https://fonts.gstatic.com/}" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/assets/css/vendor/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/plugins/swiper-bundle.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/plugins/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/plugins/fancybox.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/plugins/nice-select.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/style.min.css}">
+
+
+</head>
+<body>
+<div class="wrapper">
+    <header class="header-area sticky-header ">
+        <div th:replace="navigation :: header_menu"></div>
+    </header>
+<div class="container">
+
+    <form th:action="@{/login}" method="post" style="max-width: 350px; margin: 0 auto">
+        <div th:if="${param.error}">
+            <p class="text-danger">[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]</p>
+        </div>
+        <div th:if="${param.logout}">
+            <p class="text-warning">You have been logged out.</p>
+        </div>
+
+        <div class="border border-secondary rounded p-3">
+            <p>
+                <input type="email" name="email" class="form-control" placeholder="E-mail" required />
+            </p>
+            <p>
+                <input type="password" name="password" class="form-control" placeholder="Password" required />
+            </p>
+            <p>
+                <input type="checkbox" name="remember-me" />&nbsp;Remember Me
+            </p>
+            <p>
+                <input type="submit" value="Login" class="btn btn-primary" />
+            </p>
+        </div>
+    </form>
+    <span></span>
+    <span></span>
+</div>
+    <footer class="footer-area">
+        <div class="footer-main">
+            <div th:replace="navigation :: footer_menu"></div>
+        </div>
+    </footer>
+</div>
+
+<script th:src="@{/assets/js/vendor/modernizr-3.11.7.min.js}"></script>
+<script th:src="@{/assets/js/vendor/jquery-3.6.0.min.js}"></script>
+<script th:src="@{/assets/js/vendor/jquery-migrate-3.3.2.min.js}"></script>
+<script th:src="@{/assets/js/vendor/bootstrap.bundle.min.js}"></script>
+
+<!-- Plugins JS -->
+<script th:src="@{/assets/js/plugins/swiper-bundle.min.js}"></script>
+<script th:src="@{/assets/js/plugins/fancybox.min.js}"></script>
+<script th:src="@{/assets/js/plugins/jquery.nice-select.min.js}"></script>
+
+<!-- Custom Main JS -->
+<script th:src="@{/assets/js/main.js}"></script>
+<script type="text/javascript" th:src="@{/assets/js/quantity_control.js}"></script>
+<script type="text/javascript" th:src="@{/assets/js/common_modal.js}"></script>
+</body>
+
+
+
+<!-- Mirrored from template.hasthemes.com/brancy/brancy/product-details-group.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Nov 2022 06:24:13 GMT -->
+</html>

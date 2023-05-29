@@ -15,14 +15,14 @@
           <div class="header-navigation ps-7">
             <ul class="main-nav justify-content-start">
               <li class="has-submenu"><a href="../../../../../ShoptechBackEnd/src/main/resources/templates/layouts/index.html">home</a>
-                <ul class="submenu-nav">
+<!--                <ul class="submenu-nav">
                   <li><a href="../../../../../ShoptechBackEnd/src/main/resources/templates/layouts/index.html">Home One</a></li>
                   <li><a href="index-two.html">Home Two</a></li>
-                </ul>
+                </ul>-->
               </li>
               <li><a href="about-us.html">about</a></li>
               <li class="has-submenu position-static"><a href="product.html">shop</a>
-                <ul class="submenu-nav-mega">
+<!--                <ul class="submenu-nav-mega">
                   <li><a href="#/" class="mega-title">Shop Layout</a>
                     <ul>
                       <li><a href="product.html">Shop 3 Column</a></li>
@@ -47,10 +47,10 @@
                       <li><a href="product-compare.html">Compare</a></li>
                     </ul>
                   </li>
-                </ul>
+                </ul>-->
               </li>
               <li class="has-submenu"><a href="blog.html">Blog</a>
-                <ul class="submenu-nav">
+<!--                <ul class="submenu-nav">
                   <li class="has-submenu"><a href="#/">Blog Layout</a>
                     <ul class="submenu-nav">
                       <li><a href="blog.html">Blog Grid</a></li>
@@ -59,14 +59,14 @@
                     </ul>
                   </li>
                   <li><a href="blog-details.html">Blog Details</a></li>
-                </ul>
+                </ul>-->
               </li>
               <li class="has-submenu"><a href="account-login.html">Pages</a>
-                <ul class="submenu-nav">
+<!--                <ul class="submenu-nav">
                   <li><a href="account-login.html">My Account</a></li>
                   <li><a href="faq.html">Frequently Questions</a></li>
                   <li><a href="page-not-found.html">Page Not Found</a></li>
-                </ul>
+                </ul>-->
               </li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -102,7 +102,8 @@
               </span>
             </button>
 
-            <a class="header-action-btn" href="account-login.html">
+
+            <a class="header-action-btn" th:href="@{/login}">
               <span class="icon">
                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                   <rect class="icon-rect" width="30" height="30" fill="url(#pattern3)"/>
@@ -117,9 +118,6 @@
             </a>
 
             <button class="header-menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasMenu" aria-controls="AsideOffcanvasMenu">
-              <span></span>
-              <span></span>
-              <span></span>
             </button>
           </div>
         </div>

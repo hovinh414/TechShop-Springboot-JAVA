@@ -35,13 +35,9 @@ public class WebSecurityConfig {
         return authProvider;
     }
 
-<<<<<<< HEAD
     //NOTE: Đóng từ dòng 39 đến 87  [đang lỗi chưa bik fix]
     /*@Bean
-=======
 
-    @Bean
->>>>>>> main
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests()
                 .requestMatchers("/users/**", "/settings/**", "/countries/**", "/states/**").hasAuthority("Admin")
@@ -69,7 +65,7 @@ public class WebSecurityConfig {
                 *//*.and().rememberMe().key("AbcDefgHijKlmnOpqrs_1234567890")
                 .tokenValiditySeconds(7 * 24 * 60 * 60);  // remember me cookie is valid for one week*//*
 
-<<<<<<< HEAD
+
         *//*
          * set a fix key used for the md5 hash algorithm to encrypt cookie content each
          * time the application is restarted, a new key will be generated; this key will
@@ -77,8 +73,7 @@ public class WebSecurityConfig {
          * permanent; a fix key is needed.
          *//*
 
-=======
->>>>>>> main
+
         http.authenticationProvider(authenticationProvider());
 
         return http.build();
@@ -90,13 +85,9 @@ public class WebSecurityConfig {
     }*/
 
 
-<<<<<<< HEAD
     //NOTE: Mở Cái này là vô được admin
 
     @Bean
-=======
-    /*@Bean
->>>>>>> main
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.ALWAYS);
         http.authorizeRequests().anyRequest().permitAll();
