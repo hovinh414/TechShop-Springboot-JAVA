@@ -24,7 +24,7 @@
 </head>
 <body>
 
-<!-------------------------- Bộ Lộc ------------------------->
+<!-------------------------- Bộ Lộc User ------------------------->
 <th th:fragment="column_link(fieldName, columnLabel)">
     <a style="color: #6c7293"
        th:href="@{'/users/page/' + ${currentPage}+ '?sortField=' + ${fieldName} +'&sortDir=' + ${sortField != fieldName ? sortDir: reverseSortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">
@@ -33,6 +33,8 @@
     <span th:if="${sortField == fieldName}"
           th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></span>
 </th>
+
+<!-------------------------- Bộ Lộc Category ------------------------->
 <th th:fragment="column_linkCat(fieldName, columnLabel)">
     <a style="color: #6c7293"
        th:href="@{'/categories/page/' + ${currentPage}+ '?sortField=' + ${fieldName} +'&sortDir=' + ${sortField != fieldName ? sortDir: reverseSortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">
@@ -41,6 +43,8 @@
     <span th:if="${sortField == fieldName}"
           th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></span>
 </th>
+
+<!-------------------------- Bộ Lộc Brand ------------------------->
 <th th:fragment="column_linkBrand(fieldName, columnLabel)">
     <a style="color: #6c7293"
        th:href="@{'/brands/page/' + ${currentPage}+ '?sortField=' + ${fieldName} +'&sortDir=' + ${sortField != fieldName ? sortDir: reverseSortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">
@@ -49,6 +53,8 @@
     <span th:if="${sortField == fieldName}"
           th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></span>
 </th>
+
+<!-------------------------- Bộ Lộc Product ------------------------->
 <th th:fragment="column_linkPro(fieldName, columnLabel)">
     <a style="color: #6c7293"
        th:href="@{'/products/page/' + ${currentPage}+ '?sortField=' + ${fieldName} +'&sortDir=' + ${sortField != fieldName ? sortDir: reverseSortDir} + ${categoryId != null ? '&categoryId=' + categoryId : ''} + ${keyword != null ? '&keyword=' + keyword : ''}}">
@@ -57,27 +63,54 @@
     <span th:if="${sortField == fieldName}"
           th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></span>
 </th>
-<!-------------------------- Phân trang ------------------------->
+
+<!-------------------------- Bộ Lộc Order ------------------------->
+<th th:fragment="column_linkOrd(fieldName, columnLabel)">
+    <a style="color: #6c7293"
+       th:href="@{'/orders/page/' + ${currentPage}+ '?sortField=' + ${fieldName} +'&sortDir=' + ${sortField != fieldName ? sortDir: reverseSortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">
+        [[${columnLabel}]]
+    </a>
+    <span th:if="${sortField == fieldName}"
+          th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></span>
+</th>
+
+<!-------------------------- Phân trang User ------------------------->
 <a th:fragment="page_link(pageNum, label)"
    class="page-link"
    th:href= "@{'/users/page/' + ${pageNum} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">
     [[${label}]]
 </a>
+
+<!-------------------------- Phân trang Category ------------------------->
 <a th:fragment="page_linkCat(pageNum, label)"
    class="page-link"
    th:href= "@{'/categories/page/' + ${pageNum} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">
     [[${label}]]
 </a>
+
+<!-------------------------- Phân trang Brand ------------------------->
 <a th:fragment="page_linkBrand(pageNum, label)"
    class="page-link"
    th:href= "@{'/brands/page/' + ${pageNum} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">
     [[${label}]]
 </a>
+
+<!-------------------------- Phân trang Product ------------------------->
 <a th:fragment="page_linkPro(pageNum, label)"
    class="page-link"
    th:href= "@{'/products/page/' + ${pageNum} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${categoryId != null ? '&categoryId=' + categoryId : ''} + ${keyword != null ? '&keyword=' + keyword : ''}}">
     [[${label}]]
 </a>
+
+<!-------------------------- Phân trang Order ------------------------->
+<a th:fragment="page_linkOrd(pageNum, label)"
+   class="page-link"
+   th:href= "@{'/orders/page/' + ${pageNum} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">
+    [[${label}]]
+</a>
+
+
+
 <div th:fragment="pagination(entityName)" th:remove="tag">
     <!-- IF -->
     <div class="text-center m-1" th:if="${totalItems > 0}">
@@ -145,5 +178,49 @@
            th:title="'Delete this ' + ${entityName}"></a>
     </th:block>
 </div>
+
+
+
+
+
+<div th:fragment="search_form_and_message()">
+    <form th:action="@{${moduleURL} + '/page/1'}" class="form-inline m-3">
+        <input type="hidden" name="sortField" th:value="${sortField}" />
+        <input type="hidden" name="sortDir" th:value="${sortDir}" />
+
+        Filter:&nbsp;
+        <input type="search" name="keyword" th:value="${keyword}" class="form-control" required/>
+        &nbsp;&nbsp;
+        <button type="submit" class="btn btn-primary">
+            <i class="fas fa-search"></i>
+        </button>
+        &nbsp;&nbsp;
+        <button type="button" class="btn btn-secondary" onclick="clearFilter()">
+            <i class="fas fa-eraser"></i>
+        </button>
+    </form>
+
+    <div th:if="${message != null}" class="alert alert-success text-center">
+        [[${message}]]
+    </div>
+</div>
+
+
+<div th:fragment="format_currency(amount)" th:remove="tag">
+    <span th:if="${CURRENCY_SYMBOL_POSITION == 'Before price'}" th:remove="tag">[[${CURRENCY_SYMBOL}]]</span>[[${#numbers.formatDecimal(amount, 1, THOUSANDS_POINT_TYPE, DECIMAL_DIGITS, DECIMAL_POINT_TYPE)}]]<span th:if="${CURRENCY_SYMBOL_POSITION == 'After price'}" th:remove="tag">[[${CURRENCY_SYMBOL}]]</span>
+</div>
+
+<div th:fragment="format_time(dateTime)" th:remove="tag">
+    <span th:text="${#dates.format(dateTime, 'yyyy-MM-dd HH:mm:ss')}"></span>
+</div>
+
+<div th:fragment="currency_input(amount)" th:remove="tag">
+    <input type="text" readonly class="form-control" th:value="${(CURRENCY_SYMBOL_POSITION == 'Before price' ? CURRENCY_SYMBOL : '') + #numbers.formatDecimal(amount, 1, THOUSANDS_POINT_TYPE, DECIMAL_DIGITS, DECIMAL_POINT_TYPE) + (CURRENCY_SYMBOL_POSITION == 'After price' ? CURRENCY_SYMBOL : '')}">
+</div>
+
 </body>
 </html>
+
+
+
+
