@@ -5,22 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c32a9d2-72a0-46d0-9220-abd148727d77" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/orders/orders.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/CartItem.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Currency.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Setting.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/SettingBag.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/SettingCategory.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/exception/CustomerNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ShoptechCommon.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../ShoptechCommon.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/order/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/order/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/order/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/order/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/paging/PagingAndSortingHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/paging/PagingAndSortingHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/security/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/fragments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/sidebar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
@@ -30,57 +21,10 @@
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/Utility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/customer/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/customer/CustomerRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/customer/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/customer/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/security/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/setting/CountryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/setting/CountryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/._exception" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/entity/._ProductDetail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/entity/._ProductImage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/entity/._order" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/entity/order/._Order.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/entity/order/._OrderDetail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/entity/order/._OrderStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/entity/order/._OrderTrack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/entity/order/._PaymentMethod.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/exception/._CategoryNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/exception/._CustomerNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/exception/._OrderNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/exception/._ProductNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/src/main/java/com/shoptech/exception/._ReviewNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/._AbstractAddress.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/._AbstractAddressWithCountry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/._Address.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/._AuthenticationType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/._Country.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/._Customer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/._IdBasedEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/._PaymentMethod.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/._ProductDetail.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/._ProductImage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/._State.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/._order" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/order/._Order.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/order/._OrderDetail.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/order/._OrderStatus$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/order/._OrderStatus$10.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/order/._OrderStatus$11.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/order/._OrderStatus$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/order/._OrderStatus$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/order/._OrderStatus$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/order/._OrderStatus$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/order/._OrderStatus$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/order/._OrderStatus$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/order/._OrderStatus$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/order/._OrderStatus$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/order/._OrderStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/order/._OrderTrack.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/entity/order/._PaymentMethod.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/exception/._CustomerNotFoundException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/exception/._OrderNotFoundException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../__MACOSX/ShoptechCommon/target/classes/com/shoptech/exception/._ReviewNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/layouts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/layouts/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +127,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ShoptechBackEndApplication">
+  <component name="RunManager" selected="Spring Boot.ShoptechFrontEndApplication">
     <configuration name="CartItemRepositoryTests.testFindByCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ShoptechFrontEnd" />
       <extension name="coverage">
@@ -324,6 +268,7 @@
       <workItem from="1685368942701" duration="430000" />
       <workItem from="1685420703189" duration="73000" />
       <workItem from="1685420785188" duration="38000" />
+      <workItem from="1685423144874" duration="890000" />
     </task>
     <servers />
   </component>
