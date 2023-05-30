@@ -69,7 +69,7 @@
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
-                <span class="menu-title">Dashboard</span>
+                <span class="menu-title">Trang chủ</span>
             </a>
         </li>
         <li class="nav-item menu-items">
@@ -103,7 +103,7 @@
         <li class="nav-item menu-items">
             <a class="nav-link" th:href="@{/brands}" aria-expanded="false" aria-controls="auth">
               <span class="menu-icon">
-                <i class="mdi mdi-table-large"></i>
+                <i class="mdi mdi-office"></i>
               </span>
                 <span class="menu-title">Thương hiệu</span>
             </a>
@@ -114,7 +114,7 @@
         <li class="nav-item menu-items">
             <a class="nav-link" th:href="@{/products}" aria-expanded="false" aria-controls="auth">
               <span class="menu-icon">
-                <i class="mdi mdi-chart-bar"></i>
+                <i class="mdi mdi-package-variant-closed"></i>
               </span>
                 <span class="menu-title">Sản phẩm</span>
             </a>
@@ -125,11 +125,21 @@
         <li class="nav-item menu-items">
             <a class="nav-link" th:href="@{/orders}">
               <span class="menu-icon">
-                <i class="mdi mdi-contacts"></i>
+                <i class="mdi mdi-truck-delivery"></i>
               </span>
                 <span class="menu-title">Đơn hàng</span>
             </a>
         </li>
+        </th:block>
+        <th:block sec:authorize="hasAuthority('Admin')">
+            <li class="nav-item menu-items">
+                <a class="nav-link" th:href="@{/customers}" aria-expanded="false" aria-controls="auth">
+              <span class="menu-icon">
+                <i class="mdi mdi-account"></i>
+              </span>
+                    <span class="menu-title">Khách hàng</span>
+                </a>
+            </li>
         </th:block>
         <th:block sec:authorize="hasAuthority('Admin')">
         <li class="nav-item menu-items">

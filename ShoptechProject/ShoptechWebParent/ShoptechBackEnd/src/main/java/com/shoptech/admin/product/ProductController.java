@@ -2,13 +2,16 @@ package com.shoptech.admin.product;
 
 import com.shoptech.admin.brand.BrandService;
 import com.shoptech.admin.category.CategoryService;
+import com.shoptech.admin.customer.CustomersCsvExporter;
 import com.shoptech.admin.security.ShoptechUserDetails;
 import com.shoptech.admin.upload.FileUploadUtil;
 import com.shoptech.entity.Brand;
 import com.shoptech.entity.Category;
+import com.shoptech.entity.Customer;
 import com.shoptech.entity.Product;
 import com.shoptech.exception.ProductNotFoundException;
 
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.repository.query.Param;
@@ -192,5 +195,12 @@ public class ProductController {
 
             return "redirect:/products";
         }
+    }
+    @GetMapping("/products/export/csv")
+    public void exportToCSV(HttpServletResponse response) throws IOException {
+
+        List<Product> listProducts = productService.listAll();
+        ProductCsvExporter exporter = new ProductCsvExporter();
+        exporter.export(listProducts, response);
     }
 }
