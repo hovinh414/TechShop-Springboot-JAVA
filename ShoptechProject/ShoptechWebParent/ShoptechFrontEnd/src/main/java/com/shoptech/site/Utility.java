@@ -1,8 +1,12 @@
 package com.shoptech.site;
 
+import com.shoptech.site.security.oauth.CustomerOAuth2User;
 import com.shoptech.site.setting.EmailSettingBag;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.security.authentication.RememberMeAuthenticationToken;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 
 import java.util.Properties;
 
@@ -30,8 +34,7 @@ public class Utility {
         return mailSender;
     }
 
-    /*public static String getEmailOfAuthenticatedCustomer(HttpServletRequest request) {
->>>>>>> main
+    public static String getEmailOfAuthenticatedCustomer(HttpServletRequest request) {
         Object principal = request.getUserPrincipal();
         if (principal == null) return null;
 
@@ -45,13 +48,10 @@ public class Utility {
             CustomerOAuth2User oauth2User = (CustomerOAuth2User) oauth2Token.getPrincipal();
             customerEmail = oauth2User.getEmail();
         }
-<<<<<<< HEAD
-        return customerEmail;
-    }
-=======
 
         return customerEmail;
-    }*/
+    }
+
 
     /*public static String formatCurrency(float amount, CurrencySettingBag settings) {
         String symbol = settings.getSymbol();

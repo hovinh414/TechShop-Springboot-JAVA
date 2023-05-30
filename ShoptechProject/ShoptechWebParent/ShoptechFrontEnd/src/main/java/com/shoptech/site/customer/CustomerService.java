@@ -48,9 +48,9 @@ public class CustomerService {
 
     }
 
-    /*public Customer getCustomerByEmail(String email) {
+    public Customer getCustomerByEmail(String email) {
         return customerRepo.findByEmail(email);
-    }*/
+    }
 
     private void encodePassword(Customer customer) {
         String encodedPassword = passwordEncoder.encode(customer.getPassword());
@@ -68,13 +68,13 @@ public class CustomerService {
         }
     }
 
-    /*public void updateAuthenticationType(Customer customer, AuthenticationType type) {
+    public void updateAuthenticationType(Customer customer, AuthenticationType type) {
         if (!customer.getAuthenticationType().equals(type)) {
             customerRepo.updateAuthenticationType(customer.getId(), type);
         }
-    }*/
+    }
 
-    /*public void addNewCustomerUponOAuthLogin(String name, String email, String countryCode,
+    public void addNewCustomerUponOAuthLogin(String name, String email, String countryCode,
                                              AuthenticationType authenticationType) {
         Customer customer = new Customer();
         customer.setEmail(email);
@@ -92,9 +92,9 @@ public class CustomerService {
         customer.setCountry(countryRepo.findByCode(countryCode));
 
         customerRepo.save(customer);
-    }*/
+    }
 
-    /*private void setName(String name, Customer customer) {
+    private void setName(String name, Customer customer) {
         String[] nameArray = name.split(" ");
         if (nameArray.length < 2) {
             customer.setFirstName(name);
@@ -106,7 +106,7 @@ public class CustomerService {
             String lastName = name.replaceFirst(firstName + " ", "");
             customer.setLastName(lastName);
         }
-    }*/
+    }
 
     /*public void update(Customer customerInForm) {
         Customer customerInDB = customerRepo.findById(customerInForm.getId()).get();
