@@ -1,15 +1,5 @@
 package com.shoptech.site;
 
-<<<<<<< HEAD
-import com.shoptech.site.security.oauth.CustomerOAuth2User;
-import jakarta.servlet.http.HttpServletRequest;
-import org.springframework.security.authentication.RememberMeAuthenticationToken;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
-
-public class Utility {
-    public static String getEmailOfAuthenticatedCustomer(HttpServletRequest request) {
-=======
 import com.shoptech.site.setting.EmailSettingBag;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
@@ -91,5 +81,4 @@ public class Utility {
 
         return formatter.format(amount);
     }*/
->>>>>>> main
 }

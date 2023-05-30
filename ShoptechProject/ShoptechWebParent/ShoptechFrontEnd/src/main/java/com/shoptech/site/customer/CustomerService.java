@@ -1,22 +1,15 @@
 package com.shoptech.site.customer;
 
-<<<<<<< HEAD
-=======
 
->>>>>>> main
 import com.shoptech.entity.AuthenticationType;
 import com.shoptech.entity.Country;
 import com.shoptech.entity.Customer;
 import com.shoptech.site.setting.CountryRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
-<<<<<<< HEAD
-import org.springframework.stereotype.Service;
-=======
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import net.bytebuddy.utility.RandomString;
->>>>>>> main
 
 import java.util.Date;
 import java.util.List;
@@ -25,15 +18,6 @@ import java.util.List;
 @Service
 @Transactional
 public class CustomerService {
-<<<<<<< HEAD
-    @Autowired
-    private CustomerRepository customerRepo;
-    @Autowired private CountryRepository countryRepo;
-
-    public Customer getCustomerByEmail(String email) {
-        return customerRepo.findByEmail(email);
-    }
-=======
 
     @Autowired
     private CountryRepository countryRepo;
@@ -42,14 +26,10 @@ public class CustomerService {
     @Autowired
     PasswordEncoder passwordEncoder;
 
->>>>>>> main
     public List<Country> listAllCountries() {
         return countryRepo.findAllByOrderByNameAsc();
     }
 
-<<<<<<< HEAD
-    public void addNewCustomerUponOAuthLogin(String name, String email, String countryCode,
-=======
     public boolean isEmailUnique(String email) {
         Customer customer = customerRepo.findByEmail(email);
         return customer == null;
@@ -95,7 +75,6 @@ public class CustomerService {
     }*/
 
     /*public void addNewCustomerUponOAuthLogin(String name, String email, String countryCode,
->>>>>>> main
                                              AuthenticationType authenticationType) {
         Customer customer = new Customer();
         customer.setEmail(email);
@@ -113,21 +92,9 @@ public class CustomerService {
         customer.setCountry(countryRepo.findByCode(countryCode));
 
         customerRepo.save(customer);
-<<<<<<< HEAD
-
-
-    }
-    public void updateAuthenticationType(Customer customer, AuthenticationType type) {
-        if (!customer.getAuthenticationType().equals(type)) {
-            customerRepo.updateAuthenticationType(customer.getId(), type);
-        }
-    }
-    private void setName(String name, Customer customer) {
-=======
     }*/
 
     /*private void setName(String name, Customer customer) {
->>>>>>> main
         String[] nameArray = name.split(" ");
         if (nameArray.length < 2) {
             customer.setFirstName(name);
@@ -139,10 +106,6 @@ public class CustomerService {
             String lastName = name.replaceFirst(firstName + " ", "");
             customer.setLastName(lastName);
         }
-<<<<<<< HEAD
-    }
-}
-=======
     }*/
 
     /*public void update(Customer customerInForm) {
@@ -198,4 +161,3 @@ public class CustomerService {
         customerRepo.save(customer);
     }*/
 }
->>>>>>> main

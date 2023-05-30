@@ -97,7 +97,9 @@
                 <span class="menu-title" >Danh mục</span>
             </a>
         </li>
+        </th:block>
 
+        <th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
         <li class="nav-item menu-items">
             <a class="nav-link" th:href="@{/brands}" aria-expanded="false" aria-controls="auth">
               <span class="menu-icon">
@@ -107,6 +109,7 @@
             </a>
         </li>
         </th:block>
+
         <th:block sec:authorize="hasAnyAuthority('Admin', 'Salesperson', 'Editor', 'Shipper')">
         <li class="nav-item menu-items">
             <a class="nav-link" th:href="@{/products}" aria-expanded="false" aria-controls="auth">
@@ -117,14 +120,17 @@
             </a>
         </li>
         </th:block>
+
+        <th:block sec:authorize="hasAnyAuthority('Admin', 'Salesperson',  'Shipper')">
         <li class="nav-item menu-items">
-            <a class="nav-link" href="pages/icons/mdi.html">
+            <a class="nav-link" th:href="@{/orders}">
               <span class="menu-icon">
                 <i class="mdi mdi-contacts"></i>
               </span>
-                <span class="menu-title">Icons</span>
+                <span class="menu-title">Đơn hàng</span>
             </a>
         </li>
+        </th:block>
         <th:block sec:authorize="hasAuthority('Admin')">
         <li class="nav-item menu-items">
             <a class="nav-link" th:href="@{/users}" aria-expanded="false" aria-controls="auth">

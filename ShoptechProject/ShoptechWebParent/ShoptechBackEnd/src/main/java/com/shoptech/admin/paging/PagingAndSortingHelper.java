@@ -14,16 +14,16 @@ public class PagingAndSortingHelper {
 	private String sortField;
 	private String sortDir;
 	private String keyword;
-	
-	public PagingAndSortingHelper(ModelAndViewContainer model,String listName,
-			String sortField, String sortDir, String keyword) {
+
+	public PagingAndSortingHelper(ModelAndViewContainer model, String listName, String sortField, String sortDir, String keyword) {
 		this.model = model;
 		this.listName = listName;
 		this.sortField = sortField;
 		this.sortDir = sortDir;
 		this.keyword = keyword;
 	}
-	
+
+
 	public void updateModelAttributes(int pageNum, Page<?> page) {
 		List<?> listItems = page.getContent();
 		int pageSize = page.getSize();
