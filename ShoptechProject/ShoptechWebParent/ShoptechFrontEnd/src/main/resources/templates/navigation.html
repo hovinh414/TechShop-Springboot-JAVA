@@ -14,7 +14,7 @@
         <div class="col-lg-7 col-xl-7 d-none d-lg-block">
           <div class="header-navigation ps-7">
             <ul class="main-nav justify-content-start">
-              <li class="has-submenu"><a href="../../../../../ShoptechBackEnd/src/main/resources/templates/layouts/index.html">home</a>
+              <li class="has-submenu"><a href="/Shoptech">home</a>
 <!--                <ul class="submenu-nav">
                   <li><a href="../../../../../ShoptechBackEnd/src/main/resources/templates/layouts/index.html">Home One</a></li>
                   <li><a href="index-two.html">Home Two</a></li>
@@ -69,21 +69,31 @@
                 </ul>-->
               </li>
               <li><a href="contact.html">Contact</a></li>
-              <li><a th:href="@{/register}">Register</a></li>
-              <li><a th:href="@{/login}">Login</a></li>
+              <th:block sec:authorize="isAuthenticated()">
+                <form th:action="@{/logout}" method="post" th:hidden="true" name="logoutForm">
+                  <input type="submit" value="Logout" />
+                </form>
+                <li class="has-submenu"><a href="account-login.html">Acount</a>
+                  <th:block sec:authorize="isAuthenticated()">
+                    <ul class="submenu-nav" >
+                      <li><a href="account-login.html">My Account</a></li>
+                      <li><a th:href="@{/login}">Login</a></li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="javascript: document.logoutForm.submit()">Logout</a>
+                      </li>
+                    </ul>
+                  </th:block>
+
+                </li>
             </ul>
           </div>
         </div>
         <div class="col-7 col-lg-3 col-xl-4">
           <div class="header-action justify-content-end">
             <th:block sec:authorize="isAuthenticated()">
-              <form th:action="@{/logout}" method="post" th:hidden="true" name="logoutForm">
-                <input type="submit" value="Logout" />
-              </form>
-            </th:block>
-            <th:block sec:authorize="isAuthenticated()">
               <b><a class="nav-link" th:href="@{/account_details}"
-                    sec:authentication="principal.fullName"></a></b>
+                    sec:authentication="principal.username"></a></b>
+            </th:block>
             <button class="header-action-btn ms-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasSearch" aria-controls="AsideOffcanvasSearch">
               <span class="icon">
                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -112,20 +122,6 @@
               </span>
             </button>
 
-
-            <a class="header-action-btn" th:href="@{/login}">
-              <span class="icon">
-                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                  <rect class="icon-rect" width="30" height="30" fill="url(#pattern3)"/>
-                  <defs>
-                    <pattern id="pattern3" patternContentUnits="objectBoundingBox" width="1" height="1">
-                      <use xlink:href="#image0_504:10" transform="scale(0.0333333)"/>
-                    </pattern>
-                    <image id="image0_504:10" width="30" height="30" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAABEUlEQVRIie3UMUoDYRDF8Z8psqUpLBRrBS+gx7ATD6E5iSjeQQ/gJUzEwmChnZZaKZiQ0ljsLkhQM5/5Agr74DX7DfOfgZ1Hoz+qAl30Marcx2H1thCtY4DJN76parKqmAH9DM+6eTcArX2QE3yVAO7lBA8TwMNIw6UgeJI46My+rWCjUQL0LVIUBd8lgEO1UfBZAvg8oXamCuWNRu64nRNMmUo/wReSXLXayoDoKc9miMvqW/ZNG2VRNLla2MYudrCFTvX2intlnl/gGu/zDraGYzyLZ/UTjrD6G2AHpxgnAKc9xgmWo9BNPM4BnPYDNiLg24zQ2oNpyFdZvRKZLlGhnvvKPzXXti/Yy7hEo3+iD9EHtgdqxQnwAAAAAElFTkSuQmCC"/>
-                  </defs>
-                </svg>
-              </span>
-            </a>
 
             <button class="header-menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasMenu" aria-controls="AsideOffcanvasMenu">
             </button>

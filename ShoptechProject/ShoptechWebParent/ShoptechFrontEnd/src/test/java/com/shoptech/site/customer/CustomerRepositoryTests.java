@@ -1,5 +1,6 @@
 package com.shoptech.site.customer;
 
+import com.shoptech.entity.AuthenticationType;
 import com.shoptech.entity.Country;
 import com.shoptech.entity.Customer;
 import org.junit.jupiter.api.Test;
@@ -115,7 +116,7 @@ public class CustomerRepositoryTests {
 
     @Test
     public void testFindByEmail() {
-        String email = "david.s.fountaine@gmail.com";
+        String email = "lehoanganhvn@gmail.com";
         Customer customer = repo.findByEmail(email);
 
         assertThat(customer).isNotNull();
@@ -132,7 +133,7 @@ public class CustomerRepositoryTests {
     }
 
     @Test
-    public void testEnableCustomer() {
+    public void   testEnableCustomer() {
         Integer customerId = 1;
         repo.enable(customerId);
 
@@ -140,13 +141,13 @@ public class CustomerRepositoryTests {
         assertThat(customer.isEnabled()).isTrue();
     }
 
-    /*@Test
+    @Test
     public void testUpdateAuthenticationType() {
         Integer id = 1;
-        repo.updateAuthenticationType(id, AuthenticationType.DATABASE);
+        repo.updateAuthenticationType(id, AuthenticationType.FACEBOOK);
 
         Customer customer = repo.findById(id).get();
 
-        assertThat(customer.getAuthenticationType()).isEqualTo(AuthenticationType.DATABASE);
-    }*/
+        assertThat(customer.getAuthenticationType()).isEqualTo(AuthenticationType.FACEBOOK);
+    }
 }
