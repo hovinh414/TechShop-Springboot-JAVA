@@ -157,38 +157,8 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center m-1" th:if="${totalItems > 0}">
-                <span>Hiển thị ID # Từ [[${startCount}]] đến [[${endCount}]] trên [[${totalItems}]] </span>
-            </div>
 
-            <div class="text-center m-1" th:unless="${totalItems > 0}">
-                <span>Không tìm thấy sản phẩm!</span>
-            </div>
-
-            <div th:if="${totalPages > 1}">
-                <nav>
-                    <ul class="pagination justify-content-center">
-                        <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-                            <a th:replace="fragments :: page_linkOrd(1, 'Đầu')" ></a>
-                        </li>
-                        <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-                            <a th:replace="fragments :: page_linkOrd(${currentPage - 1}, 'Sau')" ></a>
-                        </li>
-
-                        <li th:class="${currentPage != i ? 'page-item': 'page-item active'}"
-                            th:each="i : ${#numbers.sequence(1, totalPages)}">
-                            <a th:replace="fragments :: page_linkOrd(${i}, ${i})" ></a>
-                        </li>
-
-                        <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-                            <a th:replace="fragments :: page_linkOrd(${currentPage + 1}, 'Tiếp')" ></a>
-                        </li>
-                        <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-                            <a th:replace="fragments :: page_linkOrd(${totalPages}, 'Cuối')" ></a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+            <div th:replace="fragments :: pagination('orders')"></div>
 
             <!-- partial -->
         </div>
