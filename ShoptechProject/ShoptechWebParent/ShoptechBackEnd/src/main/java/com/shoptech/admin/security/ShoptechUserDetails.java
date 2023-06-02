@@ -64,7 +64,7 @@ public class ShoptechUserDetails implements UserDetails {
 		return user.isEnabled();
 	}
 	
-	public String getFullname() {
+	public String getFullName() {
 		return this.user.getFirstName() + " " + this.user.getLastName();
 	}
 	
