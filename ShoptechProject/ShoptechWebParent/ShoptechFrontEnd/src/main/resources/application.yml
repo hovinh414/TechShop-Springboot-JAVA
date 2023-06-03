@@ -18,19 +18,3 @@ spring:
         dialect: org.hibernate.dialect.MySQL8Dialect
         format_sql: true
     show-sql: false
-  security:
-    oauth2:
-      client:
-        registration:
-          google:
-            client-id: null
-            client-secret: null
-            scope:
-              - email
-              - profile
-          facebook:
-            client-id: null
-            client-secret: null
-            scope:
-              - email
-              - public_profile
