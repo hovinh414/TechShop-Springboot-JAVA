@@ -11,17 +11,41 @@
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/SettingBag.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/SettingCategory.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/exception/CustomerNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/security/DatabaseLoginSuccessHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/static/assets/js/common_customer_form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/customer/account_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/MainController.java" afterDir="false" />
+>>>>>>> main
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/ShoptechFrontEndApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/ShoptechFrontEndApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/Utility.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/customer/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/customer/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/customer/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/customer/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/customer/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/customer/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/security/CustomerUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/security/CustomerUserDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/security/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/security/oauth/CustomerOAuth2User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/security/oauth/CustomerOAuth2User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/security/oauth/CustomerOAuth2UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/security/oauth/CustomerOAuth2UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/security/oauth/OAuth2LoginSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/security/oauth/OAuth2LoginSuccessHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/shoppingcart/CartItemRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/shoppingcart/ShoppingCartException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/shoppingcart/ShoppingCartRestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/shoppingcart/ShoppingCartService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/cart/quantity_control.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/navigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/navigation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/register/register_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/register/register_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/test/java/com/shoptech/site/customer/CustomerRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/test/java/com/shoptech/site/customer/CustomerRepositoryTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/test/java/com/shoptech/site/shoppingcart/CartItemRepositoryTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,9 +59,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="Class" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -74,10 +98,16 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+<<<<<<< HEAD
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Admin/Desktop/shopme",
+=======
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "Dashboard",
     "last_opened_file_path": "/Users/yoliephan/Desktop/TechShop-Springboot-JAVA/ShoptechProject",
+>>>>>>> main
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -89,6 +119,14 @@
     "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
     "spring.configuration.checksum": "fc5320541efeeb2b38517f18f0287997",
     "vue.rearranger.settings.migration": "true"
+<<<<<<< HEAD
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "yaml"
+    ]
+=======
+>>>>>>> main
   }
 }]]></component>
   <component name="RebelAgentSelection">
@@ -106,11 +144,11 @@
       <recent name="C:\Users\Admin\Desktop\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechFrontEnd\src\main\java\com\shoptech\site" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Desktop\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechFrontEnd\src\main\resources" />
       <recent name="C:\Users\Admin\Desktop\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechFrontEnd\src\main\resources\static\assets\js" />
       <recent name="C:\Users\Admin\Desktop\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechFrontEnd\src\main\resources\templates\cart" />
       <recent name="C:\Users\ADMIN\Desktop\Web java\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechBackEnd\src\main\resources\static\assets\js" />
       <recent name="C:\Users\ADMIN\Desktop\Web java\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechFrontEnd\src\main\resources\templates" />
-      <recent name="C:\Users\ADMIN\Desktop\Web java\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechFrontEnd\src\main\resources\templates\error" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.shoptech.admin.product" />
@@ -127,7 +165,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ShoptechBackEndApplication">
+  <component name="RunManager" selected="Spring Boot.ShoptechFrontEndApplication">
     <configuration name="CartItemRepositoryTests.testFindByCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ShoptechFrontEnd" />
       <extension name="coverage">
@@ -176,33 +214,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CartItemRepositoryTests.testSave2Items" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CustomerRepositoryTests.testFindByEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ShoptechFrontEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shoptech.site.shoppingcart.*" />
+          <option name="PATTERN" value="com.shoptech.site.customer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.shoptech.site.shoppingcart" />
-      <option name="MAIN_CLASS_NAME" value="com.shoptech.site.shoppingcart.CartItemRepositoryTests" />
-      <option name="METHOD_NAME" value="testSave2Items" />
+      <option name="PACKAGE_NAME" value="com.shoptech.site.customer" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.site.customer.CustomerRepositoryTests" />
+      <option name="METHOD_NAME" value="testFindByEmail" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CartItemRepositoryTests.testSaveItem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CustomerRepositoryTests.testUpdateAuthenticationType" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ShoptechFrontEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shoptech.site.shoppingcart.*" />
+          <option name="PATTERN" value="com.shoptech.site.customer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.shoptech.site.shoppingcart" />
-      <option name="MAIN_CLASS_NAME" value="com.shoptech.site.shoppingcart.CartItemRepositoryTests" />
-      <option name="METHOD_NAME" value="testSaveItem" />
+      <option name="PACKAGE_NAME" value="com.shoptech.site.customer" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.site.customer.CustomerRepositoryTests" />
+      <option name="METHOD_NAME" value="testUpdateAuthenticationType" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -223,21 +261,21 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.CustomerRepositoryTests.testFindByEmail" />
+      <item itemvalue="JUnit.CustomerRepositoryTests.testUpdateAuthenticationType" />
       <item itemvalue="JUnit.CartItemRepositoryTests.testFindByCustomer" />
       <item itemvalue="JUnit.CartItemRepositoryTests.testFindByCustomerAndProduct" />
       <item itemvalue="JUnit.CartItemRepositoryTests.testFindByProductId" />
-      <item itemvalue="JUnit.CartItemRepositoryTests.testSave2Items" />
-      <item itemvalue="JUnit.CartItemRepositoryTests.testSaveItem" />
       <item itemvalue="Spring Boot.ShoptechBackEndApplication" />
       <item itemvalue="Spring Boot.ShoptechFrontEndApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CustomerRepositoryTests.testFindByEmail" />
+        <item itemvalue="JUnit.CartItemRepositoryTests.testFindByCustomerAndProduct" />
+        <item itemvalue="JUnit.CustomerRepositoryTests.testUpdateAuthenticationType" />
         <item itemvalue="JUnit.CartItemRepositoryTests.testFindByCustomer" />
         <item itemvalue="JUnit.CartItemRepositoryTests.testFindByProductId" />
-        <item itemvalue="JUnit.CartItemRepositoryTests.testSaveItem" />
-        <item itemvalue="JUnit.CartItemRepositoryTests.testSave2Items" />
-        <item itemvalue="JUnit.CartItemRepositoryTests.testFindByCustomerAndProduct" />
       </list>
     </recent_temporary>
   </component>
@@ -272,9 +310,14 @@
       <workItem from="1685427376488" duration="6549000" />
       <workItem from="1685458258184" duration="1084000" />
       <workItem from="1685584395313" duration="7646000" />
+<<<<<<< HEAD
+      <workItem from="1685624172947" duration="22404000" />
+      <workItem from="1685706314806" duration="17053000" />
+=======
       <workItem from="1685670172435" duration="445000" />
       <workItem from="1685672353666" duration="4707000" />
       <workItem from="1685678074003" duration="1862000" />
+>>>>>>> main
     </task>
     <servers />
   </component>

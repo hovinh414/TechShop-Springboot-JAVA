@@ -133,7 +133,7 @@ public class CustomerRepositoryTests {
     }
 
     @Test
-    public void   testEnableCustomer() {
+    public void testEnableCustomer() {
         Integer customerId = 1;
         repo.enable(customerId);
 
