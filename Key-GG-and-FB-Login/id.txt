@@ -1,0 +1,6 @@
+client-id: 160886045569-ts8b0maeu29gu8a2kafatu0ek1747681.apps.googleusercontent.com
+client-secret: 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
+
+facebook:
+client-id: 178488898208605
+client-secret: 5c64dd7a4fe2442e07269276138c626c
