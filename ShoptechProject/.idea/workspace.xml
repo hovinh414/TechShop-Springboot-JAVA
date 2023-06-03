@@ -16,6 +16,10 @@
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/static/assets/js/common_customer_form.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/customer/account_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/MainController.java" afterDir="false" />
+>>>>>>> main
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" afterDir="false" />
@@ -94,9 +98,16 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+<<<<<<< HEAD
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/Admin/Desktop/shopme",
+=======
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Dashboard",
+    "last_opened_file_path": "/Users/yoliephan/Desktop/TechShop-Springboot-JAVA/ShoptechProject",
+>>>>>>> main
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -108,11 +119,14 @@
     "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
     "spring.configuration.checksum": "fc5320541efeeb2b38517f18f0287997",
     "vue.rearranger.settings.migration": "true"
+<<<<<<< HEAD
   },
   "keyToStringList": {
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
       "yaml"
     ]
+=======
+>>>>>>> main
   }
 }]]></component>
   <component name="RebelAgentSelection">
@@ -296,8 +310,14 @@
       <workItem from="1685427376488" duration="6549000" />
       <workItem from="1685458258184" duration="1084000" />
       <workItem from="1685584395313" duration="7646000" />
+<<<<<<< HEAD
       <workItem from="1685624172947" duration="22404000" />
       <workItem from="1685706314806" duration="17053000" />
+=======
+      <workItem from="1685670172435" duration="445000" />
+      <workItem from="1685672353666" duration="4707000" />
+      <workItem from="1685678074003" duration="1862000" />
+>>>>>>> main
     </task>
     <servers />
   </component>
