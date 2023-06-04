@@ -8,7 +8,12 @@ $(document).ready(function() {
 		if (newQuantity > 0) {
 			quantityInput.val(newQuantity);
 		} else {
-			showWarningModal('Minimum quantity is 1');
+			swal({
+				title: 'Thông báo',
+				text:'Số lượng phải lớn hơn 0 ',
+				icon:'warning',
+				button:'OK'
+			});
 		}
 	});
 	
@@ -18,10 +23,15 @@ $(document).ready(function() {
 		quantityInput = $("#quantity" + productId);
 		newQuantity = parseInt(quantityInput.val()) + 1;
 		
-		if (newQuantity <= 5) {
+		if (newQuantity <= 10) {
 			quantityInput.val(newQuantity);
 		} else {
-			showWarningModal('Maximum quantity is 5');
+			swal({
+				title: 'Thông báo',
+				text:'Số lượng phải bé hơn 10 ',
+				icon:'warning',
+				button:'OK'
+			});
 		}
 	});	
 });
