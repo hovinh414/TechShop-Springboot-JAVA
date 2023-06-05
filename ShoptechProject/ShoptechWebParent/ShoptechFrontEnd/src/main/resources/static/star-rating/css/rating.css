@@ -1,0 +1,15 @@
+.symbol {
+    display: inline-block;
+    border-radius: 50%;
+    border: 5px double white;
+    width: 10px;
+    height: 10px;
+}
+
+.symbol-empty {
+    background-color: transparent;
+}
+
+.symbol-filled {
+    background-color: #ff6565;
+}

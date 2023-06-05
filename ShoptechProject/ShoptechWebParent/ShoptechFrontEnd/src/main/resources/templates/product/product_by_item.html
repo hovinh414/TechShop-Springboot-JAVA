@@ -4,6 +4,7 @@
 
 <!-- Mirrored from template.hasthemes.com/brancy/brancy/product-four-columns.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Nov 2022 06:24:08 GMT -->
 <head th:replace="fragments :: page_head('Shopme','none')"/>
+<link rel="stylesheet" th:href="@{/star-rating/css/rating.css}">
 <body>
 
   <header class="header-area sticky-header ">
@@ -46,12 +47,10 @@
                 <div class="product-info">
                   <div class="product-rating">
                     <div class="rating">
-                      <i class="fa fa-star-o"></i>
-                      <i class="fa fa-star-o"></i>
-                      <i class="fa fa-star-o"></i>
-                      <i class="fa fa-star-o"></i>
-                      <i class="fa fa-star-half-o"></i>
+                      <input readonly type="hidden" class="rating"
+                             th:value="${product.averageRating}"/>
                     </div>
+                    <div class="reviews">[[${product.reviewCount}]] đánh giá</div>
                     <!--                    <div class="reviews">150 reviews</div>-->
                   </div>
                   <h4 class="title"><a th:href="@{'/p/' +${product.alias}}">[[${product.shortName}]]</a></h4>
@@ -155,11 +154,18 @@
   <div th:replace="fragments :: search_header "></div>
 
 
+  <script type="text/javascript">
+    $('input').rating({
+      filled: 'fa fa-star',
+      empty: 'fa fa-star-o'
+    });
 
+  </script>
   <script th:src="@{/assets/js/vendor/modernizr-3.11.7.min.js}"></script>
   <script th:src="@{/assets/js/vendor/jquery-3.6.0.min.js}"></script>
   <script th:src="@{/assets/js/vendor/jquery-migrate-3.3.2.min.js}"></script>
   <script th:src="@{/assets/js/vendor/bootstrap.bundle.min.js}"></script>
+  <script th:src="@{/star-rating/js/rating.js}"></script>
 
   <!-- Plugins JS -->
   <script th:src="@{/assets/js/plugins/swiper-bundle.min.js}"></script>
