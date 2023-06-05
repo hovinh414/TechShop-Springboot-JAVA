@@ -3,6 +3,7 @@ package com.shoptech.admin.review;
 import java.util.NoSuchElementException;
 
 import com.shoptech.admin.paging.PagingAndSortingHelper;
+import com.shoptech.admin.product.ProductRepository;
 import com.shoptech.entity.Review;
 import com.shoptech.entity.ShippingRate;
 import com.shoptech.exception.ReviewNotFoundException;
@@ -21,6 +22,7 @@ public class ReviewService {
 	public static final int REVIEWS_PER_PAGE = 5;
 
 	@Autowired private ReviewRepository reviewRepo;
+	@Autowired private ProductRepository productRepo;
 
 	public Page<Review> listByPage(int pageNum, String sortField, String sortDir, String keyword) {
 		Sort sort = Sort.by(sortField);
@@ -49,6 +51,7 @@ public class ReviewService {
 		reviewInDB.setComment(reviewInForm.getComment());
 
 		reviewRepo.save(reviewInDB);
+		productRepo.updateReviewCountAndAverageRating(reviewInDB.getProduct().getId());
 	}
 
 	public void delete(Integer id) throws ReviewNotFoundException {
