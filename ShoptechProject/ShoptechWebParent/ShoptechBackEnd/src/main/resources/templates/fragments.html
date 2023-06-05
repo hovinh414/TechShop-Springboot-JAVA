@@ -81,6 +81,15 @@
     <span th:if="${sortField == fieldName}"
           th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></span>
 </th>
+<!-------------------------- Bộ Lộc Review------------------------->
+<th th:fragment="column_linkReview(fieldName, columnLabel)">
+    <a style="color: #6c7293"
+       th:href="@{'/reviews/page/' + ${currentPage}+ '?sortField=' + ${fieldName} +'&sortDir=' + ${sortField != fieldName ? sortDir: reverseSortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">
+        [[${columnLabel}]]
+    </a>
+    <span th:if="${sortField == fieldName}"
+          th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></span>
+</th>
 <!-------------------------- Bộ Lộc Order ------------------------->
 <th th:fragment="column_linkOrd(fieldName, columnLabel)">
     <a style="color: #6c7293"
@@ -121,6 +130,12 @@
 <a th:fragment="page_linkRate(pageNum, label)"
    class="page-link"
    th:href= "@{'/shipping_rates/page/' + ${pageNum} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">
+    [[${label}]]
+</a>
+<!-------------------------- Phân trang Review ------------------------->
+<a th:fragment="page_linkReview(pageNum, label)"
+   class="page-link"
+   th:href= "@{'/reviews/page/' + ${pageNum} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">
     [[${label}]]
 </a>
 <!-------------------------- Phân trang Product ------------------------->
