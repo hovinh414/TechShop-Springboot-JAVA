@@ -11,7 +11,7 @@
   <div class="text-center">
     <div>&nbsp;</div>
     <div>&nbsp;</div>
-    <div><h2>Địa chỉ giao hàng của bạn </h2></div>
+    <div><h2>Địa chỉ nhận hàng của bạn </h2></div>
     <div>
       <a th:href="@{/address_book/new}" class="h4">Thêm địa chỉ giao hàng</a>
     </div>
@@ -26,11 +26,18 @@
           <div class="row">
             <div class="col">
               <b>Địa chỉ chính</b>
+
+              <th:block th:if="${usePrimaryAddressAsDefault}">
+                <span class="text-danger">[Mặc Định]</span>
+              </th:block>
+              <th:block th:unless="${usePrimaryAddressAsDefault}">
+                <a th:href="@{'/address_book/default/0'}">[Đặt làm mặc định]</a>
+              </th:block>
             </div>
             <div class="col">
               <div class="float-right">
-                <a class="fas fa-edit icon-dark" title="Edit your primary address"
-                   th:href="@{/account_details(redirect=address_book)}"></a>
+                <a title="Edit your primary address"
+                   th:href="@{/account_details(redirect=address_book)}">Sửa</a>
               </div>
             </div>
           </div>
@@ -47,14 +54,19 @@
             <div class="row">
               <div class="col">
                 <b>Địa chỉ #[[${status.count + 1}]]</b>
+
+                <th:block th:if="${address.defaultForShipping}">
+                  <span class="text-danger">[Mặc Định]</span>
+                </th:block>
+                <th:block th:unless="${address.defaultForShipping}">
+                  <a th:href="@{'/address_book/default/' + ${address.id}}">[Đặt làm mặc định]</a>
+                </th:block>
+
               </div>
               <div class="col">
                 <div class="float-right">
-                  <a class="fas fa-edit icon-dark" title="Edit this address"
-                     th:href="@{'/address_book/edit/' + ${address.id}}"></a>
-                  <a class="fas fa-trash icon-dark linkDelete" title="Delete this address"
-                     th:entityId="${address.id}"
-                     th:href="@{'/address_book/delete/' + ${address.id}}"></a>
+                  <a title="Edit this address" th:href="@{'/address_book/edit/' + ${address.id}}">Sửa |</a>
+                  <a title="Delete this address" th:entityId="${address.id}" th:href="@{'/address_book/delete/' + ${address.id}}">Xoá</a>
                 </div>
               </div>
             </div>

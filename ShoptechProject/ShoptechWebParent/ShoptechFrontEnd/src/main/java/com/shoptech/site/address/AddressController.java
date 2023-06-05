@@ -68,7 +68,7 @@ public class AddressController {
             redirectURL += "?redirect=checkout";
         }
 
-        ra.addFlashAttribute("message", "Địa chỉ giao hàng đã được lưu thành công. ");
+        ra.addFlashAttribute("message", "Địa chỉ nhận hàng đã được lưu thành công. ");
 
         return redirectURL;
     }
@@ -83,7 +83,7 @@ public class AddressController {
 
         model.addAttribute("address", address);
         model.addAttribute("listCountries", listCountries);
-        model.addAttribute("pageTitle", "Sửa địa chỉ giao hàng (ID: " + addressId + ")");
+        model.addAttribute("pageTitle", "Sửa địa chỉ nhận hàng (ID: " + addressId + ")");
 
         return "address_book/address_form";
     }
@@ -95,6 +95,13 @@ public class AddressController {
         addressService.delete(addressId, customer.getId());
 
         ra.addFlashAttribute("message", "Địa chỉ đã được xoá. ");
+
+        return "redirect:/address_book";
+    }
+    @GetMapping("/address_book/default/{id}")
+    public String setDefaultAddress(@PathVariable("id") Integer addressId, HttpServletRequest request){
+        Customer customer = getAuthenticatedCustomer(request);
+        addressService.setDefaultAddress(addressId, customer.getId());
 
         return "redirect:/address_book";
     }
