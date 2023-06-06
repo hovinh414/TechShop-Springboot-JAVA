@@ -12,29 +12,15 @@
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/SettingBag.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/SettingCategory.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/exception/CustomerNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/static/star-rating/css/rating.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/static/star-rating/css/star-rating.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/static/star-rating/css/star-rating.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/static/star-rating/img/loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/static/star-rating/js/rating.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/static/star-rating/js/star-rating.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/static/star-rating/js/star-rating.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/static/star-rating/themes/krajee-svg/theme.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/static/star-rating/themes/krajee-svg/theme.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/static/star-rating/themes/krajee-svg/theme.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/static/star-rating/themes/krajee-svg/theme.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ShoptechCommon.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../ShoptechCommon.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/product/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/product/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/product/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/review/ReviewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/java/com/shoptech/admin/review/ReviewService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/product/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/product/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/review/ReviewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/review/ReviewRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/review/ReviewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/review/ReviewService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/fragments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/navigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/navigation.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/product/product_by_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/product/product_by_item.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/product/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/product/product_detail.html" afterDir="false" />
     </list>
@@ -83,8 +69,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Zinh",
-    "last_opened_file_path": "D:/Vinh_2B_03/LapTrinhUngDungJava/TechShop-Springboot-JAVA/ShoptechProject/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/static",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/Vinh_2B_03/LapTrinhUngDungJava/TechShop-Springboot-JAVA/ShoptechProject",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -171,6 +157,9 @@
       <workItem from="1685974801312" duration="3617000" />
       <workItem from="1685985214915" duration="7906000" />
       <workItem from="1685993590498" duration="444000" />
+      <workItem from="1685994211683" duration="70000" />
+      <workItem from="1686012732498" duration="4701000" />
+      <workItem from="1686068150913" duration="316000" />
     </task>
     <servers />
   </component>
