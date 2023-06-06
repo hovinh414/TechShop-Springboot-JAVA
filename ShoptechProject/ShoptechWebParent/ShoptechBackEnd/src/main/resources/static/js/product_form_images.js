@@ -62,9 +62,9 @@ function addNextExtraImageSection(index){
 	
 	htmlExtraImage = `
 		<div class="col border m-3 p-2" id="divExtraImage${index}">
-      <div id="extraImageHeader${index}"><label>Ảnh sản pẩm #${index + 1}:</label></div>
+      <div id="extraImageHeader${index}"><label>Extra image #${index + 1}:</label></div>
       <div class="m-4">
-        <img id="extraThumbnail${index}" alt="Ảnh sản phẩm #${index + 1}" style="width: 100px" src="${defaultImageThumbnailSrc}"/>
+        <img id="extraThumbnail${index}" alt="Extra image #${index + 1}" style="width: 100px" src="${defaultImageThumbnailSrc}"/>
       </div>
       <div>
         <input type="file" name="extraImage" 
@@ -77,7 +77,7 @@ function addNextExtraImageSection(index){
 	htmlLinkRemove = `
 	<a style="padding-left: 10px" class=" btn btn-sm btn-danger" 
         href="javascript:removeExtraImage(${index - 1})"
-        title="Xóa ảnh">Xóa ảnh</a>`;
+        title="Remove this image">Remove</a>`;
 
 	$("#divProductImages").append(htmlExtraImage);
 	

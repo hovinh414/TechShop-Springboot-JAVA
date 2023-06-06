@@ -56,7 +56,7 @@ function showExtraImageThumbnail(fileInput){
 		fileSize = fileInput.files[0].size;
 
 		if(fileSize > MAX_FILE_SIZE) {
-			fileInput.setCustomValidity("Bạn phải chọn ảnh có dung lượng < " + MAX_FILE_SIZE + " byes!");
+			fileInput.setCustomValidity("You must choose an image less than " + MAX_FILE_SIZE + " byes!");
 			fileInput.reportValidity();
 			
 			return false;

@@ -1,11 +1,11 @@
 <div class="modal-header">
-    <h4 class="modal-title">Chi tiết đánh giá</h4>
+    <h4 class="modal-title">Detail review</h4>
 </div>
 
 <div class="modal-body">
     <div class="form-group row">
         <div class="col-sm-2 col-form-label">
-            <label>Mã Review: </label>
+            <label>Review ID: </label>
         </div>
         <div class="col-sm-10">
             <div th:utext="${review.id}" class="border p-2 m-2"></div>
@@ -13,7 +13,7 @@
     </div>
     <div class="form-group row">
         <div class="col-sm-2 col-form-label">
-            <label>Sản phẩm: </label>
+            <label>Product: </label>
         </div>
         <div class="col-sm-10">
             <div th:utext="${review.product.name}" class="border p-2 m-2"></div>
@@ -21,7 +21,7 @@
     </div>
     <div class="form-group row">
         <div class="col-sm-2 col-form-label">
-            <label>Khách hàng: </label>
+            <label>Customer: </label>
         </div>
         <div class="col-sm-10">
             <div th:utext="${review.customer.fullName}" class="border p-2 m-2"></div>
@@ -30,7 +30,7 @@
 
     <div class="form-group row">
         <div class="col-sm-2 col-form-label">
-            <label>Tiêu đề: </label>
+            <label>Title: </label>
         </div>
         <div class="col-sm-10">
             <div th:utext="${review.headline}" class="border p-2 m-2"></div>
@@ -38,7 +38,7 @@
     </div>
     <div class="form-group row">
         <div class="col-sm-2 col-form-label">
-            <label>Đánh giá: </label>
+            <label>Rating: </label>
         </div>
         <div class="col-sm-10">
             <div th:utext="${review.rating}" class="border p-2 m-2"></div>
@@ -46,7 +46,7 @@
     </div>
     <div class="form-group row">
         <div class="col-sm-2 col-form-label">
-            <label>Bình luận: </label>
+            <label>Comment: </label>
         </div>
         <div class="col-sm-10">
             <div th:utext="${review.comment}" class="border p-2 m-2"></div>

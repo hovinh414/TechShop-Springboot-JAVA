@@ -61,7 +61,7 @@ public class CategoryController {
         List<Category> listCategories = service.listCategoriesUsedInForm();
         model.addAttribute("category", new Category());
         model.addAttribute("listCategories", listCategories);
-        model.addAttribute("pageTitle", "Thêm mới danh mục");
+        model.addAttribute("pageTitle", "Create New Category");
         return "categories/category_form";
     }
     @PostMapping("/categories/save")
@@ -81,7 +81,7 @@ public class CategoryController {
             service.save(category);
         }
 
-        redirectAttributes.addFlashAttribute("message", "Lưu danh mục thành công");
+        redirectAttributes.addFlashAttribute("message", "The category has been saved successfully.");
         return "redirect:/categories";
     }
     @GetMapping("/categories/edit/{id}")
@@ -91,7 +91,7 @@ public class CategoryController {
             List<Category> listCategories = service.listCategoriesUsedInForm();
             model.addAttribute("category", category);
             model.addAttribute("listCategories", listCategories);
-            model.addAttribute("pageTitle", "Sửa danh mục (ID: " + id + ")");
+            model.addAttribute("pageTitle", "Edit Category (ID: " + id + ")");
 
             return "categories/category_form";
         } catch (CategoryNotFoundException ex) {
@@ -103,8 +103,8 @@ public class CategoryController {
     public String updateCategoryEnabledStatus(@PathVariable("id") Integer id, @PathVariable("status") boolean enabled,
                                               RedirectAttributes redirectAttributes) {
         service.updateCategoryEnabledStatus(id, enabled);
-        String status = enabled ? "mở khóa" : "bị khóa";
-        String message = "Danh mục ID: " + id + " vừa " + status;
+        String status = enabled ? "enabled" : "disabled";
+        String message = "The category ID " + id + " has been " + status;
         redirectAttributes.addFlashAttribute("message", message);
 
         return "redirect:/categories";
@@ -118,7 +118,8 @@ public class CategoryController {
             String categoryDir = "../category-images/" + id;
             FileUploadUtil.removeDir(categoryDir);
 
-            redirectAttributes.addFlashAttribute("message", "Đã xóa danh mục ID " + id);
+            redirectAttributes.addFlashAttribute("message",
+                    "The category ID " + id + " has been deleted successfully");
         } catch (CategoryNotFoundException ex) {
             redirectAttributes.addFlashAttribute("message", ex.getMessage());
         }

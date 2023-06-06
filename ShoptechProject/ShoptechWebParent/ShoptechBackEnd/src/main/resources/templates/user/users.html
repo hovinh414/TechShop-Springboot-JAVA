@@ -35,11 +35,11 @@
             <!-- Trang Chủ-->
             <article layout:fragment="content">
                 <div class="card-body">
-                    <h4 class="card-title ">QUẢN LÝ TÀI KHOẢN</h4>
+                    <h4 class="card-title ">MANAGE USERS</h4>
                     <a th:href="@{/users/create}" aria-expanded="false" aria-controls="auth">
                     <button type="submit" class="btn btn-danger btn-icon-text" >
                         <i class="mdi mdi-account-plus"></i>
-                        Tạo mới
+                       Create
                     </button>
                     </a>
                     </p>
@@ -68,21 +68,21 @@
                         <a th:href="@{/users/export/csv}" aria-expanded="false" aria-controls="auth">
                             <button type="submit" class="btn btn-outline-behance btn-icon-text" >
                                 <i class="mdi mdi-file-export"></i>
-                                IN CSV
+                                EXPORT CSV
                             </button>
                         </a>
                         &nbsp;
                         <a th:href="@{/users/export/excel}" aria-expanded="false" aria-controls="auth">
                             <button type="submit" class="btn btn-outline-success btn-icon-text" >
                                 <i class="mdi mdi-file-excel"></i>
-                                IN EXCEL
+                                EXPORT EXCEL
                             </button>
                         </a>
                         &nbsp;
                         <a th:href="@{/users/export/pdf}" aria-expanded="false" aria-controls="auth">
                             <button type="submit" class="btn btn-outline-reddit btn-icon-text" >
                                 <i class="mdi mdi-file-pdf"></i>
-                                IN PDF
+                                EXPORT PDF
                             </button>
                         </a>
                     </div>
@@ -95,11 +95,11 @@
                                <th th:replace="fragments :: column_link('id','ID')"></th>
                                 <th>Avatar</th>
                                 <th th:replace="fragments :: column_link('email','Email')"></th>
-                                <th th:replace="fragments :: column_link('firstName','Tên')"></th>
-                                <th th:replace="fragments :: column_link('lastName','Họ')"></th>
-                                <th>Vai trò</th>
-                                <th th:replace="fragments :: column_link('enabled','Trạng thái')"></th>
-                                <th>Thao tác</th>
+                                <th th:replace="fragments :: column_link('firstName','First name')"></th>
+                                <th th:replace="fragments :: column_link('lastName','Last name')"></th>
+                                <th>Role</th>
+                                <th th:replace="fragments :: column_link('enabled','Enable')"></th>
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -117,17 +117,17 @@
                                 <td>
                                     <a style="font-size: 16px;" th:if="${user.enabled == true}" class="fas fa-check-square fas-2x icon-blue"
                                        th:href="@{'/users/' + ${user.id} + '/enabled/false'}"
-                                       title="Khoá tài khoản"></a>
+                                       title="Disable this user"></a>
 
                                     <a style="font-size: 16px;" th:if="${user.enabled == false}" class="fas fa-square fas-2x icon-silver"
                                        th:href="@{'/users/' + ${user.id} + '/enabled/true'}"
-                                       title="Mở tài khoản"></a>
+                                       title="Enable this user"></a>
                                 </td>
                                 <td>
                                     <a style="font-size: 16px;" class="fas fa-edit fas-2x icon-purple" th:href="@{'/users/edit/' + ${user.id}}"
                                        title="Edit this user"></a>
                                     &nbsp;&nbsp;
-                                    <a style="font-size: 16px;" class="fas fa-trash fas-2x icon-red" onclick="return confirm('Bạn có muốn xóa?')" th:href="@{'/users/delete/' + ${user.id}}"
+                                    <a style="font-size: 16px;" class="fas fa-trash fas-2x icon-red" onclick="return confirm('Do you want delete this user?')" th:href="@{'/users/delete/' + ${user.id}}"
                                        title="Delete this user"></a>
                                 </td>
                             </tr>
@@ -140,11 +140,11 @@
 
             <!--- -------------- Show Users --------------- ----->
             <div class="text-center m-1" th:if="${totalItems > 0}">
-                <span>Hiển thị ID # Từ [[${startCount}]] đến [[${endCount}]] trên [[${totalItems}]] </span>
+                <span>Showing users # from [[${startCount}]] to [[${endCount}]] of [[${totalItems}]] </span>
             </div>
 
             <div class="text-center m-1" th:unless="${totalItems > 0}">
-                <span>Không tìm thấy tài khoản!</span>
+                <span>No user found !</span>
             </div>
 
             <!--- --------------Phân Trang --------------- ----->
@@ -152,10 +152,10 @@
                 <nav>
                     <ul class="pagination justify-content-center">
                         <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-                           <a th:replace="fragments :: page_link(1, 'Đầu')" ></a>
+                           <a th:replace="fragments :: page_link(1, 'First')" ></a>
                         </li>
                         <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-                            <a th:replace="fragments :: page_link(${currentPage - 1}, 'Sau')" ></a>
+                            <a th:replace="fragments :: page_link(${currentPage - 1}, 'Previous')" ></a>
                         </li>
 
                         <li th:class="${currentPage != i ? 'page-item': 'page-item active'}"
@@ -164,10 +164,10 @@
                         </li>
 
                         <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-                            <a th:replace="fragments :: page_link(${currentPage + 1}, 'Tiếp')" ></a>
+                            <a th:replace="fragments :: page_link(${currentPage + 1}, 'Next')" ></a>
                         </li>
                         <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-                            <a th:replace="fragments :: page_link(${totalPages}, 'Cuối')" ></a>
+                            <a th:replace="fragments :: page_link(${totalPages}, 'Last')" ></a>
                         </li>
                     </ul>
                 </nav>

@@ -78,7 +78,7 @@ public class ReviewController {
 			Review review = service.get(id);
 
 			model.addAttribute("review", review);
-			model.addAttribute("pageTitle", String.format("Sửa đánh giá (ID: %d)", id));
+			model.addAttribute("pageTitle", String.format("Edit Review (ID: %d)", id));
 
 			return "reviews/review_form";
 		} catch (ReviewNotFoundException ex) {
@@ -90,7 +90,7 @@ public class ReviewController {
 	@PostMapping("/reviews/save")
 	public String saveReview(Review reviewInForm, RedirectAttributes ra) {
 		service.save(reviewInForm);
-		ra.addFlashAttribute("message", "Đánh giá ID " + reviewInForm.getId() + " lưu thành công!");
+		ra.addFlashAttribute("message", "The review ID " + reviewInForm.getId() + " has been updated successfully.");
 		return defaultRedirectURL;
 	}
 
@@ -98,7 +98,7 @@ public class ReviewController {
 	public String deleteReview(@PathVariable("id") Integer id, RedirectAttributes ra) {
 		try {
 			service.delete(id);
-			ra.addFlashAttribute("message", "Đánh giá ID " + id + " đã xóa.");
+			ra.addFlashAttribute("message", "The review ID " + id + " has been deleted.");
 		} catch (ReviewNotFoundException ex) {
 			ra.addFlashAttribute("message", ex.getMessage());
 		}

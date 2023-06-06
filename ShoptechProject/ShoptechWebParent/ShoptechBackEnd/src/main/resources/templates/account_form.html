@@ -57,7 +57,7 @@
                                   enctype="multipart/form-data">
                                 <input type="hidden" th:field="*{id}"/>
                                 <div class="row mt-2">
-                                    <div class="col-md-6"><label style="color:black" class="labels">Tên</label> <input
+                                    <div class="col-md-6"><label style="color:black" class="labels">First name</label> <input
                                             style="color:white"
                                             type="text"
                                             class="form-control p_input"
@@ -65,8 +65,7 @@
                                             required
                                             minlength="2"
                                             maxlength="45"></div>
-                                    <div class="col-md-6"><label style="color:black" class="labels">Họ và tên
-                                        đệm</label> <input
+                                    <div class="col-md-6"><label style="color:black" class="labels">Last name</label> <input
                                             style="color:white" type="text" class="form-control p_input"
                                             th:field="*{lastName}" required minlength="2" maxlength="45"></div>
                                 </div>
@@ -76,26 +75,26 @@
                                             style="color:black" type="email" class="form-control p_input"
                                             th:field="*{email}" readonly="readonly"></div>
                                     <div class="col-md-12"><label style="color:black; padding-top: 10px; "
-                                                                  class="labels">Mật khẩu</label>
+                                                                  class="labels">Password</label>
                                         <input style="color:white" type="password" class="form-control p_input"
-                                               th:field="*{password}" placeholder="để trống nếu không thay đổi"
+                                               th:field="*{password}" placeholder="leave blank if you don't want to change password"
                                                minlength="8" maxlength="20"
                                                oninput="checkPasswordMatch(document.getElementById('confirmPassword'))">
                                     </div>
                                     <div class="col-md-12"><label style="color:black; padding-top: 10px;"
-                                                                  class="labels">Nhập lại mật khẩu</label>
+                                                                  class="labels">Confirm password</label>
                                         <input style="color:white" type="password" class="form-control p_input"
-                                               id="confirmPassword" placeholder="nhập lại mật khẩu"
+                                               id="confirmPassword" placeholder="Confirm password"
                                                minlength="8" maxlength="20"
                                                oninput="checkPasswordMatch(this)">
                                     </div>
 
                                     <div class="col-md-12"><label style="color:black; padding-top: 10px;"
-                                                                  class="labels">Chức vụ: </label>
+                                                                  class="labels">Role: </label>
                                         <span><b style="color:black">[[${user.roles}]]</b></span>
                                     </div>
                                     <div class="col-md-12"><label style="color:black; padding-top: 10px;"
-                                                                  class="labels">Hình ảnh: </label>
+                                                                  class="labels">Image: </label>
                                         <input type="hidden" th:field="*{photos}"/>
                                         <input type="file" id="fileImage" name="image" accept="image/jpeg, image/png "
                                                class="mb-2"/>
@@ -173,7 +172,7 @@
             $("#password") selector refers to the input tag with th:field="*{password}"
         */
         if (confirmPassword.value != $("#password").val()) {
-            confirmPassword.setCustomValidity("mật khẩu không trùng khớp!");
+            confirmPassword.setCustomValidity("Passwords do not match!");
 
         } else {
             confirmPassword.setCustomValidity("");

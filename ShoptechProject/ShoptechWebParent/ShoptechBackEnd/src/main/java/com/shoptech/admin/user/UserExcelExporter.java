@@ -32,10 +32,10 @@ public class UserExcelExporter extends AbstractExporter {
 
         createCell(row, 0, "ID", cellStyle);
         createCell(row, 1, "Email", cellStyle);
-        createCell(row, 2, "Tên", cellStyle);
-        createCell(row, 3, "Họ", cellStyle);
-        createCell(row, 4, "Vai trò", cellStyle);
-        createCell(row, 5, "Trạng thái", cellStyle);
+        createCell(row, 2, "LastName", cellStyle);
+        createCell(row, 3, "FirstName", cellStyle);
+        createCell(row, 4, "Role", cellStyle);
+        createCell(row, 5, "Status", cellStyle);
     }
 
     private void createCell(XSSFRow row, int columnIndex, Object value, CellStyle style) {

@@ -36,12 +36,12 @@
             <!-- Trang Chủ-->
             <article layout:fragment="content">
                 <div class="card-body">
-                    <h4 class="card-title ">QUẢN LÝ SẢN PHẨM</h4>
+                    <h4 class="card-title ">MANAGE PRODUCTS</h4>
                     <th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
                     <a th:href="@{/products/create}" aria-expanded="false" aria-controls="auth">
                     <button type="submit" class="btn btn-danger btn-icon-text" >
                         <i class="mdi mdi-playlist-play"></i>
-                        Tạo mới
+                        Create
                     </button>
                     </a>
                     </th:block>
@@ -56,7 +56,7 @@
                             <input type="hidden" name="sortField" th:value="${sortField}" />
                             <input type="hidden" name="sortDir" th:value="${sortDir}" />
                             <select style="color: white" class="form-control" name="categoryId" id="dropdownCategory">
-                                <option style="color: white"  value="0">Danh mục sản phẩm</option>
+                                <option style="color: white"  value="0">Product category</option>
 
                                 <th:block th:each="cat : ${listCategories}">
                                     <option style="color: white"  th:value="${cat.id}" th:selected="(${categoryId} == ${cat.id})">[[${cat.name}]]</option>
@@ -78,7 +78,7 @@
                             <a th:href="@{/products/export/csv}" aria-expanded="false" aria-controls="auth">
                                 <button type="submit" class="btn btn-outline-behance btn-icon-text" >
                                     <i class="mdi mdi-file-export"></i>
-                                    IN CSV
+                                    EXPORT CSV
                                 </button>
                             </a>
                         </div>
@@ -89,14 +89,14 @@
                             <thead>
                             <tr>
                                 <th th:replace="fragments :: column_linkPro('id','ID')"></th>
-                                <th th:replace="fragments :: column_linkPro('name','Tên sản phẩm')"></th>
-                                <th>Hình ảnh</th>
-                                <th th:replace="fragments :: column_linkPro('brand.name','Thương hiệu')"></th>
-                                <th th:replace="fragments :: column_linkPro('category.name','Danh mục')"></th>
+                                <th th:replace="fragments :: column_linkPro('name','Product name')"></th>
+                                <th>Image</th>
+                                <th th:replace="fragments :: column_linkPro('brand.name','Brand')"></th>
+                                <th th:replace="fragments :: column_linkPro('category.name','Category')"></th>
                                 <th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
-                                <th style="text-align: center">Trạng thái</th>
+                                <th style="text-align: center">Status</th>
                                 </th:block>
-                                <th>Thao tác</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -115,22 +115,22 @@
                                 <td style="text-align: center">
                                     <a style="font-size: 16px;" th:if="${product.enabled == true}" class="fas fa-check-square fas-2x icon-blue"
                                        th:href="@{'/products/' + ${product.id} + '/enabled/false'}"
-                                       title="Khoá sản phẩm"></a>
+                                       title="Disable this product"></a>
 
                                     <a style="font-size: 16px;" th:if="${product.enabled == false}" class="fas fa-square fas-2x icon-silver"
                                        th:href="@{'/products/' + ${product.id} + '/enabled/true'}"
-                                       title="Mở sản phẩm"></a>
+                                       title="Enable this product"></a>
                                 </td>
                                 </th:block>
                                 <td>
-                                    <a class="fas fa-file-alt fas-2x icon-green link-detail" th:href="@{'/products/detail/' + ${product.id}}" title="Xem chi tiết sản phẩm"></a>
+                                    <a class="fas fa-file-alt fas-2x icon-green link-detail" th:href="@{'/products/detail/' + ${product.id}}" title="View detail this product"></a>
                                     &nbsp;&nbsp;<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor', 'Salesperson')">
                                     <a style="font-size: 16px;" class="fas fa-edit fas-2x icon-purple" th:href="@{'/products/edit/' + ${product.id}}"
-                                       title="Sửa sản phẩm"></a>
+                                       title="Edit this product"></a>
                                     &nbsp;&nbsp;</th:block>
                                     <th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
-                                    <a style="font-size: 16px;" class="fas fa-trash fas-2x icon-red" onclick="return confirm('Bạn có muốn xóa?')" th:href="@{'/products/delete/' + ${product.id}}"
-                                       title="Xóa sản phẩm"></a>
+                                    <a style="font-size: 16px;" class="fas fa-trash fas-2x icon-red" onclick="return confirm('Do you want delete this product?')" th:href="@{'/products/delete/' + ${product.id}}"
+                                       title="Detele this product"></a>
                                     </th:block>
                                 </td>
                             </tr>
@@ -146,20 +146,20 @@
                 </div>
             </div>
             <div class="text-center m-1" th:if="${totalItems > 0}">
-                <span>Hiển thị ID # Từ [[${startCount}]] đến [[${endCount}]] trên [[${totalItems}]] </span>
+                <span>Showing products # from [[${startCount}]] to [[${endCount}]] of [[${totalItems}]] </span>
             </div>
 
             <div class="text-center m-1" th:unless="${totalItems > 0}">
-                <span>Không tìm thấy sản phẩm!</span>
+                <span>No product found !</span>
             </div>
             <div th:if="${totalPages > 1}">
                 <nav>
                     <ul class="pagination justify-content-center">
                         <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-                            <a th:replace="fragments :: page_linkPro(1, 'Đầu')" ></a>
+                            <a th:replace="fragments :: page_linkPro(1, 'First')" ></a>
                         </li>
                         <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-                            <a th:replace="fragments :: page_linkPro(${currentPage - 1}, 'Sau')" ></a>
+                            <a th:replace="fragments :: page_linkPro(${currentPage - 1}, 'Previous')" ></a>
                         </li>
 
                         <li th:class="${currentPage != i ? 'page-item': 'page-item active'}"
@@ -168,10 +168,10 @@
                         </li>
 
                         <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-                            <a th:replace="fragments :: page_linkPro(${currentPage + 1}, 'Tiếp')" ></a>
+                            <a th:replace="fragments :: page_linkPro(${currentPage + 1}, 'Next')" ></a>
                         </li>
                         <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-                            <a th:replace="fragments :: page_linkPro(${totalPages}, 'Cuối')" ></a>
+                            <a th:replace="fragments :: page_linkPro(${totalPages}, 'Last')" ></a>
                         </li>
                     </ul>
                 </nav>

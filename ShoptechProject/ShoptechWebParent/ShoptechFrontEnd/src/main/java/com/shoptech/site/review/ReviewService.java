@@ -11,6 +11,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 @Service
 public class ReviewService {
     public static final int REVIEWS_PER_PAGE = 5;
@@ -42,5 +44,9 @@ public class ReviewService {
         Pageable pageable = PageRequest.of(0, 10, sort);
 
         return reviewRepo.findByProduct(product, pageable);
+    }
+    public void saveReview(Review review) {
+        review.setReviewTime(new Date());
+        reviewRepo.save(review);
     }
 }

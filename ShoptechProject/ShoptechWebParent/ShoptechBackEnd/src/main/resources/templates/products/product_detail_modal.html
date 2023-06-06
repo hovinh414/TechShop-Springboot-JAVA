@@ -1,23 +1,23 @@
 <div class="modal-header">
-  <h4 class="modal-title">Chi tiết sản phẩm</h4>
+  <h4 class="modal-title">Detail product</h4>
 </div>
 
 <div>
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item">
-      <a class="nav-link active" data-toggle="tab" href="#overview" role="tab">Tổng Quan</a>
+      <a class="nav-link active" data-toggle="tab" href="#overview" role="tab">Overview</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#description" role="tab">Mô Tả</a>
+      <a class="nav-link" data-toggle="tab" href="#description" role="tab">Description</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#images" role="tab">Hình Ảnh</a>
+      <a class="nav-link" data-toggle="tab" href="#images" role="tab">Images</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#details" role="tab">Chi Tiết</a>
+      <a class="nav-link" data-toggle="tab" href="#details" role="tab">Details</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#shipping" role="tab">Kích Thước</a>
+      <a class="nav-link" data-toggle="tab" href="#shipping" role="tab">Shipping</a>
     </li>
   </ul>
 
@@ -25,7 +25,7 @@
     <div class="tab-pane active p-3" id="overview" role="tabpanel">
       <div class="form-group row">
         <div class="col-sm-2 col-form-label">
-          <label>Tên sản phẩm: </label>
+          <label>Product name: </label>
         </div>
         <div class="col-sm-10">
           <div th:utext="${product.name}" class="border p-2 m-2"></div>
@@ -34,7 +34,7 @@
 
       <div class="form-group row">
         <div class="col-sm-2 col-form-label">
-          <label>Đường dẫn: </label>
+          <label>Alias: </label>
         </div>
         <div class="col-sm-10">
           <div th:utext="${product.alias}" class="border p-2 m-2"></div>
@@ -43,7 +43,7 @@
 
       <div class="form-group row">
         <div class="col-sm-2 col-form-label">
-          <label>Thương hiệu: </label>
+          <label>Brand: </label>
         </div>
         <div class="col-sm-10">
           <div th:utext="${product.brand.name}" class="border p-2 m-2"></div>
@@ -51,7 +51,7 @@
       </div>
       <div class="form-group row">
         <div class="col-sm-2 col-form-label">
-          <label>Danh mục: </label>
+          <label>Category: </label>
         </div>
         <div class="col-sm-10">
           <div th:utext="${product.category.name}" class="border p-2 m-2"></div>
@@ -73,7 +73,7 @@
 
       <div class="form-group row">
         <div class="col-sm-2 col-form-label">
-          <label>Giá gốc: </label>
+          <label>Cost: </label>
         </div>
         <div class="col-sm-10">
           <div th:utext="${product.cost}" class="border p-2 m-2"></div>
@@ -82,7 +82,7 @@
 
       <div class="form-group row">
         <div class="col-sm-2 col-form-label">
-          <label>Giá bán: </label>
+          <label>Price: </label>
         </div>
         <div class="col-sm-10">
           <div th:utext="${product.price}" class="border p-2 m-2"></div>
@@ -91,7 +91,7 @@
 
       <div class="form-group row">
         <div class="col-sm-2 col-form-label">
-          <label>Giảm giá: </label>
+          <label>Discount percent: </label>
         </div>
         <div class="col-sm-10">
           <div th:utext="${product.discountPercent}" class="border p-2 m-2"></div>
@@ -107,12 +107,12 @@
     </div>
     <div class="tab-pane p-3" id="description" role="tabpanel" >
       <div class="m-2">
-        <label>Mô tả:</label>
+        <label>Short description:</label>
         <div th:utext="${product.shortDescription}" class="border p-2 m-2"></div>
       </div>
 
       <div class="m-2">
-        <label>Mô tả chi tiết:</label>
+        <label>Full descriptiont:</label>
         <div th:utext="${product.fullDescription}" class="border p-2 m-2"></div>
       </div>
     </div>
@@ -160,7 +160,7 @@
     <div class="tab-pane p-3" id="shipping" role="tabpanel">
       <div class="form-group row">
         <div class="col-sm-2 col-form-label">
-          <label>Chiều dài (cm): </label>
+          <label>Length (cm): </label>
         </div>
         <div class="col-sm-10">
           <div th:utext="${product.length}" class="border p-2 m-2"></div>
@@ -168,7 +168,7 @@
       </div>
       <div class="form-group row">
         <div class="col-sm-2 col-form-label">
-          <label>Chiều rộng (cm): </label>
+          <label>Width (cm): </label>
         </div>
         <div class="col-sm-10">
           <div th:utext="${product.width}" class="border p-2 m-2"></div>
@@ -176,7 +176,7 @@
       </div>
       <div class="form-group row">
         <div class="col-sm-2 col-form-label">
-          <label>Chiều cao (cm): </label>
+          <label>Height (cm): </label>
         </div>
         <div class="col-sm-10">
           <div th:utext="${product.height}" class="border p-2 m-2"></div>
@@ -184,7 +184,7 @@
       </div>
       <div class="form-group row">
         <div class="col-sm-2 col-form-label">
-          <label>Cân nặng (kg): </label>
+          <label>Weight (kg): </label>
         </div>
         <div class="col-sm-10">
           <div th:utext="${product.weight}" class="border p-2 m-2"></div>

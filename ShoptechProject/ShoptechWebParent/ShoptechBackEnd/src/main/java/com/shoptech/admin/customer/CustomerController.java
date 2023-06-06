@@ -65,8 +65,8 @@ public class CustomerController {
     public String updateCustomerEnabledStatus(@PathVariable("id") Integer id,
                                               @PathVariable("status") boolean enabled, RedirectAttributes redirectAttributes) {
         service.updateCustomerEnabledStatus(id, enabled);
-        String status = enabled ? "mở khóa" : "bị khóa";
-        String message = "Khách hàng ID " + id + " đã " + status;
+        String status = enabled ? "enabled" : "disabled";
+        String message = "The Customer ID " + id + " has been " + status;
         redirectAttributes.addFlashAttribute("message", message);
 
         return "redirect:/customers";
@@ -93,7 +93,7 @@ public class CustomerController {
 
             model.addAttribute("listCountries", countries);
             model.addAttribute("customer", customer);
-            model.addAttribute("pageTitle", String.format("Sửa khách hàng (ID: %d)", id));
+            model.addAttribute("pageTitle", String.format("Edit Customer (ID: %d)", id));
 
             return "customers/customer_form";
 
@@ -114,7 +114,7 @@ public class CustomerController {
     public String deleteCustomer(@PathVariable Integer id, RedirectAttributes ra) {
         try {
             service.delete(id);
-            ra.addFlashAttribute("message", "Khách hàng ID " + id + " đã xóa thành công");
+            ra.addFlashAttribute("message", "The customer ID " + id + " has been deleted successfully.");
 
         } catch (CustomerNotFoundException ex) {
             ra.addFlashAttribute("message", ex.getMessage());

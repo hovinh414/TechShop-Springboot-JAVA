@@ -43,19 +43,19 @@
                   enctype="multipart/form-data">
               <input type="hidden" th:field="*{id}" />
               <div class="form-group">
-                <label class="col-sm-3 col-form-label">Sản phẩm: </label>
+                <label class="col-sm-3 col-form-label">Product: </label>
                 <div  class="col-sm-12">
                   <input style="color:black" type="text" class="form-control p_input" th:value="${review.product.name}" readonly/>
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-sm-3 col-form-label">Khách hàng: </label>
+                <label class="col-sm-3 col-form-label">Customer: </label>
                 <div class="col-sm-12">
                   <input style="color:black" type="text" class="form-control p_input" th:value="${review.customer.fullName}" readonly/>
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-sm-3 col-form-label">Đánh giá: </label>
+                <label class="col-sm-3 col-form-label">Rating: </label>
                 <div class="col-sm-12">
                   <input style="color:black" type="text" class="form-control p_input" th:value="${review.rating}" readonly/>
                 </div>
@@ -67,19 +67,19 @@
                 </div>
               </div>-->
               <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Thời gian đánh giá: </label>
+                <label class="col-sm-3 col-form-label">Review time: </label>
                 <div class="col-sm-12">
                   <span th:text="${#dates.format(review.reviewTime, 'yyyy-MM-dd HH:mm:ss')}"></span>
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-sm-3 col-form-label">Tiêu đề: </label>
+                <label class="col-sm-3 col-form-label">Headline: </label>
                 <div class="col-sm-12">
                   <input style="color:white" type="text" class="form-control p_input" th:field="*{headline}" minlength="20" maxlength="128" required />
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-sm-3 col-form-label">Bình luận: </label>
+                <label class="col-sm-3 col-form-label">Comment: </label>
                 <div class="col-sm-12">
                   <textarea rows="3" class="form-control" th:field="*{comment}" minlength="30" maxlength="300" required></textarea>
                 </div>
