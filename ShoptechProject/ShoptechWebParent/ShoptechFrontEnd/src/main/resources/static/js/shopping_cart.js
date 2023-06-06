@@ -27,7 +27,12 @@ function decreaseQuantity(link) {
 		quantityInput.val(newQuantity);
 		updateQuantity(productId, newQuantity);
 	} else {
-		showWarningModal('Minimum quantity is 1');
+		swal({
+			title: 'Thông báo',
+			text:'Số lượng phải lớn hơn 0 ' + catName,
+			icon:'warning',
+			button:'OK'
+		});
 	}	
 }
 
@@ -36,11 +41,16 @@ function increaseQuantity(link) {
 		quantityInput = $("#quantity" + productId);
 		newQuantity = parseInt(quantityInput.val()) + 1;
 		
-		if (newQuantity <= 5) {
+		if (newQuantity <= 10) {
 			quantityInput.val(newQuantity);
 			updateQuantity(productId, newQuantity);
 		} else {
-			showWarningModal('Maximum quantity is 5');
+			swal({
+				title: 'Thông báo',
+				text:'Số lượng phải bé hơn 10 ' + catName,
+				icon:'warning',
+				button:'OK'
+			});
 		}	
 }
 

@@ -14,7 +14,7 @@
         <div class="col-lg-7 col-xl-7 d-none d-lg-block">
           <div class="header-navigation ps-7">
             <ul class="main-nav justify-content-start">
-              <li class="has-submenu"><a href="/Shoptech">home</a>
+              <li class="has-submenu"><a href="/tech">home</a>
 <!--                <ul class="submenu-nav">
                   <li><a href="../../../../../ShoptechBackEnd/src/main/resources/templates/layouts/index.html">Home One</a></li>
                   <li><a href="index-two.html">Home Two</a></li>
@@ -76,13 +76,18 @@
                 <li class="has-submenu"><a href="account-login.html">Acount</a>
                   <th:block sec:authorize="isAuthenticated()">
                     <ul class="submenu-nav" >
-                      <li><a href="account-login.html">My Account</a></li>
+                      <li><a th:href="@{/account_details}">My Account</a></li>
+                      <li><a th:href="@{/address_book}">Address Book</a></li>
                       <li><a th:href="@{/login}">Login</a></li>
                       <li class="nav-item">
                         <a class="nav-link" href="javascript: document.logoutForm.submit()">Logout</a>
                       </li>
                     </ul>
                   </th:block>
+<<<<<<< HEAD
+=======
+              </th:block>
+>>>>>>> main
                 </li>
               </th:block>
             </ul>
@@ -91,8 +96,8 @@
         <div class="col-7 col-lg-3 col-xl-4">
           <div class="header-action justify-content-end">
             <th:block sec:authorize="isAuthenticated()">
-              <b><a class="nav-link" th:href="@{/account_details}"
-                    sec:authentication="principal.username"></a></b>
+              <b><a class="nav-link" th:href="@{/customers}"
+                    sec:authentication="principal.fullName"></a></b>
             </th:block>
             <button class="header-action-btn ms-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasSearch" aria-controls="AsideOffcanvasSearch">
               <span class="icon">

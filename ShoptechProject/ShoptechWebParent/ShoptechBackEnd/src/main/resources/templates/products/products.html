@@ -103,7 +103,7 @@
                             <tr th:each="product : ${listProducts}">
                                 <td>[[${product.id}]]</td>
                                 <td>
-                                    <a class="link-detail"style="color: #6c7293" th:href="@{'/products/detail/' + ${product.id}}" th:title="${product.name}">[[${product.shortName}]]</a>
+                                    <a class="link-detail" style="color: #6c7293" th:href="@{'/products/detail/' + ${product.id}}" th:title="${product.name}">[[${product.shortName}]]</a>
 
                                 </td>
                                 <td>

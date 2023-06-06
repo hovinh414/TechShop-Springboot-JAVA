@@ -1,28 +1,35 @@
 package com.shoptech.site.customer;
 
+
 import com.shoptech.entity.Country;
 import com.shoptech.entity.Customer;
-import com.shoptech.site.Utility;
+import com.shoptech.site.security.CustomerUserDetails;
+import com.shoptech.site.security.oauth.CustomerOAuth2User;
 import com.shoptech.site.setting.EmailSettingBag;
 import com.shoptech.site.setting.SettingService;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.Banner;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
+
+import org.springframework.security.authentication.RememberMeAuthenticationToken;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 @Controller
 public class CustomerController {
-    @Autowired
-    private CustomerService customerService;
+    @Autowired private CustomerService customerService;
     @Autowired private SettingService settingService;
 
     @GetMapping("/register")
@@ -46,7 +53,7 @@ public class CustomerController {
       return "register/register_success";
     }
 
-    private void sendVerificationEmail(HttpServletRequest request, Customer customer) throws MessagingException, UnsupportedEncodingException {
+/*    private void sendVerificationEmail(HttpServletRequest request, Customer customer) throws MessagingException, UnsupportedEncodingException {
         EmailSettingBag emailSettings = settingService.getEmailSettings();
         JavaMailSenderImpl mailSender = Utility.prepareMailSender(emailSettings);
 
@@ -73,7 +80,7 @@ public class CustomerController {
 
         System.out.println("to Address: " + toAddress);
         System.out.println("Verify URL: " + verifyURL);
-    }
+    }*/
 
     @GetMapping("/verify")
     public String verifyAccount(String code, Model model) {
@@ -83,40 +90,47 @@ public class CustomerController {
     }
 
     @GetMapping("/account_details")
+<<<<<<< HEAD
     public String viewAccountDetails(Model model, HttpServletRequest request) {
         String email = Utility.getEmailOfAuthenticatedCustomer(request);
+=======
+    public String viewAccountDetails(Model model, HttpServletRequest request){
+        String email = getEmailOfAuthenticatedCustomer(request);
+>>>>>>> main
         Customer customer = customerService.getCustomerByEmail(email);
         List<Country> listCountries = customerService.listAllCountries();
 
         model.addAttribute("customer", customer);
         model.addAttribute("listCountries", listCountries);
 
+
         return "customer/account_form";
     }
+<<<<<<< HEAD
+=======
+    private String getEmailOfAuthenticatedCustomer(HttpServletRequest request){
+        Object principal = request.getUserPrincipal();
+        String customerEmail = null;
+>>>>>>> main
 
-    /*@PostMapping("/update_account_details")
-    public String updateAccountDetails(Model model, Customer customer, RedirectAttributes ra,
-                                       HttpServletRequest request) {
-        customerService.update(customer);
-        ra.addFlashAttribute("message", "Your account details have been updated.");
-
-        updateNameForAuthenticatedCustomer(customer, request);
-
-        String redirectOption = request.getParameter("redirect");
-        String redirectURL = "redirect:/account_details";
-
-        if ("address_book".equals(redirectOption)) {
-            redirectURL = "redirect:/address_book";
-        } else if ("cart".equals(redirectOption)) {
-            redirectURL = "redirect:/cart";
-        } else if ("checkout".equals(redirectOption)) {
-            redirectURL = "redirect:/address_book?redirect=checkout";
+        if (principal instanceof UsernamePasswordAuthenticationToken || principal instanceof RememberMeAuthenticationToken){
+            customerEmail = request.getUserPrincipal().getName();
+        } else if (principal instanceof OAuth2AuthenticationToken){
+            OAuth2AuthenticationToken oauth2Token = (OAuth2AuthenticationToken) principal;
+            CustomerOAuth2User oauth2User = (CustomerOAuth2User) oauth2Token.getPrincipal();
+            customerEmail = oauth2User.getEmail();
         }
 
-        return redirectURL;
-    }*/
-
-    /*private void updateNameForAuthenticatedCustomer(Customer customer, HttpServletRequest request) {
+        return customerEmail;
+    }
+    @PostMapping("/update_account_details")
+    public String updateAccountDetails(Model model, Customer customer, RedirectAttributes ra, HttpServletRequest request){
+        customerService.update(customer);
+        ra.addFlashAttribute("message", "Tài khoản của bạn đã được cập nhật.");
+        updateNameForAuthenticatedCustomer(customer, request);
+        return "redirect:/account_details";
+    }
+    private void updateNameForAuthenticatedCustomer(Customer customer, HttpServletRequest request) {
         Object principal = request.getUserPrincipal();
 
         if (principal instanceof UsernamePasswordAuthenticationToken
@@ -132,9 +146,9 @@ public class CustomerController {
             String fullName = customer.getFirstName() + " " + customer.getLastName();
             oauth2User.setFullName(fullName);
         }
-    }*/
+    }
 
-    /*private CustomerUserDetails getCustomerUserDetailsObject(Object principal) {
+    private CustomerUserDetails getCustomerUserDetailsObject(Object principal) {
         CustomerUserDetails userDetails = null;
         if (principal instanceof UsernamePasswordAuthenticationToken) {
             UsernamePasswordAuthenticationToken token = (UsernamePasswordAuthenticationToken) principal;
@@ -145,6 +159,6 @@ public class CustomerController {
         }
 
         return userDetails;
-    }*/
+    }
 }
 

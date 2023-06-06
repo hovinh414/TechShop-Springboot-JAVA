@@ -40,6 +40,10 @@ public class CustomerUserDetails  implements UserDetails {
         return customer.isEnabled();
     }
     public String getFullName(){
-        return customer.getFirstName()+ "" + customer.getLastName();
+        return customer.getFirstName()+ " " + customer.getLastName();
+    }
+
+    public Customer getCustomer(){
+        return this.customer;
     }
 }

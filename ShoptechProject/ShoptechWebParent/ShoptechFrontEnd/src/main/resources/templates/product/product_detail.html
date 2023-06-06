@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
+<<<<<<< HEAD
 
 <head th:replace="fragments :: page_head('Shopme','none')">
 
 
+=======
+<head th:replace="fragments :: page_head('Shopme','none')"/>
+>>>>>>> main
 </head>
 
 <!-- Mirrored from template.hasthemes.com/brancy/brancy/product-details-group.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Nov 2022 06:24:12 GMT -->
 <link rel="stylesheet" th:href="@{/assets/style.css}">
+<link rel="stylesheet" th:href="@{/star-rating/css/rating.css}">
 <body>
 
 <!--== Wrapper Start ==-->
@@ -49,24 +54,7 @@
     <section class="section-space">
       <div class="container">
         <div class="row product-details">
-          <!--<div class="col-lg-2 justify-content-around">
-            <div class="m-2">
-              <img class="image-thumbnail" th:src="@{${product.mainImagePath}}" width="90px" height="90px" alt="Image">
-            </div>
-            <th:block th:each="extraImage : ${product.images}">
-              <div class="m-2">
-                <img class="image-thumbnail" th:src="@{${extraImage.imagePath}}" height="90px" width="90px">
-              </div>
-            </th:block>
-          </div>
-          <div class="col-lg-5">
-            <div class="product-details-thumb">
-              <img id="bigImage" th:src="@{${product.mainImagePath}}" width="570px" height="693px" class="img-fluid">
-              <th:block th:if="${product.discountPercent > 0 }">
-                <span class="flag-new">sale</span>
-              </th:block>
-            </div>
-          </div>-->
+
           <div class="col-lg-6">
             <div class="haythachotao">
               <div class="metlamroi">
@@ -83,11 +71,10 @@
               <span th:unless="${product.inStock}" class="text-danger">Out Stock</span></p>
               <div class="product-details-review mb-7">
                 <div class="product-review-icon">
-                  <i class="fa fa-star-o"></i>
-                  <i class="fa fa-star-o"></i>
-                  <i class="fa fa-star-o"></i>
-                  <i class="fa fa-star-o"></i>
-                  <i class="fa fa-star-half-o"></i>
+                  <input readonly type="hidden" class="rating"
+                         th:value="${product.averageRating}"/>
+                  <i id="ratingNumber"> - [[${product.averageRating}]]/5</i>
+
                 </div>
               </div>
               <div>
@@ -119,7 +106,8 @@
           <div class="col-lg-7">
             <div class="nav product-details-nav" id="product-details-nav-tab" role="tablist">
               <button class="nav-link active" id="specification-tab" data-bs-toggle="tab" data-bs-target="#specification" type="button" role="tab" aria-controls="specification" aria-selected="true"><b>Thông tin sản phẩm</b></button>
-              <button class="nav-link " id="review-tab" data-bs-toggle="tab" data-bs-target="#review" type="button" role="tab" aria-controls="review" aria-selected="flase"><b>Đánh giá</b></button>
+              <button class="nav-link " id="detail-tab" data-bs-toggle="tab" data-bs-target="#detail" type="button" role="tab" aria-controls="detail" aria-selected="flase"><b>Chi tiết sản phẩm</b></button>
+              <button class="nav-link " id="review-tab" data-bs-toggle="tab" data-bs-target="#review" type="button" role="tab" aria-controls="review" aria-selected="flase"><b>Đánh giá ([[${product.reviewCount}]])</b></button>
             </div>
             <div class="tab-content" id="product-details-nav-tabContent">
               <div class="tab-pane fade show active" id="specification" role="tabpanel" aria-labelledby="specification-tab">
@@ -128,76 +116,33 @@
                   </li>
                 </ul>
               </div>
+              <div class="tab-pane" id="detail" role="tabpanel" aria-labelledby="specification-tab">
+                <ul class="product-details-info-wrap">
+                  <li th:each="detail : ${product.details}">
+                    <span>[[${detail.name}]]</span>
+                    <p>[[${detail.value}]]</p>
+                  </li>
+                </ul>
 
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius velit corporis quo voluptate culpa soluta, esse accusamus, sunt quia omnis amet temporibus sapiente harum quam itaque libero tempore. Ipsum, ducimus. lorem</p>
+              </div>
               <div class="tab-pane " id="review" role="tabpanel" aria-labelledby="review-tab">
                 <!--== Start Reviews Content Item ==-->
-                <div class="product-review-item">
+                <div th:each="review : ${listReviews}"  class="product-review-item">
                   <div class="product-review-top">
-                    <div class="product-review-thumb">
-                      <img src="assets/images/shop/product-details/comment1.webp" alt="Images">
-                    </div>
                     <div class="product-review-content">
-                      <span class="product-review-name">Tomas Doe</span>
-                      <span class="product-review-designation">Delveloper</span>
+                      <span class="product-review-name">[[${review.customer.fullName}]]</span>
+                      <span class="product-review-designation">[[${#dates.format(review.reviewTime, 'dd-MM-yyyy')}]]</span>
                       <div class="product-review-icon">
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-half-o"></i>
+                        <input readonly type="hidden" class="rating"
+                               th:value="${review.rating}"/>
+                      </div>
                       </div>
                     </div>
+                  <p class="desc">[[${review.comment}]]</p>
                   </div>
-                  <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra amet, sodales faucibus nibh. Vivamus amet potenti ultricies nunc gravida duis. Nascetur scelerisque massa sodales.</p>
-                  <button type="button" class="review-reply"><i class="fa fa fa-undo"></i></button>
-                </div>
-                <!--== End Reviews Content Item ==-->
 
-                <!--== Start Reviews Content Item ==-->
-                <div class="product-review-item product-review-reply">
-                  <div class="product-review-top">
-                    <div class="product-review-thumb">
-                      <img src="assets/images/shop/product-details/comment2.webp" alt="Images">
-                    </div>
-                    <div class="product-review-content">
-                      <span class="product-review-name">Tomas Doe</span>
-                      <span class="product-review-designation">Delveloper</span>
-                      <div class="product-review-icon">
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-half-o"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra amet, sodales faucibus nibh. Vivamus amet potenti ultricies nunc gravida duis. Nascetur scelerisque massa sodales.</p>
-                  <button type="button" class="review-reply"><i class="fa fa fa-undo"></i></button>
                 </div>
-                <!--== End Reviews Content Item ==-->
-
-                <!--== Start Reviews Content Item ==-->
-                <div class="product-review-item mb-0">
-                  <div class="product-review-top">
-                    <div class="product-review-thumb">
-                      <img src="assets/images/shop/product-details/comment3.webp" alt="Images">
-                    </div>
-                    <div class="product-review-content">
-                      <span class="product-review-name">Tomas Doe</span>
-                      <span class="product-review-designation">Delveloper</span>
-                      <div class="product-review-icon">
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-half-o"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra amet, sodales faucibus nibh. Vivamus amet potenti ultricies nunc gravida duis. Nascetur scelerisque massa sodales.</p>
-                  <button type="button" class="review-reply"><i class="fa fa fa-undo"></i></button>
-                </div>
-                <!--== End Reviews Content Item ==-->
               </div>
             </div>
           </div>
@@ -258,32 +203,7 @@
       </div>
     </div>
   </aside>
-  <!--== End Product Quick Wishlist Modal ==-->
 
-  <!--== Start Product Quick Add Cart Modal ==-->
-<!--  <aside class="product-action-modal modal fade" id="action-CartAddModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-body">
-          <div class="product-action-view-content">
-            <button type="button" class="btn-close" data-bs-dismiss="modal">
-              <i class="fa fa-times"></i>
-            </button>
-            <div class="modal-action-messages">
-              <i class="fa fa-check-square-o"></i> Added to cart successfully!
-            </div>
-            <div class="modal-action-product">
-              <div class="thumb">
-                <img th:src="@{${product.mainImagePath}}" alt="hashTag" width="466" height="320">
-              </div>
-              <h4 class="product-name"><a href="/">[[${product.name}]]</a></h4>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </aside>-->
-  <!--== End Product Quick Add Cart Modal ==-->
 
   <!--== Start Aside Search Form ==-->
   <aside class="aside-search-box-wrapper offcanvas offcanvas-top" tabindex="-1" id="AsideOffcanvasSearch" aria-labelledby="offcanvasTopLabel">
@@ -480,10 +400,12 @@
   productId = "[[${product.id}]]";
   var csrfHeaderName = "[[${_csrf.headerName}]]";
   var csrfValue = "[[${_csrf.token}]]";
-
+  $('input').rating({
+    filled: 'fa fa-star',
+    empty: 'fa fa-star-o'
+  });
   decimalSeparator = "[[${DECIMAL_POINT_TYPE == 'COMMA' ? ',' : '.'}]]";
   thousandSeparator = "[[${THOUSANDS_POINT_TYPE == 'COMMA' ? ',' : '.'}]]";
-
   $(document).ready(function() {
     bigImage = $("#bigImage");
 
@@ -500,6 +422,7 @@
       imageIndex = parseInt(bigImage.attr("index"));
       $("#carouselExampleIndicators").carousel(imageIndex);
     });
+<<<<<<< HEAD
     function showModalDialog(title, message){
       $("#modalTitle").text(title);
       $("#modalBody").text(message);
@@ -507,6 +430,18 @@
     }
   });
 </script>
+=======
+    formatRatingNumber();
+
+  });
+  function formatRatingNumber() {
+    ratingText = $("#ratingNumber").text();
+    formattedRating = $.number(ratingText, 2, decimalSeparator, thousandSeparator);
+    $("#ratingNumber").text(formattedRating);
+  }
+</script>
+<script th:src="@{/assets/js/vendor/modernizr-3.11.7.min.js}"></script>
+>>>>>>> main
 <script th:src="@{/assets/js/vendor/jquery-3.6.0.min.js}"></script>
 <script th:src="@{/assets/js/vendor/jquery-migrate-3.3.2.min.js}"></script>
 <script th:src="@{/assets/js/vendor/bootstrap.bundle.min.js}"></script>
@@ -519,10 +454,18 @@
 
 <!-- Custom Main JS -->
 <script th:src="@{/assets/js/main.js}"></script>
-<script th:src="@{/assets/js/quantity_control.js}"></script>
+<script th:src="@{/js/quantity_control.js}"></script>
+<script th:src="@{/assets/js/shopping_cart.js}"></script>
 <script th:src="@{/assets/js/common_modal.js}"></script>
+<<<<<<< HEAD
 <script th:src="@{/assets/js/add_to_cart.js}"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+=======
+<script th:src="@{/star-rating/js/rating.js}"></script>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+>>>>>>> main
 </body>
 
 

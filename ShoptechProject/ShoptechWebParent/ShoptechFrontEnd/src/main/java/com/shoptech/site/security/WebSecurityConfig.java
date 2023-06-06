@@ -1,6 +1,13 @@
 package com.shoptech.site.security;
 
 
+<<<<<<< HEAD
+=======
+import com.shoptech.admin.ShoptechBackEndApplication;
+import com.shoptech.site.security.oauth.CustomerOAuth2UserService;
+import com.shoptech.site.security.oauth.OAuth2LoginSuccessHandler;
+import org.springframework.beans.factory.annotation.Autowired;
+>>>>>>> main
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -16,6 +23,9 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class WebSecurityConfig {
 
+    @Autowired private CustomerOAuth2UserService oAuth2UserService;
+    @Autowired private OAuth2LoginSuccessHandler oauth2LoginSuccessHandler;
+    @Autowired private DatabaseLoginSuccessHandler databaseLoginSuccessHandler;
     @Bean
     public UserDetailsService userDetailsService() {
         return new CustomerUserDetailsService();
@@ -29,15 +39,28 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests()
+<<<<<<< HEAD
                 .requestMatchers("/customer","/cart").authenticated()
+=======
+                .requestMatchers("/account_details","/update_account_details","/address_book/**").authenticated()
+>>>>>>> main
                 .anyRequest().permitAll()
                 .and()
                 .formLogin()
                 .loginPage("/login")
                 .usernameParameter("email")
+                .successHandler(databaseLoginSuccessHandler)
                 .defaultSuccessUrl("/", true)
                 .permitAll()
-                .and().logout().permitAll()
+                .and()
+                .oauth2Login()
+                .loginPage("/login")
+                .userInfoEndpoint()
+                .userService(oAuth2UserService)
+                .and()
+                .successHandler(oauth2LoginSuccessHandler)
+                .and()
+                .logout().permitAll()
                 .and().rememberMe()
                 .key("AbcDefgHijKlmnOpqrs_1234567890")
                 .tokenValiditySeconds(7 * 24 * 60 * 60)

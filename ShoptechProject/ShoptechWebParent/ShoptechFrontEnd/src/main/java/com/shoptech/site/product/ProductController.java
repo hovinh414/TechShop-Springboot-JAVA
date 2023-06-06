@@ -2,9 +2,11 @@ package com.shoptech.site.product;
 
 import com.shoptech.entity.Category;
 import com.shoptech.entity.Product;
+import com.shoptech.entity.Review;
 import com.shoptech.exception.CategoryNotFoundException;
 import com.shoptech.exception.ProductNotFoundException;
 import com.shoptech.site.category.CategoryService;
+import com.shoptech.site.review.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.repository.query.Param;
@@ -21,6 +23,8 @@ public class ProductController {
     private ProductService productService;
     @Autowired
     private CategoryService categoryService;
+    @Autowired
+    private ReviewService reviewService;
 
     @GetMapping("/c/{category_alias}")
     public String viewCategoryFirstPage(@PathVariable("category_alias") String alias,
@@ -64,8 +68,10 @@ public class ProductController {
         try {
             Product product = productService.getProduct(alias);
             List<Category> listCategoryParents = categoryService.getCategoryParents(product.getCategory());
+            Page<Review> listReviews = reviewService.list3MostVotedReviewsByProduct(product);
             model.addAttribute("listCategoryParents", listCategoryParents);
             model.addAttribute("product", product);
+            model.addAttribute("listReviews", listReviews);
             model.addAttribute("pageTitle",product.getShortName());
             return "product/product_detail";
         } catch (ProductNotFoundException e) {
