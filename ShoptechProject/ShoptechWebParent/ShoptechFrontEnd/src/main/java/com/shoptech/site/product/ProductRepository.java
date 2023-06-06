@@ -6,6 +6,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
+import java.util.List;
+
 public interface ProductRepository extends PagingAndSortingRepository<Product, Integer> {
 
     @Query("SELECT p FROM Product p WHERE p.enabled = true "
@@ -18,4 +20,6 @@ public interface ProductRepository extends PagingAndSortingRepository<Product, I
             + "MATCH(name, short_description, full_description) AGAINST (?1)",
             nativeQuery = true)
     public Page<Product> search(String keyword, Pageable pageable);
+
+    public Product findById(Integer productId);
 }

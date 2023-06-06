@@ -4,25 +4,60 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="6c32a9d2-72a0-46d0-9220-abd148727d77" name="Changes" comment="">
+=======
     <list default="true" id="4c4c041f-4e58-4e17-859d-b9c97aef1c87" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/CartItem.java" afterDir="false" />
+>>>>>>> main
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Currency.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Review.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Setting.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/SettingBag.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/SettingCategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/shoppingcart/CartItem.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/exception/CustomerNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/shoppingcart/ShoppingCartController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/static/assets/images/shoppingcart/shopping-cart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/static/assets/js/shopping_cart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/cart/shopping_cart.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/static/richtext/jquery.richtext.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/static/richtext/jquery.richtext.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/static/richtext/richtext.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/static/richtext/richtext.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/settings/settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechBackEnd/src/main/resources/templates/settings/settings.html" afterDir="false" />
+=======
+>>>>>>> main
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/mvnw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/Role.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechCommon/src/main/java/com/shoptech/entity/User.java" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/customer/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/customer/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/product/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/product/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/security/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/shoppingcart/CartItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/shoppingcart/CartItemRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/shoppingcart/ShoppingCartRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/shoppingcart/ShoppingCartRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/shoppingcart/ShoppingCartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/shoppingcart/ShoppingCartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/static/assets/js/add_to_cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/static/assets/js/add_to_cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/static/assets/js/quantity_control.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/static/assets/js/quantity_control.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/static/assets/js/vendor/jquery-migrate-3.3.2.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/static/assets/js/vendor/jquery-migrate-3.3.2.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/static/assets/js/vendor/modernizr-3.11.7.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/static/assets/js/vendor/modernizr-3.11.7.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/static/js/quantity_control.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/static/js/quantity_control.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/cart/quantity_control.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/cart/quantity_control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/navigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/navigation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/product/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/product/product_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/product/product_fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/product/product_fragments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/register/register_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/register/register_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/test/java/com/shoptech/site/shoppingcart/CartItemRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/test/java/com/shoptech/site/shoppingcart/CartItemRepositoryTests.java" afterDir="false" />
+=======
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/product/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/product/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/review/ReviewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/review/ReviewRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/review/ReviewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/java/com/shoptech/site/review/ReviewService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/fragments.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/product/product_by_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/product/product_by_item.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/product/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/templates/product/product_detail.html" afterDir="false" />
+>>>>>>> main
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,11 +88,46 @@
       </MavenGeneralSettings>
     </option>
   </component>
+<<<<<<< HEAD
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2QAxDYF9nzu9o6Wj5pGYYigvIrq" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+=======
   <component name="ProjectId" id="2QhqrgSN7qv9NKm9FfYxWtU90wg" />
+>>>>>>> main
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ADMIN/Desktop/Web java/TechShop-Springboot-JAVA/ShoptechProject/ShoptechWebParent/ShoptechFrontEnd/src/main/resources/static/assets/js&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;fc5320541efeeb2b38517f18f0287997&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+=======
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
@@ -78,15 +148,31 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "spring.configuration.checksum": "5dfa6fdcd7d06aeec6ac8abb1598a1e6",
     "vue.rearranger.settings.migration": "true"
+>>>>>>> main
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+<<<<<<< HEAD
+      <recent name="C:\Users\ADMIN\Desktop\Web java\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechFrontEnd\src\main\resources\static\assets\js" />
+      <recent name="C:\Users\ADMIN\Desktop\Web java\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechFrontEnd\src\main\resources\static\assets\images\shoppingcart" />
+      <recent name="C:\Users\ADMIN\Desktop\Web java\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechFrontEnd\src\main\resources\templates\cart" />
+      <recent name="C:\Users\ADMIN\Desktop\Web java\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechFrontEnd\src\main\java\com\shoptech\site\shoppingcart" />
+      <recent name="C:\Users\ADMIN\Desktop\Web java\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechCommon\src\main\java\com\shoptech\entity" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ADMIN\Desktop\Web java\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechFrontEnd\src\main\resources\static\assets\js" />
+      <recent name="C:\Users\Admin\Desktop\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechFrontEnd\src\main\resources\static\assets\js" />
+      <recent name="C:\Users\Admin\Desktop\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechFrontEnd\src\main\resources\templates\cart" />
+      <recent name="C:\Users\ADMIN\Desktop\Web java\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechBackEnd\src\main\resources\static\assets\js" />
+      <recent name="C:\Users\ADMIN\Desktop\Web java\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechFrontEnd\src\main\resources\templates" />
+=======
       <recent name="D:\Vinh_2B_03\LapTrinhUngDungJava\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechFrontEnd\src\main\resources\static" />
       <recent name="D:\Vinh_2B_03\LapTrinhUngDungJava\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechBackEnd\src\test\java\com\shoptech\admin\review" />
       <recent name="D:\Vinh_2B_03\LapTrinhUngDungJava\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechBackEnd\src\main\resources\templates\reviews" />
       <recent name="D:\Vinh_2B_03\LapTrinhUngDungJava\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechBackEnd\src\main\java\com\shoptech\admin" />
       <recent name="D:\Vinh_2B_03\LapTrinhUngDungJava\TechShop-Springboot-JAVA\ShoptechProject\ShoptechWebParent\ShoptechCommon\src\main\java\com\shoptech\entity" />
+>>>>>>> main
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.shoptech.site.setting" />
@@ -101,17 +187,92 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.ShoptechFrontEndApplication">
+<<<<<<< HEAD
+    <configuration name="CartItemRepositoryTests.testDeleteByCustomerAndProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ShoptechFrontEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shoptech.site.shoppingcart.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shoptech.site.shoppingcart" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.site.shoppingcart.CartItemRepositoryTests" />
+      <option name="METHOD_NAME" value="testDeleteByCustomerAndProduct" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CartItemRepositoryTests.testFindByCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ShoptechFrontEnd" />
+=======
     <configuration name="ReviewRepositoryTests.testCreateReview" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ShoptechBackEnd" />
+>>>>>>> main
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.shoptech.admin.review.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+<<<<<<< HEAD
+      <option name="PACKAGE_NAME" value="com.shoptech.site.shoppingcart" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.site.shoppingcart.CartItemRepositoryTests" />
+      <option name="METHOD_NAME" value="testFindByCustomer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CartItemRepositoryTests.testFindByCustomerAndProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ShoptechFrontEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shoptech.site.shoppingcart.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shoptech.site.shoppingcart" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.site.shoppingcart.CartItemRepositoryTests" />
+      <option name="METHOD_NAME" value="testFindByCustomerAndProduct" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CartItemRepositoryTests.testFindByProductId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ShoptechFrontEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shoptech.site.shoppingcart.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shoptech.site.shoppingcart" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.site.shoppingcart.CartItemRepositoryTests" />
+      <option name="METHOD_NAME" value="testFindByProductId" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CartItemRepositoryTests.testUpdateQuantity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ShoptechFrontEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shoptech.site.shoppingcart.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shoptech.site.shoppingcart" />
+      <option name="MAIN_CLASS_NAME" value="com.shoptech.site.shoppingcart.CartItemRepositoryTests" />
+      <option name="METHOD_NAME" value="testUpdateQuantity" />
+=======
       <option name="PACKAGE_NAME" value="com.shoptech.admin.review" />
       <option name="MAIN_CLASS_NAME" value="com.shoptech.admin.review.ReviewRepositoryTests" />
       <option name="METHOD_NAME" value="testCreateReview" />
+>>>>>>> main
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -131,9 +292,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
+    <list>
+      <item itemvalue="JUnit.CartItemRepositoryTests.testDeleteByCustomerAndProduct" />
+      <item itemvalue="JUnit.CartItemRepositoryTests.testUpdateQuantity" />
+      <item itemvalue="JUnit.CartItemRepositoryTests.testFindByCustomer" />
+      <item itemvalue="JUnit.CartItemRepositoryTests.testFindByCustomerAndProduct" />
+      <item itemvalue="JUnit.CartItemRepositoryTests.testFindByProductId" />
+      <item itemvalue="Spring Boot.ShoptechBackEndApplication" />
+      <item itemvalue="Spring Boot.ShoptechFrontEndApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CartItemRepositoryTests.testDeleteByCustomerAndProduct" />
+        <item itemvalue="JUnit.CartItemRepositoryTests.testUpdateQuantity" />
+        <item itemvalue="JUnit.CartItemRepositoryTests.testFindByCustomerAndProduct" />
+        <item itemvalue="JUnit.CartItemRepositoryTests.testFindByCustomer" />
+        <item itemvalue="JUnit.CartItemRepositoryTests.testFindByProductId" />
+=======
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.ReviewRepositoryTests.testCreateReview" />
+>>>>>>> main
       </list>
     </recent_temporary>
   </component>
@@ -144,6 +324,41 @@
       <created>1685816360824</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
+      <updated>1684848018792</updated>
+      <workItem from="1684848023359" duration="1064000" />
+      <workItem from="1684849333011" duration="1663000" />
+      <workItem from="1684901791693" duration="2158000" />
+      <workItem from="1684936839076" duration="9480000" />
+      <workItem from="1684951064840" duration="287000" />
+      <workItem from="1684955514262" duration="4180000" />
+      <workItem from="1684959916961" duration="100000" />
+      <workItem from="1685012996335" duration="20663000" />
+      <workItem from="1685199082638" duration="14913000" />
+      <workItem from="1685217319291" duration="669000" />
+      <workItem from="1685253644452" duration="140000" />
+      <workItem from="1685259528743" duration="23985000" />
+      <workItem from="1685344850344" duration="8250000" />
+      <workItem from="1685366064888" duration="687000" />
+      <workItem from="1685367427456" duration="3000" />
+      <workItem from="1685367437737" duration="42000" />
+      <workItem from="1685368942701" duration="430000" />
+      <workItem from="1685420703189" duration="73000" />
+      <workItem from="1685420785188" duration="38000" />
+      <workItem from="1685423144874" duration="890000" />
+      <workItem from="1685427376488" duration="6549000" />
+      <workItem from="1685458258184" duration="1084000" />
+      <workItem from="1685584395313" duration="7646000" />
+      <workItem from="1685639484335" duration="1091000" />
+      <workItem from="1685728776819" duration="2302000" />
+      <workItem from="1685754050796" duration="2105000" />
+      <workItem from="1685758315859" duration="2393000" />
+      <workItem from="1685769437879" duration="12063000" />
+      <workItem from="1685841954735" duration="7743000" />
+      <workItem from="1685923913121" duration="28865000" />
+      <workItem from="1686012488020" duration="8422000" />
+      <workItem from="1686049756575" duration="9512000" />
+=======
       <updated>1685816360824</updated>
       <workItem from="1685816362352" duration="116000" />
       <workItem from="1685816548054" duration="4503000" />
@@ -160,6 +375,7 @@
       <workItem from="1685994211683" duration="70000" />
       <workItem from="1686012732498" duration="4701000" />
       <workItem from="1686068150913" duration="316000" />
+>>>>>>> main
     </task>
     <servers />
   </component>

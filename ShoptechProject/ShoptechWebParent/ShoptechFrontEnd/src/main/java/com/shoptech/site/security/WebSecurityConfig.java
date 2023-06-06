@@ -1,17 +1,19 @@
 package com.shoptech.site.security;
 
 
+<<<<<<< HEAD
+=======
 import com.shoptech.admin.ShoptechBackEndApplication;
 import com.shoptech.site.security.oauth.CustomerOAuth2UserService;
 import com.shoptech.site.security.oauth.OAuth2LoginSuccessHandler;
 import org.springframework.beans.factory.annotation.Autowired;
+>>>>>>> main
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
-import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -25,26 +27,23 @@ public class WebSecurityConfig {
     @Autowired private OAuth2LoginSuccessHandler oauth2LoginSuccessHandler;
     @Autowired private DatabaseLoginSuccessHandler databaseLoginSuccessHandler;
     @Bean
-    public UserDetailsService userDetailsService(){
-        return  new CustomerUserDetailsService();
+    public UserDetailsService userDetailsService() {
+        return new CustomerUserDetailsService();
     }
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
-
-
- /*   @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.ALWAYS);
-        http.authorizeRequests().anyRequest().permitAll();
-        return http.build();
-    }*/
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests()
+<<<<<<< HEAD
+                .requestMatchers("/customer","/cart").authenticated()
+=======
                 .requestMatchers("/account_details","/update_account_details","/address_book/**").authenticated()
+>>>>>>> main
                 .anyRequest().permitAll()
                 .and()
                 .formLogin()
@@ -70,6 +69,7 @@ public class WebSecurityConfig {
         http.authenticationProvider(authenticationProvider());
         return http.build();
     }
+
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
         return (web) -> web.ignoring().requestMatchers("/images/**", "/js/**", "/css/**");
