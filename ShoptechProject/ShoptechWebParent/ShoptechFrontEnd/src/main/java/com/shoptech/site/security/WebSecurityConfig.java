@@ -1,13 +1,11 @@
 package com.shoptech.site.security;
 
 
-<<<<<<< HEAD
-=======
 import com.shoptech.admin.ShoptechBackEndApplication;
 import com.shoptech.site.security.oauth.CustomerOAuth2UserService;
 import com.shoptech.site.security.oauth.OAuth2LoginSuccessHandler;
 import org.springframework.beans.factory.annotation.Autowired;
->>>>>>> main
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -39,11 +37,7 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests()
-<<<<<<< HEAD
-                .requestMatchers("/customer","/cart").authenticated()
-=======
-                .requestMatchers("/account_details","/update_account_details","/address_book/**").authenticated()
->>>>>>> main
+                .requestMatchers("/account_details","/update_account_details","/address_book/**","/cart").authenticated()
                 .anyRequest().permitAll()
                 .and()
                 .formLogin()

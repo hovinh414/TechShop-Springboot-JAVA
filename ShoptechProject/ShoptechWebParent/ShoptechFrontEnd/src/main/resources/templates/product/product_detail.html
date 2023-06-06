@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<<<<<<< HEAD
-
-<head th:replace="fragments :: page_head('Shopme','none')">
-
-
-=======
 <head th:replace="fragments :: page_head('Shopme','none')"/>
->>>>>>> main
+
 </head>
 
 <!-- Mirrored from template.hasthemes.com/brancy/brancy/product-details-group.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Nov 2022 06:24:12 GMT -->
@@ -419,7 +413,6 @@
       imageIndex = parseInt(bigImage.attr("index"));
       $("#carouselExampleIndicators").carousel(imageIndex);
     });
-<<<<<<< HEAD
     function showModalDialog(title, message){
       $("#modalTitle").text(title);
       $("#modalBody").text(message);
@@ -427,18 +420,8 @@
     }
   });
 </script>
-=======
-    formatRatingNumber();
 
-  });
-  function formatRatingNumber() {
-    ratingText = $("#ratingNumber").text();
-    formattedRating = $.number(ratingText, 2, decimalSeparator, thousandSeparator);
-    $("#ratingNumber").text(formattedRating);
-  }
-</script>
 <script th:src="@{/assets/js/vendor/modernizr-3.11.7.min.js}"></script>
->>>>>>> main
 <script th:src="@{/assets/js/vendor/jquery-3.6.0.min.js}"></script>
 <script th:src="@{/assets/js/vendor/jquery-migrate-3.3.2.min.js}"></script>
 <script th:src="@{/assets/js/vendor/bootstrap.bundle.min.js}"></script>
@@ -454,15 +437,10 @@
 <script th:src="@{/js/quantity_control.js}"></script>
 <script th:src="@{/assets/js/shopping_cart.js}"></script>
 <script th:src="@{/assets/js/common_modal.js}"></script>
-<<<<<<< HEAD
 <script th:src="@{/assets/js/add_to_cart.js}"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-=======
 <script th:src="@{/star-rating/js/rating.js}"></script>
 
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
->>>>>>> main
 </body>
 
 </html>

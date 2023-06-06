@@ -3,6 +3,7 @@ package com.shoptech.site.customer;
 
 import com.shoptech.entity.Country;
 import com.shoptech.entity.Customer;
+import com.shoptech.site.Utility;
 import com.shoptech.site.security.CustomerUserDetails;
 import com.shoptech.site.security.oauth.CustomerOAuth2User;
 import com.shoptech.site.setting.EmailSettingBag;
@@ -32,26 +33,9 @@ public class CustomerController {
     @Autowired private CustomerService customerService;
     @Autowired private SettingService settingService;
 
-    @GetMapping("/register")
-    public String showRegisterForm(Model model) {
-        List<Country> listCountries = customerService.listAllCountries();
 
-        model.addAttribute("listCountries", listCountries);
-        model.addAttribute("pageTitle", "Customer Registration");
-        model.addAttribute("customer", new Customer());
 
-        return "register/register_form";
-    }
 
-    @PostMapping("/create_customer")
-    public String createCustomer(Customer customer, Model model, HttpServletRequest request) throws MessagingException, UnsupportedEncodingException {
-      customerService.registerCustomer(customer);
-      /*sendVerificationEmail(request, customer);*/
-
-      model.addAttribute("pageTitle", "Registration Succeeded!");
-
-      return "register/register_success";
-    }
 
 /*    private void sendVerificationEmail(HttpServletRequest request, Customer customer) throws MessagingException, UnsupportedEncodingException {
         EmailSettingBag emailSettings = settingService.getEmailSettings();
@@ -90,13 +74,9 @@ public class CustomerController {
     }
 
     @GetMapping("/account_details")
-<<<<<<< HEAD
     public String viewAccountDetails(Model model, HttpServletRequest request) {
         String email = Utility.getEmailOfAuthenticatedCustomer(request);
-=======
-    public String viewAccountDetails(Model model, HttpServletRequest request){
-        String email = getEmailOfAuthenticatedCustomer(request);
->>>>>>> main
+
         Customer customer = customerService.getCustomerByEmail(email);
         List<Country> listCountries = customerService.listAllCountries();
 
@@ -106,12 +86,10 @@ public class CustomerController {
 
         return "customer/account_form";
     }
-<<<<<<< HEAD
-=======
+
     private String getEmailOfAuthenticatedCustomer(HttpServletRequest request){
         Object principal = request.getUserPrincipal();
         String customerEmail = null;
->>>>>>> main
 
         if (principal instanceof UsernamePasswordAuthenticationToken || principal instanceof RememberMeAuthenticationToken){
             customerEmail = request.getUserPrincipal().getName();

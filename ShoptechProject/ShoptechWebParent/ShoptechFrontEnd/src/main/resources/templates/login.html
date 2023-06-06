@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<title>Login</title>
-<body class="box">
+<head th:replace="fragments :: page_head('Shopme','none')"/>
 
-<p class="tip">Welcome to our Shop</p>
-<div class="cont">
-    <div class="form sign-in">
+</head>
+<body style="  background-color: #f4cccc " class="box">
+<header class="header-area ">
+    <div th:replace="navigation :: header_menu"></div>
+</header>
+<div style="border-radius: 15px" class="cont">
+    <div style="text-align: center" class="form sign-in">
         <h2>Welcome back,</h2>
         <form th:action="@{/login}" method="post" style="max-width: 350px; margin: 0 auto">
             <div th:if="${param.error}">
@@ -15,16 +18,23 @@
                 <p class="text-warning">You have been logged out.</p>
             </div>
             <label>
-                <span>Email</span>
-                <input type="email" name="email" required/>
+                <span style="color: black">Email</span>
+                <input type="email" name="email" class="form-control" required/>
             </label>
             <label>
-                <span>Password</span>
-                <input type="password" name="password"  required />
+                <span style="color: black">Password</span>
+                <input type="password" name="password" class="form-control" required />
             </label>
-            <input style="border: none; border-radius: 30px; font-size: 15px; height: 45px; outline: none; width: 100%; background: rgba(255,255,255,0.6); cursor: pointer" type="submit"  value="Sign In"/>
-            <button  class="fb-btn">Connect with <span><a th:href="@{/oauth2/authorization/facebook}">Facebook</a></span></button>
-            <button  class="fb-btn">Connect with <span><a th:href="@{/oauth2/authorization/google}">Google</a></span></button>
+            <label>
+                <input  type="submit" class="btn-login"  value="Sign In"/>
+            </label>
+            <label>
+                <button  class="fb-btn">Connect with <span><a style="color: #3a61c9" th:href="@{/oauth2/authorization/facebook}">Facebook</a></span></button>
+            </label>
+            <label style="padding-top: 10px">
+                <button  class="fb-btn">Connect with <span><a th:href="@{/oauth2/authorization/google}">Google</a></span></button>
+            </label>
+
         </form>
     </div>
         <div class="sub-cont">
@@ -45,28 +55,21 @@
 
             <div class="form sign-up" >
                 <h2>Time to feel like home,</h2>
-                <div th:replace="register/register_form :: register"></div>
-                <!--<label>
-                    <span>Name</span>
-                    <input type="text" />
-                </label>
-                <label>
-                    <span>Email</span>
-                    <input type="email" />
-                </label>
-                <label>
-                    <span>Password</span>
-                    <input type="password" />
-                </label>
-                <button type="button" class="submit">Sign Up</button>
-                <button type="button" class="fb-btn">Join with <span>facebook</span></button>-->
+                <form th:replace="register/register_form :: register"></form>
             </div>
         </div>
 
 </div>
 
 <link rel="stylesheet" th:href="@{/assets/login_style.css}">
+<link rel="stylesheet" th:href="@{/assets/css/vendor/bootstrap.min.css}">
 </body>
+<footer class="footer-area">
+    <div class="footer-main">
+        <div th:replace="navigation :: footer_menu"></div>
+    </div>
+</footer>
+
 <script>
     document.querySelector('.img__btn').addEventListener('click', function() {
         document.querySelector('.cont').classList.toggle('s--signup');

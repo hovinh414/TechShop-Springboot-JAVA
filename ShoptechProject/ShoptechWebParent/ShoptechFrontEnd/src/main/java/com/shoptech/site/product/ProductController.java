@@ -40,6 +40,7 @@ public class ProductController {
     }
 
 
+
     @GetMapping("/c/{category_alias}/page/{pageNum}")
     public String viewCategoryByPage(@PathVariable("category_alias") String alias,
                                      @PathVariable("pageNum") int pageNum,
