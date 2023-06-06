@@ -9,12 +9,12 @@
 <body>
 <div th:fragment="content" th:remove="tag">
     <div class="m-2">
-        <label>Mô tả:</label>
+        <label>Short description:</label>
         <textarea style="color:white" class="form-control" id="shortDescription" th:field="*{shortDescription}" rows="5" required></textarea>
     </div>
 
     <div class="m-2">
-        <label>Mô tả chi tiết:</label>
+        <label>Full description:</label>
         <textarea style="color:white" class="form-control" th:field="*{fullDescription}" rows="10" required></textarea>
     </div>
 </div>

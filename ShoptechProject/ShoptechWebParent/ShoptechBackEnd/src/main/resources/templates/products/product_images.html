@@ -4,7 +4,7 @@
 <div th:fragment="content" th:remove="tag">
   <div class="row" id="divProductImages">
     <div class="col border m-3 p-2">
-      <div><label>Ảnh đại diện: [[${product.mainImage}]]</label></div>
+      <div><label>Main Image: [[${product.mainImage}]]</label></div>
       <div class="m-2">
         <img id="thumbnail" alt="Ảnh đại diện preview" style="width: 100px"
              th:src="@{${product.mainImagePath}}"/>
@@ -20,14 +20,14 @@
     <th:block th:each="productImage, status : ${product.images}">
       <div class="col border m-3 p-2" th:id="'divExtraImage' + ${status.index}">
         <div>
-          <label>Ảnh sản phẩm #[[${status.index + 1}]]: [[${productImage.name}]]</label>
+          <label>Extra image #[[${status.index + 1}]]: [[${productImage.name}]]</label>
           <a style="padding-left: 10px" name="linkRemoveExtraImage"
              class=" btn btn-sm btn-danger"
-             title="Xóa ảnh">Xóa ảnh</a>
+             title="Remove this image">Remove</a>
         </div>
         <div class="m-2">
           <img th:id="'extraThumbnail' + ${status.index}"
-               th:alt="'Ảnh sản phẩm #' + ${status.index + 1} + ' preview'" style="width: 100px"
+               th:alt="'Extra image #' + ${status.index + 1} + ' preview'" style="width: 100px"
                th:src="@{${productImage.imagePath}}"/>
         </div>
         <div>
@@ -45,11 +45,11 @@
 
     <div class="col border m-3 p-2" th:id="'divExtraImage' + ${numberOfExistingExtraImages}">
       <div th:id="'extraImageHeader' + ${numberOfExistingExtraImages}">
-        <label>Ảnh sản phẩm #[[${numberOfExistingExtraImages + 1}]]:</label>
+        <label>Extra image #[[${numberOfExistingExtraImages + 1}]]:</label>
       </div>
       <div class="m-2">
         <img th:id="'extraThumbnail' + ${numberOfExistingExtraImages}"
-             th:alt="'Ảnh sản phẩm' + ${numberOfExistingExtraImages} + ' preview'" style="width: 100px"
+             th:alt="'Extra image' + ${numberOfExistingExtraImages} + ' preview'" style="width: 100px"
              th:src="@{/images/image-thumbnail.png}"/>
       </div>
       <div>

@@ -41,7 +41,7 @@ public class ReviewService {
 		try {
 			return reviewRepo.findById(id).get();
 		} catch (NoSuchElementException ex) {
-			throw new ReviewNotFoundException("Không tìm thấy đánh giá ID: " + id);
+			throw new ReviewNotFoundException("Could not find any reviews with ID " + id);
 		}
 	}
 
@@ -56,7 +56,7 @@ public class ReviewService {
 
 	public void delete(Integer id) throws ReviewNotFoundException {
 		if (!reviewRepo.existsById(id)) {
-			throw new ReviewNotFoundException("Không tìm thấy đánh giá ID: " + id);
+			throw new ReviewNotFoundException("Could not find any reviews with ID " + id);
 		}
 
 		reviewRepo.deleteById(id);

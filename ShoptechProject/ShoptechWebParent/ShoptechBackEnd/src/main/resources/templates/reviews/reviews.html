@@ -35,7 +35,7 @@
         <!-- Trang Chủ-->
         <article layout:fragment="content">
             <div class="card-body">
-                <h4 class="card-title ">QUẢN LÝ ĐÁNH GIÁ</h4>
+                <h4 class="card-title ">MANAGE REVIEWS</h4>
                 <div th:if="${message != null}" class="alert alert-success text-center">
                     [[${message}]]
                 </div>
@@ -58,11 +58,11 @@
                         <thead>
                         <tr>
                             <th th:replace="fragments :: column_linkReview('id','ID')"></th>
-                            <th th:replace="fragments :: column_linkReview('product','Sản phẩm')"></th>
-                            <th th:replace="fragments :: column_linkReview('customer','Khách hàng')"></th>
-                            <th th:replace="fragments :: column_linkReview('rating','Đánh giá')"></th>
-                            <th th:replace="fragments :: column_linkReview('reviewTime','Thời gian đánh giá')"></th>
-                            <th>Thao tác</th>
+                            <th th:replace="fragments :: column_linkReview('product','Product')"></th>
+                            <th th:replace="fragments :: column_linkReview('customer','Customer')"></th>
+                            <th th:replace="fragments :: column_linkReview('rating','Rating')"></th>
+                            <th th:replace="fragments :: column_linkReview('reviewTime','Review time')"></th>
+                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -82,11 +82,11 @@
                             <td>[[${review.reviewTime}]]</td>
 
                             <td>
-                                <a class="fas fa-file-alt fas-2x icon-green link-detail-review" th:href="@{'/reviews/detail/' + ${review.id}}" title="Xem chi tiết đánh giá"></a>
+                                <a class="fas fa-file-alt fas-2x icon-green link-detail-review" th:href="@{'/reviews/detail/' + ${review.id}}" title="View detail this review"></a>
                                 <a style="font-size: 16px;" class="fas fa-edit fas-2x icon-purple" th:href="@{'/reviews/edit/' + ${review.id}}"
-                                   title="Sửa đánh giá"></a>
-                                <a style="font-size: 16px;" class="fas fa-trash fas-2x icon-red" onclick="return confirm('Bạn có muốn xóa?')" th:href="@{'/reviews/delete/' + ${review.id}}"
-                                   title="Xóa đánh giá"></a>
+                                   title="Edit this review"></a>
+                                <a style="font-size: 16px;" class="fas fa-trash fas-2x icon-red" onclick="return confirm('Do you want delete this review?')" th:href="@{'/reviews/delete/' + ${review.id}}"
+                                   title="Delete this review"></a>
                             </td>
                         </tr>
                         </tbody>
@@ -108,20 +108,20 @@
             </div>
         </div>
         <div class="text-center m-1" th:if="${totalItems > 0}">
-            <span>Hiển thị ID # Từ [[${startCount}]] đến [[${endCount}]] trên [[${totalItems}]] </span>
+            <span>Showing reviews # from [[${startCount}]] to [[${endCount}]] of [[${totalItems}]] </span>
         </div>
 
         <div class="text-center m-1" th:unless="${totalItems > 0}">
-            <span>Không tìm thấy đánh giá!</span>
+            <span>No review found !</span>
         </div>
         <div th:if="${totalPages > 1}">
             <nav>
                 <ul class="pagination justify-content-center">
                     <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-                        <a th:replace="fragments :: page_linkReview(1, 'Đầu')" ></a>
+                        <a th:replace="fragments :: page_linkReview(1, 'First')" ></a>
                     </li>
                     <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-                        <a th:replace="fragments :: page_linkReview(${currentPage - 1}, 'Sau')" ></a>
+                        <a th:replace="fragments :: page_linkReview(${currentPage - 1}, 'Previous')" ></a>
                     </li>
 
                     <li th:class="${currentPage != i ? 'page-item': 'page-item active'}"
@@ -130,10 +130,10 @@
                     </li>
 
                     <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-                        <a th:replace="fragments :: page_linkReview(${currentPage + 1}, 'Tiếp')" ></a>
+                        <a th:replace="fragments :: page_linkReview(${currentPage + 1}, 'Next')" ></a>
                     </li>
                     <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-                        <a th:replace="fragments :: page_linkReview(${totalPages}, 'Cuối')" ></a>
+                        <a th:replace="fragments :: page_linkReview(${totalPages}, 'Last')" ></a>
                     </li>
                 </ul>
             </nav>

@@ -29,11 +29,11 @@
                         <form th:action="@{/login}" method="post"  >
 
                             <div th:if="${param.error}">
-                                <p class="text-danger">Vui lòng kiểm tra lại username và password</p>
+                                <p class="text-danger">Please check your username and password again</p>
                             </div>
 
                             <div th:if="${param.logout}">
-                                <p class="text-warning">Bạn đã đăng xuất thành công!</p>
+                                <p class="text-warning">You have been logged out.</p>
                             </div>
 
                             <div class="form-group">

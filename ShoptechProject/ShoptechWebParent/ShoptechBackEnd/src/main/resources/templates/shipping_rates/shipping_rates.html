@@ -35,11 +35,11 @@
         <!-- Trang Chủ-->
         <article layout:fragment="content">
             <div class="card-body">
-                <h4 class="card-title ">QUẢN LÝ PHÍ VẬN CHUYỂN</h4>
+                <h4 class="card-title ">MANAGE SHIPPINGRATES</h4>
                 <a th:href="@{/shipping_rates/new}" aria-expanded="false" aria-controls="auth">
                     <button type="submit" class="btn btn-danger btn-icon-text" >
                         <i class="mdi mdi-playlist-play"></i>
-                        Tạo mới
+                        Create
                     </button>
                 </a>
                 <div th:if="${message != null}" class="alert alert-success text-center">
@@ -67,12 +67,12 @@
                         <thead>
                         <tr>
                             <th th:replace="fragments :: column_linkRate('id','ID')"></th>
-                            <th th:replace="fragments :: column_linkRate('country','Quốc gia')"></th>
-                            <th th:replace="fragments :: column_linkRate('state','Tỉnh')"></th>
-                            <th th:replace="fragments :: column_linkRate('rate','Phí')"></th>
-                            <th th:replace="fragments :: column_linkRate('days','Ngày')"></th>
-                            <th style="text-align: center">Hỗ trợ COD</th>
-                            <th>Thao tác</th>
+                            <th th:replace="fragments :: column_linkRate('country','Country')"></th>
+                            <th th:replace="fragments :: column_linkRate('state','State')"></th>
+                            <th th:replace="fragments :: column_linkRate('rate','Rate')"></th>
+                            <th th:replace="fragments :: column_linkRate('days','Day')"></th>
+                            <th style="text-align: center">COD Support</th>
+                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -85,18 +85,18 @@
                             <td style="text-align: center">
                                 <a style="font-size: 16px;" th:if="${rate.codSupported}" class="fas fa-hand-holding-usd fa-2x icon-green"
                                    th:href="@{'/shipping_rates/cod/' + ${rate.id} + '/enabled/false'}"
-                                   title="Không hỗ trợ COD"></a>
+                                   title="Don't support COD"></a>
 
                                 <a style="font-size: 16px;" th:unless="${rate.codSupported}" class="fas fa-hand-holding-usd fa-2x icon-dark"
                                    th:href="@{'/shipping_rates/cod/' + ${rate.id} + '/enabled/true'}"
-                                   title="Hỗ trợ COD"></a>
+                                   title="Support COD"></a>
                             </td>
                             <td>
                                 <a style="font-size: 16px;" class="fas fa-edit fas-2x icon-purple" th:href="@{'/shipping_rates/edit/' + ${rate.id}}"
-                                   title="Sửa phí vận chuyển"></a>
+                                   title="Edit this shippingrate"></a>
                                 &nbsp;&nbsp;
-                                <a style="font-size: 16px;" class="fas fa-trash fas-2x icon-red" onclick="return confirm('Bạn có muốn xóa?')" th:href="@{'/shipping_rates/delete/' + ${rate.id}}"
-                                   title="Xóa phí vận chuyển"></a>
+                                <a style="font-size: 16px;" class="fas fa-trash fas-2x icon-red" onclick="return confirm('Do you want delete this shippingrate?')" th:href="@{'/shipping_rates/delete/' + ${rate.id}}"
+                                   title="Delete this shippingrate"></a>
                             </td>
                         </tr>
                         </tbody>
@@ -105,20 +105,20 @@
             </div>
         </article>
         <div class="text-center m-1" th:if="${totalItems > 0}">
-            <span>Hiển thị ID # Từ [[${startCount}]] đến [[${endCount}]] trên [[${totalItems}]] </span>
+            <span>Showing shippingrates # from [[${startCount}]] to [[${endCount}]] of [[${totalItems}]] </span>
         </div>
 
         <div class="text-center m-1" th:unless="${totalItems > 0}">
-            <span>Không tìm COD!</span>
+            <span>No shippingrate found !</span>
         </div>
         <div th:if="${totalPages > 1}">
             <nav>
                 <ul class="pagination justify-content-center">
                     <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-                        <a th:replace="fragments :: page_linkRate(1, 'Đầu')" ></a>
+                        <a th:replace="fragments :: page_linkRate(1, 'First')" ></a>
                     </li>
                     <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-                        <a th:replace="fragments :: page_linkRate(${currentPage - 1}, 'Sau')" ></a>
+                        <a th:replace="fragments :: page_linkRate(${currentPage - 1}, 'Previous')" ></a>
                     </li>
 
                     <li th:class="${currentPage != i ? 'page-item': 'page-item active'}"
@@ -127,10 +127,10 @@
                     </li>
 
                     <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-                        <a th:replace="fragments :: page_linkRate(${currentPage + 1}, 'Tiếp')" ></a>
+                        <a th:replace="fragments :: page_linkRate(${currentPage + 1}, 'Next')" ></a>
                     </li>
                     <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-                        <a th:replace="fragments :: page_linkRate(${totalPages}, 'Cuối')" ></a>
+                        <a th:replace="fragments :: page_linkRate(${totalPages}, 'Last')" ></a>
                     </li>
                 </ul>
             </nav>

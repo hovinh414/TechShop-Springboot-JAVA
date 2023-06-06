@@ -75,7 +75,7 @@ public class UserController {
         user.setEnabled(true);
         model.addAttribute("user", user);
         model.addAttribute("listRoles", listRoles);
-        model.addAttribute("pageTitle", "Tạo tài khoản");
+        model.addAttribute("pageTitle", "Create New User");
         return "user/users_form";
 
     }
@@ -100,7 +100,7 @@ public class UserController {
                 user.setPhotos(null);
             service.save(user);
         }
-        redirectAttributes.addFlashAttribute("message", "Lưu tài khoản thành công!");
+        redirectAttributes.addFlashAttribute("message", "The user has been saved successfully.");
         return getRedirectURLtoAffectedUser(user);
     }
 
@@ -116,7 +116,7 @@ public class UserController {
             List<Role> listRoles = service.listRoles();
 
             model.addAttribute("user", user);
-            model.addAttribute("pageTitle", "Cập nhật tài khoản (ID: " + id + ")");
+            model.addAttribute("pageTitle", "Edit User (ID: " + id + ")");
             model.addAttribute("listRoles", listRoles);
 
             return "user/users_form";
@@ -132,7 +132,8 @@ public class UserController {
                              Model model) {
         try {
             service.delete(id);
-            redirectAttributes.addFlashAttribute("message", "Tài khoản " + id + " đã xoá thành công.");
+            redirectAttributes.addFlashAttribute("message",
+                    "The user ID " + id + " has been deleted successfully");
 
         } catch (UserNotFoundException ex) {
             redirectAttributes.addFlashAttribute("message", ex.getMessage());
@@ -147,8 +148,8 @@ public class UserController {
                                           @PathVariable(name = "status") boolean enabled, RedirectAttributes redirectAttributes) {
 
         service.updateUserEnabledStatus(id, enabled);
-        String status = enabled ? "mở khoá" : "bị khoá";
-        String message = "Tài khoản " + id + " vừa mới " + status;
+        String status = enabled ? "enabled" : "disabled";
+        String message = "The user ID " + id + " has been " + status;
         redirectAttributes.addFlashAttribute("message", message);
 
         return "redirect:/users";

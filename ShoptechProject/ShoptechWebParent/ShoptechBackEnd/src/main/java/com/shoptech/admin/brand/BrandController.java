@@ -66,7 +66,7 @@ public class BrandController {
 
         model.addAttribute("listCategories", listCategories);
         model.addAttribute("brand", new Brand());
-        model.addAttribute("pageTitle", "Thêm thương hiệu");
+        model.addAttribute("pageTitle", "Create New Brand");
 
         return "brands/brand_form";
     }
@@ -86,7 +86,7 @@ public class BrandController {
             service.save(brand);
         }
 
-        ra.addFlashAttribute("message", "Lưu thương hiệu thành công");
+        ra.addFlashAttribute("message", "The brand has been saved successfully.");
         return "redirect:/brands";
     }
     @GetMapping("/brands/edit/{id}")
@@ -97,7 +97,7 @@ public class BrandController {
 
             model.addAttribute("brand", brand);
             model.addAttribute("listCategories", listCategories);
-            model.addAttribute("pageTitle", "Sửa thương hiệu` (ID: " + id + ")");
+            model.addAttribute("pageTitle", "Edit Brand (ID: " + id + ")");
 
             return "brands/brand_form";
         } catch (BrandNotFoundException ex) {
@@ -114,7 +114,8 @@ public class BrandController {
             String brandDir = "../brand-logos/" + id;
             FileUploadUtil.cleanDir(brandDir);
 
-            redirectAttributes.addFlashAttribute("message", "Đã xóa thương hiệu ID " + id);
+            redirectAttributes.addFlashAttribute("message",
+                    "The brand ID " + id + " has been deleted successfully");
         } catch (BrandNotFoundException ex) {
             redirectAttributes.addFlashAttribute("message", ex.getMessage());
         }

@@ -44,22 +44,22 @@
                   th:object="${category}" >
               <input type="hidden" th:field="*{id}" />
               <div class="form-group">
-                <label class="col-sm-3 col-form-label">Tên danh mục: </label>
+                <label class="col-sm-3 col-form-label">Title: </label>
                 <div  class="col-sm-12">
                   <input style="color:white" type="text" class="form-control p_input" th:field="*{name}" required minlength="3" maxlength="128">
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-sm-3 col-form-label">Đường dẫn: </label>
+                <label class="col-sm-3 col-form-label">Alias: </label>
                 <div class="col-sm-12">
                   <input style="color:white" type="text" class="form-control p_input" th:field="*{alias}" required minlength="3" maxlength="64">
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-sm-3 col-form-label">Danh mục cha: </label>
+                <label class="col-sm-3 col-form-label">Parent category: </label>
                 <div class="col-sm-12">
                   <select style="color:white" class="form-control" th:field="*{parent}">
-                    <option style="color:white" value="0">- Chọn danh mục -</option>
+                    <option style="color:white" value="0">- Choose category -</option>
                     <th:block th:each = "cat : ${listCategories}">
                       <option style="color:white" th:value = "${cat.id}">[[${cat.name}]]</option>
                     </th:block>
@@ -68,7 +68,7 @@
               </div>
 
               <div class="form-group">
-                <label class="col-sm-3 col-form-label">Hình ảnh: </label>
+                <label class="col-sm-3 col-form-label">Image: </label>
                 <div class="col-sm-12">
                   <input  type="hidden" th:field="*{image}"/>
                   <input style="color:white" type="file" id="fileImage" name="fileImage" th:required="${category.imagePath == null}"/>
@@ -77,7 +77,7 @@
               </div>
 
               <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Kích hoạt: </label>
+                <label class="col-sm-3 col-form-label">Enable: </label>
                 <div class="col-sm-3">
                   <input type="checkbox" class="form-check-primary" th:field="*{enable}">
                 </div>
@@ -157,33 +157,33 @@
         form.submit();
       } else if(response == "DuplicateName") {
         swal({
-          title: 'Thông báo',
-          text:'Tên danh mục đã tồn tại ' + catName,
+          title: 'Notification',
+          text:'There is another category having same name ' + catName,
           icon:'warning',
-          button:'OK'
+          button:'Close'
         });
       } else if(response == "DuplicateAlias") {
         swal({
-          title: 'Thông báo',
-          text:'Đường dẫn đã tồn tại ' + catAlias,
+          title: 'Notification',
+          text:'There is another category having same alias ' + catAlias,
           icon:'warning',
-          button:'OK'
+          button:'Close'
         });
       } else {
         swal({
-          title: 'Thông báo',
-          text:'Không thể kết nối tới server',
+          title: 'Notification',
+          text:'Could not connect to the server',
           icon:'warning',
-          button:'OK'
+          button:'Close'
         });
       }
 
     }).fail(function() {
       swal({
-        title: 'Thông báo',
-        text:'Không thể kết nối tới server',
+        title: 'Notification',
+        text:'Could not connect to the server',
         icon:'warning',
-        button:'OK'
+        button:'Close'
       });
     });
 

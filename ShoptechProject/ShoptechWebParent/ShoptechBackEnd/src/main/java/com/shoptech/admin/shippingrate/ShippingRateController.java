@@ -65,7 +65,7 @@ public class ShippingRateController {
 
         model.addAttribute("rate", new ShippingRate());
         model.addAttribute("listCountries", listCountries);
-        model.addAttribute("pageTitle", "Tạo mới phí vận chuyển");
+        model.addAttribute("pageTitle", "New Rate");
 
         return "shipping_rates/shipping_rate_form";
     }
@@ -73,7 +73,7 @@ public class ShippingRateController {
     public String saveRate(ShippingRate rate, RedirectAttributes ra) {
         try {
             service.save(rate);
-            ra.addFlashAttribute("message", "Lưu phí vận chuyển thành công.");
+            ra.addFlashAttribute("message", "The shipping rate has been saved successfully.");
         } catch (ShippingRateAlreadyExistsException ex) {
             ra.addFlashAttribute("message", ex.getMessage());
         }
@@ -89,7 +89,7 @@ public class ShippingRateController {
 
             model.addAttribute("listCountries", listCountries);
             model.addAttribute("rate", rate);
-            model.addAttribute("pageTitle", "Sửa phí vận chuyển (ID: " + id + ")");
+            model.addAttribute("pageTitle", "Edit Rate (ID: " + id + ")");
 
             return "shipping_rates/shipping_rate_form";
         } catch (ShippingRateNotFoundException ex) {
@@ -103,7 +103,7 @@ public class ShippingRateController {
                                    Model model, RedirectAttributes ra) {
         try {
             service.updateCODSupport(id, supported);
-            ra.addFlashAttribute("message", "COD hỗ trợ cho phí vận chuyển ID " + id + "được thay đổi!");
+            ra.addFlashAttribute("message", "COD support for shipping rate ID " + id + " has been updated.");
         } catch (ShippingRateNotFoundException ex) {
             ra.addFlashAttribute("message", ex.getMessage());
         }
@@ -115,7 +115,7 @@ public class ShippingRateController {
                              Model model, RedirectAttributes ra) {
         try {
             service.delete(id);
-            ra.addFlashAttribute("message", "Đã xóa phí vận chuyển ID " + id);
+            ra.addFlashAttribute("message", "The shipping rate ID " + id + " has been deleted.");
         } catch (ShippingRateNotFoundException ex) {
             ra.addFlashAttribute("message", ex.getMessage());
         }
