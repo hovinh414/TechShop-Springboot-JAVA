@@ -66,6 +66,7 @@
                 <div class="product-review-icon">
                   <input readonly type="hidden" class="rating"
                          th:value="${product.averageRating}"/>
+                  <i id="ratingNumber"> - [[${product.averageRating}]]/5</i>
 
                 </div>
               </div>
@@ -98,6 +99,7 @@
           <div class="col-lg-7">
             <div class="nav product-details-nav" id="product-details-nav-tab" role="tablist">
               <button class="nav-link active" id="specification-tab" data-bs-toggle="tab" data-bs-target="#specification" type="button" role="tab" aria-controls="specification" aria-selected="true"><b>Thông tin sản phẩm</b></button>
+              <button class="nav-link " id="detail-tab" data-bs-toggle="tab" data-bs-target="#detail" type="button" role="tab" aria-controls="detail" aria-selected="flase"><b>Chi tiết sản phẩm</b></button>
               <button class="nav-link " id="review-tab" data-bs-toggle="tab" data-bs-target="#review" type="button" role="tab" aria-controls="review" aria-selected="flase"><b>Đánh giá ([[${product.reviewCount}]])</b></button>
             </div>
             <div class="tab-content" id="product-details-nav-tabContent">
@@ -107,76 +109,33 @@
                   </li>
                 </ul>
               </div>
+              <div class="tab-pane" id="detail" role="tabpanel" aria-labelledby="specification-tab">
+                <ul class="product-details-info-wrap">
+                  <li th:each="detail : ${product.details}">
+                    <span>[[${detail.name}]]</span>
+                    <p>[[${detail.value}]]</p>
+                  </li>
+                </ul>
 
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius velit corporis quo voluptate culpa soluta, esse accusamus, sunt quia omnis amet temporibus sapiente harum quam itaque libero tempore. Ipsum, ducimus. lorem</p>
+              </div>
               <div class="tab-pane " id="review" role="tabpanel" aria-labelledby="review-tab">
                 <!--== Start Reviews Content Item ==-->
-                <div class="product-review-item">
+                <div th:each="review : ${listReviews}"  class="product-review-item">
                   <div class="product-review-top">
-                    <div class="product-review-thumb">
-                      <img src="assets/images/shop/product-details/comment1.webp" alt="Images">
-                    </div>
                     <div class="product-review-content">
-                      <span class="product-review-name">Tomas Doe</span>
-                      <span class="product-review-designation">Delveloper</span>
+                      <span class="product-review-name">[[${review.customer.fullName}]]</span>
+                      <span class="product-review-designation">[[${#dates.format(review.reviewTime, 'dd-MM-yyyy')}]]</span>
                       <div class="product-review-icon">
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-half-o"></i>
+                        <input readonly type="hidden" class="rating"
+                               th:value="${review.rating}"/>
+                      </div>
                       </div>
                     </div>
+                  <p class="desc">[[${review.comment}]]</p>
                   </div>
-                  <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra amet, sodales faucibus nibh. Vivamus amet potenti ultricies nunc gravida duis. Nascetur scelerisque massa sodales.</p>
-                  <button type="button" class="review-reply"><i class="fa fa fa-undo"></i></button>
-                </div>
-                <!--== End Reviews Content Item ==-->
 
-                <!--== Start Reviews Content Item ==-->
-                <div class="product-review-item product-review-reply">
-                  <div class="product-review-top">
-                    <div class="product-review-thumb">
-                      <img src="assets/images/shop/product-details/comment2.webp" alt="Images">
-                    </div>
-                    <div class="product-review-content">
-                      <span class="product-review-name">Tomas Doe</span>
-                      <span class="product-review-designation">Delveloper</span>
-                      <div class="product-review-icon">
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-half-o"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra amet, sodales faucibus nibh. Vivamus amet potenti ultricies nunc gravida duis. Nascetur scelerisque massa sodales.</p>
-                  <button type="button" class="review-reply"><i class="fa fa fa-undo"></i></button>
                 </div>
-                <!--== End Reviews Content Item ==-->
-
-                <!--== Start Reviews Content Item ==-->
-                <div class="product-review-item mb-0">
-                  <div class="product-review-top">
-                    <div class="product-review-thumb">
-                      <img src="assets/images/shop/product-details/comment3.webp" alt="Images">
-                    </div>
-                    <div class="product-review-content">
-                      <span class="product-review-name">Tomas Doe</span>
-                      <span class="product-review-designation">Delveloper</span>
-                      <div class="product-review-icon">
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-half-o"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra amet, sodales faucibus nibh. Vivamus amet potenti ultricies nunc gravida duis. Nascetur scelerisque massa sodales.</p>
-                  <button type="button" class="review-reply"><i class="fa fa fa-undo"></i></button>
-                </div>
-                <!--== End Reviews Content Item ==-->
               </div>
             </div>
           </div>
@@ -456,13 +415,14 @@
       imageIndex = parseInt(bigImage.attr("index"));
       $("#carouselExampleIndicators").carousel(imageIndex);
     });
+    formatRatingNumber();
 
-    function showModalDialog(title, message){
-      $("#modalTitle").text(title);
-      $("#modalBody").text(message);
-      $("#modalDialog").modal();
-    }
   });
+  function formatRatingNumber() {
+    ratingText = $("#ratingNumber").text();
+    formattedRating = $.number(ratingText, 2, decimalSeparator, thousandSeparator);
+    $("#ratingNumber").text(formattedRating);
+  }
 </script>
 <script th:src="@{/assets/js/vendor/modernizr-3.11.7.min.js}"></script>
 <script th:src="@{/assets/js/vendor/jquery-3.6.0.min.js}"></script>
