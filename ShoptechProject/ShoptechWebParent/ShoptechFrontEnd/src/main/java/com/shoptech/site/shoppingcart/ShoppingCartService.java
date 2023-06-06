@@ -1,6 +1,6 @@
 package com.shoptech.site.shoppingcart;
 
-import com.shoptech.entity.shoppingcart.CartItem;
+import com.shoptech.entity.CartItem;
 import com.shoptech.entity.Customer;
 import com.shoptech.entity.Product;
 import com.shoptech.site.product.ProductRepository;

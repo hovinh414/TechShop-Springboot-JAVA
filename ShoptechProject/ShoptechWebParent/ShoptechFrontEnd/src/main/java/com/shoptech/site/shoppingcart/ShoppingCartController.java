@@ -2,7 +2,7 @@ package com.shoptech.site.shoppingcart;
 
 import com.shoptech.entity.Address;
 import com.shoptech.entity.Customer;
-import com.shoptech.entity.shoppingcart.CartItem;
+import com.shoptech.entity.CartItem;
 import com.shoptech.exception.CustomerNotFoundException;
 import com.shoptech.site.Utility;
 import com.shoptech.site.customer.CustomerService;
