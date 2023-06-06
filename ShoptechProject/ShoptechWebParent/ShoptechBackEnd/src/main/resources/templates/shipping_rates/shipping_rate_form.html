@@ -43,7 +43,7 @@
                   enctype="multipart/form-data">
               <input type="hidden" th:field="*{id}" />
               <div class="form-group">
-                <label class="col-sm-3 col-form-label">Nước đến: </label>
+                <label class="col-sm-3 col-form-label">Destination Country: </label>
                 <div  class="col-sm-12">
                   <select style="color:white" th:field="*{country}" class="form-control">
                     <option style="color:white" th:each="country : ${listCountries}" th:value="${country.id}">[[${country.name}]]</option>
@@ -51,7 +51,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-sm-3 col-form-label">Tỉnh/Thành phố: </label>
+                <label class="col-sm-3 col-form-label">Destination State/Province: </label>
                 <div class="col-sm-12">
                   <input style="color:white" type="text" class="form-control p_input" th:field="*{state}" required minlength="3" maxlength="64" list="listStates">
                   <datalist id="listStates">
@@ -60,19 +60,19 @@
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-sm-3 col-form-label">Tỷ lệ vận chuyển: </label>
+                <label class="col-sm-3 col-form-label">Shipping Rate (per DIM weight): </label>
                 <div class="col-sm-12">
                   <input style="color:white" type="number" class="form-control p_input" th:field="*{rate}" required step="0.01" min="0">
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-sm-3 col-form-label">Số ngày giao tới: </label>
+                <label class="col-sm-3 col-form-label">Days to deliver: </label>
                 <div class="col-sm-12">
                   <input style="color:white" type="number" class="form-control p_input" th:field="*{days}" required step="1" min="0">
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Hỗ trợ COD: </label>
+                <label class="col-sm-3 col-form-label">Cash On Delivery (COD): </label>
                 <div class="col-sm-3">
                   <input type="checkbox" class="form-check-primary" th:field="*{codSupported}">
                 </div>

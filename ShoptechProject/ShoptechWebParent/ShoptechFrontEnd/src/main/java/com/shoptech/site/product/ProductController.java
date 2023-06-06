@@ -1,17 +1,24 @@
 package com.shoptech.site.product;
 
-import com.shoptech.entity.Category;
-import com.shoptech.entity.Product;
+import com.shoptech.entity.*;
 import com.shoptech.exception.CategoryNotFoundException;
 import com.shoptech.exception.ProductNotFoundException;
 import com.shoptech.site.category.CategoryService;
+import com.shoptech.site.customer.CustomerService;
+import com.shoptech.site.review.ReviewService;
+import com.shoptech.site.security.oauth.CustomerOAuth2User;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.repository.query.Param;
+import org.springframework.security.authentication.RememberMeAuthenticationToken;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -21,6 +28,10 @@ public class ProductController {
     private ProductService productService;
     @Autowired
     private CategoryService categoryService;
+    @Autowired
+    private ReviewService reviewService;
+    @Autowired
+    private CustomerService customerService;
 
     @GetMapping("/c/{category_alias}")
     public String viewCategoryFirstPage(@PathVariable("category_alias") String alias,
@@ -64,14 +75,17 @@ public class ProductController {
         try {
             Product product = productService.getProduct(alias);
             List<Category> listCategoryParents = categoryService.getCategoryParents(product.getCategory());
+            Page<Review> listReviews = reviewService.list3MostVotedReviewsByProduct(product);
             model.addAttribute("listCategoryParents", listCategoryParents);
             model.addAttribute("product", product);
+            model.addAttribute("listReviews", listReviews);
             model.addAttribute("pageTitle",product.getShortName());
             return "product/product_detail";
         } catch (ProductNotFoundException e) {
             return "error/404";
         }
     }
+
     @GetMapping("/search")
     public String searchFirstPage(@Param("keyword") String keyword, Model model){
         return searchByPage(keyword, 1, model);

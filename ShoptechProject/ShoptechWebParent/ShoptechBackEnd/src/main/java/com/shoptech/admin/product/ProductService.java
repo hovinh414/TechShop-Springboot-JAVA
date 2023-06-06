@@ -58,9 +58,10 @@ public class ProductService {
 
         product.setUpdatedTime(new Date());
 
+        Product updatedProduct = repo.save(product);
+        repo.updateReviewCountAndAverageRating(updatedProduct.getId());
 
-
-        return repo.save(product);
+        return updatedProduct;
     }
     public void saveProductPrice(Product productInForm) {
         Product productInDB = repo.findById(productInForm.getId()).get();
@@ -91,7 +92,7 @@ public class ProductService {
         Long countById = repo.countById(id);
 
         if (countById == null || countById == 0) {
-            throw new ProductNotFoundException("Không tìm thấy sản phẩm với ID " + id);
+            throw new ProductNotFoundException("Could not find any product with ID " + id);
         }
 
         repo.deleteById(id);
@@ -100,7 +101,7 @@ public class ProductService {
         try {
             return repo.findById(id).get();
         } catch (NoSuchElementException ex) {
-            throw new ProductNotFoundException("Không tìm thấy sản phẩm với ID " + id);
+            throw new ProductNotFoundException("Could not find any product with ID " + id);
         }
     }
 

@@ -90,8 +90,13 @@ public class CustomerController {
     }
 
     @GetMapping("/account_details")
+<<<<<<< HEAD
+    public String viewAccountDetails(Model model, HttpServletRequest request) {
+        String email = Utility.getEmailOfAuthenticatedCustomer(request);
+=======
     public String viewAccountDetails(Model model, HttpServletRequest request){
         String email = getEmailOfAuthenticatedCustomer(request);
+>>>>>>> main
         Customer customer = customerService.getCustomerByEmail(email);
         List<Country> listCountries = customerService.listAllCountries();
 
@@ -101,9 +106,12 @@ public class CustomerController {
 
         return "customer/account_form";
     }
+<<<<<<< HEAD
+=======
     private String getEmailOfAuthenticatedCustomer(HttpServletRequest request){
         Object principal = request.getUserPrincipal();
         String customerEmail = null;
+>>>>>>> main
 
         if (principal instanceof UsernamePasswordAuthenticationToken || principal instanceof RememberMeAuthenticationToken){
             customerEmail = request.getUserPrincipal().getName();

@@ -54,26 +54,26 @@ function checkUnique(form) {
 			form.submit();
 		} else if (response == "Duplicate") {
 			swal({
-				title: 'Thông báo',
-				text:'Tên sản phẩm đã tồn tại ' + productName,
+				title: 'Notification',
+				text:'There is another product having the name ' + productName,
 				icon:'warning',
-				button:'OK'
+				button:'Close'
 			});
 		} else {
 			swal({
-				title: 'Thông báo',
-				text:'Không thể kết nối tới server',
+				title: 'Notification',
+				text:'Unknown response from server',
 				icon:'warning',
-				button:'OK'
+				button:'Close'
 			});
 		}
 
 	}).fail(function() {
 		swal({
-			title: 'Thông báo',
-			text:'Không thể kết nối tới server',
+			title: 'Notification',
+			text:'Unknown response from server',
 			icon:'warning',
-			button:'OK'
+			button:'Close'
 		});
 	});
 

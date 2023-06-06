@@ -35,7 +35,7 @@
             <!-- Trang Chủ-->
             <article layout:fragment="content">
                 <div class="card-body">
-                    <h4 class="card-title ">QUẢN LÝ KHÁCH HÀNG</h4>
+                    <h4 class="card-title ">MANAGE CUSTOMERS</h4>
 
                     </p>
 
@@ -64,7 +64,7 @@
                         <a th:href="@{/customers/export/csv}" aria-expanded="false" aria-controls="auth">
                             <button type="submit" class="btn btn-outline-behance btn-icon-text" >
                                 <i class="mdi mdi-file-export"></i>
-                                IN CSV
+                                EXPORT CSV
                             </button>
                         </a>
                     </div>
@@ -73,15 +73,15 @@
                         <table class="table table-hover">
                             <thead>
                             <tr>
-                                <th th:replace="fragments :: column_linkCus('id', 'ID')" />
-                                <th th:replace="fragments :: column_linkCus('firstName', 'First Name')" />
-                                <th th:replace="fragments :: column_linkCus('lastName', 'Last Name')" />
-                                <th th:replace="fragments :: column_linkCus('email', 'E-mail')" />
-                                <th th:replace="fragments :: column_linkCus('city', 'City')" />
-                                <th th:replace="fragments :: column_linkCus('state', 'State')" />
-                                <th th:replace="fragments :: column_linkCus('country', 'Country')" />
-                                <th th:replace="fragments :: column_linkCus('enabled', 'Enabled')" />
-                                <th>Thao tác</th>
+                                <th th:replace="fragments :: column_linkCus('id', 'ID')"></th>
+                                <th th:replace="fragments :: column_linkCus('firstName', 'First Name')"></th>
+                                <th th:replace="fragments :: column_linkCus('lastName', 'Last Name')"></th>
+                                <th th:replace="fragments :: column_linkCus('email', 'E-mail')"></th>
+                                <th th:replace="fragments :: column_linkCus('city', 'City')"></th>
+                                <th th:replace="fragments :: column_linkCus('state', 'State')"></th>
+                                <th th:replace="fragments :: column_linkCus('country', 'Country')"></th>
+                                <th th:replace="fragments :: column_linkCus('enabled', 'Enabled')"></th>
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -97,20 +97,20 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;
                                     <a style="font-size: 16px;" th:if="${customer.enabled == true}" class="fas fa-check-square fas-2x icon-blue"
                                        th:href="@{'/customers/' + ${customer.id} + '/enabled/false'}"
-                                       title="Khoá tài khoản"></a>
+                                       title="Disable this account"></a>
 
                                     <a style="font-size: 16px;" th:if="${customer.enabled == false}" class="fas fa-square fas-2x icon-silver"
                                        th:href="@{'/customers/' + ${customer.id} + '/enabled/true'}"
-                                       title="Mở tài khoản"></a>
+                                       title="Enable this account"></a>
                                 </td>
                                 <td>
-                                    <a class="fas fa-file-alt fas-2x icon-green link-detail" th:href="@{'/customers/detail/' + ${customer.id}}" title="Xem chi tiết khách hàng"></a>
+                                    <a class="fas fa-file-alt fas-2x icon-green link-detail" th:href="@{'/customers/detail/' + ${customer.id}}" title="View detail this customer"></a>
                                     &nbsp;&nbsp;
                                     <a style="font-size: 16px;" class="fas fa-edit fas-2x icon-purple" th:href="@{'/customers/edit/' + ${customer.id}}"
-                                       title="Sửa khách hàng"></a>
+                                       title="Edit this customer"></a>
                                     &nbsp;&nbsp;
-                                        <a style="font-size: 16px;" class="fas fa-trash fas-2x icon-red" onclick="return confirm('Bạn có muốn xóa?')" th:href="@{'/customers/delete/' + ${customer.id}}"
-                                           title="Xóa khách hàng"></a>
+                                        <a style="font-size: 16px;" class="fas fa-trash fas-2x icon-red" onclick="return confirm('Do you want delete this customer?')" th:href="@{'/customers/delete/' + ${customer.id}}"
+                                           title="Delete this customer"></a>
                                 </td>
 
                             </tr>
@@ -129,11 +129,11 @@
 
             <!--- -------------- Show Users --------------- ----->
             <div class="text-center m-1" th:if="${totalItems > 0}">
-                <span>Hiển thị ID # Từ [[${startCount}]] đến [[${endCount}]] trên [[${totalItems}]] </span>
+                <span>Showing customer # from [[${startCount}]] to [[${endCount}]] of [[${totalItems}]] </span>
             </div>
 
             <div class="text-center m-1" th:unless="${totalItems > 0}">
-                <span>Không tìm thấy khách hàng!</span>
+                <span>No customer found !</span>
             </div>
 
             <!--- --------------Phân Trang --------------- ----->
@@ -141,10 +141,10 @@
                 <nav>
                     <ul class="pagination justify-content-center">
                         <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-                           <a th:replace="fragments :: page_linkCus(1, 'Đầu')" ></a>
+                           <a th:replace="fragments :: page_linkCus(1, 'First')" ></a>
                         </li>
                         <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-                            <a th:replace="fragments :: page_linkCus(${currentPage - 1}, 'Sau')" ></a>
+                            <a th:replace="fragments :: page_linkCus(${currentPage - 1}, 'Previous')" ></a>
                         </li>
 
                         <li th:class="${currentPage != i ? 'page-item': 'page-item active'}"
@@ -153,10 +153,10 @@
                         </li>
 
                         <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-                            <a th:replace="fragments :: page_linkCus(${currentPage + 1}, 'Tiếp')" ></a>
+                            <a th:replace="fragments :: page_linkCus(${currentPage + 1}, 'Next')" ></a>
                         </li>
                         <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-                            <a th:replace="fragments :: page_linkCus(${totalPages}, 'Cuối')" ></a>
+                            <a th:replace="fragments :: page_linkCus(${totalPages}, 'Last')" ></a>
                         </li>
                     </ul>
                 </nav>

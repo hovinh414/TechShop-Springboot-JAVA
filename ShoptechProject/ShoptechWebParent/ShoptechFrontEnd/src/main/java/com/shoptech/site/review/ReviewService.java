@@ -1,6 +1,7 @@
 package com.shoptech.site.review;
 
 import com.shoptech.entity.Customer;
+import com.shoptech.entity.Product;
 import com.shoptech.entity.Review;
 import com.shoptech.exception.ReviewNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+
+import java.util.Date;
 
 @Service
 public class ReviewService {
@@ -35,5 +38,15 @@ public class ReviewService {
             throw new ReviewNotFoundException("Customer doesn not have any reviews with ID " + reviewId);
 
         return review;
+    }
+    public Page<Review> list3MostVotedReviewsByProduct(Product product) {
+        Sort sort = Sort.by("reviewTime").descending();
+        Pageable pageable = PageRequest.of(0, 10, sort);
+
+        return reviewRepo.findByProduct(product, pageable);
+    }
+    public void saveReview(Review review) {
+        review.setReviewTime(new Date());
+        reviewRepo.save(review);
     }
 }

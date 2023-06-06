@@ -35,11 +35,11 @@
     <!-- Trang Chủ-->
     <article layout:fragment="content">
       <div class="card-body">
-        <h4 class="card-title ">QUẢN LÝ THƯƠNG HIỆU</h4>
+        <h4 class="card-title ">MANAGE BRANDS</h4>
         <a th:href="@{/brands/new}" aria-expanded="false" aria-controls="auth">
           <button type="submit" class="btn btn-danger btn-icon-text" >
             <i class="mdi mdi-playlist-play"></i>
-            Tạo mới
+            Create
           </button>
         </a>
         <div th:if="${message != null}" class="alert alert-success text-center">
@@ -61,24 +61,12 @@
         </div>
         <!--- --------------Xuất CSV | Xuất Excel | Xuất PDF --------------- ----->
         <div style="text-align: right;">
-          <!--<a th:href="@{/brands/export/csv}" aria-expanded="false" aria-controls="auth">
-              <button type="submit" class="btn btn-outline-behance btn-icon-text" >
-                  <i class="mdi mdi-file-export"></i>
-                  IN CSV
-              </button>
-          </a>-->
-          &nbsp;
-          <!--<a th:href="@{/users/export/excel}" aria-expanded="false" aria-controls="auth">
-              <button type="submit" class="btn btn-outline-success btn-icon-text" >
-                  <i class="mdi mdi-file-excel"></i>
-                  IN EXCEL
-              </button>
-          </a>-->
+
           &nbsp;
           <a th:href="@{/brands/export/pdf}" aria-expanded="false" aria-controls="auth">
             <button type="submit" class="btn btn-outline-reddit btn-icon-text" >
               <i class="mdi mdi-file-pdf"></i>
-              IN PDF
+              EXPORT PDF
             </button>
           </a>
         </div>
@@ -88,10 +76,10 @@
             <thead>
             <tr>
               <th th:replace="fragments :: column_linkBrand('id','ID')"></th>
-              <th th:replace="fragments :: column_linkBrand('name','Tên thương hiệu')"></th>
-              <th>logo</th>
-              <th style="text-align: center">Danh mục</th>
-              <th>Thao tác</th>
+              <th th:replace="fragments :: column_linkBrand('name','Name')"></th>
+              <th>Logo</th>
+              <th style="text-align: center">Categories</th>
+              <th>Action</th>
             </tr>
             </thead>
             <tbody>
@@ -108,10 +96,10 @@
               </td>
               <td>
                 <a style="font-size: 16px;" class="fas fa-edit fas-2x icon-purple" th:href="@{'/brands/edit/' + ${brand.id}}"
-                   title="Sửa thương hiệu"></a>
+                   title="Edit brand"></a>
                 &nbsp;&nbsp;
-                <a style="font-size: 16px;" class="fas fa-trash fas-2x icon-red" onclick="return confirm('Bạn có muốn xóa?')" th:href="@{'/brands/delete/' + ${brand.id}}"
-                   title="Xóa thương hiệu"></a>
+                <a style="font-size: 16px;" class="fas fa-trash fas-2x icon-red" onclick="return confirm('Do you want delete this brand?')" th:href="@{'/brands/delete/' + ${brand.id}}"
+                   title="Delete brand"></a>
               </td>
             </tr>
             </tbody>
@@ -120,20 +108,20 @@
       </div>
     </article>
     <div class="text-center m-1" th:if="${totalItems > 0}">
-      <span>Hiển thị ID # Từ [[${startCount}]] đến [[${endCount}]] trên [[${totalItems}]] </span>
+      <span>Showing brands # from [[${startCount}]] to [[${endCount}]] of [[${totalItems}]] </span>
     </div>
 
     <div class="text-center m-1" th:unless="${totalItems > 0}">
-      <span>Không tìm thấy thương hiệu!</span>
+      <span>No brand found !</span>
     </div>
     <div th:if="${totalPages > 1}">
       <nav>
         <ul class="pagination justify-content-center">
           <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-            <a th:replace="fragments :: page_linkBrand(1, 'Đầu')" ></a>
+            <a th:replace="fragments :: page_linkBrand(1, 'First')" ></a>
           </li>
           <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-            <a th:replace="fragments :: page_linkBrand(${currentPage - 1}, 'Sau')" ></a>
+            <a th:replace="fragments :: page_linkBrand(${currentPage - 1}, 'Previous')" ></a>
           </li>
 
           <li th:class="${currentPage != i ? 'page-item': 'page-item active'}"
@@ -142,10 +130,10 @@
           </li>
 
           <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-            <a th:replace="fragments :: page_linkBrand(${currentPage + 1}, 'Tiếp')" ></a>
+            <a th:replace="fragments :: page_linkBrand(${currentPage + 1}, 'Next')" ></a>
           </li>
           <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-            <a th:replace="fragments :: page_linkBrand(${totalPages}, 'Cuối')" ></a>
+            <a th:replace="fragments :: page_linkBrand(${totalPages}, 'Last')" ></a>
           </li>
         </ul>
       </nav>

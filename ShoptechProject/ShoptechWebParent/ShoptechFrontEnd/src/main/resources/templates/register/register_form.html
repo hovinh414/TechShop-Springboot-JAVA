@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<<<<<<< HEAD
+=======
+
+<head th:replace="fragments :: page_head(${pageTitle},'none')">
+
+</head>
+>>>>>>> main
 <body>
 <div th:fragment="register">
     <div class="form sign-up">
@@ -92,7 +99,22 @@
             customerEmail = $("#email").val();
             csrfValue = $("input[name='_csrf']").val();
 
+<<<<<<< HEAD
             params = {email: customerEmail, _csrf: csrfValue};
+=======
+    $.post(url, params, function(response) {
+      if (response == "OK") {
+        form.submit();
+      } else if (response == "Duplicated") {
+        showWarningModal("There is another cusotmer having the email " + customerEmail);
+        alert("There is another cusotmer having the email " + customerEmail)
+      } else {
+        showErrorModal("Unknown response from server");
+      }
+    }).fail(function() {
+      showErrorModal("Could not connect to the server");
+    });
+>>>>>>> main
 
             $.post(url, params, function (response) {
                 if (response == "OK") {
@@ -106,10 +128,21 @@
                 showErrorModal("Could not connect to the server");
             });
 
+<<<<<<< HEAD
             return false;
         }
     </script>
     <script type="text/javascript" th:src="@{/assets/js/common_customer_form.js}"></script>
 </div>
+=======
+</script>
+<<<<<<< HEAD
+<script th:src="@{/js/common_modal.js}"></script>
+<script type="text/javascript" th:src="@{/js/common_customer_form.js}"></script>
+=======
+
+<script type="text/javascript" th:src="@{/assets/js/common_customer_form.js}"></script>
+>>>>>>> main
+>>>>>>> main
 </body>
 </html>

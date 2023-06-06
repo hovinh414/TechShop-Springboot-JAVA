@@ -82,7 +82,7 @@ public class ProductController {
 
         model.addAttribute("product", product);
         model.addAttribute("listBrands", listBrands);
-        model.addAttribute("pageTitle", "Thêm sản phẩm");
+        model.addAttribute("pageTitle", "Create New Product");
         model.addAttribute("numberOfExistingExtraImages", 0);
 
         return "products/product_form";
@@ -101,7 +101,7 @@ public class ProductController {
         if (!loggedUser.hasRole("Admin") && !loggedUser.hasRole("Editor")) {
             if (loggedUser.hasRole("Salesperson")) {
                 productService.saveProductPrice(product);
-                ra.addFlashAttribute("message", "Lưu sản phẩm thành công");
+                ra.addFlashAttribute("message", "The product has been saved successfully.");
                 return "redirect:/products";
             }
         }
@@ -117,7 +117,7 @@ public class ProductController {
 
         ProductSaveHelper.deleteExtraImagesWeredRemovedOnForm(product);
 
-        ra.addFlashAttribute("message","Lưu sản phẩm thành công");
+        ra.addFlashAttribute("message", "The product has been saved successfully.");
 
 
         return "redirect:/products";
@@ -127,8 +127,8 @@ public class ProductController {
     public String updateProductEnabledStatus(@PathVariable("id") Integer id,
                                              @PathVariable("status") boolean enabled, RedirectAttributes redirectAttributes) {
         productService.updateProductEnabledStatus(id, enabled);
-        String status = enabled ? "mở khóa" : "bị khóa";
-        String message = "Sản phẩm ID " + id + " đã " + status;
+        String status = enabled ? "enabled" : "disabled";
+        String message = "The Product ID " + id + " has been " + status;
         redirectAttributes.addFlashAttribute("message", message);
 
         return "redirect:/products";
@@ -145,7 +145,7 @@ public class ProductController {
             FileUploadUtil.removeDir(productImagesDir);
 
             redirectAttributes.addFlashAttribute("message",
-                    "Sản phẩm ID " + id + " đã xóa thành công");
+                    "The product ID " + id + " has been deleted successfully");
         } catch (ProductNotFoundException ex) {
             redirectAttributes.addFlashAttribute("message", ex.getMessage());
         }
@@ -170,7 +170,7 @@ public class ProductController {
 
             model.addAttribute("product", product);
             model.addAttribute("listBrands", listBrands);
-            model.addAttribute("pageTitle", "Sửa Sản Phẩm (ID: " + id + ")");
+            model.addAttribute("pageTitle", "Edit Product (ID: " + id + ")");
             model.addAttribute("numberOfExistingExtraImages", numberOfExistingExtraImages);
 
             return "products/product_form";
