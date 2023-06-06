@@ -82,7 +82,7 @@ public class CustomerController {
         return "register/" + (verified ? "verify_success" : "verify_fail");
     }
 
-    /*@GetMapping("/account_details")
+    @GetMapping("/account_details")
     public String viewAccountDetails(Model model, HttpServletRequest request) {
         String email = Utility.getEmailOfAuthenticatedCustomer(request);
         Customer customer = customerService.getCustomerByEmail(email);
@@ -92,7 +92,7 @@ public class CustomerController {
         model.addAttribute("listCountries", listCountries);
 
         return "customer/account_form";
-    }*/
+    }
 
     /*@PostMapping("/update_account_details")
     public String updateAccountDetails(Model model, Customer customer, RedirectAttributes ra,

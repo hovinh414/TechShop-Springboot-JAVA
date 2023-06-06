@@ -2,7 +2,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 
-<head th:replace="fragments :: page_head('Shopme','none')"></head>
+<head th:replace="fragments :: page_head('Shopme','none')">
+
+
+</head>
 
 <!-- Mirrored from template.hasthemes.com/brancy/brancy/product-details-group.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Nov 2022 06:24:12 GMT -->
 <link rel="stylesheet" th:href="@{/assets/style.css}">
@@ -11,14 +14,14 @@
 <!--== Wrapper Start ==-->
 <div class="wrapper">
   <!--== Start Header Wrapper ==-->
-  <header class="header-area sticky-header ">
+  <header class="header-area sticky-header">
     <div th:replace="navigation :: header_menu"></div>
   </header>
   <!--== End Header Wrapper ==-->
   <main class="main-content">
     <section class="page-header-area pt-8 pb-6" data-bg-color="#FFF3DA">
       <div class="container">
-        <div class="row" th:if="${listCategoryParents != null && !listCategoryParents.empty}">
+        <div class="row" th:if="${listCategoryParents != null && !listCategoryParents .empty}">
           <div class="col">
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
@@ -105,7 +108,7 @@
                 </div>
                 <th:block th:if="${product.inStock}">
                   <div class="product-details-cart-wishlist">
-                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#action-CartAddModal" id="buttonAdd2Cart">Add to cart</button>
+                    <input type="button" class="btn" id="buttonAdd2Cart" value="Add to Cart">
                   </div>
                 </th:block>
               </div>
@@ -503,11 +506,11 @@
       $("#modalDialog").modal();
     }
   });
-
-<script th:src="@{/assets/js/vendor/modernizr-3.11.7.min.js}"></script>
+</script>
 <script th:src="@{/assets/js/vendor/jquery-3.6.0.min.js}"></script>
 <script th:src="@{/assets/js/vendor/jquery-migrate-3.3.2.min.js}"></script>
 <script th:src="@{/assets/js/vendor/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/assets/js/vendor/modernizr-3.11.7.min.js}"></script>
 
 <!-- Plugins JS -->
 <script th:src="@{/assets/js/plugins/swiper-bundle.min.js}"></script>
@@ -518,6 +521,8 @@
 <script th:src="@{/assets/js/main.js}"></script>
 <script th:src="@{/assets/js/quantity_control.js}"></script>
 <script th:src="@{/assets/js/common_modal.js}"></script>
+<script th:src="@{/assets/js/add_to_cart.js}"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 
 

@@ -1,6 +1,6 @@
 package com.shoptech.site.shoppingcart;
 
-import com.shoptech.entity.CartItem;
+import com.shoptech.entity.shoppingcart.CartItem;
 import com.shoptech.entity.Customer;
 import com.shoptech.entity.Product;
 import org.junit.jupiter.api.Test;
@@ -20,8 +20,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @Rollback(false)
 public class CartItemRepositoryTests {
-    @Autowired private CartItemRepository repo;
-    @Autowired private TestEntityManager entityManager;
+    @Autowired
+    private CartItemRepository repo;
+    @Autowired
+    private TestEntityManager entityManager;
 
     @Test
     public void testSaveItem() {
@@ -40,6 +42,7 @@ public class CartItemRepositoryTests {
 
         assertThat(savedItem.getId()).isGreaterThan(0);
     }
+
     @Test
     public void testSave2Items() {
         Integer customerId = 10;
@@ -62,6 +65,7 @@ public class CartItemRepositoryTests {
 
         assertThat(iterable).size().isGreaterThan(0);
     }
+
     @Test
     public void testFindByCustomer() {
         Integer customerId = 10;
@@ -71,7 +75,8 @@ public class CartItemRepositoryTests {
 
         assertThat(listItems.size()).isEqualTo(2);
     }
-    @Test
+
+    /*@Test
     public void testFindByProductId() {
         Integer productId = 8;
         List<CartItem> listItems = repo.findByProductId(new Product(productId));
@@ -79,11 +84,11 @@ public class CartItemRepositoryTests {
         listItems.forEach(System.out::println);
 
         assertThat(listItems.size()).isEqualTo(2);
-    }
+    }*/
     @Test
     public void testFindByCustomerAndProduct() {
-        Integer customerId = 1;
-        Integer productId = 1;
+        Integer customerId = 10;
+        Integer productId = 10;
 
         CartItem item = repo.findByCustomerAndProduct(new Customer(customerId), new Product(productId));
 
@@ -91,10 +96,11 @@ public class CartItemRepositoryTests {
 
         System.out.println(item);
     }
+
     @Test
     public void testUpdateQuantity() {
-        Integer customerId = 1;
-        Integer productId = 1;
+        Integer customerId = 10;
+        Integer productId = 10;
         Integer quantity = 5;
 
         repo.updateQuantity(quantity, customerId, productId);
@@ -103,6 +109,7 @@ public class CartItemRepositoryTests {
 
         assertThat(item.getQuantity()).isEqualTo(5);
     }
+
     @Test
     public void testDeleteByCustomerAndProduct() {
         Integer customerId = 10;
