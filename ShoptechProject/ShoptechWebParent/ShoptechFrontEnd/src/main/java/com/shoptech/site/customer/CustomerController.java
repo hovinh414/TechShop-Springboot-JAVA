@@ -118,7 +118,7 @@ public class CustomerController {
     @PostMapping("/update_account_details")
     public String updateAccountDetails(Model model, Customer customer, RedirectAttributes ra, HttpServletRequest request){
         customerService.update(customer);
-        ra.addFlashAttribute("message", "Tài khoản của bạn đã được cập nhật.");
+        ra.addFlashAttribute("message", "Your account have been updated.");
         updateNameForAuthenticatedCustomer(customer, request);
         return "redirect:/account_details";
     }
