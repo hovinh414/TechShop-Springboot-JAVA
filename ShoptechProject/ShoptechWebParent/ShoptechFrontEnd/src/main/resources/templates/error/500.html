@@ -6,9 +6,20 @@
 <header class="header-area sticky-header header-transparent">
   <div th:replace="navigation :: header_menu"></div>
 </header>
-<div class="m-3" style="padding-top: 60px">
-  <h2>Sorry, the server has encountered an error while processing your request</h2>
-</div>
+<main style="padding-top: 200px" class="main-content">
+  <!--== Start Faq Area Wrapper ==-->
+  <section class="page-not-found-area">
+    <div class="container">
+      <div class="page-not-found">
+        <h3 class="title">Opps! You Lost. 500 Error</h3>
+        <h5 class="back-btn">Go to <a href="/tech">Home</a> Page</h5>
+        <img src="assets/images/photos/page-not-found.webp" width="975" height="538" alt="Image">
+
+      </div>
+    </div>
+  </section>
+  <!--== End Faq Area Wrapper ==-->
+</main>
 <footer class="footer-area">
   <div class="footer-main">
     <div th:replace="navigation :: footer_menu"></div>
