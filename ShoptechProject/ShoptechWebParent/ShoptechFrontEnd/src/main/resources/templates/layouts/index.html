@@ -105,7 +105,7 @@
                 </div>
                 <div class="row g-3 g-sm-6" >
                     <div class="col-6 col-lg-4 col-lg-2 col-xl-2" th:each="cat:${listCategories}" style="padding-top: 10px">
-                        <a th:href="@{'/c/' + ${cat.alias}}" class="product-category-item">
+                        <a th:href="@{'/products/page/1?sortField=name&sortDir=asc&categoryId=' + ${cat.id}}" class="product-category-item">
                             <img class="icon" th:src="@{${cat.imagePath}}" width="70" height="80" alt="Image-HasTech">
                             <h3 class="title">[[${cat.name}]]</h3>
                         </a>
