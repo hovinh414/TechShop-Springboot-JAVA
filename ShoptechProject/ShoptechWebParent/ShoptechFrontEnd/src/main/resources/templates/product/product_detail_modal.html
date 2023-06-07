@@ -1,0 +1,61 @@
+
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="product-quick-view-content">
+          <button type="button" class="btn-close" data-bs-dismiss="modal">
+            <span class="fa fa-close"></span>
+          </button>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6">
+                <!--== Start Product Thumbnail Area ==-->
+                <div class="product-single-thumb">
+                  <img th:src="@{${product.mainImagePath}}"  width="530px" height="650px" class="img-fluid">
+                </div>
+                <!--== End Product Thumbnail Area ==-->
+              </div>
+              <div class="col-lg-6">
+                <!--== Start Product Info Area ==-->
+                <div class="product-details-content">
+                  <h3 class="product-details-title">[[${product.shortName}]]</h3>
+                  <div class="product-details-review mb-5">
+                    <div class="product-review-icon">
+                      <input readonly type="hidden" class="rating"
+                             th:value="${product.averageRating}"/>
+                      <i id="ratingNumber"> - [[${product.averageRating}]]/5</i>
+
+                    </div>
+                    <button type="button" class="product-review-show">[[${product.reviewCount}]] reviews</button>
+                  </div>
+                  <div>
+                    <span><b>Brand:</b> [[${product.brand.name}]]</span>
+                  </div>
+                  <span><b>General:</b></span>
+                  <p class="text" th:utext="${product.shortDescription}"></p>
+                  <div class="product-details-pro-qty">
+
+                    <th:block th:if="${product.inStock}">
+                      <div th:replace="cart/quantity_control :: quantity_control(1, ${product.id})"></div>
+                    </th:block>
+                  </div>
+                  <div class="product-details-action">
+                    <div class="prices" th:if="${product.discountPercent <= 0 }">
+                      <span class="price"><h3>[[${product.price}]] $</h3></span>
+                    </div>
+                    <div class="prices" th:if="${product.discountPercent > 0 }">
+                      <span class="price"><h3>[[${product.discountPrice}]] $</h3></span>([[${product.discountPercent}]] % off)
+                    </div>
+                    <th:block th:if="${product.inStock}">
+                      <div class="product-details-cart-wishlist">
+                        <input type="button" class="btn" id="buttonAdd2Cart" value="Add to Cart">
+                      </div>
+                    </th:block>
+                  </div>
+                </div>
+                <!--== End Product Info Area ==-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

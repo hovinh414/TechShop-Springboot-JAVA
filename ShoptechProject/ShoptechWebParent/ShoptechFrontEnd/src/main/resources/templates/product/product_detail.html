@@ -70,6 +70,7 @@
                   <i id="ratingNumber"> - [[${product.averageRating}]]/5</i>
 
                 </div>
+                <button type="button" class="product-review-show">[[${product.reviewCount}]] reviews</button>
               </div>
               <div>
                 <span><b>Thương hiệu:</b> [[${product.brand.name}]]</span>
@@ -146,7 +147,7 @@
     <!--== Start Product Banner Area Wrapper ==-->
     <div class="container">
       <!--== Start Product Category Item ==-->
-      <a href="product.html" class="product-banner-item">
+      <a href="products.html" class="product-banner-item">
         <img th:src="@{/assets/images/shop/banner/7.webp}" width="1170" height="240" alt="Image-HasTech">
       </a>
       <!--== End Product Category Item ==-->
@@ -330,7 +331,7 @@
             <ul>
               <li><a href="#" class="offcanvas-nav-item">Shop Layout</a>
                 <ul>
-                  <li><a href="product.html">Shop 3 Column</a></li>
+                  <li><a href="products.html">Shop 3 Column</a></li>
                   <li><a href="product-four-columns.html">Shop 4 Column</a></li>
                   <li><a href="product-left-sidebar.html">Shop Left Sidebar</a></li>
                   <li><a href="product-right-sidebar.html">Shop Right Sidebar</a></li>
