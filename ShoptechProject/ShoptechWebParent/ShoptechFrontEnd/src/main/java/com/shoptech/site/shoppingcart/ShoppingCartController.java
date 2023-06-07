@@ -35,6 +35,21 @@ public class ShoppingCartController {
 		
 		return "cart/shopping_cart";
 	}
+	@GetMapping("/cartmodal")
+	public String viewCart1(Model model, HttpServletRequest request){
+		Customer customer = getAuthenticatedCustomer(request);
+		List<CartItem> cartItems = cartService.listCartItems(customer);
+		float estimatedTotal = 0.0F;
+
+		for (CartItem item : cartItems) {
+			estimatedTotal += item.getSubtotal();
+		}
+
+		model.addAttribute("cartItems", cartItems);
+		model.addAttribute("estimatedTotal", estimatedTotal);
+
+		return "navigation";
+	}
 	private Customer getAuthenticatedCustomer(HttpServletRequest request) {
 		String email = Utility.getEmailOfAuthenticatedCustomer(request);
 		return customerService.getCustomerByEmail(email);
