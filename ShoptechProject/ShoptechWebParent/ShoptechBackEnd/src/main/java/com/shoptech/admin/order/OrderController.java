@@ -1,9 +1,10 @@
 package com.shoptech.admin.order;
+
 import com.shoptech.admin.paging.PagingAndSortingHelper;
 import com.shoptech.admin.paging.PagingAndSortingParam;
 import com.shoptech.admin.security.ShoptechUserDetails;
 import com.shoptech.admin.setting.SettingService;
-import com.shoptech.entity.Country;
+import com.shoptech.entity.Customer;
 import com.shoptech.entity.Product;
 import com.shoptech.entity.Setting;
 import com.shoptech.entity.order.Order;
@@ -13,6 +14,7 @@ import com.shoptech.entity.order.OrderTrack;
 import com.shoptech.exception.OrderNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,18 +23,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
-import java.util.Set;
 
 
 @Controller
 public class OrderController {
 	private String defaultRedirectURL = "redirect:/orders/page/1?sortField=orderTime&sortDir=desc";
-	
+
 	@Autowired private OrderService orderService;
 	@Autowired private SettingService settingService;
 
@@ -40,21 +40,40 @@ public class OrderController {
 	public String listFirstPage() {
 		return defaultRedirectURL;
 	}
-	
+
 	@GetMapping("/orders/page/{pageNum}")
 	public String listByPage(
+			Model model,
 			@PagingAndSortingParam(listName = "listOrders", moduleURL = "/orders") PagingAndSortingHelper helper,
 			@PathVariable(name = "pageNum") int pageNum,
 			HttpServletRequest request,
 			@AuthenticationPrincipal ShoptechUserDetails loggedUser) {
 
-		orderService.listByPage(pageNum, helper);
 		loadCurrencySetting(request);
-		
 		if (!loggedUser.hasRole("Admin") && !loggedUser.hasRole("Salesperson") && loggedUser.hasRole("Shipper")) {
 			return "orders/orders_shipper";
 		}
-		
+
+		Page<Order> page = orderService.listByPage(pageNum, helper);
+		List<Order> listOrder = null;
+		if (page != null){
+			listOrder = page.getContent();
+		}
+
+		long startCount = (pageNum - 1) * orderService.ORDERS_PER_PAGE + 1;
+		long endCount = startCount + orderService.ORDERS_PER_PAGE - 1;
+		if(endCount > page.getTotalElements())
+		{
+			endCount = page.getTotalElements();
+		}
+
+		model.addAttribute("currentPage", pageNum);
+		model.addAttribute("totalPages", page != null ? page.getTotalPages() : 0);
+		model.addAttribute("startCount", startCount);
+		model.addAttribute("endCount", endCount);
+		model.addAttribute("totalItems", page != null ? page.getTotalElements() : 0);
+		model.addAttribute("currentPage", pageNum);
+		model.addAttribute("listOrders", listOrder);
 		return "orders/orders";
 	}
 	
@@ -108,13 +127,7 @@ public class OrderController {
 			HttpServletRequest request) {
 		try {
 			Order order = orderService.get(id);;
-			
-			List<Country> listCountries = orderService.listAllCountries();
-			
-			model.addAttribute("pageTitle", "Edit Order (ID: " + id + ")");
 			model.addAttribute("order", order);
-			model.addAttribute("listCountries", listCountries);
-			
 			return "orders/order_form";
 			
 		} catch (OrderNotFoundException ex) {
@@ -124,18 +137,53 @@ public class OrderController {
 		
 	}	
 	
-	@PostMapping("/order/save")
-	public String saveOrder(Order order, HttpServletRequest request, RedirectAttributes ra) {
-		String countryName = request.getParameter("countryName");
-		order.setCountry(countryName);
-		
-		updateProductDetails(order, request);
-		updateOrderTracks(order, request);
+	@PostMapping("/orders/save")
+	public String saveOrder(Order order, HttpServletRequest request, RedirectAttributes ra) throws OrderNotFoundException {
+		Order currentOrder = orderService.get(order.getId());
+		// Overview
+		currentOrder.setProductCost(order.getProductCost());
+		currentOrder.setSubtotal(order.getSubtotal());
+		currentOrder.setShippingCost(order.getShippingCost());
+		currentOrder.setTax(order.getTax());
+		currentOrder.setTotal(order.getTotal());
+		currentOrder.setPaymentMethod(order.getPaymentMethod());
+		currentOrder.setStatus(order.getStatus());
 
-		orderService.save(order);		
+		// Shipping
+		currentOrder.setDeliverDays(order.getDeliverDays());
+		currentOrder.setDeliverDate(order.getDeliverDate());
+
+		Customer currentCustomer = currentOrder.getCustomer();
+		currentCustomer.setFirstName(order.getCustomer().getFirstName());
+		currentCustomer.setLastName(order.getCustomer().getLastName());
+		currentCustomer.setPhoneNumber(order.getCustomer().getPhoneNumber());
+		currentCustomer.setAddressLine1(order.getCustomer().getAddressLine1());
+		currentCustomer.setAddressLine2(order.getCustomer().getAddressLine2());
+		currentCustomer.setCity(order.getCustomer().getCity());
+		currentCustomer.setState(order.getCustomer().getState());
+		currentCustomer.setPostalCode(order.getCustomer().getPostalCode());
+		currentOrder.setCustomer(currentCustomer);
+
+		// Order tracking
+		if(order.getOrderTracks().size() > 0){
+			OrderTrack lastedOrderTrack = currentOrder.getOrderTracks().get(currentOrder.getOrderTracks().size()-1);
+			lastedOrderTrack.setStatus(order.getOrderTracks().get(order.getOrderTracks().size()-1).getStatus());
+			lastedOrderTrack.setNotes(order.getOrderTracks().get(order.getOrderTracks().size()-1).getNotes());
+			lastedOrderTrack.setUpdatedTime(order.getOrderTracks().get(order.getOrderTracks().size()-1).getUpdatedTime());
+		}
+
+		// Product
+		for (int i=0;i<order.getOrderDetails().size();i++){
+			currentOrder.getOrderDetails().get(i).setProductCost(order.getOrderDetails().get(i).getProductCost());
+			currentOrder.getOrderDetails().get(i).setQuantity(order.getOrderDetails().get(i).getQuantity());
+			currentOrder.getOrderDetails().get(i).setUnitPrice(order.getOrderDetails().get(i).getShippingCost());
+			currentOrder.getOrderDetails().get(i).setShippingCost(order.getOrderDetails().get(i).getShippingCost());
+		}
+
+
+		orderService.save(currentOrder);
 		
 		ra.addFlashAttribute("message", "The order ID " + order.getId() + " has been updated successfully");
-		
 		return defaultRedirectURL;
 	}
 
@@ -178,8 +226,8 @@ public class OrderController {
 		String[] quantities = request.getParameterValues("quantity");
 		String[] productSubtotals = request.getParameterValues("productSubtotal");
 		String[] productShipCosts = request.getParameterValues("productShipCost");
-		
-		Set<OrderDetail> orderDetails = order.getOrderDetails();
+
+		List<OrderDetail> orderDetails = (List<OrderDetail>) order.getOrderDetails();
 		
 		for (int i = 0; i < detailIds.length; i++) {
 			System.out.println("Detail ID: " + detailIds[i]);
@@ -206,7 +254,5 @@ public class OrderController {
 			orderDetails.add(orderDetail);
 			
 		}
-		
 	}
-	
 }

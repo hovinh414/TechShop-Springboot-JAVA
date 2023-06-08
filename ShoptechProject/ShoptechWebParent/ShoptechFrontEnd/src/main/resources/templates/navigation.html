@@ -20,30 +20,12 @@
                   <li><a href="index-two.html">Home Two</a></li>
                 </ul>-->
               </li>
-              <li><a href="about-us.html">about</a></li>
               <li class="has-submenu position-static">
                 <a href="/tech/products">shop</a>
               </li>
               <li class="has-submenu"><a href="blog.html">Blog</a>
-<!--                <ul class="submenu-nav">
-                  <li class="has-submenu"><a href="#/">Blog Layout</a>
-                    <ul class="submenu-nav">
-                      <li><a href="blog.html">Blog Grid</a></li>
-                      <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                      <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="blog-details.html">Blog Details</a></li>
-                </ul>-->
-              </li>
-              <li class="has-submenu"><a href="account-login.html">Pages</a>
-<!--                <ul class="submenu-nav">
-                  <li><a href="account-login.html">My Account</a></li>
-                  <li><a href="faq.html">Frequently Questions</a></li>
-                  <li><a href="page-not-found.html">Page Not Found</a></li>
-                </ul>-->
-              </li>
-              <li><a href="contact.html">Contact</a></li>
+
+              <li><a href="/tech/contact">Contact</a></li>
               <th:block sec:authorize="isAuthenticated()">
                 <form th:action="@{/logout}" method="post" th:hidden="true" name="logoutForm">
                   <input type="submit" value="Logout" />
@@ -117,9 +99,9 @@
               <li><a href="about-us.html">About us</a></li>
               <li><a href="contact.html">Contact</a></li>
               <li><a href="faq.html">Privacy</a></li>
-              <li><a href="account-login.html">Login</a></li>
-              <li><a href="product.html">Shop</a></li>
-              <li><a href="my-account.html">My Account</a></li>
+              <li><a href="/tech/login">Login</a></li>
+              <li><a href="/tech/products">Shop</a></li>
+              <li><a href="/tech/account_details">My Account</a></li>
               <li><a href="faq.html">FAQs</a></li>
             </ul>
           </div>
