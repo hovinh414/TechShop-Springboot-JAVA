@@ -36,18 +36,7 @@
             <!-- Trang Chủ-->
             <article layout:fragment="content">
                 <div class="card-body">
-                    <h4 class="card-title ">MANAGE ORDERS</h4>
-                    <th:block sec:authorize="hasAnyAuthority('Admin', 'Salesperson', 'Shipper')">
-                    <a th:href="@{/orders/create}" aria-expanded="false" aria-controls="auth">
-                    <button type="submit" class="btn btn-danger btn-icon-text" >
-                        <i class="mdi mdi-playlist-play"></i>
-                        Create
-                    </button>
-                    </a>
-                    </th:block>
-
-                    <div th:replace="fragments :: search_form_and_message" />
-
+                    <h4 class="card-title ">MANAGE ORDER</h4>
 
                     <!--- -------------- Tìm Kiếm --------------- ----->
                     <div  style="padding-top: 10px;" class="input-group m-3">
@@ -94,36 +83,26 @@
                         <table class="table table-hover">
                             <thead>
                             <tr>
-                                <th th:replace="fragments :: column_linkOrd('id', 'ID', 'none')" />
-                                <th th:replace="fragments :: column_linkOrd('customer', 'Customer', 'none')" />
-                                <th th:replace="fragments :: column_linkOrd('total', 'Total', 'none')" />
-                                <th th:replace="fragments :: column_linkOrd('orderTime', 'Order Time', 'none')" />
-
-                                <th class="hideable-column">
-                                <th th:replace="fragments :: column_linkOrd('destination', 'Destination', 'tag')" />
-                                </th>
-
-                                <th class="hideable-column">
-                                <th th:replace="fragments :: column_linkOrd('paymentMethod', 'Payment Method', 'tag')" />
-                                </th>
-
-                                <th class="hideable-column">
-                                <th th:replace="fragments :: column_linkOrd('status', 'Status', 'tag')" />
-                                </th>
-
-                                <th></th>
+                                <th th:replace="fragments :: column_linkOrd('id', 'ID')" />
+                                <th th:replace="fragments :: column_linkOrd('customer', 'Customer')" />
+                                <th th:replace="fragments :: column_linkOrd('total', 'Total')" />
+                                <th th:replace="fragments :: column_linkOrd('orderTime', 'Order Time')" />
+                                <th th:replace="fragments :: column_linkOrd('destination', 'Destination')" />
+                                <th th:replace="fragments :: column_linkOrd('paymentMethod', 'Payment Method')" />
+                                <th th:replace="fragments :: column_linkOrd('status', 'Status')" />
+                                <th />
                             </tr>
                             </thead>
                             <tbody>
-                            <tr th:each="order : ${listOrders}">
-                                <td>[[[${order.id}]]</td>
+                            <tr th:if="${listOrders != null}" th:each="order : ${listOrders}">
+                                <td>[[${order.id}]]</td>
                                 <td>
                                     <a class="linkCustomerDetail" th:href="@{'/customers/detail/' + ${order.customer.id}}">
                                         [[${order.customer.fullName}]]
                                     </a>
                                 </td>
                                 <td>
-                                    <div th:replace="fragments :: format_currency(${order.total})"></div>
+                                    [[${order.total}]]
                                 </td>
                                 <td>
                                     <div th:replace="fragments :: format_time(${order.orderTime})"></div>
@@ -131,19 +110,13 @@
                                 <td class="hideable-column">[[${order.destination}]]</td>
                                 <td class="hideable-column">[[${order.paymentMethod}]]</td>
                                 <td class="hideable-column">[[${order.status}]]</td>
-                                <div><div th:replace="fragments :: format_currency(${order.total})">Total</div> - [[${order.paymentMethod}]]</div>
                                 <td>
                                     <a class="fas fa-file-alt fas-2x icon-green linkOrderDetail"
                                        th:href="@{'/orders/detail/' + ${order.id}}"
-                                       title="View detail this order"></a>
-                                    <a style="font-size: 16px;" class="fas fa-edit fas-2x icon-purple"
-                                       th:replace="fragments :: edit('order', '/orders/edit/' + ${order.id})"
-                                       title="Edit this order"></a>
-                                    &nbsp;&nbsp;</th:block>
-
-                                    <a style="font-size: 16px;" class="fas fa-trash fas-2x icon-red" onclick="return confirm('Do you want delete this order?')"
-                                       th:replace="fragments :: delete('order', ${order.id}, '/orders/delete/' + ${order.id}, true)"
-                                       title="Delete this order"></a>
+                                       title="Xem chi tiết đơn hàng"></a>
+                                    <a class="fas fa-edit fas-2x icon-purple linkOrderEdit"
+                                       th:href="@{'/orders/edit/' + ${order.id}}"
+                                       title="Sửa đơn hàng"></a>
                                 </td>
                             </tr>
                             </tbody>
@@ -151,7 +124,13 @@
                     </div>
                 </div>
             </article>
-            <div class="modal fade" id="detailModal">
+            <div class="modal fade" id="orderEditModal">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="orderDetailModal">
                 <div class="modal-dialog modal-xl">
                     <div class="modal-content">
                     </div>
@@ -192,27 +171,19 @@
     moduleURL = "[[@{/orders}]]";
 
     $(document).ready(function() {
-        handleLinkViewCustomerDetails();
-        handleLinkViewOrderDetails();
-        handleLinkDeleteOrder();
+        handleBtnEdit();
+        handleBtnDetail();
     });
 
-    function handleLinkDeleteOrder() {
-        $(".link-delete").on("click", function(e) {
-            e.preventDefault();
-            showDeleteConfirmModal($(this), 'order');
-        });
-    }
-
-    function handleLinkViewCustomerDetails() {
-        $(".linkCustomerDetail").on("click", function(e) {
+    function handleBtnEdit() {
+        $(".linkOrderEdit").on("click", function(e) {
             e.preventDefault();
             linkDetailURL = $(this).attr("href");
-            $("#customerDetailModal").modal("show").find(".modal-content").load(linkDetailURL);
+            $("#orderEditModal").modal("show").find(".modal-content").load(linkDetailURL);
         });
     }
 
-    function handleLinkViewOrderDetails() {
+    function handleBtnDetail() {
         $(".linkOrderDetail").on("click", function(e) {
             e.preventDefault();
             linkDetailURL = $(this).attr("href");
