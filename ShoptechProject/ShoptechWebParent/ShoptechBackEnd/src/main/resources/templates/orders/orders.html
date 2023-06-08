@@ -137,7 +137,31 @@
                 </div>
             </div>
 
-            <div th:replace="fragments :: pagination('orders')"></div>
+           <!-- <div th:replace="fragments :: pagination('orders')"></div>-->
+            <div th:if="${totalPages > 1}">
+                <nav>
+                    <ul class="pagination justify-content-center">
+                        <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
+                            <a th:replace="fragments :: page_linkOrd(1, 'First')" ></a>
+                        </li>
+                        <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
+                            <a th:replace="fragments :: page_linkOrd(${currentPage - 1}, 'Previous')" ></a>
+                        </li>
+
+                        <li th:class="${currentPage != i ? 'page-item': 'page-item active'}"
+                            th:each="i : ${#numbers.sequence(1, totalPages)}">
+                            <a th:replace="fragments :: page_linkOrd(${i}, ${i})" ></a>
+                        </li>
+
+                        <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
+                            <a th:replace="fragments :: page_linkOrd(${currentPage + 1}, 'Next')" ></a>
+                        </li>
+                        <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
+                            <a th:replace="fragments :: page_linkOrd(${totalPages}, 'Last')" ></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
 
             <!-- partial -->
         </div>
