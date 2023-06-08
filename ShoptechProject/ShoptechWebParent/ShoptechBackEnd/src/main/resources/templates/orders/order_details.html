@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="content" th:remove="tag">
+    <div class="row" th:each="orderDetail, itemStat : *{orderDetails}">
+        <div class="col border m-2 p-2">
+            <div class="m-2">
+                <img alt="Main image preview" style="width: 130px"
+                     th:src="@{${orderDetail.product.mainImagePath}}"/>
+            </div>
+            <div><label>[[${orderDetail.product.name}]]</label></div>
+            <div class="form-group row">
+                <div class="col-sm-2 col-form-label">
+                    <label>Product cost: </label>
+                </div>
+                <div class="col-sm-2">
+                    <input type="number" th:field="*{orderDetails[__${itemStat.index}__].productCost}" class="border p-2 m-2" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-2 col-form-label">
+                    <label>Quantity: </label>
+                </div>
+                <div class="col-sm-2">
+                    <input type="number" th:field="*{orderDetails[__${itemStat.index}__].quantity}" class="border p-2 m-2"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-2 col-form-label">
+                    <label>Unit Price: </label>
+                </div>
+                <div class="col-sm-2">
+                    <input type="number" th:field="*{orderDetails[__${itemStat.index}__].unitPrice}" class="border p-2 m-2"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-2 col-form-label">
+                    <label>Sub total: </label>
+                </div>
+                <div class="col-sm-2">
+                    <div type="number" th:text="*{orderDetails[__${itemStat.index}__].subtotal}" class="border p-2 m-2"></div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-2 col-form-label">
+                    <label>Shipping Cost: </label>
+                </div>
+                <div class="col-sm-2">
+                    <input type="number" th:field="*{orderDetails[__${itemStat.index}__].shippingCost}" class="border p-2 m-2" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

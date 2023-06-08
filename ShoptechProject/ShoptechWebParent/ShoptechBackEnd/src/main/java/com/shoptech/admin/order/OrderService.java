@@ -9,13 +9,11 @@ import com.shoptech.entity.order.OrderStatus;
 import com.shoptech.entity.order.OrderTrack;
 import com.shoptech.exception.OrderNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-
 
 import java.util.Date;
 import java.util.List;
@@ -28,31 +26,29 @@ public class OrderService {
 	@Autowired private OrderRepository orderRepo;
 	@Autowired private CountryRepository countryRepo;
 	
-	public void listByPage(int pageNum, PagingAndSortingHelper helper) {
+	public Page<Order> listByPage(int pageNum, PagingAndSortingHelper helper) {
 		String sortField = helper.getSortField();
 		String sortDir = helper.getSortDir();
 		String keyword = helper.getKeyword();
+		System.out.println(keyword);
 		
 		Sort sort = null;
-		
 		if ("destination".equals(sortField)) {
 			sort = Sort.by("country").and(Sort.by("state")).and(Sort.by("city"));
-		} else {
+		} else if(!sortField.isEmpty()) {
 			sort = Sort.by(sortField);
+		}else{
+			sort = Sort.by("orderTime");
 		}
 		
 		sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
 		Pageable pageable = PageRequest.of(pageNum - 1, ORDERS_PER_PAGE, sort);
 		
-		Page<Order> page = null;
-		
 		if (keyword != null) {
-			page = orderRepo.findAll(keyword, pageable);
+			return orderRepo.findAll(keyword, pageable);
 		} else {
-			page = orderRepo.findAll(pageable);
+			return orderRepo.findAll(pageable);
 		}
-		
-		helper.updateModelAttributes(pageNum, page);		
 	}
 	
 	public Order get(Integer id) throws OrderNotFoundException {
