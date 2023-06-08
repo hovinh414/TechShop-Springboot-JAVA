@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+
+
+<!-- Mirrored from template.hasthemes.com/brancy/brancy/product-four-columns.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Nov 2022 06:24:08 GMT -->
+<head th:replace="fragments :: page_head('Shopme','none')"/>
+<link rel="stylesheet" th:href="@{/star-rating/css/rating.css}">
+<body>
+
+<header class="header-area sticky-header ">
+  <div th:replace="navigation :: header_menu"></div>
+</header>
+<main class="main-content">
+  <section class="page-header-area pt-10 pb-9" data-bg-color="#FFF3DA">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="page-header-st3-content text-center text-md-start">
+            <ol class="breadcrumb justify-content-center justify-content-md-start">
+              <li class="breadcrumb-item"><a class="text-dark" href="/tech">Home</a></li>
+              <li class="breadcrumb-item active text-dark" aria-current="page">CheckOut</li>
+            </ol>
+            <h2 class="page-header-title">Check Out</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section-space">
+    <div class="container">
+      <div class="text-center">
+        <h3>Check Out</h3>
+      </div>
+      <div class="row m-1">
+        <div class="col-sm-8">
+          <div class="card">
+            <div class="card-header">
+              <h5>Shipping Information</h5>
+            </div>
+            <div class="card-body">
+              <p>
+                <b>Ship to:</b>&nbsp; [[${shippingAddress}]]
+                <a style="color: red" th:href="@{/address_book}">[Ship to another address]</a>
+              </p>
+              <p>
+                <b>Days to deliver: </b>[[${checkoutInfo.deliverDays}]] day(s)
+              </p>
+              <p>
+                <b>Expected deliver date: </b>[[${#dates.format(checkoutInfo.deliverDate, 'E, dd MMM yyyy')}]]
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <h5>Payment Method</h5>
+            </div>
+            <div class="card-body">
+              <div th:if="${checkoutInfo.codSupported}">
+                <form th:action="@{/place_order}" method="post">
+                  <p>
+                    <input type="radio" name="paymentMethod" id="radioCOD" value="COD"/> Cash on Delivery (COD)
+                    &nbsp;
+                    <button class="btn btn-primary d-none" type="submit" id="buttonSubmit">Place Order with COD</button>
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="cart-totals-wrap">
+            <h2 class="title">Cart totals</h2>
+            <table>
+              <tbody>
+              <tr class="cart-subtotal">
+                <th>Order Summary</th>
+                <table>
+                  <th:block th:each="item : ${cartItems}">
+                    <tr th:with="product = ${item.product}">
+                      <td width="70%">
+                        <a th:href="@{'/p/' + ${product.alias}}" target="_blank">
+                          [[${item.quantity}]] x [[${product.shortName}]]
+                        </a>
+                        <br/>
+                        <small>Ship: [[${item.shippingCost}]] $</small>
+                      </td>
+                    </tr>
+                  </th:block>
+                </table>
+              </tr>
+              <tr class="shipping-totals">
+                <td>
+                  <ul class="shipping-list">
+                    <li class="radio">
+                      <label>Delivery charges: <span>[[${checkoutInfo.shippingCostTotal}]] $</span></label>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr class="order-total">
+                <th>Total: </th>
+                <td>
+                  <span style="color: red" class="amount">[[${checkoutInfo.paymentTotal}]] $</span>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-area">
+    <div class="footer-main">
+      <div th:replace="navigation :: footer_menu"></div>
+    </div>
+  </footer>
+  <div id="scroll-to-top" class="scroll-to-top"><span class="fa fa-angle-up"></span></div>
+</main>
+<div th:replace="fragments :: search_header "></div>
+<script type="text/javascript">
+  contextPath = "[[@{/}]]";
+  var csrfHeaderName = "[[${_csrf.headerName}]]";
+  var csrfValue = "[[${_csrf.token}]]";
+
+  $(document).ready(function() {
+    $("#radioCOD").on("click", function() {
+      $("#buttonSubmit").removeClass("d-none");
+    });
+  });
+</script>
+
+<script th:src="@{/assets/js/vendor/modernizr-3.11.7.min.js}"></script>
+<script th:src="@{/assets/js/vendor/jquery-3.6.0.min.js}"></script>
+<script th:src="@{/assets/js/vendor/jquery-migrate-3.3.2.min.js}"></script>
+<script th:src="@{/assets/js/vendor/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/star-rating/js/rating.js}"></script>
+
+<!-- Plugins JS -->
+<script th:src="@{/assets/js/plugins/swiper-bundle.min.js}"></script>
+<script th:src="@{/assets/js/plugins/fancybox.min.js}"></script>
+<script th:src="@{/assets/js/plugins/jquery.nice-select.min.js}"></script>
+
+<!-- Custom Main JS -->
+<script th:src="@{/assets/js/main.js}"></script>
+<script th:src="@{/js/quantity_control.js}"></script>
+<script th:src="@{/assets/js/shopping_cart.js}"></script>
+<script th:src="@{/assets/js/common_modal.js}"></script>
+<script th:src="@{/assets/js/add_to_cart.js}"></script>
+</body>
+</html>
