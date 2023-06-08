@@ -14,6 +14,7 @@ import com.shoptech.entity.order.OrderTrack;
 import com.shoptech.exception.OrderNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,7 +40,7 @@ public class OrderController {
 	public String listFirstPage() {
 		return defaultRedirectURL;
 	}
-	
+
 	@GetMapping("/orders/page/{pageNum}")
 	public String listByPage(
 			Model model,
@@ -53,8 +54,26 @@ public class OrderController {
 			return "orders/orders_shipper";
 		}
 
+		Page<Order> page = orderService.listByPage(pageNum, helper);
+		List<Order> listOrder = null;
+		if (page != null){
+			listOrder = page.getContent();
+		}
+
+		long startCount = (pageNum - 1) * orderService.ORDERS_PER_PAGE + 1;
+		long endCount = startCount + orderService.ORDERS_PER_PAGE - 1;
+		if(endCount > page.getTotalElements())
+		{
+			endCount = page.getTotalElements();
+		}
+
 		model.addAttribute("currentPage", pageNum);
-		model.addAttribute("listOrders", orderService.listByPage(pageNum, helper));
+		model.addAttribute("totalPages", page != null ? page.getTotalPages() : 0);
+		model.addAttribute("startCount", startCount);
+		model.addAttribute("endCount", endCount);
+		model.addAttribute("totalItems", page != null ? page.getTotalElements() : 0);
+		model.addAttribute("currentPage", pageNum);
+		model.addAttribute("listOrders", listOrder);
 		return "orders/orders";
 	}
 	
