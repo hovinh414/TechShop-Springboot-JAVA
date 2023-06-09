@@ -12,6 +12,9 @@ import org.springframework.data.repository.query.Param;
 
 public interface UserRepository extends CrudRepository<User,Integer>, PagingAndSortingRepository<User, Integer>
 {
+    @Query("SELECT u FROM User u WHERE u.tokenforgotpassword =:token")
+    public User getUserByTokenforgotpassword(String token);
+
     @Query("SELECT u FROM User u WHERE u.email=:email")
     public User getUserByEmail(@Param("email") String email);
 
@@ -20,8 +23,10 @@ public interface UserRepository extends CrudRepository<User,Integer>, PagingAndS
     @Query("SELECT u FROM User u WHERE CONCAT(u.id, ' ', u.email, ' ', u.firstName, ' ', " + "u.lastName) LIKE %?1%")
     public Page<User>findAll(String keyword, Pageable pageable);
 
-
     @Query("UPDATE User u SET u.enabled = ?2 WHERE u.id = ?1")
+
+
+
     @Modifying
     public void updateEnabledStatus(Integer id, boolean enabled);
 }

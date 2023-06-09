@@ -42,7 +42,7 @@ public class OrderService {
             newOrder.copyShippingAddress(address);
         }
 
-        Set<OrderDetail> orderDetails = newOrder.getOrderDetails();
+        List<OrderDetail> orderDetails = newOrder.getOrderDetails();
 
         for (CartItem cartItem : cartItems) {
             Product product = cartItem.getProduct();

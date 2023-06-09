@@ -8,6 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -149,6 +150,31 @@ public class UserService {
     public void updateUserEnabledStatus(Integer id, boolean enabled) {
 
         userRepo.updateEnabledStatus(id, enabled);
+    }
+
+    public void updateResetPasswordToken(String token, String email) throws UserNotFoundException{
+        User user = userRepo.getUserByEmail(email);
+        if(user != null){
+            user.setTokenforgotpassword(token);
+            user.setTimeexpired(null);
+            userRepo.save(user);
+        }else {
+            throw new UserNotFoundException("Could not find user have email: " + email);
+        }
+
+    }
+
+    public User getUserByTokenforgotpassWord(String token){
+        return userRepo.getUserByTokenforgotpassword(token);
+    }
+
+    public void updatePassword(User user, String newPassword){
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String encodedPassword = passwordEncoder.encode(newPassword);
+        user.setPassword(encodedPassword);
+
+        user.setTokenforgotpassword(null);
+        userRepo.save(user);
     }
 
 
