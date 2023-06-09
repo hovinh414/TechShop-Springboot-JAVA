@@ -2,6 +2,7 @@ package com.shoptech.admin.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -55,6 +56,8 @@ public class WebSecurityConfig {
                 .requestMatchers("/articles/**", "/menus/**").hasAnyAuthority("Admin", "Editor")
                 .requestMatchers("/reviews/**").permitAll()
                 .requestMatchers("/assets/**").permitAll()
+                .requestMatchers("/forgot_password").permitAll()
+                .requestMatchers("/reset_password").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
