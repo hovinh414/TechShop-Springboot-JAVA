@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/richtext/richtext.min.css}" />
+    <link rel="stylesheet" th:href="@{/richtext.scss}" />
+    <script th:src="@{/richtext/jquery.richtext.min.js}"></script>
+    <script th:src="@{/richtext/jquery.richtext.js}"></script>
+</head>
+<body>
+<div th:fragment="content" th:remove="tag">
+    <div class="m-2">
+        <label>Short description:</label>
+        <textarea style="color:white" class="form-control" id="shortDescription" th:field="*{shortDescription}" rows="5" required></textarea>
+    </div>
+
+    <div class="m-2">
+        <label>Full description:</label>
+        <textarea style="color:white" class="form-control" th:field="*{fullDescription}" rows="10" required></textarea>
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#shortDescription").richText();
+        $("#fullDescription").richText();
+
+    });
+</script>
+
