@@ -30,5 +30,5 @@
 <h4>BƯỚC 10: git push origin name_branch</h4>
 <h4 align="cneter"> 🎫---- Forgot Password ------ 🎫</h4>
 <h5>technologyecommerce4@gmail.com</h5>
-<h5>password: 123456aA@</h5>
+<h5>password: like gmail bootspringjava</h5>
 </div>
