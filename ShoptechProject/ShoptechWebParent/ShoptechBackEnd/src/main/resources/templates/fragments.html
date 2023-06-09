@@ -63,6 +63,15 @@
     <span th:if="${sortField == fieldName}"
           th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></span>
 </th>
+<!-------------------------- Bộ Lộc Home Product ------------------------->
+<th th:fragment="column_linkProHome(fieldName, columnLabel)">
+    <a style="color: #6c7293"
+       th:href="@{'/home/page/' + ${currentPage}+ '?sortField=' + ${fieldName} +'&sortDir=' + ${sortField != fieldName ? sortDir: reverseSortDir} + ${categoryId != null ? '&categoryId=' + categoryId : ''} + ${keyword != null ? '&keyword=' + keyword : ''}}">
+        [[${columnLabel}]]
+    </a>
+    <span th:if="${sortField == fieldName}"
+          th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></span>
+</th>
 <!-------------------------- Bộ Lộc Customer ------------------------->
 <th th:fragment="column_linkCus(fieldName, columnLabel)">
     <a style="color: #6c7293"

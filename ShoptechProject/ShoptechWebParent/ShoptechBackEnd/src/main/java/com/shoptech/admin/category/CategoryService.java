@@ -1,5 +1,6 @@
 package com.shoptech.admin.category;
 
+import com.shoptech.entity.Brand;
 import com.shoptech.entity.Category;
 import com.shoptech.exception.CategoryNotFoundException;
 import jakarta.transaction.Transactional;
@@ -16,47 +17,24 @@ import java.util.*;
 @Transactional
 public class CategoryService {
 
-    public static final int ROOT_CATEGORIES_PER_PAGE = 4;
+    public static final int ROOT_CATEGORIES_PER_PAGE = 5;
 
     @Autowired
     private CategoryRepository repo;
 
-    public List<Category> listByPage(CategoryPageInfo pageInfo, int pageNum, String sortDir, String keyword) {
+    public List<Category> listAll() {
+        return (List<Category>) repo.findAll();
+    }
+    public Page<Category> listByPage(int pageNum, String sortField, String sortDir, String keyword) {
+        Sort sort = Sort.by(sortField);
 
-        Sort sort = Sort.by("name");
-
-        if (sortDir.equals("asc")) {
-            sort = sort.ascending();
-        } else if (sortDir.equals("desc")) {
-            sort = sort.descending();
-        }
-        // page number start from zero
+        sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
         Pageable pageable = PageRequest.of(pageNum - 1, ROOT_CATEGORIES_PER_PAGE, sort);
 
-        Page<Category> pageCategories = null;
-
-        if (keyword != null && !keyword.isEmpty()) {
-            pageCategories = repo.search(keyword, pageable);
-        } else {
-            pageCategories = repo.findRootCategories(pageable);
+        if (keyword != null) {
+            return repo.findAll(keyword, pageable);
         }
-
-        List<Category> rootCategories = pageCategories.getContent();
-
-        pageInfo.setTotalElements(pageCategories.getTotalElements());
-        pageInfo.setTotalPages(pageCategories.getTotalPages());
-
-        if (keyword != null && !keyword.isEmpty()) {
-            List<Category> searchResult = pageCategories.getContent();
-            for (Category category : searchResult) {
-                category.setHasChildren(category.getChildren().size() > 0);
-            }
-
-            return searchResult;
-
-        } else {
-            return listHierarchicalCategories(rootCategories, sortDir);
-        }
+        return repo.findAll(pageable);
     }
 
     private List<Category> listHierarchicalCategories(List<Category> rootCategories, String sortDir) {
