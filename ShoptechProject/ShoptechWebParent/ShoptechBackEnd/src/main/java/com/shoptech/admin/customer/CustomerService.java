@@ -28,7 +28,6 @@ public class CustomerService {
     private CustomerRepository customerRepo;
     @Autowired private CountryRepository countryRepo;
     @Autowired private PasswordEncoder passwordEncoder;
-
     public Page<Customer> listByPage(int pageNum, String sortField, String sortDir, String keyword) {
         Sort sort = Sort.by(sortField);
 

@@ -15,7 +15,7 @@ import java.util.List;
 
 public class CategoryPdfExporter extends AbstractExporter {
     public void export(List<Category> listCategories, HttpServletResponse response) throws IOException {
-        super.setResponseHeader(response, "application/pdf", ".pdf", "brand");
+        super.setResponseHeader(response, "application/pdf", ".pdf", "category");
 
         Document document = new Document(PageSize.A4);
         PdfWriter.getInstance(document, response.getOutputStream());
