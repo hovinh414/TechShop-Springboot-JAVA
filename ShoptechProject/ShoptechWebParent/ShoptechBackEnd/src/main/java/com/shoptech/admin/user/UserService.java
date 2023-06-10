@@ -67,10 +67,6 @@ public class UserService {
         return userRepo.findAll(pageable);
     }
 
-    /*public void listByPage(int pageNum, PagingAndSortingHelper helper) {
-
-        helper.listEntities(pageNum, USERS_PER_PAGE, userRepo);
-    }*/
 
     public User save(User user)
     {
