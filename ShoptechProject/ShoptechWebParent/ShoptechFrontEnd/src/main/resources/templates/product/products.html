@@ -26,6 +26,37 @@
       </div>
     </div>
   </section>
+  <div class="shop-top-bar-area">
+    <div class="container">
+      <div class="shop-top-bar">
+        <div class="nice-select select-shoing" tabindex="0">
+          <span class="current">Trending</span>
+          <ul class="list">
+            <li data-value="Trending" data-display="Trending" class="option selected focus">Trending</li>
+<!--            <li data-value="1" class="option">Featured</li>
+            <li data-value="2" class="option">Best Selling</li>-->
+            <li data-value="3" class="option"><a href="/tech/products/page/1?sortField=name&sortDir=asc">Alphabetically, A-Z</a></li>
+            <li data-value="4" class="option"><a href="/tech/products/page/1?sortField=name&sortDir=desc">Alphabetically, Z-A</a></li>
+            <li data-value="5" class="option"><a href="/tech/products/page/1?sortField=price&sortDir=asc">Price, low to high</a></li>
+            <li data-value="6" class="option"><a href="/tech/products/page/1?sortField=price&sortDir=desc">Price, high to low</a></li>
+            <li data-value="7" class="option"><a href="/tech/products/page/1?sortField=createdTime&sortDir=desc">Date, new to old</a></li>
+            <li data-value="8" class="option"><a href="/tech/products/page/1?sortField=createdTime&sortDir=asc">Date, old to new</a></li>
+          </ul>
+        </div>
+        <div class="select-price-range">
+          <h4 class="title">Pricing</h4>
+          <div class="select-price-range-slider">
+            <div class="slider-range" id="slider-range"></div>
+            <div class="slider-labels">
+              <span id="slider-range-value1"></span>
+              <span>-</span>
+              <span id="slider-range-value2"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <section class="section-space">
     <div class="container">
       <div class="row justify-content-between flex-xl-row-reverse">
@@ -110,17 +141,6 @@
               </form>
             </div>
             <div class="product-widget">
-              <h4 class="product-widget-title">Price Filter</h4>
-              <div class="product-widget-range-slider">
-                <div class="slider-range" id="slider-range"></div>
-                <div class="slider-labels">
-                  <span id="slider-range-value1"></span>
-                  <span>—</span>
-                  <span id="slider-range-value2"></span>
-                </div>
-              </div>
-            </div>
-            <div class="product-widget">
               <h4 class="product-widget-title">Categories</h4>
               <ul class="product-widget-category">
                 <li th:each="cat : ${listCategories}"><a th:href="@{'/products/page/1?sortField=name&sortDir=asc&categoryId=' + ${cat.id}}">[[${cat.name}]] </a></li>
@@ -165,10 +185,7 @@
 <script th:src="@{/assets/js/vendor/bootstrap.bundle.min.js}"></script>
 <script th:src="@{/star-rating/js/rating.js}"></script>
 
-<!-- Plugins JS -->
-<script th:src="@{/assets/js/plugins/swiper-bundle.min.js}"></script>
-<script th:src="@{/assets/js/plugins/fancybox.min.js}"></script>
-<script th:src="@{/assets/js/plugins/jquery.nice-select.min.js}"></script>
+
 
 <!-- Custom Main JS -->
 <script th:src="@{/assets/js/main.js}"></script>
