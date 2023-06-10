@@ -65,14 +65,14 @@
                                 <th> Destination</th>
                                 <th th:replace="fragments :: column_linkOrd('paymentMethod', 'Payment Method')" />
                                 <th th:replace="fragments :: column_linkOrd('status', 'Status')" />
-                                <th />
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr th:if="${listOrders != null}" th:each="order : ${listOrders}">
                                 <td>[[${order.id}]]</td>
                                 <td>
-                                    <a class="linkCustomerDetail" th:href="@{'/customers/detail/' + ${order.customer.id}}">
+                                    <a class="linkCustomerDetail" style="color: #6c7293" th:href="@{'/customers/detail/' + ${order.customer.id}}">
                                         [[${order.customer.fullName}]]
                                     </a>
                                 </td>
@@ -86,10 +86,10 @@
                                 <td class="hideable-column">[[${order.paymentMethod}]]</td>
                                 <td class="hideable-column">[[${order.status}]]</td>
                                 <td>
-                                    <a class="fas fa-file-alt fas-2x icon-green linkOrderDetail"
+                                    <a style="font-size: 16px;" class="fas fa-file-alt fas-2x icon-green linkOrderDetail"
                                        th:href="@{'/orders/detail/' + ${order.id}}"
                                        title="Xem chi tiết đơn hàng"></a>
-                                    <a class="fas fa-edit fas-2x icon-purple linkOrderEdit"
+                                    <a style="font-size: 16px;" class="fas fa-edit fas-2x icon-purple linkOrderEdit"
                                        th:href="@{'/orders/edit/' + ${order.id}}"
                                        title="Sửa đơn hàng"></a>
                                 </td>
