@@ -35,12 +35,12 @@ public class MainController {
         List<Product> listProducts = pagePro.getContent();
         model.addAttribute("listProducts", listProducts);
 
-        Page<Order> pageOrd = orderService.listByPage(1,"orderTime", "desc",null);
+        Page<Order> pageOrd = orderService.home(1,"orderTime", "desc",null);
         List<Order> listOrders = pageOrd.getContent();
         model.addAttribute("listOrders", listOrders);
 
 
-        Page<ShippingRate> page = shippingRateService.listByPage(1, "country", "asc", null);
+        Page<ShippingRate> page = shippingRateService.home(1, "country", "asc", null);
         List<ShippingRate> shippingRates = page.getContent();
         model.addAttribute("shippingRates", shippingRates);
 

@@ -37,7 +37,18 @@ public class ShippingRateService {
 
         return shipRepo.findAll(pageable);
     }
+    public Page<ShippingRate> home(int pageNum, String sortField, String sortDir, String keyword) {
+        Sort sort = Sort.by(sortField);
 
+        sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
+        Pageable pageable = PageRequest.of(pageNum - 1, 7, sort);
+
+        if (keyword != null && !keyword.isEmpty()) {
+            return shipRepo.findAll(keyword, pageable);
+        }
+
+        return shipRepo.findAll(pageable);
+    }
     public List<Country> listAllCountries() {
         return countryRepo.findAllByOrderByNameAsc();
     }
