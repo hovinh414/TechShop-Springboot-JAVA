@@ -1,0 +1,17 @@
+PAYPAL_API_BASE_URL : https://api-m.sandbox.paypal.com 
+PAYPAL_API_CLIENT_ID : Abd5z4xNuWolufuFoX9n4vz0oxRV6na9uEwZGD6OaRNnBw1Nsdm03s8EfwECsjH9L2Z7WHLyMBmhNWkM
+PAYPAL_API_CLIENT_SECRET : EO1luVGGCLtzRLk9RfIWpHWr5iRh0noAPGfTJLCt1wa_QmiWY2ReakRBw2o9lXUg7-wxoryS8oE_q92I
+
+
+account test paypal:
+account 1:
+email: sb-upco026280081@personal.example.com
+pass: 123456aA@
+
+account 2:
+email: sb-01koe25298887@personal.example.com
+pass: conchotrung
+
+account 3:
+email: sb-s9syj25298896@business.example.com
+pass: conchoquynh

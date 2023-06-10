@@ -95,17 +95,8 @@ public class ProductController {
                               @RequestParam(name = "detailNames", required = false) String[] detailNames,
                               @RequestParam(name = "detailValues", required = false) String[] detailValues,
                               @RequestParam(name = "imageIDs", required = false) String[] imageIDs,
-                              @RequestParam(name = "imageNames", required = false) String[] imageNames,
-                              @AuthenticationPrincipal ShoptechUserDetails loggedUser
+                              @RequestParam(name = "imageNames", required = false) String[] imageNames
                               ) throws IOException {
-        if (!loggedUser.hasRole("Admin") && !loggedUser.hasRole("Editor")) {
-            if (loggedUser.hasRole("Salesperson")) {
-                productService.saveProductPrice(product);
-                ra.addFlashAttribute("message", "The product has been saved successfully.");
-                return "redirect:/products";
-            }
-        }
-
         ProductSaveHelper.setMainImageName(mainImageMultipart, product);
         ProductSaveHelper.setExistingExtraImageNames(imageIDs, imageNames, product);
         ProductSaveHelper.setNewExtraImageNames(extraImageMultiparts, product);

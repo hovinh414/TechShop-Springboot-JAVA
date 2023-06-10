@@ -37,14 +37,12 @@
             <article layout:fragment="content">
                 <div class="card-body">
                     <h4 class="card-title ">MANAGE PRODUCTS</h4>
-                    <th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
                     <a th:href="@{/products/create}" aria-expanded="false" aria-controls="auth">
                     <button type="submit" class="btn btn-danger btn-icon-text" >
                         <i class="mdi mdi-playlist-play"></i>
                         Create
                     </button>
                     </a>
-                    </th:block>
                     <div th:if="${message != null}" class="alert alert-success text-center">
                         [[${message}]]
                     </div>
@@ -73,7 +71,6 @@
                         </form>
                     </div>
                     <!--- --------------Xuất CSV | Xuất Excel | Xuất PDF --------------- ----->
-                    <th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
                         <div style="text-align: right;">
                             <a th:href="@{/products/export/csv}" aria-expanded="false" aria-controls="auth">
                                 <button type="submit" class="btn btn-outline-behance btn-icon-text" >
@@ -82,7 +79,6 @@
                                 </button>
                             </a>
                         </div>
-                    </th:block>
                     <!--- -------------- Danh Sách Category --------------- ----->
                     <div style="padding-top: 12px;" class="table-responsive">
                         <table class="table table-hover">
@@ -93,9 +89,7 @@
                                 <th>Image</th>
                                 <th th:replace="fragments :: column_linkPro('brand.name','Brand')"></th>
                                 <th th:replace="fragments :: column_linkPro('category.name','Category')"></th>
-                                <th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
                                 <th style="text-align: center">Status</th>
-                                </th:block>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -111,7 +105,6 @@
                                 </td>
                                 <td>[[${product.brand.name}]]</td>
                                 <td>[[${product.category.name}]]</td>
-                                <th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
                                 <td style="text-align: center">
                                     <a style="font-size: 16px;" th:if="${product.enabled == true}" class="fas fa-check-square fas-2x icon-blue"
                                        th:href="@{'/products/' + ${product.id} + '/enabled/false'}"
@@ -121,17 +114,12 @@
                                        th:href="@{'/products/' + ${product.id} + '/enabled/true'}"
                                        title="Enable this product"></a>
                                 </td>
-                                </th:block>
                                 <td>
                                     <a class="fas fa-file-alt fas-2x icon-green link-detail" th:href="@{'/products/detail/' + ${product.id}}" title="View detail this product"></a>
-                                    &nbsp;&nbsp;<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor', 'Salesperson')">
                                     <a style="font-size: 16px;" class="fas fa-edit fas-2x icon-purple" th:href="@{'/products/edit/' + ${product.id}}"
                                        title="Edit this product"></a>
-                                    &nbsp;&nbsp;</th:block>
-                                    <th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
                                     <a style="font-size: 16px;" class="fas fa-trash fas-2x icon-red" onclick="return confirm('Do you want delete this product?')" th:href="@{'/products/delete/' + ${product.id}}"
                                        title="Detele this product"></a>
-                                    </th:block>
                                 </td>
                             </tr>
                             </tbody>

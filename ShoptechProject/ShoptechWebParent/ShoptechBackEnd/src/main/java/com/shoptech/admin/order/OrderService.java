@@ -23,7 +23,17 @@ public class OrderService {
 	
 	@Autowired private OrderRepository orderRepo;
 	@Autowired private CountryRepository countryRepo;
+	public Page<Order> home(int pageNum, String sortField, String sortDir, String keyword){
+		Sort sort = Sort.by(sortField);
+		sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
+		Pageable pageable = PageRequest.of(pageNum-1, 7, sort);
 
+		if(keyword != null){
+			return orderRepo.findAll(keyword, pageable);
+		}
+
+		return orderRepo.findAll(pageable);
+	}
 	public Page<Order> listByPage(int pageNum, String sortField, String sortDir, String keyword){
 		Sort sort = Sort.by(sortField);
 		sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
