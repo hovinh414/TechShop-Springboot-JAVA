@@ -4,6 +4,7 @@ package com.shoptech.admin.order;
 import com.shoptech.admin.paging.PagingAndSortingHelper;
 import com.shoptech.admin.setting.country.CountryRepository;
 import com.shoptech.entity.Country;
+import com.shoptech.entity.User;
 import com.shoptech.entity.order.Order;
 import com.shoptech.entity.order.OrderStatus;
 import com.shoptech.entity.order.OrderTrack;
@@ -25,32 +26,20 @@ public class OrderService {
 	
 	@Autowired private OrderRepository orderRepo;
 	@Autowired private CountryRepository countryRepo;
-	
-	public Page<Order> listByPage(int pageNum, PagingAndSortingHelper helper) {
-		String sortField = helper.getSortField();
-		String sortDir = helper.getSortDir();
-		String keyword = helper.getKeyword();
-		System.out.println(keyword);
-		
-		Sort sort = null;
-		if ("destination".equals(sortField)) {
-			sort = Sort.by("country").and(Sort.by("state")).and(Sort.by("city"));
-		} else if(!sortField.isEmpty()) {
-			sort = Sort.by(sortField);
-		}else{
-			sort = Sort.by("orderTime");
-		}
-		
+
+	public Page<Order> listByPage(int pageNum, String sortField, String sortDir, String keyword){
+		Sort sort = Sort.by(sortField);
 		sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
-		Pageable pageable = PageRequest.of(pageNum - 1, ORDERS_PER_PAGE, sort);
-		
-		if (keyword != null) {
+		Pageable pageable = PageRequest.of(pageNum-1, ORDERS_PER_PAGE, sort);
+
+		if(keyword != null){
 			return orderRepo.findAll(keyword, pageable);
-		} else {
-			return orderRepo.findAll(pageable);
 		}
+
+		return orderRepo.findAll(pageable);
 	}
-	
+
+
 	public Order get(Integer id) throws OrderNotFoundException {
 		try {
 			return orderRepo.findById(id).get();
