@@ -1,137 +1,166 @@
-<div class="modal-header">
-    <h4 class="modal-title">Detail customer</h4>
-</div>
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Tech Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" th:href="@{/assets/vendors/mdi/css/materialdesignicons.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/vendors/css/vendor.bundle.base.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/fontawesome/all.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" th:href="@{/assets/vendors/jvectormap/jquery-jvectormap.css}">
+    <link rel="stylesheet" th:href="@{/assets/vendors/flag-icon-css/css/flag-icon.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/vendors/owl-carousel-2/owl.carousel.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/vendors/owl-carousel-2/owl.theme.default.min.css}">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/style.css}">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" th:href="@{/assets/images/favicon.png}"/>
+    <script th:src="@{/richtext/jquery.richtext.js}"></script>
+    <link rel="stylesheet" th:href="@{/richtext/richtext.css}">
+</head>
+<body>
+    <div class="modal-header">
+        <h4 class="modal-title">Detail customer</h4>
+    </div>
+    <div>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#general" role="tab">General</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#address" role="tab">Address</a>
+            </li>
+        </ul>
 
-<div>
+        <div class="tab-content">
+            <div class="tab-pane active p-3" id="general" role="tabpanel">
+                <div class="form-group row">
+                    <div class="col-sm-2 col-form-label">
+                        <label>ID: </label>
+                    </div>
+                    <div class="col-sm-10">
+                        <div th:utext="${customer.id}" class="border p-2 m-2"></div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-2 col-form-label">
+                        <label>Full name: </label>
+                    </div>
+                    <div class="col-sm-10">
+                        <div th:utext="${customer.fullName}" class="border p-2 m-2"></div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-2 col-form-label">
+                        <label>E-mail: </label>
+                    </div>
+                    <div class="col-sm-10">
+                        <div th:utext="${customer.email}" class="border p-2 m-2"></div>
+                    </div>
+                </div>
 
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#general" role="tab">General</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#address" role="tab">Address</a>
-        </li>
-    </ul>
+                <div class="form-group row">
+                    <div class="col-sm-2 col-form-label">
+                        <label>Phone: </label>
+                    </div>
+                    <div class="col-sm-10">
+                        <div th:utext="${customer.phoneNumber}" class="border p-2 m-2"></div>
+                    </div>
+                </div>
 
-    <div class="tab-content">
-        <div class="tab-pane active p-3" id="general" role="tabpanel">
-            <div class="form-group row">
-                <div class="col-sm-2 col-form-label">
-                    <label>ID: </label>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Enable:</label>
+                    <div class="col-sm-10">
+                        <input type="checkbox" th:checked="${customer.enabled}" onclick="return false;"/>
+                    </div>
                 </div>
-                <div class="col-sm-10">
-                    <div th:utext="${customer.id}" class="border p-2 m-2"></div>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-2 col-form-label">
-                    <label>Full name: </label>
-                </div>
-                <div class="col-sm-10">
-                    <div th:utext="${customer.fullName}" class="border p-2 m-2"></div>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-2 col-form-label">
-                    <label>E-mail: </label>
-                </div>
-                <div class="col-sm-10">
-                    <div th:utext="${customer.email}" class="border p-2 m-2"></div>
-                </div>
-            </div>
 
-            <div class="form-group row">
-                <div class="col-sm-2 col-form-label">
-                    <label>Phone: </label>
-                </div>
-                <div class="col-sm-10">
-                    <div th:utext="${customer.phoneNumber}" class="border p-2 m-2"></div>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Enable:</label>
-                <div class="col-sm-10">
-                    <input type="checkbox" th:checked="${customer.enabled}" onclick="return false;" />
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Created date:</label>
-                <div class="col-sm-10">
-                    <span th:text="${#dates.format(customer.createdTime, 'dd-MM-yyyy')}"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="tab-pane p-3" id="address" role="tabpanel" >
-            <div class="form-group row">
-                <div class="col-sm-2 col-form-label">
-                    <label>Address line 1: </label>
-                </div>
-                <div class="col-sm-10">
-                    <div th:utext="${customer.addressLine1}" class="border p-2 m-2"></div>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <div class="col-sm-2 col-form-label">
-                    <label>Address line 2: </label>
-                </div>
-                <div class="col-sm-10">
-                    <div th:utext="${customer.addressLine2}" class="border p-2 m-2"></div>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <div class="col-sm-2 col-form-label">
-                    <label>City: </label>
-                </div>
-                <div class="col-sm-10">
-                    <div th:utext="${customer.city}" class="border p-2 m-2"></div>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <div class="col-sm-2 col-form-label">
-                    <label>State: </label>
-                </div>
-                <div class="col-sm-10">
-                    <div th:utext="${customer.state}" class="border p-2 m-2"></div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Created date:</label>
+                    <div class="col-sm-10">
+                        <span th:text="${#dates.format(customer.createdTime, 'dd-MM-yyyy')}"></span>
+                    </div>
                 </div>
             </div>
 
-            <div class="form-group row">
-                <div class="col-sm-2 col-form-label">
-                    <label>Country: </label>
+            <div class="tab-pane p-3" id="address" role="tabpanel">
+                <div class="form-group row">
+                    <div class="col-sm-2 col-form-label">
+                        <label>Address line 1: </label>
+                    </div>
+                    <div class="col-sm-10">
+                        <div th:utext="${customer.addressLine1}" class="border p-2 m-2"></div>
+                    </div>
                 </div>
-                <div class="col-sm-10">
-                    <div th:utext="${customer.country.name}" class="border p-2 m-2"></div>
-                </div>
-            </div>
 
-            <div class="form-group row">
-                <div class="col-sm-2 col-form-label">
-                    <label>Postal code: </label>
+                <div class="form-group row">
+                    <div class="col-sm-2 col-form-label">
+                        <label>Address line 2: </label>
+                    </div>
+                    <div class="col-sm-10">
+                        <div th:utext="${customer.addressLine2}" class="border p-2 m-2"></div>
+                    </div>
                 </div>
-                <div class="col-sm-10">
-                    <div th:utext="${customer.postalCode}" class="border p-2 m-2"></div>
+
+                <div class="form-group row">
+                    <div class="col-sm-2 col-form-label">
+                        <label>City: </label>
+                    </div>
+                    <div class="col-sm-10">
+                        <div th:utext="${customer.city}" class="border p-2 m-2"></div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-2 col-form-label">
+                        <label>State: </label>
+                    </div>
+                    <div class="col-sm-10">
+                        <div th:utext="${customer.state}" class="border p-2 m-2"></div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-2 col-form-label">
+                        <label>Country: </label>
+                    </div>
+                    <div class="col-sm-10">
+                        <div th:utext="${customer.country.name}" class="border p-2 m-2"></div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-2 col-form-label">
+                        <label>Postal code: </label>
+                    </div>
+                    <div class="col-sm-10">
+                        <div th:utext="${customer.postalCode}" class="border p-2 m-2"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="modal-footer">
-    <button type="button" class="btn btn-danger cancel" data-dismiss="modal">Close</button>
-</div>
-<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" ></script>
-<script type="text/javascript" th:src="@{/js/common.js}" ></script>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger cancel" data-dismiss="modal">Close</button>
+    </div>
+<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/common.js}"></script>
 <script type="text/javascript">
-    function cancel(){
-        window.location= "[[@{/customers}]]";
+    function cancel() {
+        window.location = "[[@{/customers}]]";
     }
 </script>
 <script th:src="@{/js/common_form.js}"></script>
 <script th:src="@{/js/countries_setting.js}"></script>
 <script th:src="@{/js/states_setting.js}"></script>
+</body>
+</html>

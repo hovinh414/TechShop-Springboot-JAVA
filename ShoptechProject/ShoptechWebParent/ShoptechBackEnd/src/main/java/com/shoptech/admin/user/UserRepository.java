@@ -10,11 +10,11 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-@Repository
+
 public interface UserRepository extends CrudRepository<User,Integer>, PagingAndSortingRepository<User, Integer>
 {
     @Query("SELECT u FROM User u WHERE u.tokenforgotpassword =:token")
-    User getUserByTokenforgotpassword(String token);
+    public User getUserByTokenforgotpassword(@Param("token")String token);
 
     @Query("SELECT u FROM User u WHERE u.email=:email")
     public User getUserByEmail(@Param("email") String email);

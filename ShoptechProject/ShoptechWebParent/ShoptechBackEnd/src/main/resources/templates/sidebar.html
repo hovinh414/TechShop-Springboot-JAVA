@@ -41,25 +41,25 @@
                         </div>
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item preview-item">
+                    <a th:href="@{/account}" class="dropdown-item preview-item">
                         <div class="preview-thumbnail">
                             <div class="preview-icon bg-dark rounded-circle">
                                 <i class="mdi mdi-onepassword  text-info"></i>
                             </div>
                         </div>
                         <div class="preview-item-content">
-                            <p class="preview-subject ellipsis mb-1 text-small account-link">Profile</p>
+                            <p class="preview-subject ellipsis mb-1 text-small">Profile</p>
                         </div>
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item preview-item">
+                    <a href="" class="dropdown-item preview-item logoutLink">
                         <div class="preview-thumbnail">
                             <div class="preview-icon bg-dark rounded-circle">
                                 <i class="mdi mdi-logout text-success"></i>
                             </div>
                         </div>
                         <div class="preview-item-content">
-                            <p class="preview-subject ellipsis mb-1 text-small logoutLink">Log out</p>
+                            <p class="preview-subject ellipsis mb-1 text-small">Log out</p>
                         </div>
                     </a>
                 </div>
@@ -164,6 +164,7 @@
                 <span class="menu-title">Setting</span>
             </a>
         </li>
+        </th:block>
         </th:block>
     </ul>
 </nav>
@@ -366,12 +367,4 @@
 </div>
 </body>
 <script type="text/javascript" th:src="@{/js/common.js}" ></script>
-<script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function() {
-        var logoutLink = document.querySelector('.account-link');
-        logoutLink.addEventListener('click', function() {
-            window.location.href = '/admin/account';
-        });
-    });
-</script>
 </html>
