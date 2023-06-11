@@ -202,8 +202,8 @@
       });
     },
 
-    onError: function(err) {
-      // error that prevents buyer from doing checkout
+    onError: function(data, actions) {
+      // buyer approved payment
       return actions.order.capture().then(function(details) {
         //console.log(details);
         orderId = details.id;

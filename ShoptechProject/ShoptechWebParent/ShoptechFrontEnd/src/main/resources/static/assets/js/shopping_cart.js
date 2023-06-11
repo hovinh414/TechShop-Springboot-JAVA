@@ -28,10 +28,10 @@ function decreaseQuantity(link) {
         updateQuantity(productId, newQuantity);
     } else {
         swal({
-            title: 'Thông báo',
+            title: 'Notification',
             text: 'Minimum quantity is 1' + catName,
             icon: 'warning',
-            button: 'OK'
+            button: 'Close'
         });
     }
 }
@@ -46,10 +46,10 @@ function increaseQuantity(link) {
         updateQuantity(productId, newQuantity);
     } else {
         swal({
-            title: 'Thông báo',
+            title: 'Notification',
             text: 'Maximum quantity is 10' + catName,
             icon: 'warning',
-            button: 'OK'
+            button: 'Close'
         });
     }
 }
@@ -69,10 +69,10 @@ function updateQuantity(productId, quantity) {
     }).fail(function () {
         //showErrorModal("Error while updating product quantity.");
 		swal({
-			title: 'Thông báo',
+			title: 'Notification',
 			text: 'Error while updating product quantity.',
 			icon: 'warning',
-			button: 'OK'
+			button: 'Close'
 		});
     });
 }
@@ -120,19 +120,19 @@ function removeProduct(link) {
 
         //showModalDialog("Shopping Cart", response);
 		swal({
-			title: 'Thông báo',
+			title: 'Notification',
 			text: response,
 			icon: 'warning',
-			button: 'OK'
+			button: 'Close'
 		});
 
     }).fail(function () {
         //showErrorModal("Error while removing product.");
 		swal({
-			title: 'Thông báo',
+			title: 'Notification',
 			text: 'Error while removing product.',
 			icon: 'warning',
-			button: 'OK'
+			button: 'Close'
 		});
     });
 }
