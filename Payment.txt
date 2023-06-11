@@ -7,7 +7,6 @@ account test paypal:
 account 1:
 email: sb-upco026280081@personal.example.com
 pass: sb-upco026280081@personal.example.com
-
 account 2:
 email: sb-01koe25298887@personal.example.com
 pass: conchotrung
