@@ -71,7 +71,7 @@ function updateQuantity(productId, quantity) {
 		swal({
 			title: 'Notification',
 			text: 'Error while updating product quantity.',
-			icon: 'warning',
+			icon: 'error',
 			button: 'Close'
 		});
     });
@@ -122,7 +122,7 @@ function removeProduct(link) {
 		swal({
 			title: 'Notification',
 			text: response,
-			icon: 'warning',
+			icon: 'success',
 			button: 'Close'
 		});
 
