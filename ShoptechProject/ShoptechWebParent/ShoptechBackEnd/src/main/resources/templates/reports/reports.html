@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Tech Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" th:href="@{/assets/vendors/mdi/css/materialdesignicons.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/vendors/css/vendor.bundle.base.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/fontawesome/all.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" th:href="@{/assets/vendors/jvectormap/jquery-jvectormap.css}">
+    <link rel="stylesheet" th:href="@{/assets/vendors/flag-icon-css/css/flag-icon.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/vendors/owl-carousel-2/owl.carousel.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/vendors/owl-carousel-2/owl.theme.default.min.css}">
+    <script th:src="@{/richtext/jquery.richtext.js}"></script>
+    <link rel="stylesheet" th:href="@{/richtext/richtext.css}">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/style.css}">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" th:href="@{/assets/images/favicon.png}"/>
+</head>
+<body>
+<div class="container-scroller">
+    <nav th:replace="~{sidebar :: side_bar}"></nav>
+    <div class="container-fluid">
+        <div class="main-panel">
+            <div class="card-body">
+                <h2>Sales Report</h2>
+            </div>
+
+            <div>
+                <ul class="nav nav-tabs" id="reportTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#date" role="tab">Sales by Date</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#category" role="tab">Sales by Category</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#product" role="tab">Sales by Product</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane active p-3" id="date" role="tabpanel">
+                        <div th:replace="reports/sales_report_fragment::content('_date')"></div>
+                    </div>
+                    <div class="tab-pane p-3" id="category" role="tabpanel">
+                        <div th:replace="reports/sales_report_fragment::content('_category')"></div>
+                    </div>
+                    <div class="tab-pane p-3" id="product" role="tabpanel">
+                        <div th:replace="reports/sales_report_fragment::content('_product')"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    contextPath = "[[@{/}]]";
+    currencySymbol = "[[${CURRENCY_SYMBOL}]]";
+    thousandsPointType = "[[${THOUSANDS_POINT_TYPE == 'COMMA' ? ',' : '.'}]]";
+    decimalPointType = "[[${DECIMAL_POINT_TYPE == 'COMMA' ? ',' : '.'}]]";
+    currencySymbolPosition = "[[${CURRENCY_SYMBOL_POSITION}]]";
+    decimalDigits = "[[${DECIMAL_DIGITS}]]";
+
+    prefixCurrencySymbol = currencySymbolPosition == 'Before price' ? currencySymbol : '';
+    suffixCurrencySymbol = currencySymbolPosition == 'After price' ? currencySymbol : '';
+
+    $(document).ready(function () {
+        google.charts.load('current', {'packages': ['corechart', 'table']});
+        google.charts.setOnLoadCallback(loadSalesReportByDate);
+    });
+
+</script>
+<script type="text/javascript" th:src="@{/js/jquery.number.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/sales_report_common.js}"></script>
+<script type="text/javascript" th:src="@{/js/sales_report_by_date.js}"></script>
+<script type="text/javascript" th:src="@{/js/sales_report_by_category.js}"></script>
+<script type="text/javascript" th:src="@{/js/sales_report_by_product.js}"></script>
+</body>
+</html>
