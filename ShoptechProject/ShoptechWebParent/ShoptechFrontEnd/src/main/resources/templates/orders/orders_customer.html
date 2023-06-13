@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head('My Orders', 'none')"/>
+<body>
+<div class="wrapper">
+    <header class="header-area sticky-header header-transparent">
+        <div th:replace="navigation :: header_menu"></div>
+    </header>
+    <main class="main-content" style="padding-top: 60px">
+        <div>
+            <h2 class="text-center">My Orders</h2>
+        </div>
+        <div class="full-details">
+            <table class="table table-bordered table-striped table-hover table-responsive-xl">
+                <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Order Time</th>
+                    <th>Products</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="order : ${listOrders}">
+                    <td th:text="${order.id}">ID</td>
+                    <td>
+                        <div th:replace="fragments :: format_time(${order.orderTime})">Order Time</div>
+                    </td>
+                    <td th:utext="${order.productNames}"></td>
+                    <td>
+                        <div>[[${order.total}]]$</div>
+                    </td>
+                    <td><span th:class="'textOrderStatus' + ${order.id}">[[${order.status}]]</span></td>
+                    <td>
+                        <button class="linkDetail" style="background-color: #0dcaf0; border-radius: 10px; border: none"
+                                th:href="@{'/orders/detail/' + ${order.id}}"
+                                title="View details of this order">Detail
+                        </button>
+
+                        <th:block
+                                th:if="${order.returnRequested == false && order.delivered == true && order.returned == false}">
+                            &nbsp;&nbsp;&nbsp;
+                            <button class="linkReturnOrder" style="background-color: #fa0053; border-radius: 12px; border: none" href=""
+                                    th:classappend="'linkReturn' + ${order.id}"
+                                    th:orderId="${order.id}"
+                                    title="Return this order">Return
+                            </button>
+                        </th:block>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div th:replace="fragments :: pagination('/orders', 'orders')"></div>
+
+        <div th:replace="orders/return_order_modal :: content"></div>
+
+        <div class="modal fade" id="orderDetailsModal">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-area">
+        <div class="footer-main">
+            <div th:replace="navigation :: footer_menu"></div>
+        </div>
+    </footer>
+
+</div>
+<script th:src="@{/js/common_list.js}"></script>
+<script type="text/javascript">
+    moduleURL = "[[@{/orders}]]";
+    contextPath = "[[@{/}]]";
+    var csrfHeaderName = "[[${_csrf.headerName}]]";
+    var csrfValue = "[[${_csrf.token}]]";
+
+    $(document).ready(function () {
+        handleDetailLink(".linkDetail", "#orderDetailsModal");
+    });
+</script>
+<script type="text/javascript" th:src="@{/js/return_order.js}"></script>
+</body>
+</html>

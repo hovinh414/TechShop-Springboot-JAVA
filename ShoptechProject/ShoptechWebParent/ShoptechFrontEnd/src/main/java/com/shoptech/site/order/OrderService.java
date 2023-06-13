@@ -5,13 +5,15 @@ import com.shoptech.entity.CartItem;
 import com.shoptech.entity.Customer;
 
 import com.shoptech.entity.Product;
-import com.shoptech.entity.order.Order;
-import com.shoptech.entity.order.OrderDetail;
-import com.shoptech.entity.order.OrderStatus;
-import com.shoptech.entity.order.PaymentMethod;
+import com.shoptech.entity.order.*;
+import com.shoptech.exception.OrderNotFoundException;
 import com.shoptech.site.checkout.CheckoutInfo;
 import org.aspectj.weaver.ast.Or;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -20,6 +22,7 @@ import java.util.Set;
 
 @Service
 public class OrderService {
+    public static final int ORDERS_PER_PAGE = 5;
     @Autowired
     private OrderRepository repo;
     public Order createOrder(Customer customer, Address address, List<CartItem> cartItems,
@@ -63,5 +66,47 @@ public class OrderService {
             orderDetails.add(orderDetail);
         }
         return repo.save(newOrder);
+    }
+    public Page<Order> listForCustomerByPage(Customer customer, int pageNum,
+                                             String sortField, String sortDir, String keyword) {
+        Sort sort = Sort.by(sortField);
+        sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
+
+        Pageable pageable = PageRequest.of(pageNum - 1, ORDERS_PER_PAGE, sort);
+
+        if (keyword != null) {
+            return repo.findAll(keyword, customer.getId(), pageable);
+        }
+
+        return repo.findAll(customer.getId(), pageable);
+    }
+    public Order getOrder(Integer id, Customer customer){
+        return  repo.findByIdAndCustomer(id,customer);
+    }
+    public void setOrderReturnRequested(OrderReturnRequest request, Customer customer)
+            throws OrderNotFoundException {
+        Order order = repo.findByIdAndCustomer(request.getOrderId(), customer);
+        if (order == null) {
+            throw new OrderNotFoundException("Order ID " + request.getOrderId() + " not found");
+        }
+
+        if (order.isReturnRequested()) return;
+
+        OrderTrack track = new OrderTrack();
+        track.setOrder(order);
+        track.setUpdatedTime(new Date());
+        track.setStatus(OrderStatus.RETURN_REQUESTED);
+
+        String notes = "Reason: " + request.getReason();
+        if (!"".equals(request.getNote())) {
+            notes += ". " + request.getNote();
+        }
+
+        track.setNotes(notes);
+
+        order.getOrderTracks().add(track);
+        order.setStatus(OrderStatus.RETURN_REQUESTED);
+
+        repo.save(order);
     }
 }
