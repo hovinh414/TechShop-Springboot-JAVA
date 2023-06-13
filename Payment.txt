@@ -6,8 +6,7 @@ PAYPAL_API_CLIENT_SECRET : EO1luVGGCLtzRLk9RfIWpHWr5iRh0noAPGfTJLCt1wa_QmiWY2Rea
 account test paypal:
 account 1:
 email: sb-upco026280081@personal.example.com
-pass: 123456aA@
-
+pass: sb-upco026280081@personal.example.com
 account 2:
 email: sb-01koe25298887@personal.example.com
 pass: conchotrung
@@ -15,3 +14,8 @@ pass: conchotrung
 account 3:
 email: sb-s9syj25298896@business.example.com
 pass: conchoquynh
+
+INSERT INTO `shoptechdb`.`settings` (`key`, `category`, `value`) VALUES ('PAYPAL_API_BASE_URL', 'PAYMENT', 'https://api-m.sandbox.paypal.com');
+INSERT INTO `shoptechdb`.`settings` (`key`, `category`, `value`) VALUES ('PAYPAL_API_CLIENT_ID', 'PAYMENT', 'Abd5z4xNuWolufuFoX9n4vz0oxRV6na9uEwZGD6OaRNnBw1Nsdm03s8EfwECsjH9L2Z7WHLyMBmhNWkM');
+INSERT INTO `shoptechdb`.`settings` (`key`, `category`, `value`) VALUES ('PAYPAL_API_CLIENT_SECRET', 'PAYMENT', 'EO1luVGGCLtzRLk9RfIWpHWr5iRh0noAPGfTJLCt1wa_QmiWY2ReakRBw2o9lXUg7-wxoryS8oE_q92I');
+INSERT INTO `shoptechdb`.`settings` (`key`, `category`, `value`) VALUES ('CURRENCY_ID', 'CURRENCY', '4');

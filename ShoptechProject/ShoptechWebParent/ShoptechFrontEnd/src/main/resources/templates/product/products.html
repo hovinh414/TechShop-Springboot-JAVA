@@ -75,9 +75,10 @@
                     <button type="button" class="product-action-btn action-btn-quick-view">
                       <a class="link-detail" th:href="@{'/products/detail/' + ${product.id}}"><i class="fa fa-expand"></i></a>
                     </button>
-                    <button type="button" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
+                    <button th:id="${product.id}" type="button" class="product-action-btn action-btn-cart buttonAddCart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
                       <span>Add to cart</span>
                     </button>
+                    <input type="hidden" th:id="${product.id}" th:value="${product.id}">
                     <button type="button" class="product-action-btn action-btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
                       <i class="fa fa-heart-o"></i>
                     </button>
@@ -163,13 +164,53 @@
 
 <script type="text/javascript">
   moduleURL = "[[@{/products}]]";
+  contextPath = "[[@{/}]]";
+  var csrfHeaderName = "[[${_csrf.headerName}]]";
+  var csrfValue = "[[${_csrf.token}]]";
   $(document).ready(function() {
     $(".link-detail").on("click", function(e) {
       e.preventDefault();
       linkDetailURL = $(this).attr("href");
       $("#detailModal").modal("show").find(".modal-content").load(linkDetailURL);
     });
+    $(".buttonAddCart").on("click", function (evt) {
+      var productId = $(this).attr('id');
+      url = contextPath + "cart/add/" + productId + "/1";
+
+      $.ajax({
+        type: "POST",
+        url: url,
+        beforeSend: function (xhr) {
+          xhr.setRequestHeader(csrfHeaderName, csrfValue);
+        }
+      }).done(function (response) {
+        if (response === ' You must login to add this product to cart.')
+        {
+          swal({
+            title: 'Notification',
+            text: response,
+            icon: 'info',
+            button: 'Close'
+          });
+        } else{
+          swal({
+            title: 'Notification',
+            text: response,
+            icon: 'success',
+            button: 'Close'
+          });
+        }
+      }).fail(function () {
+        swal({
+          title: 'Notification',
+          text: ' Error when adding product to cart.',
+          icon: 'error',
+          button: 'Close'
+        });
+      });
+    });
   });
+
 
 </script>
 <script type="text/javascript">
@@ -192,6 +233,6 @@
 <script th:src="@{/js/quantity_control.js}"></script>
 <script th:src="@{/assets/js/shopping_cart.js}"></script>
 <script th:src="@{/assets/js/common_modal.js}"></script>
-<script th:src="@{/assets/js/add_to_cart.js}"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>

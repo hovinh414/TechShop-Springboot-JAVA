@@ -15,18 +15,29 @@ function addToCart() {
             xhr.setRequestHeader(csrfHeaderName, csrfValue);
         }
     }).done(function (response) {
-        swal({
-            title: 'Thông báo',
-            text: response,
-            icon: 'warning',
-            button: 'OK'
-        });
+        if (response === ' You must login to add this product to cart.')
+        {
+            swal({
+                title: 'Notification',
+                text: response,
+                icon: 'info',
+                button: 'Close'
+            });
+        } else{
+            swal({
+                title: 'Notification',
+                text: response,
+                icon: 'success',
+                button: 'Close'
+            });
+        }
+
     }).fail(function () {
         swal({
-            title: 'Thông báo',
-            text: ' Lỗi khi thêm sản phẩm vào giỏ hàng.',
-            icon: 'warning',
-            button: 'OK'
+            title: 'Notification',
+            text: ' Error when adding product to cart.',
+            icon: 'error',
+            button: 'Close'
         });
     });
 }

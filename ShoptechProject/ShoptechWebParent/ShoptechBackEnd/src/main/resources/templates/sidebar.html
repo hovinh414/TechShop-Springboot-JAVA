@@ -125,6 +125,17 @@
                     <span class="menu-title">Shipping rate</span>
                 </a>
             </li>
+        </th:block>
+        <th:block sec:authorize="hasAnyAuthority('Admin', 'Salesperson')">
+            <li class="nav-item menu-items">
+                <a class="nav-link" th:href="@{/reports}" aria-expanded="false" aria-controls="auth">
+              <span class="menu-icon">
+                <i class="mdi mdi-chart-bar"></i>
+              </span>
+                    <span class="menu-title">Sale Reports</span>
+                </a>
+            </li>
+        </th:block>
         <th:block sec:authorize="hasAnyAuthority('Admin', 'Salesperson',  'Shipper')">
         <li class="nav-item menu-items">
             <a class="nav-link" th:href="@{/orders}">
