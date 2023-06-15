@@ -1,6 +1,5 @@
 <div class="modal-header">
     <h4 class="modal-title">Order Details</h4>
-    <button type="button" class="close" data-dismiss="modal">&times;</button>
 </div>
 
 <div>
@@ -105,16 +104,16 @@
                             <div>[[${detail.subtotal}]]$</div>
                         </div>
 
-                        <!--<div th:if="${!product.reviewedByCustomer && product.customerCanReview}">
-                            <a th:href="@{'/write_review/product/' + ${product.id}}" class="btn btn-info">Write Review</a>
+                        <div th:if="${!product.reviewedByCustomer && product.customerCanReview}">
+                            <a class="button-review" th:href="@{'/write_review/product/' + ${product.id}}">Write Review</a>
                         </div>
-
                         <div th:if="${product.reviewedByCustomer}">
-                            <a target="_blank" th:href="@{'/reviews/page/1?sortField=reviewTime&sortDir=desc&keyword=' + ${#strings.substring(product.shortName, 0, 20)}}" class="btn btn-warning">See your Review</a>
-                        </div>-->
+                            <a class="button-see" target="_blank" th:href="@{'/p/' + ${product.alias}}">See your Review</a>
+                        </div>
                     </div>
                 </div>
             </th:block>
+
         </div>
         <div class="tab-pane fade p-3" id="shipping" role="tabpanel">
             <div class="form-group row">
@@ -220,8 +219,4 @@
         </div>
 
     </div>
-</div>
-
-<div class="modal-footer">
-    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 </div>
