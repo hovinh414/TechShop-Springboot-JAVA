@@ -128,7 +128,7 @@ public class ProductController {
         try {
             Product product = productService.getProduct(alias);
             List<Category> listCategoryParents = categoryService.getCategoryParents(product.getCategory());
-            Page<Review> listReviews = reviewService.list3MostVotedReviewsByProduct(product);
+            Page<Review> listReviews = reviewService.list3MostRecentReviewsByProduct(product);
             model.addAttribute("listCategoryParents", listCategoryParents);
             model.addAttribute("product", product);
             model.addAttribute("listReviews", listReviews);

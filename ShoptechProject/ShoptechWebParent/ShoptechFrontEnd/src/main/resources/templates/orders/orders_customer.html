@@ -5,6 +5,7 @@
 <div class="wrapper">
     <header class="header-area sticky-header header-transparent">
         <div th:replace="navigation :: header_menu"></div>
+        <link rel="stylesheet" th:href="@{/assets/css/style.min.css}">
     </header>
     <main class="main-content" style="padding-top: 100px">
         <div>
@@ -39,8 +40,7 @@
                                 title="View details of this order">Detail
                         </button>
 
-                        <th:block
-                                th:if="${order.returnRequested == false && order.delivered == true && order.returned == false}">
+                        <th:block th:if="${order.returnRequested == false && order.delivered == true && order.returned == false}">
                             &nbsp;&nbsp;&nbsp;
                             <button class="linkReturnOrder" style="background-color: #fa0053; border-radius: 12px; border: none" href=""
                                     th:classappend="'linkReturn' + ${order.id}"
@@ -53,9 +53,9 @@
                 </tbody>
             </table>
         </div>
-
+        <section class="pagination justify-content-center me-auto ms-auto mt-5 mb-0 mb-sm-10">
         <div th:replace="fragments :: pagination('/orders', 'orders')"></div>
-
+        </section>
         <div th:replace="orders/return_order_modal :: content"></div>
 
         <div class="modal fade" id="orderDetailsModal">

@@ -3,7 +3,10 @@ package com.shoptech.site.review;
 import com.shoptech.entity.Customer;
 import com.shoptech.entity.Product;
 import com.shoptech.entity.Review;
+import com.shoptech.entity.order.OrderStatus;
 import com.shoptech.exception.ReviewNotFoundException;
+import com.shoptech.site.order.OrderDetailRepository;
+import com.shoptech.site.product.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -19,6 +22,10 @@ public class ReviewService {
 
     @Autowired
     private ReviewRepository reviewRepo;
+    @Autowired
+    OrderDetailRepository orderDetailRepository;
+    @Autowired
+    ProductRepository productRepository;
     public Page<Review> listByCustomerByPage(Customer customer, String keyword, int pageNum,
                                              String sortField, String sortDir) {
         Sort sort = Sort.by(sortField);
@@ -39,14 +46,27 @@ public class ReviewService {
 
         return review;
     }
-    public Page<Review> list3MostVotedReviewsByProduct(Product product) {
+    public Page<Review> list3MostRecentReviewsByProduct(Product product) {
         Sort sort = Sort.by("reviewTime").descending();
         Pageable pageable = PageRequest.of(0, 10, sort);
 
         return reviewRepo.findByProduct(product, pageable);
     }
-    public void saveReview(Review review) {
+    public boolean didCustomerReviewProduct(Customer customer, Integer productId) {
+        Long count = reviewRepo.countByCustomerAndProduct(customer.getId(), productId);
+        return count > 0;
+    }
+
+    public boolean canCustomerReviewProduct(Customer customer, Integer productId) {
+        Long count = orderDetailRepository.countByProductAndCustomerAndOrderStatus(productId, customer.getId(), OrderStatus.DELIVERED);
+        return count > 0;
+    }
+    public Review save(Review review) {
         review.setReviewTime(new Date());
-        reviewRepo.save(review);
+        Review savedReview = reviewRepo.save(review);
+
+        Integer productId = savedReview.getProduct().getId();
+        productRepository.updateReviewCountAndAverageRating(productId);
+        return savedReview;
     }
 }
