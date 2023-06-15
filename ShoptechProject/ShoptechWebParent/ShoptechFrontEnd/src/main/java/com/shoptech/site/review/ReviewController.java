@@ -12,6 +12,7 @@ import com.shoptech.site.customer.CustomerService;
 import com.shoptech.site.product.ProductService;
 import com.shoptech.site.security.oauth.CustomerOAuth2User;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.security.authentication.RememberMeAuthenticationToken;
@@ -75,5 +76,60 @@ public class ReviewController {
 
         return "reviews/reviews_customer";
     }
+    @GetMapping("/write_review/product/{productId}")
+    public String showViewForm(@PathVariable("productId") Integer productId, Model model,
+                               HttpServletRequest request) {
 
+        Review review = new Review();
+
+        Product product = null;
+
+        try {
+            product = productService.get(productId);
+        } catch (ProductNotFoundException ex) {
+            return "error/404";
+        }
+
+        Customer customer = controllerHelper.getAuthenticatedCustomer(request);
+        boolean customerReviewed = reviewService.didCustomerReviewProduct(customer, product.getId());
+
+        if (customerReviewed) {
+            model.addAttribute("customerReviewed", customerReviewed);
+        } else {
+            boolean customerCanReview = reviewService.canCustomerReviewProduct(customer, product.getId());
+
+            if (customerCanReview) {
+                model.addAttribute("customerCanReview", customerCanReview);
+            } else {
+                model.addAttribute("NoReviewPermission", true);
+            }
+        }
+
+        model.addAttribute("product", product);
+        model.addAttribute("review", review);
+
+        return "reviews/review_form";
+    }
+
+    @PostMapping("/post_review")
+    @Transactional
+    public String saveReview(Model model, Review review, Integer productId, HttpServletRequest request) {
+        Customer customer = controllerHelper.getAuthenticatedCustomer(request);
+
+        Product product = null;
+
+        try {
+            product = productService.get(productId);
+        } catch (ProductNotFoundException ex) {
+            return "error/404";
+        }
+
+        review.setProduct(product);
+        review.setCustomer(customer);
+        Review savedReview = reviewService.save(review);
+
+        model.addAttribute("review", savedReview);
+
+        return "reviews/review_done";
+    }
 }
